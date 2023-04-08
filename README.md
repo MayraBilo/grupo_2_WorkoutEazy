@@ -9,6 +9,7 @@ Agustin Valcárcel: Tengo 28 años, soy de Bahía Blanca. Tengo un agencia de lo
 Mi nombre es Franco Berdini. Tengo 17 años. Soy de Santa Fe, Argentina. Soy estudiante de secundaria, cursando el ultimo año.
 
 Sitios de referencia:
+
 1- https://misaliados.com.co/ - Esta página la seleccionamos debido a la similitud con nuestra propuesta, su diseño amigable para el usuario y la amplitud de edades/grupos que abarca.
 2- https://www.alomoves.com/explore/filter?order=date - Nos gusta la estética minimalista, además de la posibilidad de fácil lectura y el diseño atractivo general. La variedad de filtros para buscar las actividades y la invitación a formar parte de una comunidad, mejorando así la experiencia del usuario.
 3- https://womensfitness.turnosweb.com/ - Esta página es específica de actividades físicas y la seleccionamos ya que nos gusta la funcionalidad de crear un calendario con las reservas realizadas y la posibilidad de cargar un apto físico(sección "mis datos").
