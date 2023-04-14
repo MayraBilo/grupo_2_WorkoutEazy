@@ -16,4 +16,3 @@ Sitios de referencia:
 4- https://fullfitness.la/ - Esta página la seleccionamos también por ser específica de actividades físicas y por sumar la idea de blog donde se buscará que la comunidad interactue aportando experiencias, recetas, etc.
 5- https://www.facebook.com/marketplace/?ref=app_tab - Esta página la seleccionamos debido a la diversidad de filtros posibiles. El que más nos gustó está vinculado al radio de búsqueda por zona de las actividades ofrecidas.
 
-prueba para ver si anda el pull
