@@ -1,0 +1,13 @@
+---------------------------- Colores ----------------------------
+
+verde menta: #00a170
+verde pradera: #006e52
+azul exotico: #006e7f
+azul saturado: #0084bd
+gris topo: #5c5d5b
+gris azulado: #dde0df
+
+---------------------------- Tipografia ----------------------------
+
+Titulos/Subtitulos: @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+Bloques de texto: @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
