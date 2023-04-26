@@ -29,3 +29,5 @@ Sitios de referencia:
 5- https://www.facebook.com/marketplace/?ref=app_tab - Esta página la seleccionamos debido a la diversidad de filtros posibiles. El que más nos gustó está vinculado al radio de búsqueda por zona de las actividades ofrecidas.
 6- https://www.rickysarkany.com/checkout/#/cart - Seleccionamos esta página ya que su carrito de compras nos resultó atractivo y sencillo en su utilización.
 7- https://www.tiendacompensar.com/cart - Por último, este carrito de compras nos servirá como guía ya que tienen una oferta bastante similar a la nuestra y suma la funcionalidad de especificar en la compra el público al que está destinado, las fechas en que serán realizados los diferentes cursos y la ubicación de los mismos.
+
+https://trello.com/b/ZWc1lNAX/pi-grupo-2
