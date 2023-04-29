@@ -1,1 +1,43 @@
+/* Font sizes */ 
  
+.titulares {
+    font-size: 24px;
+}
+
+.cuerpos-texto {
+    font-size: 12px;
+}
+
+.descripciones {
+    font-size: 16px;
+}
+ 
+ /* Header */
+
+ /* Buscador */
+
+ .buscador {
+    width: 32vw;
+    border-radius: 12px;
+    border: 1px solid whitesmoke;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buscador input {
+    width: 85%;
+    border: none;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    border-radius: 12px;
+}
+
+.buscador i {
+    width: 12%;
+}
