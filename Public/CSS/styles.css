@@ -1,1 +1,72 @@
- 
+/* ------------------------------- General ------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
+
+/* ------------------------------- Body ------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto";
+}
+
+h1, h2 {
+    font-family: "Bebas Neue";
+}
+
+/* ------------------------------- Header ------------------------------- */
+
+/* ------------------------------- Main ------------------------------- */
+
+#shopping-cart {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#shopping-cart h3{
+    font-size: 15px;
+}
+
+#purchase-summary {
+    background-color: #00a170;
+}
+
+#div-text-product {
+    display: flex;
+    margin-right: 10px;
+    width: 25%;
+}
+
+#div-product-information {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+#div-product-information h3{
+    margin-left: 10px;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.inf-product {
+    width: 25%;
+}
+
+.imag-prod {
+    width: 40px;
+}
+
+/* ------------------------------- Footer ------------------------------- */
