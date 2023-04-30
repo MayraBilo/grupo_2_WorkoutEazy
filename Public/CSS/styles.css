@@ -1,27 +1,144 @@
-/* ------------------------------- General ------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
+/* Body */
 
-/* ------------------------------- Body ------------------------------- */
-
-* {
+body {
+    background-color: white;
+    font-family: 'Roboto', 'sans-serif';
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Font sizes */
+
+.titulares {
+    font-size: 24px;
+}
+
+.cuerpos-texto {
+    font-size: 12px;
+}
+
+.descripciones {
+    font-size: 16px;
+}
+
+/* Header */
+
+header {
+    border-bottom: 1px solid black ;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mainheader-topbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 5px;
+}
+
+.logo {
+    max-width: 25%;
+}
+
+.buscador {
+    max-width: 50%;
+}
+
+.ingreso {
+    display: none;
+}
+
+.registro {
+    display: none;
+}
+
+/* Buscador */
+
+.buscador {
+    min-width: 250px;
+    border-radius: 14px;
+    border: 1px solid #e8e8e8;
+    background-color: #e8e8e8;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+}
+
+.buscador input {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #e8e8e8;
+    border-radius: 14px;
+}
+
+.buscador i {
+    width: 12%;
+}
+
+.lupita {
+    background-color: #00a170;
+    border: 1px solid #00a170;
+    border-radius: 14px;
+    padding: 1%;
+}
+
+.buscador select {
+    border: 1px solid #e8e8e8;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1%;
+}
+
+.persona {
+    display: inline-block;
+}
+
+
+
+/* Navegador */
+
+.main-navbar ul {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: "Roboto";
+.main-navbar a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
 }
 
-h1, h2 {
-    font-family: "Bebas Neue";
+.main-navbar {
+    display: none;
 }
 
-/* ------------------------------- Header ------------------------------- */
+.main-navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-/* ------------------------------- Main ------------------------------- */
+.main-navbar ul li {
+    margin: 15px;
+}
+
+/* Main */
 
 #shopping-cart {
     display: flex;
@@ -69,4 +186,43 @@ h1, h2 {
     width: 40px;
 }
 
-/* ------------------------------- Footer ------------------------------- */
+@media (min-width: 679px) {
+
+    .burger-menu {
+        display: none;
+    }
+
+    .ingreso {
+        width: 59px;
+        height: 30px;
+        border-radius: 14px;
+        border: 1px solid #e8e8e8;
+        background-color: #e8e8e8;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 8px;
+    }
+
+    .main-navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 4px;
+    }
+
+    .registro {
+        display: inline-block;
+    }
+
+    .persona {
+        display: none;
+    }
+
+    .buscador {
+        width: 400px;
+    }
+
+}
