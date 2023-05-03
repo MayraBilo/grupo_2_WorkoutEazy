@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" src="/CSS/styles.css">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles-register.css">
+
+</head>
+
+<body>
+    <header>
+        <section class="mainheader-topbar">
+            <a href="#" class="burger-menu">
+                <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
+            </a>
+
+            <img src="/images/logo-sinfondo.png" class="logo">
+
+            <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
+
+            <div class="buscador">
+                <select>
+                    <option>Buenos Aires</option>
+                    <option>Caracas</option>
+                    <option>Bahía Blanca</option>
+                    <option>Santa Fe</option>
+                </select>
+                <input type="text"></input>
+                <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+
+            <div class="registro"><p>Registro</p></div>
+            <div class="ingreso"><p>Ingresar</p></div>
+
+        </section>
+
+        <nav class="main-navbar">
+            <ul>
+                <li>Actividades</li>
+                <li>Promociones</li>
+                <li>Blog</li>
+                <li>Compras</li>
+            </ul>
+        </nav>
+    </header>
+</body>
+<main>
+    <section class="container-1">
+        <img src="/images/logo-confondo.png" alt="logo">
+    </section>
+    <section class="container-2">
+        <h3>Regístrate como Usuario</h3>
+        <form action="/registro" method="POST">
+            <div class="botones">
+                <button id="Usuario" type="button" style="background-color: #00a170;">Usuario</button>
+                <button id="Aliado" type="button">Aliado</button>
+            </div>
+            <p>Ingresa con tus redes sociales
+            <p>
+
+            <div class="grupo-de-registros">
+                <label id="nombre" for="nombre">Nombre: </label>
+
+                <input class="input-selecto id=" nombre" type="text" name="nombre" placeholder="Ingresa tu Nombre"
+                    required>
+                <span class="feedback"></span>
+            </div>
+            <div class="grupo-de-registros">
+                <label id="nombre" for="nombre">Apellidos: </label>
+
+                <input class="input-selecto" id="apellido" type="text" name="apellido"
+                    placeholder="Ingresa tus Apellidos" required>
+                <span class="feedback"></span>
+            </div>
+            <div class="grupo-de-registros">
+                <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
+
+                <input class="input-selecto" id="label fecha de nacimiento" type="date" name="fecha de nacimiento"
+                    required>
+                <span class="feedback"></span>
+            </div>
+            <div class="grupo-de-registros">
+                <label id="ciudad residencia" for="ciudad residencia">Ciudad de Residencia: </label>
+
+                <select class="option" id="ciudad residencia" name="ciudad residencia" required>>
+                    <br>
+                    <option>Buenos Aires</option>
+                    <option>Córdoba</option>
+                    <option>Rosario</option>
+                    <option>Tucumán</option>
+                    <option>Mendoza</option>
+                    <option>Mar del plata</option>
+                    <option>Bahía Blanca</option>
+                    <option>Santa Fe</option>
+                </select>
+            </div>
+            <div class="grupo-de-registros">
+                <label id="celular" for="nombre">N° Celular: </label>
+                <input class="input-selecto" id="e-mail" type="text" name="e-mail" placeholder="Ingresa tu # Celular"
+                    required>
+                <span class="feedback"></span>
+            </div>
+            <div class="grupo-de-registros">
+                <label id="apellido" for="nombre">E-mail: </label>
+                <input class="input-selecto" id="e-mail" type="text" name="e-mail"
+                    placeholder="Ingresa tu correo electrónico" required>
+                <span class="feedback"></span>
+            </div>
+            <div class="grupo-de-registros">
+                <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
+                <input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
+                    placeholder="Ingresa tu Usuario" required>
+                <span class="feedback"></span>
+            </div>
+            <div class="grupo-de-registros">
+                <label id="contraseña" for="contraseña">Contraseña:</label>
+                <input class="input-selecto" id="contraseña" type="password" name="contraseña"
+                    placeholder="Crear Contraseña">
+                <span class="feedback"></span>
+            </div>
+            <div class="grupo-de-registros">
+                <input class="input-selecto" id="confirmar contraseña" type="password" name="confirmar contraseña"
+                    placeholder="Confirmar Contraseña">
+                <span class="feedback"></span>
+            </div>
+            <br>
+            <div class="boton">
+                <input class="input-selecto" id="enviar" type="submit" value="Enviar"
+                    style="background-color: #00a170;">
+            </div>
+            <div class="condiciones">
+                <input type="checkbox" name="terminos y condiciones" value="terminos y condiciones">Acepto los términos
+                y condiciones de uso del sitio web.
+                <br>
+                <input type="checkbox" name="terminos y condiciones" value="Políticas de privacidad">Acepto el
+                tratamiento de datos personales según la política de privacidad con el fin de ser contactado por
+                WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
+                productos/servicios.
+                <span class="feedback"></span>
+            </div>
+
+
+        </form>
+    </section>
+
+</main>
+
+</html>
