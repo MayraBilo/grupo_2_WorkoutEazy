@@ -181,6 +181,11 @@ input:focus {
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
+    font-family: 'Bebas Neue';
+}
+
+.rutina p {
+    font-size: 20px;
 }
 
 /* Banner 1 */
@@ -463,6 +468,10 @@ footer h2 {
     .rutina {
         width: 250px;
         font-size: 20px;
+    }
+
+    .rutina p {
+        font-size: 30px;
     }
 
     .tarjeta {
