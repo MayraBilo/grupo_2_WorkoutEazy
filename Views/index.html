@@ -1,151 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/styles.css">
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap");
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Home</title>
 </head>
+
 <body>
-<header>
-    <section class="mainheader-topbar">
-        
-        <a href="#" class="burger-menu">
-            <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
-        </a>
+    <header>
+        <section class="mainheader-topbar">
 
-        <img src="/images/logo-sinfondo.png" class="logo">
+            <a href="#" class="burger-menu">
+                <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
+            </a>
 
-        <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
+            <img src="/images/logo-sinfondo.png" class="logo">
 
-        <div class="buscador">
-            <select>
-                <option >Buenos Aires</option>
-                <option>Caracas</option>
-                <option>Bahía Blanca</option>
-                <option>Santa Fe</option>
-            </select>
-            <input type="text"></input>
-            <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
-        </div>
+            <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
 
-        <section class="login">
-        <button class="registro"><p>Registro</p></button>
-        <button class="ingreso"><p>Ingresar</p></button>
+            <div class="buscador">
+                <select>
+                    <option>Buenos Aires</option>
+                    <option>Caracas</option>
+                    <option>Bahía Blanca</option>
+                    <option>Santa Fe</option>
+                </select>
+                <input type="text"></input>
+                <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+
+            <section class="login">
+                <button class="registro">
+                    <p>Registro</p>
+                </button>
+                <button class="ingreso">
+                    <p>Ingresar</p>
+                </button>
+            </section>
+
         </section>
 
-    </section>
+        <nav class="main-navbar">
+            <ul>
+                <li><a id="actividades">Actividades</a></li>
+                <li><a id="promociones">Promociones</a></li>
+                <li><a id="blog">Blog</a></li>
+                <li><a id="compras">Compras</a></li>
+            </ul>
+        </nav>
 
-    <nav class="main-navbar">
-        <ul>
-            <li><a id="actividades">Actividades</a></li>
-            <li><a id="promociones">Promociones</a></li>
-            <li><a id="blog">Blog</a></li>
-            <li><a id="compras">Compras</a></li>
-        </ul>
-    </nav>
-   
-</header>
+    </header>
 
-<main>
+    <main>
 
-    <section class="slider-home">
-        <div class="slider-fotos">
-        <i class="fa-solid fa-caret-left fa-2xl" style="color: #000000;"></i>
-        <img src="/images/JacintaYoga.JPG" class="imagen-slider1">
-        <i class="fa-solid fa-caret-right fa-2xl" style="color: #080808;"></i>
-        </div>
-        <br>
-        <button class="rutina"><p>ARMÁ TU RUTINA HOY</p></button>
-        <p class="tarjeta">Enviá una tarjeta de regalo</p>
-    </section>
+        <section class="slider-home">
 
-    <section class="aliados">
-        <div>
-        <h4>Aliados</h4>
-        <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
-        </div>
-        <img src="/images/ALMAYOGA.png" class="logo-aliado1" width="100px">
-    </section>
-
-    <section class="actividades">
-        <h2>Encontrá tu propósito</h2>
-        <p class="nuevas-actividades">Nuevas actividades</p>
-        <article class="actividad-1">
-        <img src="/images/escalada.JPG" class="actividades-imagen1">
-        <div class="titulo-actividad">
-        <h4>Escalada</h4>
-        <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
-        </div>
-        <div class="descripcion-actividad">
-            <p class="cuerpos-texto">Ideal para disfrutar de una actividad de montaña en el epicentro de la ciudad. 
-            Desafiá tus límites y entrená para tu próximo destino. 
-            Nuestros aliados en deportes extremos te enseñan todos los aspectos técnicos y medidas de seguridad.
-            </p>
-        </div>
-        </article>
-    </section>
-
-    <!---Banner promocional---> 
-
-    <section class="instructores">
-        <h2>Conocé nuestros instructores</h2>
-        <p class="cuerpos-texto">Desafiá tu fuerza. Ganá flexibilidad. Aprendé sobre respiración.
-            Los instructores te acompañan en el proceso.</p>
-        <div class="masinfo"><p class="cuerpos-texto">Más información...</p></div>
-        <article class="info-instructor">
-            <img src="/images/Perfil-Jacinta.JPG" class="perfil-instructor1">
-            <div class="texto-instructor">
-            <h3>Jacinta Mayol</h3>
-            <h4>Yoga Flow</h4>
+            <div class="slider-fotos">
+                <i class="fa-solid fa-caret-left fa-2xl" style="color: #000000;"></i>
+                <img src="/images/JacintaYoga.JPG" class="imagen-slider1">
+                <img src="/images/JacintaYoga2.JPG" class="imagen-slider2">
+                <i class="fa-solid fa-caret-right fa-2xl" style="color: #080808;"></i>
             </div>
-        </article>
-    </section>
 
-</main>
+            <br>
 
+            <button class="rutina">
+                <p>ARMÁ TU RUTINA HOY</p>
+            </button>
+            <p class="tarjeta">Enviá una tarjeta de regalo</p>
 
-<footer>
+        </section>
 
-    <div class="footer-columna1">
-    <h2>Ayuda</h2>
-    <ul class="lista-footer">
-        <li>Cómo convertirme en aliado</li>
-        <li>Términos y condiciones</li>
-        <li>Política de privacidad</li>
-        <li>Seguros</li>
-        <li>Preguntas y reclamos</li>
-    </ul>
-    </div>
+        <section class="aliados">
+            <div>
+                <h4>Aliados</h4>
+                <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
+            </div>
+            <img src="/images/ALMAYOGA.png" class="logo-aliado1" width="100px">
+        </section>
 
-    <div clas="footer-columna2">
-    <h2>Redes Sociales</h2>
-        <div class="iconos-redes">
-            <i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-square-facebook fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-tiktok fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-spotify fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-youtube fa-xl" style="color: #000000;"></i>
+        <section class="actividades">
+            <h2>Encontrá tu propósito</h2>
+            <p class="nuevas-actividades">Nuevas actividades</p>
+
+            <div class="ejemplos-actividades">
+            <article class="actividad-1">
+                <img src="/images/escalada copy.JPG" class="actividades-imagen1">
+                <div class="titulo-actividad">
+                    <h4>Escalada</h4>
+                    <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
+                </div>
+                <div class="descripcion-actividad">
+                    <p class="cuerpos-texto">Ideal para disfrutar de una actividad de montaña en el epicentro de la
+                        ciudad.
+                        Desafiá tus límites y entrená para tu próximo destino.
+                        Nuestros aliados en deportes extremos te enseñan todos los aspectos técnicos y medidas de
+                        seguridad.
+                    </p>
+                </div>
+            </article>
+
+            <article class="actividad-2">
+                <img src="/images/gimnasio.JPG" class="actividades-imagen2">
+                <div class="titulo-actividad">
+                    <h4>Gym</h4>
+                    <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
+                </div>
+                <div class="descripcion-actividad">
+                    <p class="cuerpos-texto">Disciplina a tu medida para ganar fuerza y masa musuclar. 
+                        Sentite fuerte y capaz, potenciá las posibilidades que ofrece tu cuerpo. 
+                        Rutinas a medida.
+                    </p>
+                </div>
+            </article>
+
+            <article class="actividad-3">
+                <img src="/images/functional.JPG" class="actividades-imagen3">
+                <div class="titulo-actividad">
+                    <h4>Functional</h4>
+                    <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
+                </div>
+                <div class="descripcion-actividad">
+                    <p class="cuerpos-texto">Entretenida actividad para todos los días. 
+                        Mové todo el cuerpo con nuestros grupos y hacé nuevos amigos! 
+                        Grupos disponibles para todas las edades.
+                    </p>
+                </div>
+            </article>
+
+            <article class="actividad-4">
+                <img src="/images/yoga-airelibre.JPG" class="actividades-imagen4">
+                <div class="titulo-actividad">
+                    <h4>Yoga al aire libre</h4>
+                    <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
+                </div>
+                <div class="descripcion-actividad">
+                    <p class="cuerpos-texto">Una forma distinta de disfrutar el Yoga más flexible. 
+                        Todos los domingos cambiamos locación conectando con lo que nos rodea,
+                        tanto el lugar como con las demás personas. Buscá la conexión con tu cuerpo y tu alma.
+                    </p>
+                </div>
+            </article>
+            </div>
+
+        </section>
+
+        <div class="banner-promocional">
+            <h2>20% OFF</h2>
+            <h3>en tu primera compra</h3>
+            <p>hace click aqui para obtener el cupón de descuento</p>
+            <div class="animacion-regalo"><i class="fa-solid fa-gift fa-2xl" style="color: #006e7f;"></i></div>
         </div>
-    </div>
 
-    <div class="footer-columna3">
-    <p class="cuerpos-texto">
-        Copyright Grupo 2 - 2023. Todos los derechos reservados.
-        Defensa de las y los consumidores. Para reclamos ingrese aquí</p>
-    </div>
-</footer>
+        <section class="instructores">
 
-<button class="consultas">
-    <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
-    Consultas</button>
-    
+            <h2>Conocé nuestros instructores</h2>
+
+            <p class="cuerpos-texto">Desafiá tu fuerza. Ganá flexibilidad. Aprendé sobre respiración.
+                Los instructores te acompañan en el proceso.</p>
+
+            <div class="masinfo">
+                <p>Más información...</p>
+            </div>
+
+            <div class="ejemplos-instructores">
+            <article class="info-instructor">
+                <img src="/images/Perfil-Jacinta.JPG" class="perfil-instructor1">
+                <div class="texto-instructor">
+                    <h3>Jacinta Mayol</h3>
+                    <h4>Yoga Flow</h4>
+                </div>
+            </article>
+
+            <article class="info-instructor">
+                <img src="/images/entrenador-boxeo.jpg" class="perfil-instructor2">
+                <div class="texto-instructor">
+                    <h3>Jaime Hernandez</h3>
+                    <h4>Boxeo</h4>
+                </div>
+            </article>
+
+            <article class="info-instructor">
+                <img src="/images/entrenador-gym.jpg" class="perfil-instructor3">
+                <div class="texto-instructor">
+                    <h3>Pablo O'connor</h3>
+                    <h4>Personal trainer</h4>
+                </div>
+            </article>
+
+            <article class="info-instructor">
+                <img src="/images/entrenadora-functional.jpg" class="perfil-instructor4">
+                <div class="texto-instructor">
+                    <h3>Maria Arias</h3>
+                    <h4>Profesora de gimnasia functional</h4>
+                </div>
+            </article>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-columna1">
+            <h2>Ayuda</h2>
+            <ul class="lista-footer">
+                <li>Cómo convertirme en aliado</li>
+                <li>Términos y condiciones</li>
+                <li>Política de privacidad</li>
+                <li>Seguros</li>
+                <li>Preguntas y reclamos</li>
+            </ul>
+        </div>
+
+        <div clas="footer-columna2">
+            <h2>Redes Sociales</h2>
+            <div class="iconos-redes">
+                <i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-square-facebook fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-tiktok fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-spotify fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-youtube fa-xl" style="color: #000000;"></i>
+            </div>
+        </div>
+
+        <div class="footer-columna3">
+            <p class="cuerpos-texto">
+                Copyright Grupo 2 - 2023. Todos los derechos reservados.
+                Defensa de las y los consumidores. Para reclamos ingrese aquí</p>
+        </div>
+    </footer>
+
+    <button class="consultas">
+        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+        Consultas</button>
+
 </body>
+
 </html>
