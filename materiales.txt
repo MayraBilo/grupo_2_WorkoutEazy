@@ -6,6 +6,7 @@ azul exotico: #006e7f
 azul saturado: #0084bd
 gris topo: #5c5d5b
 gris azulado: #dde0df
+gris claro: #e8e8e8
 
 ---------------------------- Tipografia ----------------------------
 
