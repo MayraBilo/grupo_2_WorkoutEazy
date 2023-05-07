@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /* Body */
 
@@ -79,6 +80,12 @@ header {
     box-sizing: border-box;
     background-color: #e8e8e8;
     border-radius: 16px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+input:focus {
+    border: 1px #006e7f solid;
 }
 
 .buscador i {
@@ -319,6 +326,32 @@ footer {
     padding-left: 30px;
 }
 
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer h2 {
+    color: #0084bd;
+    text-align: left;
+}
+
+.lista-footer li {
+    padding-bottom: 8px;
+}
+
+.iconos-redes i {
+    margin-right: 10px;
+}
+
+.footer-columna2 {
+    margin-bottom: 50px;
+}
+
+.footer-columna3 {
+    margin-top: 50px;
+}
 
 @media (min-width: 669px) {
 
@@ -339,17 +372,52 @@ footer {
     }
 
     .ingreso {
-        width: 59px;
-        height: 30px;
+        width: 80px;
+        height: 40px;
         border-radius: 14px;
         border: 1px solid #e8e8e8;
         background-color: #e8e8e8;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         padding: 4px 8px;
+    }
+
+    .ingreso p {
+        font-style: 'Roboto';
+        font-size: 16px;
+    }
+
+    .ingreso:hover {
+        background-color: #c1c1c1;
+        border: 1px solid #c1c1c1;
+        font-weight: 550;
+    }
+
+    .registro {
+        width: 80px;
+        height: 40px;
+        border-radius: 14px;
+        border: 0px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 4px 8px;
+    }
+
+    .registro p {
+        font-style: 'Roboto';
+        font-size: 16px;
+    }
+
+    .registro:hover {
+        border: 1px solid rgba(0, 161, 112, 30%);
+        background-color: rgba(0, 161, 112, 30%);
     }
 
     .login {
@@ -368,8 +436,8 @@ footer {
         margin: 4px;
     }
 
-    .registro {
-        display: inline-block;
+    .main-navbar li {
+        padding-right: 30px;
     }
 
     .persona {
@@ -378,6 +446,10 @@ footer {
 
     .buscador {
         width: 400px;
+    }
+
+    .main-navbar ul li:hover {
+        font-weight: 550;
     }
 
     /* Main */
@@ -395,6 +467,30 @@ footer {
 
     .tarjeta {
         font-size: 20px;
+    }
+
+    /* Footer */
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: left;
+        align-items: flex-start;
+        gap: 10px;
+        padding-left: 50px;
+    }
+
+    .footer-columna1 {
+        width: 50%;
+    }
+
+    .footer-columna2 {
+        width: 50%;
+    }
+
+    .footer-columna3 {
+        align-self: left;
     }
 
 
