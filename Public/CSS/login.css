@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgba(0, 161, 112, 30%);
+    font-size: 16px;
+    font-family: "Roboto";
+}
+
+.login-header {
+    box-sizing: content-box;
+    border-bottom: none;
+}
+
+
+
+
+/*----MAIN----*/
+
+.login-main {
+    background-color: whitesmoke;
+    border-top: solid 2px #00a170;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin: 0 5px;
+    padding-bottom: 30px;
+}
+
+
+
+.inicia-sesion {
+    text-align: center;
+    color: #006e52;
+    font-size: 50px;
+    font-family: "Bebas Neue";
+    margin: auto;
+    letter-spacing: 2px;
+    padding-top: 10px;
+}
+
+
+.form-container {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px 0 20px;
+}
+
+.form-container label {
+    width: 100%;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+#email {
+    width: 90%;
+    height: 50px;
+    border: 1px solid #00a170;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+#password {
+    width: 90%;
+    height: 50px;
+    border: 1px solid #00a170;
+    border-radius: 8px;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+
+.checkbox-recordar label {
+    font-weight: 400;
+}
+
+
+.button-access {
+    width: 100vw;
+    text-align: center;
+    padding-right: 20px;
+}
+
+.button-access button {
+    width: 50%;
+    max-width: 500px;
+    height: 50px;
+    border: solid 1px #1f8aff;
+    border-radius: 15px;
+    margin: 10px 25px;
+    background-color: #00a170;
+    color: #dde0df;
+    font-size: 30px;
+    font-family: "Bebas Neue";
+    letter-spacing: 5px;
+}
+
+
+
+
+.forgot-password {
+    text-align: center;
+    color: rgb(63, 62, 62);
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.social-media h4 {
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.social-media-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.social-media button {
+    font-size: 25px;
+    border-radius: 50px;
+    padding: 5px;
+    margin-top: 0;
+    border: 0;
+}
+
+#fb-logo {
+    background-color: #1f8aff;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    border: 0;
+}
+
+#apple-logo {
+    background-color: #838786;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    border: 0;
+}
+
+#google-logo {
+    background-color: #d55140;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    border: 0;
+}
+
+.bottom-main-bot {
+    text-align: center;
+    
+    color: #545555;
+}
+
+.line {
+    width: 90vw;
+    border-top: 1px solid rgb(56, 55, 55);
+    margin: auto;
+}
+
+.bottom-main-bot h4 {
+    font-size: 13px;
+    margin: 18px 0;
+}
+
+.bottom-main-bot a {
+    padding-bottom: 20px;
+}
+
+
+.right-main {
+    display: none;
+}
+
+/*---------FOOTER---------*/
+
+.login-footer {
+    background-color: whitesmoke;
+    margin: 0 5px;
+}
+
+@media (min-width: 679px) {
+    .main-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw
+    }
+
+    .left-main {
+        width: 50%;
+    }
+
+    .left-main form {
+        width: 100%;
+    }
+
+    .line {
+        width: 70%;
+        text-align: center;
+    }
+
+    .right-main {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right-main img {
+        width: 65%;
+        border: 1px solid rgb(7, 7, 7);
+        border-radius: 18%;
+        box-shadow: 12px 12px 2px 1px #00a17179;
+        
+    }
+
+    .forgot-password:hover {
+        text-decoration: underline;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    #fb-logo:hover {
+        width: 45px;
+        height: 45px;
+    }
+
+    #google-logo:hover {
+        width: 45px;
+        height: 45px;
+    }
+
+    #apple-logo:hover {
+        width: 45px;
+        height: 45px;
+    }
+}
