@@ -6,12 +6,17 @@
     margin: 0%;
 }
 
-
 /* Body */
 
 body {
     background-color: white;
     font-family: 'Roboto', 'sans-serif';    
+}
+
+/* Header */  
+
+header {
+    background-color: rgba(0, 161, 112, 30%);
 }
 
 /* Main */  
@@ -35,7 +40,7 @@ main {
 }
 
 #purchase-summary {
-    background-color: #00a170;
+    background-color: rgba(0, 161, 112, 30%);
     border-radius: 10px;
     box-shadow: 1px 0px 12px 0px rgba(0,0,0,0.75);
     border: 1px solid black;
@@ -76,7 +81,7 @@ main {
 }
 
 #input-discount-cup button{
-    background-color: rgba(129, 131, 129, 100%);
+    background-color: #00a170;
     color: black;
     width: 15%;
     padding: 5px;
@@ -98,7 +103,7 @@ main {
     width: 100%;
     padding: 5px;
     margin-bottom: 15px;
-    background-color: rgba(129, 131, 129, 100%);
+    background-color: #00a170;
     font-weight: bold;
     border-radius: 5px;
     border: none;
@@ -195,43 +200,6 @@ main {
 @media (min-width: 679px) {
 
     /* Header */
-
-    .burger-menu {
-        display: none;
-    }
-
-    .ingreso {
-        width: 59px;
-        height: 30px;
-        border-radius: 14px;
-        border: 1px solid #e8e8e8;
-        background-color: #e8e8e8;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 4px 8px;
-    }
-
-    .main-navbar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 4px;
-    }
-
-    .registro {
-        display: inline-block;
-    }
-
-    .persona {
-        display: none;
-    }
-
-    .buscador {
-        width: 400px;
-    }
 
     /* Main */
 
@@ -337,6 +305,4 @@ main {
     .fa-trash:hover {
         transform: scale(1.5)
     }
-
-    
 } 
