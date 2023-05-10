@@ -13,12 +13,12 @@ body {
     font-family: "Roboto";
 }
 
+/*---------HEADER----------*/
+
 .login-header {
     box-sizing: content-box;
     border-bottom: none;
 }
-
-
 
 
 /*----MAIN----*/
@@ -59,7 +59,7 @@ body {
 }
 
 #email {
-    width: 90%;
+    width: 95%;
     height: 50px;
     border: 1px solid #00a170;
     border-radius: 8px;
@@ -70,8 +70,13 @@ body {
     font-size: 18px;
 }
 
+#email:focus {
+    outline: none;
+    border: solid 2px #0084bd;
+}
+
 #password {
-    width: 90%;
+    width: 95%;
     height: 50px;
     border: 1px solid #00a170;
     border-radius: 8px;
@@ -81,6 +86,12 @@ body {
     padding-left: 15px;
     font-size: 18px;
 }
+
+#password:focus {
+    outline: none;
+    border: solid 2px #0084bd;
+}
+
 
 
 .checkbox-recordar label {
@@ -108,8 +119,9 @@ body {
     letter-spacing: 5px;
 }
 
-
-
+.button-access button:active{
+    color: #0084bd
+}
 
 .forgot-password {
     text-align: center;
@@ -206,6 +218,10 @@ body {
     padding-bottom: 20px;
 }
 
+.bottom-main-bot a:visited {
+    color: black;
+}
+
 
 .right-main {
     display: none;
@@ -218,6 +234,10 @@ body {
     margin: 0 5px;
 }
 
+.login-footer h2 {
+    margin: 20px 0;
+}
+
 @media (min-width: 679px) {
     .main-container {
         display: flex;
@@ -226,7 +246,7 @@ body {
     }
 
     .left-main {
-        width: 50%;
+        width: 55%;
     }
 
     .left-main form {
@@ -240,7 +260,7 @@ body {
 
     .right-main {
         display: flex;
-        width: 50%;
+        width: 45%;
         justify-content: center;
         align-items: center;
     }

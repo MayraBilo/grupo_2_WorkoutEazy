@@ -38,12 +38,12 @@
             </div>
 
             <section class="login">
-                <div class="registro">
-                    <p>Registro</p>
-                </div>
-                <div class="ingreso">
-                    <p>Ingresar</p>
-                </div>
+                <a href="/register"><button class="registro">
+                        <p>Registro</p>
+                    </button></a>
+                <a href="/login"><button class="ingreso">
+                        <p>Ingresar</p>
+                    </button></a>
             </section>
 
         </section>
@@ -58,11 +58,12 @@
         </nav>
 
     </header>
+
     <main class="login-main">
         <section class="main-container">
             <div class="left-main">
                 <h2 class="inicia-sesion">INICIAR SESIÓN</h2>
-                <form action="/login" method="POST" class="form-container">
+                <form action="/login" method="GET" class="form-container">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email">
 
@@ -77,7 +78,7 @@
                     </div>
                 </form>
                 <div class="bottom-main">
-                        <h5 class="forgot-password">¿Olvidaste tu contraseña?</h5>
+                    <h5 class="forgot-password">¿Olvidaste tu contraseña?</h5>
                     <section class="social-media">
                         <h4>Ingresá con tus cuentas</h4>
                         <div class="social-media-logos">
