@@ -1,12 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/CSS/styles.css" />
+    <link rel="stylesheet" href="/CSS/productDetail.css" />
+    <title>Product Detail</title>
 </head>
-<body>
+  <body class="body">
+
+    <header class="header">
+    <section class="mainheader-topbar">
+        <a href="#" class="burger-menu">
+            <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
+        </a>
+
+        <img src="/images/logo-sinfondo.png" class="logo">
+
+        <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
+
+        <div class="buscador">
+            <select>
+                <option>Buenos Aires</option>
+                <option>Caracas</option>
+                <option>Bahía Blanca</option>
+                <option>Santa Fe</option>
+            </select>
+            <input type="text"></input>
+            <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+
+        <div class="registro"><p>Registro</p></div>
+        <div class="ingreso"><p>Ingresar</p></div>
+
+    </section>
+
+    <nav class="main-navbar">
+        <ul>
+            <li>Actividades</li>
+            <li>Promociones</li>
+            <li>Blog</li>
+            <li>Compras</li>
+        </ul>
+    </nav>
+    </header>
+    <main class="main">
+        <section>
+        <h1 class="h1">Escalada</h1>
+        <div class="dificultad">
+            <h4 class="h4">Dificultad   </h4>
+             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+        </div>
+        <div class="img-producto">
+            <i class="iconoIZQ" class="fa-solid-fa-caret-left"></i>
+            <img src="/images/escalada.jpg" alt="gimArt" class="img-producto">
+            <div class="boton"> <button class="reserva">Reservá tu lugar</button></div>
+            <i class="iconoDER" class="fa-solid fa-caret-right"></i>
+        </div>
+    </section>
+    <section class="descripcion">
+        <div class="descripcionProducto">
+        <h2>Clases de escalada en boulder</h2>
+        <h5>$2500 (por clase)</h5>
+    </br>
+        <p> Si tenes ganas de vivir una nueva experiencia, llevando al máximo tu crecimiento, ésta es la clase que estás buscando.
+        </p>
+        </div>
+    </section>
+    <h6>Búsquedas relacionadas</h6>
+    <section class="busquedasRelacionadas">
+    </br>
+    <div><i class="fa-solid fa-caret-left"></i></div>
+            <div class="clase-relacionada">
+            <img src="images/functional.JPG" alt="functional" class="img-relacionada">
+            <h5>Functional</h5>
+            <p>
+                Mantenete entrenado con nuestras clases
+            </p>
+
+        </div>
+        <div class="clase-relacionada">
+            <img src="images/yoga1.JPG" alt="yoga1" class="img-relacionada">
+            <h5>Yoga a aire libre</h5>
+            <p>
+                Viví el yoga con la naturaleza
+            </p>
+
+        </div>
+        <div class="clase-relacionada">
+            <img src="images/gimnasio.JPG" alt="gimnasio" class="img-relacionada">
+            <h5>Gimnasio Indoor</h5>
+            <p>
+                Entrenamiento adaptado a todos los niveles
+            </p>
+            
+        </div>
+        <div><i class="fa-solid fa-caret-right"></i></div>
+        
+    </section>
+    </main>
+<footer class="footer"> 
     
-</body>
+    <div class="footer-columna1">
+        <h2>Ayuda</h2>
+        <ul class="lista-footer">
+            <li>Cómo convertirme en aliado</li>
+            <li>Términos y condiciones</li>
+            <li>Política de privacidad</li>
+            <li>Seguros</li>
+            <li>Preguntas y reclamos</li>
+        </ul>
+    </div>
+    
+    <div clas="footer-columna2">
+        <h2>Redes Sociales</h2>
+        <div class="iconos-redes">
+            <i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i>
+            <i class="fa-brands fa-square-facebook fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-tiktok fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-spotify fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-youtube fa-xl" style="color: #000000;"></i>
+            </div>
+        </div>
+        
+        <div class="footer-columna3">
+            <p class="cuerpos-texto">
+                Copyright Grupo 2 - 2023. Todos los derechos reservados.
+                Defensa de las y los consumidores. Para reclamos ingrese aquí</p>
+            </div>
+        </footer>
+    </body>
+
 </html>

@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
+
+.body {
+    background-color: whitesmoke;
+    margin-top: 200px;
+    position: relative;
+   
+}
+.header {
+    background-color: #00a170;
+    border: none;
+    position: fixed;
+    width: 90vw;
+    top:0px;
+    left:0px;   
+    z-index: 100;
+}
+
+.h1 {
+    display: flex;
+    align-items: center;
+    color:#00a170;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    font-weight: 200;
+    font-size: 30px;
+    margin: 0vh 2vw;
+    padding: 0;
+    height: 10vh;
+}
+.h4 {
+    padding: 0px;
+    margin:0px;
+}
+.dificultad {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color: black;
+    font-style: italic;
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: lighter;
+    font-size: 14px;
+
+
+}
+
+.img-producto {
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    height: 270px;
+    margin-left:0px;
+    padding-left: 15px;
+    border-radius: 0px 40px 0px 0px;
+    position: relative;
+}
+
+.boton{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100px;
+    height: 20px;
+    border: #006e52 solid 1px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: -10px;
+    z-index: 99;
+    
+.reserva:hover {
+    background-color: #1af3bd;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.reserva{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background-color: #006e52;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: roboto;
+    width: 100px;
+    height: 30px;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+    
+}
+.descripcionProducto {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.descripcionProducto h2 {
+    padding: 0;
+    padding-left: 15px;
+    color:#000000;
+    margin: 0px;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+}
+.descripcionProducto h5 {
+    padding-left: 15px;
+    color:#000000;
+    margin: 0px;
+    font-family: roboto;
+}
+.descripcionProducto p {
+    color:#000000;
+    font-family: roboto;
+    padding:10px;
+    text-align: justify;
+    max-width: 90vw;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.busquedasRelacionadas{
+    display: flex;
+    flex-wrap: wrap;
+    font-family: roboto;
+    margin-bottom: 15px;
+}
+.busquedasRelacionadas h6 {
+    display: flex;
+    color: #0084bd;
+    justify-content: center;
+    margin: 0px 20px;
+    margin-right: 200px;
+}
+.busquedasRelacionadas i{
+    position: relative;
+    top: 70px;
+    right: -5px;
+    display: none;
+}
+.clase-relacionada {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 8px;
+    padding: 5px;
+    max-width: 100px;
+    max-height: 180px;
+    background-color: #97ebd1;
+    border-radius: 0 8px 0 8px;
+    font-size: 12px;
+    transition: 450ms;
+}
+
+.clase-relacionada:hover {
+    transform: scale(1.1);
+}
+
+.img-relacionada {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    max-height: 35%;
+    align-items: center;
+    border-radius: 0 8px 0 8px;
+    margin: 2px;
+}
+.footer {
+    border-top: rgb(226, 226, 226) solid 0.5px;
+    border-radius: 5% 5% 0 0;
+}
+
+@media (min-width: 669px) {
+.header{
+    width: 100vw;
+   }
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    gap: 20px
+}
+.descripcion{
+    width: 50%;
+    align-self: center;
+}
+.body{
+    margin-top: 280px;
+
+}
+.busquedasRelacionadas{
+    justify-content: space-around;
+}
+.busquedasRelacionadas h6 {
+   
+    margin-right: 500px;
+}
+
+
+}
+@media (min-width: 1200px) {
+    .header{
+        width: 100vw;
+       }
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100vw;
+        gap: 20px
+    }
+    .descripcion{
+        width: 50%;
+        align-self: center;
+    }
+    .body{
+        margin-top: 200px;
+    
+    }
+    .busquedasRelacionadas{
+        justify-content: space-around;
+    }
+    .busquedasRelacionadas h6 {
+       
+        margin-right: 1200px;
+    }
+    
+    .dificultad {
+        margin-left: 25px;
+        margin-top: 0px;
+    }
+   
+    }
