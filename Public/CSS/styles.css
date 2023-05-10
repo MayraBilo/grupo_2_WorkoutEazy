@@ -17,7 +17,7 @@ body {
 }
 
 .cuerpos-texto {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .descripciones {
@@ -43,7 +43,7 @@ header {
 }
 
 .logo {
-    max-width: 128px;
+    max-width: 100px;
 }
 
 .ingreso {
@@ -187,6 +187,10 @@ input:focus {
     font-size: 20px;
 }
 
+.imagen-slider2 {
+    display: none;
+}
+
 /* Banner 1 */
 
 .aliados {
@@ -210,8 +214,12 @@ input:focus {
 
 /* Actividades */
 
+.actividades h2 {
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+}
 .actividades img {
-    width: 250px;
+    width: 332px;
     border-top-right-radius: 40px;
 }
 
@@ -229,9 +237,11 @@ input:focus {
     padding-bottom: 20px;
 }
 
-.actividad-1 {
-    text-align: center;
+.ejemplos-actividades article {
+    margin-bottom: 30px;
 }
+
+
 
 .titulo-actividad {
     align-self: flex-start;
@@ -253,6 +263,47 @@ input:focus {
     text-align: left;
 }
 
+/* Banner promocional */
+
+.banner-promocional {
+    background-color: black;
+    min-height: 200px;
+    color: whitesmoke;
+    border: 10px #006e7f solid;
+}
+
+@keyframes aumentar {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.animacion-regalo {
+    padding: 20px;
+    width: 32px;
+}
+
+.animacion-regalo, .descuento {
+    animation: aumentar 2s infinite alternate;
+}
+
+.texto-banner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.banner-promocional img {
+    display: none;
+}
+
+
 /* Instructores */
 
 .instructores {
@@ -267,6 +318,11 @@ input:focus {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.instructores h2 {
+    font-family: 'Bebas Neue';
+    font-size: 20px;
 }
 
 .instructores p {
@@ -297,8 +353,17 @@ input:focus {
     margin-bottom: 10px;
 }
 
+.masinfo p {
+    font-family: 'Bebas Neue';
+    font-size: 15px;
+}
+
 .texto-instructor {
     align-self: flex-start;
+}
+
+.ejemplos-instructores article {
+    margin-bottom: 20px;
 }
 
 /* Footer */
@@ -372,7 +437,7 @@ footer h2 {
     }
 
     .logo {
-        max-width: 150px;
+        max-width: 128px;
     }
 
     .ingreso {
@@ -464,6 +529,10 @@ footer h2 {
         width: 400px;
     }
 
+    .imagen-slider2 {
+        display: inline-block;
+    }
+
     .rutina {
         width: 250px;
         font-size: 20px;
@@ -476,6 +545,84 @@ footer h2 {
     .tarjeta {
         font-size: 20px;
     }
+
+    /* Actividades */
+
+    .actividades h2 {
+        font-size: 30px;
+    }
+
+    .ejemplos-actividades {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Banner promocional */
+
+    .texto-banner {
+        width: 70%;
+        padding: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .banner-promocional {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .banner-promocional img {
+        display: block;
+        height: 200px;
+
+    }
+
+    .descuento {
+        font-size: 40px;
+    }
+
+    .texto-banner h3 {
+        font-size: 30px;
+    }
+
+    .texto-banner p {
+        font-size: 20px;
+    }
+
+    /* Instructores */
+
+    .instructores h2 {
+        font-size: 30px;
+    }
+
+    .masinfo p {
+        font-size: 20px;
+    }
+
+    .ejemplos-instructores {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+
 
     /* Footer */
 
