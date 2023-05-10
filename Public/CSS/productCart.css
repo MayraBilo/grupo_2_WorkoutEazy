@@ -197,7 +197,7 @@ main {
     margin-right: 15px;
 }
 
-@media (min-width: 679px) {
+@media (min-width: 669px) {
 
     /* Header */
 
@@ -205,6 +205,10 @@ main {
 
     .product {
         margin-bottom: 25px;
+        width: 99%;
+        border-radius: 0%;
+        border-top-left-radius: 5%;
+        border-bottom-left-radius: 5%;
     }
 
     .text-product {
