@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/productCart.css">
+    <link rel="stylesheet" href="/CSS/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -16,17 +17,18 @@
 <body>
     <header>
         <section class="mainheader-topbar">
+            
             <a href="#" class="burger-menu">
                 <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
             </a>
-
+    
             <img src="/images/logo-sinfondo.png" class="logo">
-
+    
             <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
-
+    
             <div class="buscador">
                 <select>
-                    <option>Buenos Aires</option>
+                    <option >Buenos Aires</option>
                     <option>Caracas</option>
                     <option>Bahía Blanca</option>
                     <option>Santa Fe</option>
@@ -34,24 +36,23 @@
                 <input type="text"></input>
                 <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
             </div>
-
-            <div class="registro">
-                <p>Registro</p>
-            </div>
-            <div class="ingreso">
-                <p>Ingresar</p>
-            </div>
-
+    
+            <section class="login">
+            <button class="registro"><p>Registro</p></button>
+            <button class="ingreso"><p>Ingresar</p></button>
+            </section>
+    
         </section>
-
+    
         <nav class="main-navbar">
             <ul>
-                <li>Actividades</li>
-                <li>Promociones</li>
-                <li>Blog</li>
-                <li>Compras</li>
+                <li><a id="actividades">Actividades</a></li>
+                <li><a id="promociones">Promociones</a></li>
+                <li><a id="blog">Blog</a></li>
+                <li><a id="compras">Compras</a></li>
             </ul>
         </nav>
+       
     </header>
     <main>
         <section id="shopping-cart">
