@@ -1,46 +1,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+header {
+    background-color: rgba(0, 161, 112, 30%);
+}
+
 main {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin: 12px;
-    
+
 }
+
 .container-1 {
     display: flex;
+    width: 50vw;
     flex-direction: column;
     justify-content: center;
-    width: 35vw;
-  padding-top: 20px;
+    padding-bottom: 20px;
 }
+.container-1 img {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
 .container-2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 35vw;
+    border: 1px solid #00a170;
+    background-color: rgba(0, 161, 112, 30%);
+    border-top-right-radius: 25px;
+    margin-top: 20px;
+    width: 40vw;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
-.botones{
-display: flex;
-justify-content: space-around;
-padding: 8px;
+
+h2 {
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+    color:#006e52;
 }
+
+.redes-sociales {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px;
+    flex-wrap: nowrap;
+}
+
+.redes-sociales img {
+    width: 40px;
+    margin: 5px;
+    font-size: 10px;
+}
+
+#facebook {
+    background-color: #6627e5;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: initial;
+    font-size: 2.7rem;
+    border-radius: 50%;
+    border: 0;
+    margin: 3px
+}
+
+
+#apple {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: initial;
+    font-size: 2.7rem;
+    border-radius: 50%;
+    border: 0;
+    margin: 3px
+}
+
+#google-logo {
+    background-color: #d55140;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: initial;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    border: 0;
+    margin: 3px
+}
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+}
+
 button {
     border: 1px solid #00a170;
-    border-radius: 8px;
-    padding: 3%;
+    border-radius: 18px;
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    letter-spacing: 3px;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.5s;
 }
+
+button:hover {
+    background-color: #0084bd;
+    color: white;
+}
+
 .grupo-de-registros {
     display: flex;
-   flex-direction: column;
- padding: 2%;
+    flex-direction: column;
+    padding: 2%;
 
 }
+
+.grupo-indicarSexo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2%;
+}
+
 .input-selecto {
     text-align: center;
     border-radius: 10px;
@@ -53,14 +162,37 @@ button {
     border-radius: 8px;
     border: 1px solid #00a170;
 }
+
 .boton {
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.boton input {
+    background-color: #006e52;
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: white;
+    padding: 8px;
+    border: 1px solid #00a170;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.boton input:hover {
+    background-color: #0084bd;
+    color: white;
+    transform: scale(1.1);
 }
 
 h3 {
     text-align: center;
     margin: 15px;
 }
+
 p {
     text-align: center;
     margin: 15px;
@@ -69,11 +201,11 @@ p {
 
 .condiciones {
     padding: 3%;
-font-size: 10px;
+    font-size: 10px;
 }
 
-/* Media Queries*/
-@media (min-width: 679px) { 
+/*------------------------------------------------------- Media Queries-----------------------------------------------------------*/
+@media (min-width: 679px) {
     .ingreso {
         width: 70px;
         height: 40px;
@@ -98,18 +230,21 @@ font-size: 10px;
         flex-wrap: wrap;
         margin: 12px;
     }
+
     .container-1 {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 92vw;
-      padding-top: 20px;
-      padding-left: 20px;
+        padding-top: 20px;
+        padding-left: 20px;
     }
+
     .container-2 {
         display: flex;
+        padding-top: 10px;
         flex-direction: column;
         justify-content: space-between;
         width: 95vw;
+    }
 }
- }

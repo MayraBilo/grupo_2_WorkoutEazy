@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Inicia Sesion en WorkoutEazy</title>
+</head>
+
+<body>
+    <header class="login-header">
+        <section class="mainheader-topbar">
+
+            <a href="#" class="burger-menu">
+                <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
+            </a>
+            <a href="/">
+                <img src="/images/logo-sinfondo.png" class="logo">
+            </a>
+
+            <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
+
+            <div class="buscador">
+                <select>
+                    <option>Buenos Aires</option>
+                    <option>Caracas</option>
+                    <option>Bahía Blanca</option>
+                    <option>Santa Fe</option>
+                </select>
+                <input type="text"></input>
+                <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+
+            <section class="login">
+                <div class="registro">
+                    <p>Registro</p>
+                </div>
+                <div class="ingreso">
+                    <p>Ingresar</p>
+                </div>
+            </section>
+
+        </section>
+
+        <nav class="main-navbar">
+            <ul>
+                <li>Actividades</li>
+                <li>Promociones</li>
+                <li>Blog</li>
+                <li>Compras</li>
+            </ul>
+        </nav>
+
+    </header>
+    <main class="login-main">
+        <section class="main-container">
+            <div class="left-main">
+                <h2 class="inicia-sesion">INICIAR SESIÓN</h2>
+                <form action="/login" method="POST" class="form-container">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password">
+                    <div class="checkbox-recordar">
+                        <input type="checkbox" name="recordarme" id="recordarme">
+                        <label for="recordarme">Recordarme</label>
+                    </div>
+                    <div class="button-access">
+                        <button type="submit">INGRESAR</button>
+                    </div>
+                </form>
+                <div class="bottom-main">
+                        <h5 class="forgot-password">¿Olvidaste tu contraseña?</h5>
+                    <section class="social-media">
+                        <h4>Ingresá con tus cuentas</h4>
+                        <div class="social-media-logos">
+                            <button id="fb-logo">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                            <button id="apple-logo">
+                                <i class="fa-brands fa-apple"></i>
+                            </button>
+                            <button id="google-logo">
+                                <i class="fa-brands fa-google"></i>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="bottom-main-bot">
+                        <div class="line"></div>
+                        <h4>¿Aún no tienes una cuenta?</h4>
+                        <a href="/register">
+                            <h3> Registrarse</h3>
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <div class="right-main">
+                <img src="/images/editworkouteasy1b.jpg" class="imagen-main">
+            </div>
+        </section>
+    </main>
+    <footer class="login-footer">
+        <div class="footer-columna1">
+            <h2>Ayuda</h2>
+            <ul class="lista-footer">
+                <li>Cómo convertirme en aliado</li>
+                <li>Términos y condiciones</li>
+                <li>Política de privacidad</li>
+                <li>Seguros</li>
+                <li>Preguntas y reclamos</li>
+            </ul>
+        </div>
+
+        <div clas="footer-columna2">
+            <h2>Redes Sociales</h2>
+            <div class="iconos-redes">
+                <i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-square-facebook fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-tiktok fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-spotify fa-xl" style="color: #000000;"></i>
+                <i class="fa-brands fa-youtube fa-xl" style="color: #000000;"></i>
+            </div>
+        </div>
+
+        <div class="footer-columna3">
+            <p class="cuerpos-texto">
+                Copyright Grupo 2 - 2023. Todos los derechos reservados.
+                Defensa de las y los consumidores. Para reclamos ingrese aquí</p>
+        </div>
+    </footer>
+
+    <button class="consultas">
+        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+        Consultas</button>
+</body>
+
+</html>
