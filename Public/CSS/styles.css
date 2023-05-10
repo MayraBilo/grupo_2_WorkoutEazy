@@ -114,6 +114,10 @@ input:focus {
     color: #5c5d5b;
 }
 
+.burger-menu i:hover {
+    color: #5c5d5b;
+}
+
 /* Navegador */
 
 .main-navbar ul {
@@ -144,6 +148,10 @@ input:focus {
     margin: 15px;
 }
 
+.main-navbar ul li:hover {
+    font-weight: 550;
+}
+
 /* Main */
 
 /* Slider */
@@ -170,7 +178,7 @@ input:focus {
 }
 
 .slider-fotos img {
-    width: 25%;
+    width: 300px;
     border-top-right-radius: 40px;
 }
 
@@ -190,6 +198,10 @@ input:focus {
 
 .rutina p {
     font-size: 20px;
+}
+
+.rutina p:hover {
+    color: #006e7f;
 }
 
 .imagen-slider2 {
@@ -245,8 +257,6 @@ input:focus {
 .ejemplos-actividades article {
     margin-bottom: 30px;
 }
-
-
 
 .titulo-actividad {
     align-self: flex-start;
@@ -371,9 +381,15 @@ input:focus {
     margin-bottom: 20px;
 }
 
+.masinfo:hover {
+    color: #0084bd;
+    border: #0084bd solid 1px;
+}
+
 /* Footer */
 
 .consultas {
+    font-family: 'Bebas Neue';
     background-color: #006e52;
     border: #006e52 solid 1px;
     border-radius: 20px;
@@ -425,6 +441,14 @@ footer h2 {
 
 .footer-columna3 {
     margin-top: 50px;
+}
+
+.lista-footer li:hover {
+    font-weight: 550;
+}
+
+.iconos-redes i:hover {
+    font-size: 32px;
 }
 
 @media (min-width: 669px) {
@@ -487,6 +511,10 @@ footer h2 {
     .registro p {
         font-style: 'Roboto';
         font-size: 16px;
+    }
+
+    .login a {
+        text-decoration: none;
     }
 
     .registro:hover {
@@ -652,6 +680,16 @@ footer h2 {
     .footer-columna3 {
         align-self: left;
     }
+}
 
+@media (min-width: 763px) {
+    .slider-fotos img {
+        width: 300px;
+    }
+}
 
+@media (min-width: 1200px) {
+    .slider-fotos img {
+        width: 400px;
+    }
 }
