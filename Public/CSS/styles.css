@@ -597,6 +597,10 @@ footer h2 {
         box-sizing: border-box;
     }
 
+    .actividades {
+        min-height: 600px;
+    }
+
     /* Banner promocional */
 
     .texto-banner {
