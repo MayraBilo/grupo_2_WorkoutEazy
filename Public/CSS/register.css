@@ -7,16 +7,23 @@
     padding: 0;
 }
 
-header {
-    background-color: rgba(0, 161, 112, 30%);
-}
 
+body {
+
+    background-color: rgba(0, 161, 112, 30%);
+}  
+.registo a {
+    text-decoration: none;
+}
 main {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    margin: 12px;
-
+    margin-left: 12px;
+    margin-right: 12px;
+    background-color: whitesmoke;
+    border-top: solid 2px #00a170;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 .container-1 {
@@ -24,24 +31,30 @@ main {
     width: 50vw;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-bottom: 20px;
 }
 .container-1 img {
     display: flex;
-    justify-content: center;
-    width: 90%;
+    width: 75%;
+  justify-content: center;
+  border-radius: 16%;
+  box-shadow: 9px 12px 2px 1px #00a17179;
 }
 
 .container-2 {
     display: flex;
+
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     border: 1px solid #00a170;
     background-color: rgba(0, 161, 112, 30%);
     border-top-right-radius: 25px;
     margin-top: 20px;
-    width: 40vw;
+    width: 45vw;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin-bottom: 30px;
 }
 
 h2 {
@@ -61,41 +74,38 @@ h2 {
     margin: 15px;
     flex-wrap: nowrap;
 }
-
-.redes-sociales img {
-    width: 40px;
-    margin: 5px;
-    font-size: 10px;
+.redes-sociales button:hover {
+    transform: scale(1.2);
 }
-
 #facebook {
-    background-color: #6627e5;
+    background-color: #1f8aff;
+    color: #fff;
     width: 40px;
     height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: initial;
-    font-size: 2.7rem;
+    font-size: 1.5rem;
+    text-align: center;
     border-radius: 50%;
     border: 0;
-    margin: 3px
-}
-
+margin-right: 5px;
+ }
 
 #apple {
+    background-color: #838786;
+    color: #fff;
     width: 40px;
     height: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: initial;
-    font-size: 2.7rem;
+    font-size: 1.5rem;
     border-radius: 50%;
     border: 0;
-    margin: 3px
+    margin-right: 5px;
 }
 
 #google-logo {
@@ -107,11 +117,9 @@ h2 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: initial;
     font-size: 1.2rem;
     border-radius: 50%;
     border: 0;
-    margin: 3px
 }
 
 .botones {
@@ -120,7 +128,7 @@ h2 {
     padding: 8px;
 }
 
-button {
+.button-r {
     border: 1px solid #00a170;
     border-radius: 18px;
     font-family: 'Bebas Neue';
@@ -142,23 +150,37 @@ button:hover {
     padding: 2%;
 
 }
+.dos-registros {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
 
 .grupo-indicarSexo {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:flex-start;
+    margin: 3px;
     padding: 2%;
 }
+.grupo-indicarSexo  input {
+    margin-right: 12px;
+}
+.grupo-indicarSexo  label {
+    margin-right: 5px;
+}
+
 
 .input-selecto {
     text-align: center;
     border-radius: 10px;
     border: 1px solid #00a170;
-    padding: 3%;
+    padding: 2%;
 }
 
 .option {
-    padding: 3%;
+    padding: 2%;
     border-radius: 8px;
     border: 1px solid #00a170;
 }
@@ -200,10 +222,15 @@ p {
 }
 
 .condiciones {
-    padding: 3%;
+    padding: 2%;
     font-size: 10px;
 }
+        /*--------------------------------------footer---------------------------------------------------------------------*/
 
+ footer {
+    background-color: whitesmoke;
+    margin: 0;
+ }       
 /*------------------------------------------------------- Media Queries-----------------------------------------------------------*/
 @media (min-width: 679px) {
     .ingreso {
@@ -233,18 +260,34 @@ p {
 
     .container-1 {
         display: flex;
+        width: 100vw;
         flex-direction: column;
         justify-content: center;
-        width: 92vw;
+        align-items: center;
         padding-top: 20px;
         padding-left: 20px;
+    }
+    .container-1 img {
+        display: flex;
+        width: 55%;
+        justify-content: center;
+        align-items: center;
     }
 
     .container-2 {
         display: flex;
+        width: 92vw;
         padding-top: 10px;
         flex-direction: column;
-        justify-content: space-between;
-        width: 95vw;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .dos-registros {
+        display: flex;
+        font-size: 15px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
     }
 }

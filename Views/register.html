@@ -11,7 +11,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/styles-register.css">
+    <link rel="stylesheet" href="/css/register.css">
 
 </head>
 
@@ -22,7 +22,7 @@
                 <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
             </a>
 
-            <img src="/images/logo-sinfondo.png" class="logo">
+            <a href="/"> <img src="/images/logo-sinfondo.png" class="logo"> </a>
 
             <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
 
@@ -37,8 +37,14 @@
                 <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
             </div>
 
-            <div class="registro"><p>Registro</p></div>
-            <div class="ingreso"><p>Ingresar</p></div>
+            <section class="login">
+                <a href="/register"><button class="registro">
+                    <p>Registro</p>
+                </button></a>
+                <a href="/login"><button class="ingreso">
+                    <p>Ingresar</p>
+                </button></a>
+            </section>
 
         </section>
 
@@ -59,8 +65,8 @@
         <h2>Regístrate como:</h2>
         <form action="/registro" method="POST">
             <div class="botones">
-                <button id="Usuario" type="button">Usuario</button>
-                <button id="Aliado" type="button">Aliado</button>
+                <button id="Usuario" class="button-r" type="button">Usuario</button>
+                <button id="Aliado" class="button-r" type="button">Aliado</button>
             </div>
             <p>Ingresa con tus redes sociales<p>
                 <div class="redes-sociales">
@@ -88,6 +94,7 @@
                 <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
                 <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
             </div>
+            <div class="dos-registros">
             <div class="grupo-de-registros">
                 <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
 
@@ -110,8 +117,9 @@
                     <option>Santa Fe</option>
                 </select>
             </div>
+        </div>
             <div class="grupo-de-registros">
-                <label id="celular" for="nombre">N° Celular: </label>
+                <label id="celular" for="celular">N° Celular: </label>
                 <input class="input-selecto" id="e-mail" type="text" name="e-mail" placeholder="Ingresa tu # Celular"
                     required>
                 <span class="feedback"></span>
