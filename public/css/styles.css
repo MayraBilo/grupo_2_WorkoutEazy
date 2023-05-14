@@ -278,6 +278,12 @@ input:focus {
     text-align: left;
 }
 
+.titulo-actividad h4, p, i, a {
+    text-decoration: none;
+    color: black;
+}
+
+
 /* Banner promocional */
 
 .banner-promocional {
@@ -429,6 +435,14 @@ footer h2 {
 
 .lista-footer li {
     padding-bottom: 8px;
+}
+
+.navbar-footer li {
+    padding-bottom: 8px;
+}
+
+.navbar-footer li:hover {
+    font-weight: 550;
 }
 
 .iconos-redes i {
@@ -667,22 +681,27 @@ footer h2 {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: left;
+        justify-content: space-around;
         align-items: flex-start;
         gap: 10px;
         padding-left: 50px;
     }
 
     .footer-columna1 {
-        width: 50%;
+        width: 200px;
     }
 
     .footer-columna2 {
-        width: 50%;
+        width: 200px;
+    }
+
+    .footer-columna4 {
+        width: 200px;
     }
 
     .footer-columna3 {
         align-self: left;
+        width: 100%;
     }
 }
 
