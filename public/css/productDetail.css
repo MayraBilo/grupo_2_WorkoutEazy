@@ -75,6 +75,7 @@ body {
     bottom: 5px;
     left: 35px;
     z-index: 99;
+}
     
 .reserva:hover {
     background-color: #1af3bd;
