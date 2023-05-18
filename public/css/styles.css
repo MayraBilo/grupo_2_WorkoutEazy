@@ -293,6 +293,10 @@ input:focus {
     border: 10px #006e7f solid;
 }
 
+.texto-banner p {
+    color: whitesmoke;
+}
+
 @keyframes aumentar {
     0% {
         transform: scale(1);
