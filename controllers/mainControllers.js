@@ -1,8 +1,7 @@
 const path = require("path");
 
 const controller = {
-    getIndex: (req, res) =>
-    res.sendFile(path.join(__dirname, "../views/user/index.html"))
+    getIndex: (req, res) => res.render("index")
 };
 
 module.exports = controller;
