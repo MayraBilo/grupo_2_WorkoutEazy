@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+    <main class="login-main">
+        <section class="main-container">
+            <div class="left-main">
+                <h2 class="inicia-sesion">INICIAR SESIÓN</h2>
+                <form action="/login" method="GET" class="form-container">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password">
+                    <div class="checkbox-recordar">
+                        <input type="checkbox" name="recordarme" id="recordarme">
+                        <label for="recordarme">Recordarme</label>
+                    </div>
+                    <div class="button-access">
+                        <button type="submit">INGRESAR</button>
+                    </div>
+                </form>
+                <div class="bottom-main">
+                    <h5 class="forgot-password">¿Olvidaste tu contraseña?</h5>
+                    <section class="social-media">
+                        <h4>Ingresá con tus cuentas</h4>
+                        <div class="social-media-logos">
+                            <button id="fb-logo">
+                                <i class="fa-brands fa-facebook"></i>
+                            </button>
+                            <button id="apple-logo">
+                                <i class="fa-brands fa-apple"></i>
+                            </button>
+                            <button id="google-logo">
+                                <i class="fa-brands fa-google"></i>
+                            </button>
+                        </div>
+                    </section>
+                    <section class="bottom-main-bot">
+                        <div class="line"></div>
+                        <h4>¿Aún no tienes una cuenta?</h4>
+                        <a href="/register">
+                            <h3> Registrarse</h3>
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <div class="right-main">
+                <img src="/images/editworkouteasy1b.jpg" class="imagen-main">
+            </div>
+        </section>
+    </main>
+    <%- include("../partials/footer") %>
+    <button class="consultas">
+        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+        Consultas</button>
+</body>
+
+</html>

@@ -2,60 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/styles.css">
+    <%- include("../partials/head") %>
     <link rel="stylesheet" href="/css/register.css">
-
 </head>
 
 <body>
-    <header>
-        <section class="mainheader-topbar">
-            <a href="#" class="burger-menu">
-                <i class="fa-solid fa-bars-staggered fa-xl" style="color: #000000;"></i>
-            </a>
-
-            <a href="/"> <img src="/images/logo-sinfondo.png" class="logo"> </a>
-
-            <div class="persona"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></div>
-
-            <div class="buscador">
-                <select>
-                    <option>Buenos Aires</option>
-                    <option>Caracas</option>
-                    <option>Bahía Blanca</option>
-                    <option>Santa Fe</option>
-                </select>
-                <input type="text"></input>
-                <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
-            </div>
-
-            <section class="login">
-                <a href="/register"><button class="registro">
-                    <p>Registro</p>
-                </button></a>
-                <a href="/login"><button class="ingreso">
-                    <p>Ingresar</p>
-                </button></a>
-            </section>
-
-        </section>
-
-        <nav class="main-navbar">
-            <ul>
-                <li>Actividades</li>
-                <li>Promociones</li>
-                <li>Blog</li>
-                <li>Compras</li>
-            </ul>
-        </nav>
-    </header>
+    <%- include("../partials/header") %>
 <main>
     <section class="container-1">
         <img src="/images/editworkouteasy3-a-copy.png" alt="imagen1">
@@ -163,38 +115,7 @@
         </form>
     </section>
 </main>
-<footer>
-
-    <div class="footer-columna1">
-    <h2>Ayuda</h2>
-    <ul class="lista-footer">
-        <li>Cómo convertirme en aliado</li>
-        <li>Términos y condiciones</li>
-        <li>Política de privacidad</li>
-        <li>Seguros</li>
-        <li>Preguntas y reclamos</li>
-    </ul>
-    </div>
-
-    <div clas="footer-columna2">
-    <h2>Redes Sociales</h2>
-        <div class="iconos-redes">
-            <i class="fa-brands fa-instagram fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-square-facebook fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-tiktok fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-spotify fa-xl" style="color: #000000;"></i>
-            <i class="fa-brands fa-youtube fa-xl" style="color: #000000;"></i>
-        </div>
-    </div>
-
-    <div class="footer-columna3">
-    <p class="cuerpos-texto">
-        Copyright Grupo 2 - 2023. Todos los derechos reservados.
-        Defensa de las y los consumidores. Para reclamos ingrese aquí</p>
-    </div>
-</footer>
-
-
+<%- include("../partials/footer") %>
 <button class="consultas">
     <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
     Consultas</button>
