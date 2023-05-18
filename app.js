@@ -2,28 +2,19 @@ const { log } = require("console");
 const express = require("express");
 const path = require("path");
 
+const mainRoutes = require('./routes/mainRoutes');
+const productsRoutes = require('./routes/productsRoutes');
+const userRoutes = require('./routes/userRoutes');
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, "./public")));
 
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "./views/user/index.html"))
-);
+app.use(mainRoutes);
 
-app.get("/productDetail", (req, res) =>
-  res.sendFile(path.join(__dirname, "./views/productos/productDetail.html"))
-);
+app.use(productsRoutes);
 
-app.get("/productCart", (req, res) =>
-  res.sendFile(path.join(__dirname, "./views/productos/productCart.html"))
-);
+app.get(userRoutes);
 
-app.get("/register", (req, res) =>
-  res.sendFile(path.join(__dirname, "./views/user/register.html"))
-);
-
-app.get("/login", (req, res) =>
-  res.sendFile(path.join(__dirname, "./views/user/login.html"))
-);
 
 app.listen(3000, () => console.log("Servidor escuchando en el puerto 3000🚀"));

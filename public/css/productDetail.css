@@ -99,6 +99,7 @@ body {
     box-sizing: border-box;
 }
     
+
 .descripcionProducto {
     display: flex;
     flex-direction: column;
