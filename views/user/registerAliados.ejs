@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main class="mainRegister2">
+            <section class="container-1A">
+                <img src="/images/registro-Aliados.jpg" alt="imagen1">
+                <div class="part2">
+                    <h1>Registro Aliados: Prestadores de Servicios</h1>
+                    <br>
+                    <p>Bienvenido, es hora de hacer parte de nuestra comunidad de Aliados en deporte y actividad física</p>
+                </div>
+                <div class="introducción">
+                    <h2>Buscamos empresas o trabajadores independientes en diferentes áreas del trabajo físico, que se
+                        comprometan a prestar servicios como expertos y con el sello de nuestra comunidad: Calidad y
+                        Garantía.</h2>
+                        <div class="datos1">
+                            <p>Debes tener estos documentos para tu registro y adjuntarlos al formulario:</p>
+                            <p>* Si eres empresa: Código Único de Identificación Tributaria y documento de identidad de representante legal.</p>
+                               <p>* Si eres persona natural: DNI.</p>
+                               <p>* Certificado de Estudios y/o trabajos en tu profesión.</p>
+                               <p>* Certificados de autorización de prestación de servicios.</p>
+                                <p>* Fotos de la entidad deportiva o del profesional en actividad física y servicios que ofrece.</p> 
+                        </div>
+                    </div>
+            </section>
+                    <section class="container-2A">
+                        <h2>Comencemos...</h2>
+                <form action="/registro" method="POST">
+                    
+                    <div class="grupo-de-registrosPerfil">
+                        <label id="pefil de usuario" for="perfil de usuario">Perfil de Usuario:</label>
+                        <br>
+                        <select id="pefil de usuario" name="perfil de usuario" required>
+                            <br>
+                            <option value="Empresa Deportiva">Empresa Deportiva</option>
+                            <option value="Profesional Físico">Profesional Físico</option>
+                        </select>
+                        </div>
+                    
+                    <div class="grupo-de-registrosEntidad">
+                        <label id="nombre" for="nombre">Nombre de empresa o entidad deportiva:</label>
+<br>
+                        <input id="nombre" type="text" name="nombre"
+                            placeholder="Empresa" required>
+                        <span class="feedback"></span>
+                    </div>
+                        <section class="grupo-de-registrosA1">
+                        <div>
+                        <label id="nombre" for="nombre">Nombre de profesional deportivo:</label>
+<br>
+                        <input id="nombre" type="text" name="nombre"
+                            placeholder="Ingresa tu Nombre" required>
+                        <span class="feedback"></span>
+                    </div>
+                        
+                    <div>
+                        <label id="apellido" for="apellido">Apellidos de profesional deportivo: </label>
+<br>
+                        <input id="apellido" type="text" name="apellido"
+                            placeholder="Ingresa tus Apellidos" required>
+                        <span class="feedback"></span>
+                    </div>
+                </section>
+                
+                    <div class="grupo-indicarSexo" required>
+
+                        <label for="">Hombre</label><input type="radio" name="medio" id="hombre" value="hombre">
+                        <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
+                        <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
+                    </div>
+
+                    <section class="grupo-de-registrosIdentificación">
+                        
+                        <div>
+                            <label id="tipo de idetificación" for="tipo de identificación">Tipo:</label>
+                            <br>
+                            <select id="tipo de idetificación" name="tipo de idetificación" required>
+                                <br>
+                                <option value="DNI">DNI</option>
+                                <option value="CUIT">CUIT</option>
+                            </select>
+                        </div>
+                            <div>
+                            <label id="número de identificación" for="nombre">Número de Identificación:</label>
+    <br>
+                            <input id="número de identificación" type="text" name="número de identifiación"
+                                placeholder="Ingresa tu Identificación" required>
+                            <span class="feedback"></span>
+                            </div>
+</section>
+<section class="grupo-de-registrosA1">
+    <div>
+        <label id="fecha de expedición" for="fecha de expedición">Fecha de Expedición: </label>
+<br>
+        <input  id="label fecha de expedición" type="date"
+            name="fecha de expedición" required>
+        <span class="feedback"></span>
+    </div>
+    <div>
+        <label id="ciudad residencia" for="ciudad residencia">Ciudad: </label>
+    <br>
+        <select class="option" id="ciudad residencia" name="ciudad residencia" required>>
+            <br>
+            <option>Buenos Aires</option>
+            <option>Córdoba</option>
+            <option>Rosario</option>
+            <option>Tucumán</option>
+            <option>Mendoza</option>
+            <option>Mar del plata</option>
+            <option>Bahía Blanca</option>
+            <option>Santa Fe</option>
+        </select>
+    </div>
+</section>
+<section class="grupo-de-registrosA1">
+                    <div>
+                        <label id="celular" for="celular">N° Celular: </label>
+                        <input id="celular" type="text" name="celular"
+                            placeholder="Ingresa tu # Celular" required>
+                        <span class="feedback"></span>
+                    </div>
+                    <div>
+                        <label id="e-mail" for="e-mail">E-mail: </label>
+                        <input id="e-mail" type="text" name="e-mail"
+                            placeholder="Ingresa tu correo electrónico" required>
+                        <span class="feedback"></span>
+                    </div>
+                </section>
+                <section class="grupo-de-registrosDocumentos">
+                    <label id="documentos" for="docuementos">Subir documentos requeridos:</label>
+                    <br>
+                    <input id="documentos" type="file" name="documentos" accept="document/*">
+                </section>
+                    <div class="grupo-de-registrosUsuarios">
+                        <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
+                        <input id="Nombre Usuari@" type="text" name="nombre usuario"
+                            placeholder="Crea tu Usuario" required>
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="grupo-de-registrosUsuarios">
+                        <label id="contraseña" for="contraseña">Contraseña:</label>
+                        <input id="contraseña" type="password" name="contraseña"
+                            placeholder="Crear Contraseña">
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="grupo-de-registrosUsuarios">
+                        <input id="confirmar contraseña" type="password"
+                            name="confirmar contraseña" placeholder="Confirmar Contraseña">
+                        <span class="feedback"></span>
+                    </div>
+                    <br>
+                    <div class="condiciones">
+                        <input type="checkbox" name="terminos y condiciones" value="terminos y condiciones">Acepto los
+                        términos
+                        y condiciones de uso del sitio web.
+                        <br>
+                        <input type="checkbox" name="terminos y condiciones" value="Políticas de privacidad">Acepto el
+                        tratamiento de datos personales según la política de privacidad con el fin de ser contactado por
+                        WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
+                        productos/servicios.
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="boton">
+                        <input id="enviar" type="submit" value="Registrarse">
+                    </div>
+                </form>
+            </section>
+        </main>
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+
+</body>
+
+</html>
