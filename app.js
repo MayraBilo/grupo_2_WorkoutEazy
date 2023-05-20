@@ -24,4 +24,4 @@ app.use(productsRoutes);
 app.use(userRoutes);
 
 
-app.listen(3000, () => console.log("Servidor escuchando en el puerto 3000🚀"));
+app.listen(3000, () => console.log("Servidor escuchando en el puerto http://localhost:3000/"));
