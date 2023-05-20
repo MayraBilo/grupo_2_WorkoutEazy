@@ -231,10 +231,9 @@ body {
 
 .login-footer {
     background-color: whitesmoke;
-    margin: 0 5px;
 }
 
-.login-footer h2 {
+footer h2 {
     margin: 20px 0;
 }
 
