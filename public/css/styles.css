@@ -57,7 +57,7 @@ header {
 
 /* Buscador */
 
-.buscador {
+header .buscador {
     width: 270px;
     border-radius: 16px;
     border: 1px solid #e8e8e8;
@@ -84,7 +84,7 @@ header {
     margin-right: 2px;
 }
 
-input:focus {
+header input:focus {
     border: 1px #006e7f solid;
 }
 
