@@ -8,6 +8,6 @@ router.get('/product/productDetail', productController.getDetail);
 router.get('/product/productCart', productController.getCart);
 router.get('/product/createProduct', productController.getCreate);
 router.get('/product/editeProduct', productController.getEdite);
-router.get('/product/perfilServicios', productController.getEdite);
+router.get('/product/profileServices', productController.getEdite);
 
 module.exports = router;
