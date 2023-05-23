@@ -38,6 +38,24 @@ select:focus {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 
+.nav-filtros2 {
+    display:none;
+}
+
+.side-bar {
+    display:none;
+}
+
+/* Side-bar */
+
+.radio-dificultad div {
+    padding-bottom: 10px;
+}
+
+.radio-edad div {
+    padding-bottom: 10px;
+}
+
 
 /* Actividades */
 
@@ -146,6 +164,11 @@ select:focus {
 
 @media (min-width: 669px) {
 
+
+    main {
+        margin: 20px;
+    }
+
         /* Footer */
 
         footer {
@@ -175,13 +198,71 @@ select:focus {
             width: 100%;
         }
 
+        /* Actividades */
+
         .foto {
             height: 55%;
         }
 
-        .nav-filtros select {
-            width: 20%;
+        .actividades-fitness {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
         }
+
+        /* Filtros */
+
+        .nav-filtros2 select {
+            width: 15%;
+            padding: 10px;
+            padding-right: 15px;
+            font-size: 20px;
+            border: 2px #00a170 solid;
+            border-radius: 14px;
+            text-align: center;
+            background-color: #e8e8e8;
+            appearance: none;
+            background-image: url('/images2/caret-down-solid2.svg');
+            background-position: right center;
+            background-repeat: no-repeat;
+        }
+
+        .titulo-general {
+            width: 100%;
+        }
+
+        .nav-filtros2 {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 10px;
+
+        }
+
+        .side-bar {
+            display: inline-block;
+            grid: side;
+        }
+
+        .nav-filtros {
+            display: none;
+        }
+
+        .productos-display {
+            grid: productos;
+        }
+
+        .container-grid {
+            display: grid;
+            grid-template-areas: "side productos";
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .titulo-fitness {
+            display: none;
+        }
+
+
     }
 
 

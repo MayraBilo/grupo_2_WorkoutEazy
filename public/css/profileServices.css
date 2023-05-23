@@ -86,7 +86,7 @@ main {
 
 .container1 input {
     display: flex;
-    width: 40%;
+    width: 60%;
     align-items: center;
     justify-content: center;
     padding: 5px;
