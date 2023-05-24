@@ -46,6 +46,10 @@ main {
     display: flex;
     flex-direction: column;
 }
+.profail-part1 h1{
+    font-family: 'Bebas Neue';
+    letter-spacing: 1px;
+}
 
 .ranking-content {
     display: flex;
@@ -114,9 +118,15 @@ main {
     padding: 0.5rem 0;
     margin: 0 0 1.5rem;
 }
+.profile-header h1 {
+    font-family: 'Bebas Neue';
+    letter-spacing: 1px;
+}
 
 .titulos {
     text-align: center;
+    font-family: 'Bebas Neue';
+    letter-spacing: 1px;
     border-bottom: 2px solid #006e52;
     border-radius: 0;
     padding: 0.5rem 0;
