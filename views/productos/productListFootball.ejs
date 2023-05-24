@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/productListFootball.css">
+    </head>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+
+            <div class="banner">
+                <section class="titulo-general">
+                </section>
+
+                <section class="titulo-h1">
+                    <h1>Football</h1>
+                </section>
+            </div>
+
+            <section class="nav-filtros">
+                <select>
+                    <option>Football</option>
+                    <option>Fitness</option>
+                    <option>Yoga</option>
+                    <option>Montaña</option>
+                    <option>Tennis</option>
+                    <option>Baile</option>
+                    <option>Todos</option>
+                </select>
+            </section>
+
+            <section class="filtros-container">
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfootball" value="football11">Football 11</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfootball" value="football5">Football 5</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfootball" value="entrenamiento">Entrenamiento</input>
+                    <span class="checkmark"></span>
+                </div>
+            </section>
+
+            <section class="side-bar">
+                <button class="edad">
+                    <h4>Edad</h4>
+                </button>
+                
+                <button class="dificultad">
+                    <h4>Dificultad</h4>
+                </button>
+            </section>
+
+            <section class="sidebar-desplegables">
+                <div class="check-edad">
+                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <div class="check-dificultad">
+                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="productos-display">
+
+                <div class="actividades-contenedor">
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Football</p>
+                            </div>
+                            <img src="/images-clases/futbolfemenino.jpg" alt="clasefutbolfem">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Football femenino</h3>
+                        <p class="texto-actividad">Tincho Krausse</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Creá tu propia rutina de Yoga que se adapte a tu cuerpo y modo de vida. Ideal para
+                                practicar en viajes o en tu día para cortar.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Football</p>
+                            </div>
+                            <img src="/images-clases/futbolkids.jpg" alt="claseYoga">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Fútbol para niños</h3>
+                        <p class="texto-actividad">Mayra Bilo</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>10</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$6.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Una clase ideal para traer a todos tus amigos y hacer nuevos.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Football</p>
+                            </div>
+                            <img src="/images-clases/futbolcallejero.jpg" alt="clasefutbolcalle">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Football callejero</h3>
+                        <p class="texto-actividad">Juan Perez</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Recorremos las calles de la ciudad jugando a la pelota.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+                </div>
+
+            </section>
+
+        </main>
+        
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/productListTennis.css">
+    </head>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+
+            <div class="banner">
+                <section class="titulo-general">
+                </section>
+
+                <section class="titulo-h1">
+                    <h1>Tennis</h1>
+                </section>
+            </div>
+
+            <section class="nav-filtros">
+                <select>
+                    <option>Tennis</option>
+                    <option>Fitness</option>
+                    <option>Yoga</option>
+                    <option>Montaña</option>
+                    <option>Football</option>
+                    <option>Baile</option>
+                    <option>Todos</option>
+                </select>
+            </section>
+
+            <section class="filtros-container">
+                <div class="contenedor-check"><input type="checkbox" name="filtrostennis" value="clases">Clases</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrostennis" value="paddle">Paddle</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrostennis" value="entrenamiento">Entrenamiento</input>
+                    <span class="checkmark"></span>
+                </div>
+            </section>
+
+            <section class="side-bar">
+                <button class="edad">
+                    <h4>Edad</h4>
+                </button>
+                
+                <button class="dificultad">
+                    <h4>Dificultad</h4>
+                </button>
+            </section>
+
+            <section class="sidebar-desplegables">
+                <div class="check-edad">
+                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <div class="check-dificultad">
+                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="productos-display">
+
+                <div class="actividades-contenedor">
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Tennis</p>
+                            </div>
+                            <img src="/images-clases/tennisadultos.jpg" alt="clasetennis">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Tennis grupal</h3>
+                        <p class="texto-actividad">Mario Sánchez</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Armamos clases y torneos para adultos.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Tennis</p>
+                            </div>
+                            <img src="/images-clases/tennisdobles.jpg" alt="clasetennis2">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Tennis dobles</h3>
+                        <p class="texto-actividad">Franco Berdini</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>10</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$6.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Entrenamiento y torneos para disfrutar con tus amigos.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+        
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+</body>
+
+</html>

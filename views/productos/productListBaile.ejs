@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/productListBaile.css">
+    </head>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+
+            <div class="banner">
+                <section class="titulo-general">
+                </section>
+
+                <section class="titulo-h1">
+                    <h1>Baile</h1>
+                </section>
+            </div>
+
+            <section class="nav-filtros">
+                <select>
+                    <option>Baile</option>
+                    <option>Fitness</option>
+                    <option>Yoga</option>
+                    <option>Montaña</option>
+                    <option>Football</option>
+                    <option>Tennis</option>
+                    <option>Todos</option>
+                </select>
+            </section>
+
+            <section class="filtros-container">
+                <div class="contenedor-check"><input type="checkbox" name="filtrosbaile" value="escalada">Urbano</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosbaile" value="baller">Ballet</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosbaile" value="contemporaneo">Contemporáneo</input>
+                    <span class="checkmark"></span>
+                </div>
+            </section>
+
+            <section class="side-bar">
+                <button class="edad">
+                    <h4>Edad</h4>
+                </button>
+                
+                <button class="dificultad">
+                    <h4>Dificultad</h4>
+                </button>
+            </section>
+
+            <section class="sidebar-desplegables">
+                <div class="check-edad">
+                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <div class="check-dificultad">
+                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="productos-display">
+
+                <div class="actividades-contenedor">
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Baile</p>
+                            </div>
+                            <img src="/images-clases/tango.jpg" alt="claseTango">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Tango</h3>
+                        <p class="texto-actividad">Silvina Saubidet</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Animate a probar el baile nacional argentino. Podés venir solo o en pareja.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Baile</p>
+                            </div>
+                            <img src="/images-clases/baileclasico.jpg" alt="claseBallet">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Baile clásico</h3>
+                        <p class="texto-actividad">Olga Ferri</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>10</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$6.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Vení a aprender las bases del ballet a una de las academias más reconocidas del país.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Baile</p>
+                            </div>
+                            <img src="/images-clases/tango.jpg" alt="claseTango">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Tango</h3>
+                        <p class="texto-actividad">Silvina Saubidet</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Animate a probar el baile nacional argentino. Podés venir solo o en pareja.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Baile</p>
+                            </div>
+                            <img src="/images-clases/baileclasico.jpg" alt="claseBallet">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Baile clásico</h3>
+                        <p class="texto-actividad">Olga Ferri</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>10</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$6.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Vení a aprender las bases del ballet a una de las academias más reconocidas del país.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+                    </article>
+
+
+
+                </div>
+
+            </section>
+
+        </main>
+        
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+</body>
+
+</html>

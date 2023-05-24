@@ -8,6 +8,11 @@ const controller = {
     getEdite: (req, res) => res.render("profileServices"),
     getList: (req, res) => res.render("productList"),
     getListYoga: (req, res) => res.render("productListYoga"),
+    getListFitness: (req, res) => res.render("productListFitness"),
+    getListMontana: (req, res) => res.render("productListMontana"),
+    getListBaile: (req, res) => res.render("productListBaile"),
+    getListFootball: (req, res) => res.render("productListFootball"),
+    getListTennis: (req, res) => res.render("productListTennis"),
 };
 
 module.exports = controller;

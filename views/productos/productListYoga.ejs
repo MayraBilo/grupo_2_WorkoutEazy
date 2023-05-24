@@ -5,7 +5,7 @@
 
     <head>
         <%- include("../partials/head") %>
-            <link rel="stylesheet" href="/css/productListYoga.css">
+        <link rel="stylesheet" href="/css/productListYoga.css">
     </head>
 </head>
 
@@ -35,41 +35,86 @@
             </section>
 
             <section class="filtros-yoga">
-                <div class="contenedor-radio"><input type="radio" name="filtrosyoga" value="ashtanga">Ashtanga</input>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosyoga" value="ashtanga">Ashtanga</input>
                     <span class="checkmark"></span>
                 </div>
-                <div class="contenedor-radio"><input type="radio" name="filtrosyoga" value="hatha">Hatha</input>
+                <div class="contenedor-check"><label for="myCheckbox" class="circle-checkbox"></label><input type="checkbox" id="myCheckbox" name="filtrosyoga" value="hatha">Hatha</input>
                     <span class="checkmark"></span>
                 </div>
-                <div class="contenedor-radio"><input type="radio" name="filtrosyoga" value="flow">Flow</input>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosyoga" value="flow">Flow</input>
                     <span class="checkmark"></span>
                 </div>
-                <div class="contenedor-radio"><input type="radio" name="filtrosyoga" value="flex">Flex</input>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosyoga" value="flex">Flex</input>
                     <span class="checkmark"></span>
                 </div>
-                <div class="contenedor-radio"><input type="radio" name="filtrosyoga" value="kundalini">Kundalini</input>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosyoga" value="kundalini">Kundalini</input>
                     <span class="checkmark"></span>
                 </div>
-                <div class="contenedor-radio"><input type="radio" name="filtrosyoga" value="maternal">Maternal</input>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosyoga" value="maternal">Maternal</input>
                     <span class="checkmark"></span>
                 </div>
-                <div class="contenedor-radio"><input type="radio" name="filtrosyoga" value="Vinyasa">Vinyasa</input>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosyoga" value="Vinyasa">Vinyasa</input>
                     <span class="checkmark"></span>
                 </div>
             </section>
 
             <section class="side-bar">
-                <div class="edad">
+                <button class="edad">
                     <h4>Edad</h4>
-                </div>
-                <div class="dificultad">
+                </button>
+                
+                <button class="dificultad">
                     <h4>Dificultad</h4>
+                </button>
+            </section>
+
+            <section class="sidebar-desplegables">
+                <div class="check-edad">
+                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <div class="check-dificultad">
+                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
                 </div>
             </section>
 
             <section class="productos-display">
 
-                <div class="actividades-fitness">
+                <div class="actividades-contenedor">
 
                     <article class="actividad-ejemplo">
 
@@ -80,6 +125,7 @@
                             <img src="/images2/yoga3.jpg" alt="claseYoga">
                         </div>
 
+                        <div class="info">
                         <h3 class="texto-actividad">Yoga flex</h3>
                         <p class="texto-actividad">Jacinta Mayol</p>
                         <p class="texto-actividad">Dificultad</p>
@@ -110,6 +156,7 @@
                                 <p>Leer más</p>
                             </button>
                         </div>
+                        </div>
 
                     </article>
 
@@ -122,6 +169,7 @@
                             <img src="/images2/yoga1.jpg" alt="claseYoga">
                         </div>
 
+                        <div class="info">
                         <h3 class="texto-actividad">Yoga al aire libre</h3>
                         <p class="texto-actividad">Mayra Bilo</p>
                         <p class="texto-actividad">Dificultad</p>
@@ -151,7 +199,96 @@
                                 <p>Leer más</p>
                             </button>
                         </div>
+                        </div>
                     </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Yoga</p>
+                            </div>
+                            <img src="/images2/yoga1.jpg" alt="claseYoga">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Yoga flex</h3>
+                        <p class="texto-actividad">Mayra Bilo</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Cambiá tu forma de practicar yoga y conectate con tu cuerpo y grupo.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Yoga</p>
+                            </div>
+                            <img src="/images2/yoga3.jpg" alt="claseYoga">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Yoga flex</h3>
+                        <p class="texto-actividad">Jacinta Mayol</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Creá tu propia rutina de Yoga que se adapte a tu cuerpo y modo de vida. Ideal para
+                                practicar en viajes o en tu día para cortar.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
 
                 </div>
 

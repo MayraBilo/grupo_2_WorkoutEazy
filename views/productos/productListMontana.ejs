@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/productListMontana.css">
+    </head>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+
+            <div class="banner">
+                <section class="titulo-general">
+                </section>
+
+                <section class="titulo-h1">
+                    <h1>Montaña</h1>
+                </section>
+            </div>
+
+            <section class="nav-filtros">
+                <select>
+                    <option>Montaña</option>
+                    <option>Fitness</option>
+                    <option>Yoga</option>
+                    <option>Baile</option>
+                    <option>Football</option>
+                    <option>Tennis</option>
+                    <option>Todos</option>
+                </select>
+            </section>
+
+            <section class="filtros-container">
+                <div class="contenedor-check"><input type="checkbox" name="filtrosmontaña" value="escalada">Escalada</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosmontaña" value="trecking">Trecking</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosmontaña" value="entrenamiento">Entrenamiento</input>
+                    <span class="checkmark"></span>
+                </div>
+            </section>
+
+            <section class="side-bar">
+                <button class="edad">
+                    <h4>Edad</h4>
+                </button>
+                
+                <button class="dificultad">
+                    <h4>Dificultad</h4>
+                </button>
+            </section>
+
+            <section class="sidebar-desplegables">
+                <div class="check-edad">
+                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <div class="check-dificultad">
+                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="productos-display">
+
+                <div class="actividades-contenedor">
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Montaña</p>
+                            </div>
+                            <img src="/images-clases/trekking.jpg" alt="clasemontaña">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Club Andino</h3>
+                        <p class="texto-actividad">Club Andino Bariloche</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Hacete socio para disfrutar todos los meses de lugares inexplorados acompañados por guías profesionales de montaña.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Montaña</p>
+                            </div>
+                            <img src="/images-clases/trekking1.jpg" alt="clasetrekking">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Salidas de montaña</h3>
+                        <p class="texto-actividad">Mayra Bilo</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>10</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$6.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Entrenate en plena naturaleza. Formá un grupo y disfrutá de salidas todos los fines de semana.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Montaña</p>
+                            </div>
+                            <img src="/images/escalada.JPG" alt="claseescalada">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Escalada</h3>
+                        <p class="texto-actividad">Club Andino Buenos Aires</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Vení a entrenar todas las semanas al boulder.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Montaña</p>
+                            </div>
+                            <img src="/images/escalada.JPG" alt="claseescalada">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Escalada</h3>
+                        <p class="texto-actividad">Club Andino Buenos Aires</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$8.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Vení a entrenar todas las semanas al boulder.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+        </main>
+        
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+</body>
+
+</html>

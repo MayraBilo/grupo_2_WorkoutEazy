@@ -37,9 +37,12 @@ main {
     top: 0px;
     z-index: 10;
     margin: auto;
+    font-family: "Bebas Neue";
 }
 
 /* Filtros */
+
+/* Filtros generales */
 
 .nav-filtros {
     background-color: #00a170;
@@ -63,9 +66,9 @@ main {
 
 select:focus {
     outline: none;
-    border-color: #000;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
+}
+
+/* Filtros tipos de yoga */
 
 .filtros-yoga {
     display: flex;
@@ -74,15 +77,16 @@ select:focus {
     border-bottom: 2px #e8e8e8 solid;
     margin: 5px 15px;
     padding: 2px;
-
 }
 
-.contenedor-radio {
+.contenedor-check {
     border: 2px #e8e8e8 solid;
     border-radius: 14px;
     margin: 5px;
     width: 100px;
 }
+
+/* Side-bar */
 
 .side-bar {
     color: #5c5d5b;
@@ -93,7 +97,8 @@ select:focus {
     margin: 10px 15px;
 }
 
-.edad, .dificultad {
+.edad,
+.dificultad {
     border: 2px #e8e8e8 solid;
     width: 80px;
     text-align: center;
@@ -104,11 +109,32 @@ select:focus {
     margin: auto;
 }
 
+.dificultad:hover {
+    background-color: #0084bd;
+    color: white
+}
+
+.edad:hover {
+    background-color: #0084bd;
+    color: white;
+}
+
+.sidebar-desplegables {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sidebar-desplegables {
+    display: none;
+}
+
 /* Actividades */
 
 /* Actividades cargadas */
 
-.actividades-fitness {
+.actividades-contenedor {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 100%;
@@ -118,14 +144,20 @@ select:focus {
 
 .actividad-ejemplo:hover {
     background-color: rgba(0, 132, 189, 30%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Foto */
+
+.foto {
+    position: relative;
 }
 
 .etiqueta-actividad {
     background-color: white;
     width: 60%;
     box-sizing: border-box;
-    position: relative;
-    top: 28px;
+    position: absolute;
     text-align: center;
     padding-top: 5px;
 }
@@ -139,9 +171,15 @@ select:focus {
     width: 100%;
 }
 
-.foto {
-    height: 54%;
+.actividad-ejemplo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }
+
+/* Texto actividad */
 
 .texto-actividad {
     text-align: center;
@@ -160,71 +198,123 @@ select:focus {
     border-top: 3px grey solid;
     overflow: hidden;
     width: 90%;
+    min-height: 150px;
+}
+
+.info h3 {
+    font-family: "Bebas";
 }
 
 .leermas button {
     display: none;
 }
 
-
-.yoga, .montañismo, .fitness {
-    margin-bottom: 80px;
-}
-
-
 @media (min-width: 669px) {
 
-        /* Footer */
+    /* Footer */
 
-        footer {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: flex-start;
-            gap: 10px;
-            padding-left: 50px;
-        }
-    
-        .footer-columna1 {
-            width: 180px;
-        }
-    
-        .footer-columna2 {
-            width: 180px;
-        }
-    
-        .footer-columna4 {
-            width: 180px;
-        }
-    
-        .footer-columna3 {
-            align-self: left;
-            width: 100%;
-        }
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 10px;
+        padding-left: 50px;
+    }
 
-        .foto {
-            height: 70%;
-        }
+    .footer-columna1 {
+        width: 180px;
+    }
 
-        .nav-filtros select {
-            width: 20%;
-        }
-    
+    .footer-columna2 {
+        width: 180px;
+    }
+
+    .footer-columna4 {
+        width: 180px;
+    }
+
+    .footer-columna3 {
+        align-self: left;
+        width: 100%;
+    }
 
     main {
         margin-bottom: 60px;
     }
 
-    .actividad-ejemplo .descripcion-actividad {
-        border-top: 0px;
+    /* Filtros */
+
+    .nav-filtros select {
+        width: 20%;
     }
 
-    .leermas {
-        display: none;
+    .filtros-yoga {
+        justify-content: center;
+    }
+
+    /* Actividades */
+
+    .actividad-ejemplo {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .actividades-contenedor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
 }
 
-/* @media (min-width: 763px) */
+@media (min-width: 763px) {
 
-/* @media (min-width: 1200px) */
+    /* Actividades */
+
+    .actividades-contenedor {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    /* Filtros */
+
+    .nav-filtros select {
+        width: 10%;
+        font-size: 24px;
+    }
+
+    /* Titulo */
+
+    .titulo-h1 {
+        opacity: 100%;
+        text-align: center;
+        padding: 20px 5px;
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        z-index: 10;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    /* Actividades */
+
+    .actividades-contenedor {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .actividad-ejemplo {
+        justify-content: space-around;
+    }
+
+}
