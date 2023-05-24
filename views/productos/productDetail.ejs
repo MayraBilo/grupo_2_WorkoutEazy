@@ -1,68 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/head") %>
-    <link rel="stylesheet" href="/css/productDetail.css">
-</head>
+    <head>
+
+        <header>
+            <%- include("../partials/head") %>
+                <link rel="stylesheet" href="/css/productDetail.css">
+        </header>
+    </head>
 
 <body>
     <%- include("../partials/header") %>
+    <div class="banner-escalada">
+        <section class="titulo-general">
+        </section>
+
+        <section class="titulo-h1">
+            <h1>ESCALADA</h1>
+        </section>
+    </div>
     <main class="main">
-        <section>
-        <h1 class="h1">Escalada</h1>
-        <div class="dificultad">
-            <h4 class="h4">Dificultad   </h4>
-             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-        </div>
-        <section class="imagen">
-        <div class="img-producto">
-            <i class="iconoIZQ" class="fa-solid-fa-caret-left"></i>
-            <img src="/images/escalada.jpg" alt="gimArt" class="img-producto">
-            <div class="boton"> <button class="reserva">Reservá tu lugar</button></div>
-            <i class="iconoDER" class="fa-solid fa-caret-right"></i>
-        </div>
-        <section class="descripcion">
-            <div class="descripcionProducto">
-            <h2>Clases de escalada en boulder</h2>
-            <h5>$2500 (por clase)</h5>
-        </br>
-            <p> Si tenes ganas de vivir una nueva experiencia, llevando al máximo tu crecimiento, ésta es la clase que estás buscando.
-            </p>
-            </div>
-        </section>
-        </section>
-        <h6 class="busquedasRelacionadasH6">Búsquedas relacionadas</h6>
-        <section class="busquedasRelacionadas">
-        </br>
-        <div><i class="fa-solid fa-caret-left"></i></div>
-                <div class="clase-relacionada">
-                <img src="/images/functional.JPG" alt="functional" class="img-relacionada">
-                <h5>Functional</h5>
-                <p>
-                    Mantenete entrenado con nuestras clases
-                </p>
+        <section class="formatoTablet">
+            <section class="imagen">
+                <div class="img-producto">
+                    <i class="iconoIZQ" class="fa-solid-fa-caret-left"></i>
+                    <div class="etiqueta-actividad">
+                        <p>Escalada</p>
+                    </div>
+                    <img src="/images/escalada.jpg" alt="gimArt" class="img-producto">
+                    <div class="boton"> <button class="reserva">Reservá tu lugar</button></div>
+                    <i class="iconoDER" class="fa-solid fa-caret-right"></i>
+                </div>
+            </section>
+            <section >
+                <h3 class="texto-actividad" id="nombreActividad">Escalada en boulder</h3>
+                    <p class="texto-actividad" >Ignacio Bustamante</p>
+                    <p class="texto-actividad">Dificultad</p>
+                    <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                         class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                        class="fa-regular fa-star"></i></div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>12</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>18</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$2.500</h3>
+                        </div>
 
-            </div>
-            <div class="clase-relacionada">
-                <img src="/images/yoga1.JPG" alt="yoga1" class="img-relacionada">
-                <h5>Yoga a aire libre</h5>
-                <p>
-                    Viví el yoga con la naturaleza
-                </p>
-
-            </div>
-            <div class="clase-relacionada">
-                <img src="/images/gimnasio.JPG" alt="gimnasio" class="img-relacionada">
-                <h5>Gimnasio Indoor</h5>
-                <p>
-                    Entrenamiento adaptado a todos los niveles
-                </p>
-                
-            </div>
-            <div><i class="fa-solid fa-caret-right"></i></div>
-            
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Si tenes ganas de vivir una nueva experiencia, llevando al máximo tu crecimiento, ésta es la clase que estás buscando.</p>
+                        </div>
+                                <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                    </div>
+            </section>
         </section>
-        </main>
+            <h6 class="busquedasRelacionadasH6">Búsquedas relacionadas</h6>
+            <section class="busquedasRelacionadas">
+                </br>
+                <div><i class="fa-solid fa-caret-left"></i></div>
+                    <div class="clase-relacionada">
+                        <img src="/images/functional.JPG" alt="functional" class="img-relacionada">
+                        <h5>Functional</h5>
+                        <p>
+                        Mantenete entrenado con nuestras clases
+                        </p>
+                    
+                    </div>
+                    <div class="clase-relacionada">
+                        <img src="/images/yoga1.JPG" alt="yoga1" class="img-relacionada">
+                        <h5>Yoga a aire libre</h5>
+                        <p>
+                        Viví el yoga con la naturaleza
+                        </p>
+                    
+                    </div>
+                    <div class="clase-relacionada">
+                        <img src="/images/gimnasio.JPG" alt="gimnasio" class="img-relacionada">
+                        <h5>Gimnasio Indoor</h5>
+                        <p>
+                        Entrenamiento adaptado a todos los niveles
+                        </p>
+                                    
+                    </div>
+                    <div><i class="fa-solid fa-caret-right"></i></div>        
+            </section>
+       
+        
+    </br>
+        <section class="banner-promocional">
+            <div class="texto-banner">
+            <h2 class="descuento">20% OFF</h2>
+            <h3>en tu primera compra</h3>
+            <p>hacé click aquí para obtener el cupón de descuento</p>
+            <div class="animacion-regalo"><i class="fa-solid fa-gift fa-2xl" style="color: #199eb3;"></i></div>
+            </div>
+            <img src="/images/editworkouteasy2-b.png" class="imagenbanner">
+        </section>
+    </main>
         <%- include("../partials/footer") %>
         <button class="consultas">
             <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>

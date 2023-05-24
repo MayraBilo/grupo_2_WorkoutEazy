@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    max-width: 98vw;
+}
 body {
-    background-color: rgba(0, 161, 112, 30%);
     font-size: 16px;
     font-family: "Roboto";
 }
@@ -13,51 +14,54 @@ body {
 
 .main {
     background-color: whitesmoke;
-    border-radius: 30px 30px 0 0;
     margin: 0 5px;
     padding-bottom: 30px;
-    width: 1200px;
 }
 
 /*MAIN*/
+.titulo-general {
+    text-align: center;
+    padding: 20px 5px;
+    background-image: url('/images2/escaladabanner.JPG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 50%;
+    z-index: 7;
+    position: relative;
+    height: 76px;
 
-
-.h1 {
-    display: flex;
-    align-items: center;
-    color:#00a170;
-    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
-    font-weight: 200;
-    font-size: 30px;
-    margin: 0vh 2vw;
-    padding: 0;
-    height: 10vh;
 }
+
+.banner-escalada {
+    position: relative;
+    z-index: 9;
+    width: 100vw;
+}
+.titulo-h1 {
+    opacity: 100%;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    text-align: center;
+    padding: 20px 5px;
+    position: absolute;
+    left: 40%;
+    top: 0px;
+    z-index: 10;
+    margin: auto;
+}
+
 .h4 {
     padding: 0px;
     margin:0px;
 }
-.dificultad {
-    display: flex;
-    align-items: center;
-    padding: 0px;
-    margin-top: 0;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    color: black;
-    font-style: italic;
-    font-family: 'Roboto', 'sans-serif';
-    font-weight: lighter;
-    font-size: 14px;
 
-
-}
 
 .img-producto {
     display: flex;
     flex-direction: column;
     width: 270px;
     margin-left:0px;
+    margin-top: 20px;
     padding-left: 15px;
     border-radius: 0px 40px 0px 0px;
     position: relative;
@@ -66,14 +70,14 @@ body {
 .boton{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    width: 100px;
-    height: 20px;
+    align-items: center;
+    width: 270px;
+    height: 50px;
     border: #006e52 solid 1px;
-    border-radius: 20px;
-    position: absolute;
-    bottom: 5px;
-    left: 35px;
+    border-radius: 5px;
+    margin: 8px 0px;
+    position: relative;
+    left: 15px;
     z-index: 99;
 }
     
@@ -87,18 +91,33 @@ body {
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 8px;
+    border-radius: 2px;
     background-color: #006e52;
     color: white;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: roboto;
-    width: 100px;
-    height: 30px;
+    font-size: 24px;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    width: 270px;
+    height: 50px;
     transition: all 0.3s ease-in-out;
     box-sizing: border-box;
 }
-    
+
+.etiqueta-actividad {
+    background-color: white;
+    width: 60%;
+    box-sizing: border-box;
+    position: relative;
+    top: 45px;
+    text-align: center;
+    padding-top: 5px;
+    z-index: 100;
+}
+
+.etiqueta-actividad p {
+    height: 24px;
+    margin: auto;
+    font-family: 'Roboto', 'sans-serif';
+}
 
 .descripcionProducto {
     display: flex;
@@ -155,9 +174,9 @@ body {
     align-items: center;
     margin-left: 8px;
     padding: 5px;
-    max-width: 100px;
+    max-width: 95px;
     max-height: 180px;
-    background-color: #97ebd1;
+    background-color: #97ebd1c0;
     border-radius: 0 8px 0 0px;
     font-size: 12px;
     transition: 450ms;
@@ -185,6 +204,85 @@ body {
     margin: 2px;
 }
 
+
+.texto-actividad {
+    text-align: center;
+    margin: auto;
+    padding: 4px;
+    
+}
+#nombreActividad {
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    font-size: 24px;
+}
+.h3 {
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+}
+
+.seccion-texto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.descripcion-actividad {
+    border-top: 3px grey solid;
+    overflow: hidden;
+    width: 90%;
+    margin-left: 10px;
+}
+
+.leermas button {
+    display: none;
+}
+/* Banner promocional */
+
+.banner-promocional {
+    background-color: black;
+    min-height: 200px;
+    color: whitesmoke;
+    border: 10px #006e7f solid;
+}
+
+.texto-banner p {
+    color: whitesmoke;
+}
+
+@keyframes aumentar {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.animacion-regalo {
+    padding: 20px;
+    width: 32px;
+}
+
+.animacion-regalo, .descuento {
+    animation: aumentar 2s infinite alternate;
+}
+
+.texto-banner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.banner-promocional img {
+    display: none;
+}
+
+
+
 /*FOOTER*/
 
 .footer {
@@ -195,33 +293,113 @@ body {
 
 
 
-@media (min-width: 763px) {
-.header{
-    width: 100vw;
-   }
+@media (min-width: 669px) {
+
 .mainheader-topbar .buscador {
-    width: 40%;
-}
-.main {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100vw;
-    gap: 20px
-}
-.imagen{
-    display: flex;
-    flex-wrap: wrap;
-    gap:20px;
-}
-.descripcion{
     width: 50%;
-    align-self: center;
 }
-.body{
-    margin-top: 280px;
+.formatoTablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+.busquedasRelacionadasH6{
+    margin-top: 20px;
+}
+.busquedasRelacionadas {
+    justify-content: center;
 
 }
 
+/* Banner promocional */
+
+.texto-banner {
+    width: 70%;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.banner-promocional {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.banner-promocional img {
+    display: block;
+    height: 200px;
+
+}
+
+.descuento {
+    font-size: 40px;
+}
+
+.texto-banner h3 {
+    font-size: 30px;
+}
+
+.texto-banner p {
+    font-size: 20px;
+}
+
+/* FOOTER */
+
+ footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 10px;
+    padding-left: 50px;
+}
+
+.footer-columna1 {
+    width: 180px;
+}
+
+.footer-columna2 {
+    width: 180px;
+}
+
+.footer-columna4 {
+    width: 180px;
+}
+
+.footer-columna3 {
+    align-self: left;
+    width: 100%;
+}
+
+.foto {
+    height: 70%;
+}
+
+.nav-filtros select {
+    width: 20%;
+}
+
+
+main {
+margin-bottom: 60px;
+}
+
+.actividad-ejemplo .descripcion-actividad {
+border-top: 0px;
+}
+
+.leermas {
+display: none;
+}
 
 }
 @media (min-width: 1200px) {
@@ -255,7 +433,7 @@ body {
         gap: 10px;
     }
     .busquedasRelacionadasH6 {
-        margin-top: 20px;
+        margin: 20px 0px;
         font-size: 20px;
     }
     .clase-relacionada {
@@ -276,5 +454,38 @@ body {
         margin-left: 25px;
         margin-top: 0px;
     }
+    .formatoTablet {
+        width: 100%;
+        justify-content: center;
+        padding-top: 50px;
+        gap: 200px;
+    }
+    .img-producto{
+        justify-content: flex-start;
+    }
+
+    /* Banner promocional */
+
+.texto-banner {
+    width: 70%;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+
+.descuento {
+    font-size: 40px;
+    margin-left: 100px;
+}
+
+
+.texto-banner p {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
 
     }
