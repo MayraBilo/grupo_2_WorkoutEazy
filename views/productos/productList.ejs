@@ -46,18 +46,18 @@
                         <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                 class="fa-solid fa-star"></i>
-                                <span class="checkmark"></span>
+                            <span class="checkmark"></span>
                         </div>
                         <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                 class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                <span class="checkmark"></span>
+                            <span class="checkmark"></span>
                         </div>
                         <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                 class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                 class="fa-solid fa-star"></i>
-                                <span class="checkmark"></span>
+                            <span class="checkmark"></span>
                         </div>
                     </div>
 
@@ -91,92 +91,61 @@
                         </div>
 
                         <div class="actividades-container">
+                            <% products.forEach(product=> { %>
+                                <article class="actividad-ejemplo">
 
-                            <article class="actividad-ejemplo">
-
-                                <div class="foto">
-                                    <div class="etiqueta-actividad">
-                                        <p>Fitness</p>
-                                    </div>
-                                    <img src="/images2/boxeo1.jpg" alt="claseFitness">
-                                </div>
-
-                                <div clas="info">
-                                    <h3 class="texto-actividad">Boxeo fit</h3>
-                                    <p class="texto-actividad">Hernán González</p>
-                                    <p class="texto-actividad">Dificultad</p>
-                                    <div class="texto-actividad"><i class="fa-solid fa-star"></i><i
-                                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                            class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></div>
-
-                                    <div class="seccion-texto">
-                                        <p class="texto-actividad">Disponibilidad</p>
-                                        <h3>30</h3>
-                                    </div>
-                                    <div class="seccion-texto">
-                                        <p class="texto-actividad">Inscriptos</p>
-                                        <h3>4</h3>
-                                    </div>
-                                    <div class="seccion-texto">
-                                        <p class="texto-actividad">Valor</p>
-                                        <h3>$2.500</h3>
+                                    <div class="foto">
+                                        <div class="etiqueta-actividad">
+                                            <p>
+                                                <%= product.categoría %>
+                                            </p>
+                                        </div>
+                                        <img src="/images2/<%= product.img %>" alt="<%= product.subcategoría %>">
                                     </div>
 
-                                    <div class="descripcion-actividad">
-                                        <p>Descripción:</p>
-                                        <p>Vení con todas las pilas a una clase que desafía tanto tu mente como tu
-                                            resistencia física.</p>
-                                    </div>
-                                    <div class="leermas">
-                                        <button>
-                                            <p>Leer más</p>
-                                        </button>
-                                    </div>
-                                </div>
+                                    <div clas="info">
+                                        <h3 class="texto-actividad">
+                                            <%= product.nombreActividad %>
+                                        </h3>
+                                        <p class="texto-actividad">
+                                            <%= product.nombreAliado %>
+                                        </p>
+                                        <p class="texto-actividad">Dificultad</p>
+                                        <div class="texto-actividad">
+                                            <p class="texto-actividad">
+                                                <%= product.dificultad %>
+                                            </p>
+                                            <!-- <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                                class="fa-regular fa-star"></i> -->
+                                        </div>
 
-                            </article>
+                                        <div class="seccion-texto">
+                                            <p class="texto-actividad">Disponibilidad</p>
+                                            <h3><%= product.cupos %></h3>
+                                        </div>
+                                        <div class="seccion-texto">
+                                            <p class="texto-actividad">Inscriptos</p>
+                                            <h3>4</h3>
+                                        </div>
+                                        <div class="seccion-texto">
+                                            <p class="texto-actividad">Valor</p>
+                                            <h3><%= product.valor %></h3>
+                                        </div>
 
-                            <article class="actividad-ejemplo">
-
-                                <div class="foto">
-                                    <div class="etiqueta-actividad">
-                                        <p>Fitness</p>
-                                    </div>
-                                    <img src="/images2/entrenador-gym.jpg" alt="claseFitness">
-                                </div>
-
-                                <div class="info">
-                                    <h3 class="texto-actividad">Pesas</h3>
-                                    <p class="texto-actividad">Francisco Carusso</p>
-                                    <p class="texto-actividad">Dificultad</p>
-                                    <div class="texto-actividad"><i class="fa-solid fa-star"></i><i
-                                            class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
-                                            class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></div>
-
-                                    <div class="seccion-texto">
-                                        <p class="texto-actividad">Disponibilidad</p>
-                                        <h3>30</h3>
-                                    </div>
-                                    <div class="seccion-texto">
-                                        <p class="texto-actividad">Inscriptos</p>
-                                        <h3>4</h3>
-                                    </div>
-                                    <div class="seccion-texto">
-                                        <p class="texto-actividad">Valor</p>
-                                        <h3>$2.500</h3>
+                                        <div class="descripcion-actividad">
+                                            <p>Descripción:</p>
+                                            <p><%= product.descripción %></p>
+                                        </div>
+                                        <div class="leermas">
+                                            <button>
+                                                <p>Leer más</p>
+                                            </button>
+                                        </div>
                                     </div>
 
-                                    <div class="descripcion-actividad">
-                                        <p>Descripción:</p>
-                                        <p>Entrená con pesas y máquinas. Armá una rutina sostenible.</p>
-                                    </div>
-                                    <div class="leermas">
-                                        <button>
-                                            <p>Leer más</p>
-                                        </button>
-                                    </div>
-                                </div>
-                            </article>
+                                </article>
+                                <% }) %>
 
                         </div>
 
