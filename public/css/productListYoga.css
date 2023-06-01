@@ -83,7 +83,8 @@ select:focus {
     border: 2px #e8e8e8 solid;
     border-radius: 14px;
     margin: 5px;
-    width: 100px;
+    width: 150px;
+    text-align: center;
 }
 
 /* Side-bar */
@@ -147,6 +148,10 @@ select:focus {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.info h3 {
+    font-family: "Bebas Neue";
+}
+
 /* Foto */
 
 .foto {
@@ -199,10 +204,6 @@ select:focus {
     overflow: hidden;
     width: 90%;
     min-height: 150px;
-}
-
-.info h3 {
-    font-family: "Bebas";
 }
 
 .leermas button {

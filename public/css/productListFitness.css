@@ -83,7 +83,8 @@ select:focus {
     border: 2px #e8e8e8 solid;
     border-radius: 14px;
     margin: 5px;
-    width: 100px;
+    width: 150px;
+    text-align: center;
 }
 
 /* Side-bar */

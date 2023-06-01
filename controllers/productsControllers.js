@@ -9,10 +9,8 @@ const controller = {
     getList: (req, res) => res.render("productList"),
     getListYoga: (req, res) => res.render("productListYoga"),
     getListFitness: (req, res) => res.render("productListFitness"),
-    getListMontana: (req, res) => res.render("productListMontana"),
-    getListBaile: (req, res) => res.render("productListBaile"),
-    getListFootball: (req, res) => res.render("productListFootball"),
-    getListTennis: (req, res) => res.render("productListTennis"),
+    getListDeportes: (req, res) => res.render("productListDeportes"),
+    getListDanzas: (req, res) => res.render("productListDanzas"),
 };
 
 module.exports = controller;

@@ -84,6 +84,7 @@ select:focus {
     border-radius: 14px;
     margin: 5px;
     width: 150px;
+    text-align: center;
 }
 
 /* Side-bar */
