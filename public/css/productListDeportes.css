@@ -82,8 +82,10 @@ select:focus {
     border: 2px #e8e8e8 solid;
     border-radius: 14px;
     margin: 5px;
+    text-align: center;
     width: 150px;
 }
+
 
 /* Side-bar */
 
@@ -125,9 +127,9 @@ select:focus {
     justify-content: space-between;
 }
 
-.sidebar-desplegables {
+/*.sidebar-desplegables {
     display: none;
-}
+}*/
 
 /* Actividades */
 
@@ -144,6 +146,10 @@ select:focus {
 .actividad-ejemplo:hover {
     background-color: rgba(0, 132, 189, 30%);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.info h3 {
+    font-family: "Bebas Neue";
 }
 
 /* Foto */
