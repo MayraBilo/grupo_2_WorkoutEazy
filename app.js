@@ -1,6 +1,7 @@
 /* const { log } = require("console"); */
 const express = require("express");
 const path = require("path");
+const methodOverride = require('method-override');
 
 const mainRoutes = require('./routes/mainRoutes');
 const productsRoutes = require('./routes/productsRoutes');
@@ -16,12 +17,15 @@ app.set("view engine", "ejs");
         path.join(__dirname, "./views/productos"),
         path.join(__dirname, "./views/user"),
     ]);
+// --- Middlewares ---
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(methodOverride('_method'));
 
+//----routes----//
 app.use(mainRoutes);
-
-app.use(productsRoutes);
-
+app.use('/product',productsRoutes);
 app.use(userRoutes);
-
 
 app.listen(3000, () => console.log("Servidor escuchando en el puerto http://localhost:3000/"));

@@ -39,6 +39,14 @@ const controller = {
 
         res.redirect('/products');
     },
+    updateProduct: (req, res) => {
+        const id = Number(req.params.id);
+        const nuevosDatos = req.body;
+
+        productModel.updateById(id, nuevosDatos);
+
+        res.redirect('/products');
+    },
     getCart: (req, res) => {
         let products = productModel.findAll()
         res.render("productCart", {
@@ -62,6 +70,17 @@ const controller = {
     getListDanzas: (req, res) => {
         res.render("productListDanzas")
     },
+    postProduct: (req, res) => {
+        let datos = req.body;
+
+        datos.price = Number(datos.price);
+       
+        datos.imgs = req.files.map(file => '/images/products' + file.filename);
+
+        productModel.createOne(datos);
+
+        res.redirect('/products');
+    }
 };
 
 module.exports = controller;
