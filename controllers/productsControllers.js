@@ -1,31 +1,67 @@
 const path = require("path");
-const fs = require("fs")
-const productFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productFilePath, "utf-8"));
+const productModel = require('../models/product');
 
 const controller = {
     getList: (req, res) => {
+        const productos = productModel.findAll();
         res.render("productList", {
-            products: products,
-        })},
+            products: productos,
+        })
+    },
+    getEdit: (req, res) => {
+        const id = Number(req.params.id);
+
+        const productoAModificar = productModel.findById(id)
+
+        if (!productoAModificar) {
+            return res.send('error de id');
+        }
+
+        res.render("editeProduct", {
+            products: productoAModificar
+        });
+    },
     getDetail: (req, res) => {
-        res.render("productDetail")},
+        const id = Number(req.params.id);
+
+        const productoAMostrar = productModel.findById(id);
+
+        if (!productoAMostrar) {
+            return res.send('error de id');
+        }
+
+        res.render("productDetail", {products: productoAMostrar })
+    },
+    deleteProduct: (req, res) => {
+        const id = Number(req.params.id);
+
+        productModel.deleteById(id);
+
+        res.redirect('/products');
+    },
     getCart: (req, res) => {
-        res.render("productCart")},
+        let products = productModel.findAll()
+        res.render("productCart", {
+            products: products})
+    },
     getCreate: (req, res) => {
-        res.render("createProduct")},
-    getEdite: (req, res) => {
-        res.render("editeProduct")},
+        res.render("createProduct")
+    },
     getService: (req, res) => {
-        res.render("profileServices")},
+        res.render("profileServices")
+    },
     getListYoga: (req, res) => {
-        res.render("productListYoga")},
+        res.render("productListYoga")
+    },
     getListFitness: (req, res) => {
-        res.render("productListFitness")},
+        res.render("productListFitness")
+    },
     getListDeportes: (req, res) => {
-        res.render("productListDeportes")},
+        res.render("productListDeportes")
+    },
     getListDanzas: (req, res) => {
-        res.render("productListDanzas")},
+        res.render("productListDanzas")
+    },
 };
 
 module.exports = controller;
