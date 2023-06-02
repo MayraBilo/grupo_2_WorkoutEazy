@@ -195,7 +195,6 @@
     "presencial": true,
     "virtual": false
   },
-
   {
     "id": 12,
     "categoria": "deportes",
@@ -264,5 +263,93 @@
     "horarios": "Martes y Jueves de 18 a 20hs y sábados de 9 a 11hs",
     "presencial": true,
     "virtual": false
-  }
+  },
+  {
+    "id": 16,
+    "categoria": "Danzas",
+    "subcategoria": "Clásico",
+    "img": "/images/editworkouteasy2-b.png",
+    "nombreActividad": "Clásico",
+    "nombreAliado": "Jorge Subizo",
+    "dificultad": "Fácil",
+    "edadesAlumnos": "Jovenes y Adultos",
+    "valor": 3000,
+    "cupos": 30,
+    "descripcion": "Aprender danza clásica te brindara beneficios tanto físicos como mentales...y será divertido.",
+    "direccion": "Av. Olivos 4109, B1667 KQU, Tortuguitas, Pcia. de Buenos Aires",
+    "horarios": "lunes a viernes 13:00pm a 20:00pm",
+    "presencial": "true",
+    "virtual": "false"
+},
+
+{
+    "id": 17,
+    "categoria": "Danzas",
+    "subcategoria": "Urbano",
+    "img": "/images/editworkouteasy2-b.png",
+    "nombreActividad": "Urbano",
+    "nombreAliado": "Javier Malvina",
+    "dificultad": "Avanzado",
+    "edadesAlumnos": "Jovenes y Adultos",
+    "valor": 4500,
+    "cupos": 50,
+    "descripcion": "Si te interesa aprender a bailar y disfrutas la música de moda, prueba una de nuestras clases y no dudaras en seguir concurriendo.",
+    "direccion": "FLORIDA, 15 Ciudad Autónoma de Buenos Aires",
+    "horarios": "lunes a viernes 15:00pm a 19:00pm",
+    "presencial": "true",
+    "virtual": "false"
+},
+
+{
+    "id": 18,
+    "categoria": "Danzas",
+    "subcategoria": "Salsa",
+    "img": "/images/editworkouteasy2-b.png",
+    "nombreActividad": "Salsa",
+    "nombreAliado": "Romeo Bravo",
+    "dificultad": "Principiante",
+    "edadesAlumnos": "Jovenes y Adultos",
+    "valor": 3000,
+    "cupos": 25,
+    "descripcion": "La mejor opción a la hora de iniciar en el mundo de la danza es la famosa salsa, y podemos ayudarte con eso...",
+    "direccion": "Darregueyra 2387, Buenos Aires, Argentina",
+    "horarios": "Lunes a Sabado 7:00am a 13:00 pm",
+    "presencial": "true",
+    "virtual": "false"
+},
+
+{
+    "id": 19,
+    "categoria": "Danzas",
+    "subcategoria": "Tango",
+    "img": "/images/editworkouteasy2-b.png",
+    "nombreActividad": "Tango",
+    "nombreAliado": "Academia Somos El Baile",
+    "dificultad": "Principiante",
+    "edadesAlumnos": "Adultos",
+    "valor": 3500,
+    "cupos": 50,
+    "descripcion": "Si hay algo que un buen ciudadano Argentino debe saber, es bailar Tango, inscríbete y dejanos ayudarte.",
+    "direccion": " Pinto, APZ, Buenos Aires, Argentina",
+    "horarios": "Lunes a viernes: 13:00 a 20:00, Sábados: 09:00 a 12:00",
+    "presencial": "true",
+    "virtual": "false"
+},
+{
+    "id": 20,
+    "categoria": "Danzas",
+    "subcategoria": "Cuarteto",
+    "img": "/images/editworkouteasy2-b.png" ,
+    "nombreActividad": "Cuarteto",
+    "nombreAliado": "Franco Berdini",
+    "dificultad": "Fácil",
+    "edadesAlumnos": "Jovenes y Adultos",
+    "valor": 4200,
+    "cupos": 60,
+    "descripcion": "Te sentis de madera a la hora de bailar?, tal vez logremos flexibilizarte un poco...",
+    "direccion": " AV. ALVAREZ THOMAS 28, Buenos Aires, Argentina",
+    "horarios": "Lunes a Viernes de 14 hs. 21 hs.",
+    "presencial": "true",
+    "virtual": "false"
+}
 ]
