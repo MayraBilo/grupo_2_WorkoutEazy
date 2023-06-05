@@ -83,7 +83,12 @@
 
                     <section class="fitness">
 
-                       
+                        <div class="titulo-fitness">
+                            <h3>FITNESS</h3>
+                            <button>
+                                <p>ver todo</p>
+                            </button>
+                        </div> 
 
                         <div class="actividades-container">
                             <% products.forEach(product=> { %>
@@ -95,7 +100,7 @@
                                                 <%= product.categoría %>
                                             </p>
                                         </div>
-                                        <img src="/images/productos/<%= product.img %>" alt="<%= product.subcategoría %>">
+                                        <img src="/images/<%= product.img %>" alt="<%= product.subcategoría %>">
                                     </div>
 
                                     <div clas="info">
@@ -146,11 +151,6 @@
 
                     </section>
 
-                    <section class="yoga">
-
-
-
-                    </section>
 
                     
 
