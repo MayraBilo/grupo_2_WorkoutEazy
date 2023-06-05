@@ -13,7 +13,7 @@ main {
 .titulo-general {
     text-align: center;
     padding: 20px 5px;
-    background-image: url('/images/banner-baile.jpg');
+    background-image: url('/images/diseno/banner-baile.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,7 +57,7 @@ main {
     text-align: left;
     appearance: none;
     background: none;
-    background-image: url('/images/caret-down-solid.svg');
+    background-image: url('/images/diseno/caret-down-solid.svg');
     background-position: right center;
     background-repeat: no-repeat;
     padding-right: 20px;
