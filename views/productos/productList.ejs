@@ -88,7 +88,7 @@
                             <button>
                                 <p>ver todo</p>
                             </button>
-                        </div> 
+                        </div>
 
                         <div class="actividades-container">
                             <% products.forEach(product=> { %>
@@ -97,10 +97,10 @@
                                     <div class="foto">
                                         <div class="etiqueta-actividad">
                                             <p>
-                                                <%= product.categoría %>
+                                                <%= product.categoria %>
                                             </p>
                                         </div>
-                                        <img src="/images/<%= product.img %>" alt="<%= product.subcategoría %>">
+                                        <img src="/images2/<%= product.img %>" alt="<%= product.subcategoría %>">
                                     </div>
 
                                     <div clas="info">
@@ -122,7 +122,9 @@
 
                                         <div class="seccion-texto">
                                             <p class="texto-actividad">Disponibilidad</p>
-                                            <h3><%= product.cupos %></h3>
+                                            <h3>
+                                                <%= product.cupos %>
+                                            </h3>
                                         </div>
                                         <div class="seccion-texto">
                                             <p class="texto-actividad">Inscriptos</p>
@@ -130,12 +132,16 @@
                                         </div>
                                         <div class="seccion-texto">
                                             <p class="texto-actividad">Valor</p>
-                                            <h3><%= product.valor %></h3>
+                                            <h3>
+                                                <%= product.valor %>
+                                            </h3>
                                         </div>
 
                                         <div class="descripcion-actividad">
                                             <p>Descripción:</p>
-                                            <p><%= product.descripción %></p>
+                                            <p>
+                                                <%= product.descripción %>
+                                            </p>
                                         </div>
                                         <div class="leermas">
                                             <button>
@@ -151,9 +157,7 @@
 
                     </section>
 
-
-                    
-
+                
                 </section>
 
             </div>
