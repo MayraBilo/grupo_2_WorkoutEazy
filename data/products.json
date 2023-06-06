@@ -182,7 +182,7 @@
     "id": 11,
     "categoria": "deportes",
     "subcategoria": "futbol",
-    "img": "./public/img/lalala",
+    "img": "/productos/futbol_femenino.jpg",
     "nombreActividad": "Fútbol femenino",
     "nombreAliado": "Club Deportivo Ballester",
     "dificultad": "fácil, intermedio",
@@ -199,7 +199,7 @@
     "id": 12,
     "categoria": "deportes",
     "subcategoria": "Gimnasia Artística",
-    "img": "./public/img/lalala",
+    "img": "/productos/gimnasia.jpg",
     "nombreActividad": "Gimnasia Artística infantil",
     "nombreAliado": "Centro para las olimpiadas San Andrés",
     "dificultad": "fácil",
@@ -217,7 +217,7 @@
     "id": 13,
     "categoria": "deportes",
     "subcategoria": "Voley",
-    "img": "./public/img/lalala",
+    "img": "/productos/voley.jpg",
     "nombreActividad": "Voley para Adolescentes",
     "nombreAliado": "Asociación de Fomento la red",
     "dificultad": "intermedios",
@@ -234,7 +234,7 @@
     "id": 14,
     "categoria": "deportes",
     "subcategoria": "Natación",
-    "img": "./public/img/lalala",
+    "img": "/productos/practicas_acuaticas.jpg",
     "nombreActividad": "Natación y prácticas acuáticas",
     "nombreAliado": "Natatorio Los delfines",
     "dificultad": "fácil, intermedio y avanzados",
@@ -251,7 +251,7 @@
     "id": 15,
     "categoria": "deportes",
     "subcategoría": "Básquet",
-    "img": "./public/img/lalala",
+    "img": "/productos/basquet_silla.jpg",
     "nombreActividad": "Básquet adaptado",
     "nombreAliado": "Club La Identidad Beccar",
     "dificultad": "fácil, intermedio, avanzados",
@@ -280,9 +280,9 @@
     "horarios": "lunes a viernes 13:00pm a 20:00pm",
     "presencial": "true",
     "virtual": "false"
-},
+  },
 
-{
+  {
     "id": 17,
     "categoria": "Danzas",
     "subcategoria": "Urbano",
@@ -298,9 +298,9 @@
     "horarios": "lunes a viernes 15:00pm a 19:00pm",
     "presencial": "true",
     "virtual": "false"
-},
+  },
 
-{
+  {
     "id": 18,
     "categoria": "Danzas",
     "subcategoria": "Salsa",
@@ -316,9 +316,9 @@
     "horarios": "Lunes a Sabado 7:00am a 13:00 pm",
     "presencial": "true",
     "virtual": "false"
-},
+  },
 
-{
+  {
     "id": 19,
     "categoria": "Danzas",
     "subcategoria": "Tango",
@@ -334,12 +334,12 @@
     "horarios": "Lunes a viernes: 13:00 a 20:00, Sábados: 09:00 a 12:00",
     "presencial": "true",
     "virtual": "false"
-},
-{
+  },
+  {
     "id": 20,
     "categoria": "Danzas",
     "subcategoria": "Cuarteto",
-    "img": "/images/editworkouteasy2-b.png" ,
+    "img": "/images/editworkouteasy2-b.png",
     "nombreActividad": "Cuarteto",
     "nombreAliado": "Franco Berdini",
     "dificultad": "Fácil",
@@ -351,5 +351,5 @@
     "horarios": "Lunes a Viernes de 14 hs. 21 hs.",
     "presencial": "true",
     "virtual": "false"
-}
+  }
 ]
