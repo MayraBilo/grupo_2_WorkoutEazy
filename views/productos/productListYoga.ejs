@@ -116,22 +116,31 @@
 
                 <div class="actividades-contenedor">
 
+                    <% products.forEach(product=> { %>
+
                     <article class="actividad-ejemplo">
 
                         <div class="foto">
                             <div class="etiqueta-actividad">
-                                <p>Yoga</p>
+                                <p><%= product.categoria %></p>
                             </div>
-                            <img src="/images/productos/yoga3.jpg" alt="claseYoga">
+                            <img src="/images/<%= product.img %>" alt="<%= product.subcategoria %>">
                         </div>
 
                         <div class="info">
-                        <h3 class="texto-actividad">Yoga flex</h3>
-                        <p class="texto-actividad">Jacinta Mayol</p>
+                            <h3 class="texto-actividad bebas">
+                                <%= product.nombreActividad %>
+                            </h3>
+                        <p class="texto-actividad"><%= product.nombreAliado %></p>
                         <p class="texto-actividad">Dificultad</p>
-                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        <div class="texto-actividad">
+                            <p class="texto-actividad">
+                            <%= product.dificultad %>
+                            </p>
+                            <!---<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                 class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
-                                class="fa-regular fa-star"></i></div>
+                                class="fa-regular fa-star"></i>--->
+                        </div>
 
                         <div class="seccion-texto">
                             <p class="texto-actividad">Disponibilidad</p>
@@ -139,17 +148,16 @@
                         </div>
                         <div class="seccion-texto">
                             <p class="texto-actividad">Inscriptos</p>
-                            <h3>20</h3>
+                            <h3><%= product.cupos %></h3>
                         </div>
                         <div class="seccion-texto">
                             <p class="texto-actividad">Valor</p>
-                            <h3>$8.500</h3>
+                            <h3><%= product.valor %></h3>
                         </div>
 
                         <div class="descripcion-actividad">
                             <p>Descripción:</p>
-                            <p>Creá tu propia rutina de Yoga que se adapte a tu cuerpo y modo de vida. Ideal para
-                                practicar en viajes o en tu día para cortar.</p>
+                            <p><%= product.descripcion %></p>
                         </div>
                         <div class="leermas">
                             <button>
@@ -159,7 +167,7 @@
                         </div>
 
                     </article>
-
+                    <!----
                     <article class="actividad-ejemplo">
 
                         <div class="foto">
@@ -288,8 +296,8 @@
                         </div>
 
                     </article>
-
-
+                    ---->
+                    <% }) %>
                 </div>
 
             </section>
