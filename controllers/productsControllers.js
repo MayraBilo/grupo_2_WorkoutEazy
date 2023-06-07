@@ -32,6 +32,7 @@ const controller = {
 
         res.render("productDetail", {products: productoAMostrar })
     },
+    
     deleteProduct: (req, res) => {
         const id = Number(req.params.id);
 
