@@ -111,6 +111,8 @@
 
                 <div class="actividades-contenedor">
 
+                    <% products.forEach(product=> { %>
+
                     <article class="actividad-ejemplo">
 
                         <div class="foto">
@@ -158,18 +160,25 @@
 
                         <div class="foto">
                             <div class="etiqueta-actividad">
-                                <p>Deportes</p>
+                                <p><p><%= product.categoria %></p></p>
                             </div>
-                            <img src="/images/productos/trekking1.jpg" alt="clasetrekking">
+                            <img src="/images/<%= product.img %>" alt="<%= product.subcategoria %>">
                         </div>
 
                         <div class="info">
-                        <h3 class="texto-actividad">Salidas de montaña</h3>
-                        <p class="texto-actividad">Mayra Bilo</p>
+                            <h3 class="texto-actividad bebas">
+                                <%= product.nombreActividad %>
+                            </h3>
+                        <p class="texto-actividad"><%= product.nombreAliado %></p>
                         <p class="texto-actividad">Dificultad</p>
-                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                        <div class="texto-actividad">
+                            <p class="texto-actividad">
+                                <%= product.dificultad %>
+                                </p>
+                                <!---<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                 class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></i><i
-                                class="fa-regular fa-star"></i></div>
+                                class="fa-regular fa-star"></i>--->
+                        </div>
 
                         <div class="seccion-texto">
                             <p class="texto-actividad">Disponibilidad</p>
@@ -181,12 +190,12 @@
                         </div>
                         <div class="seccion-texto">
                             <p class="texto-actividad">Valor</p>
-                            <h3>$6.500</h3>
+                            <h3><%= product.valor %></h3>
                         </div>
 
                         <div class="descripcion-actividad">
                             <p>Descripción:</p>
-                            <p>Entrenate en plena naturaleza. Formá un grupo y disfrutá de salidas todos los fines de semana.</p>
+                            <p><%= product.descripcion %></p>
                         </div>
                         <div class="leermas">
                             <button>
@@ -195,7 +204,7 @@
                         </div>
                         </div>
                     </article>
-
+                    <!------
                     <article class="actividad-ejemplo">
 
                         <div class="foto">
@@ -494,6 +503,8 @@
                         </div>
                         </div>
                     </article>
+                    ---->
+                    <% }) %>
 
                 </div>
 

@@ -105,6 +105,11 @@ select:focus {
     position: relative;
 }
 
+.foto img {
+    max-width: 180px;
+}
+
+
 .etiqueta-actividad {
     background-color: white;
     width: 60%;
@@ -119,9 +124,9 @@ select:focus {
     margin: auto;
 }
 
-.actividad-ejemplo img {
+/*.actividad-ejemplo img {
     width: 100%;
-}
+}*/
 
 .texto-actividad {
     text-align: center;
@@ -157,10 +162,13 @@ select:focus {
     margin: auto;
 }
 
-.yoga,
-.montañismo,
+
 .fitness {
     margin-bottom: 80px;
+}
+
+.bebas {
+    font-family: 'Bebas Neue';
 }
 
 

@@ -206,9 +206,27 @@ select:focus {
     min-height: 150px;
 }
 
-.leermas button {
-    display: none;
+.descripcion-actividad {
+    border-top: 3px grey solid;
+    overflow: hidden;
+    height: 100px;
 }
+
+.leermas button {
+    background: none;
+    border: none;
+    width: 80px;
+    font-size: 16px;
+    text-decoration: underline;
+    padding: 0px;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.leermas p {
+    margin: auto;
+}
+
 
 @media (min-width: 669px) {
 

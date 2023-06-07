@@ -58,18 +58,35 @@ const controller = {
     getService: (req, res) => {
         res.render("profileServices")
     },
+
     getListYoga: (req, res) => {
-        res.render("productListYoga")
+        const productos = productModel.findAll();
+        res.render("productListYoga", {
+            products: productos,
+        })
     },
+
     getListFitness: (req, res) => {
-        res.render("productListFitness")
+        const productos = productModel.findAll();
+        res.render("productListFitness", {
+            products: productos,
+        })
     },
+
     getListDeportes: (req, res) => {
-        res.render("productListDeportes")
+        const productos = productModel.findAll();
+        res.render("productListDeportes", {
+            products: productos,
+        })
     },
+
     getListDanzas: (req, res) => {
-        res.render("productListDanzas")
+        const productos = productModel.findAll();
+        res.render("productListDanzas", {
+            products: productos,
+        })
     },
+
     postProduct: (req, res) => {
         let datos = req.body;
 

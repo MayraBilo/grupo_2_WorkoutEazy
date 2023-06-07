@@ -27,7 +27,6 @@ router.post('/', upload.any('img'), productController.postProduct);
 // @GET /products/create
 router.get('/createProduct', productController.getCreate);
 
-
 // @DELETE /products/:id/delete ---> /products/5/delete
 router.delete('/:id/delete', productController.deleteProduct);
 
