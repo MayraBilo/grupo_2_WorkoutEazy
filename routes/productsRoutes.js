@@ -21,11 +21,10 @@ router.get('/product/', productController.getList);
 // @GET /products/:id/detail ---> /products/5/detail
 router.get('/:id/productDetail', productController.getDetail);
 
-// @POST /products
-router.post('/', upload.any('img'), productController.postProduct);
 
 // @GET /products/create
 router.get('/createProduct', productController.getCreate);
+
 
 // @DELETE /products/:id/delete ---> /products/5/delete
 router.delete('/:id/delete', productController.deleteProduct);

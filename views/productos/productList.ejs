@@ -85,13 +85,14 @@
 
                         <div class="titulo-fitness">
                             <h3>FITNESS</h3>
-                            <button>
+                            <a href="/product/productListFitness"><button>
                                 <p>ver todo</p>
-                            </button>
+                            </button></a>
                         </div>
 
                         <div class="actividades-container">
                             <% products.forEach(product=> { %>
+                            <% if (product.categoria === "Fitness") { %>
                                 <article class="actividad-ejemplo">
 
                                     <div class="foto">
@@ -151,6 +152,7 @@
                                     </div>
 
                                 </article>
+                                <% } %>
                                 <% }) %>
 
                         </div>

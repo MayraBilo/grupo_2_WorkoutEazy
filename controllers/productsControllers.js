@@ -88,11 +88,12 @@ const controller = {
     },
 
     postProduct: (req, res) => {
+        
         let datos = req.body;
 
-        datos.price = Number(datos.price);
+        datos.valor = Number(datos.valor);
        
-        datos.imgs = req.files.map(file => '/images/products' + file.filename);
+        datos.img = req.files.map(file => '/images/productos' + file.filename);
 
         productModel.createOne(datos);
 
