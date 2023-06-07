@@ -190,7 +190,7 @@
   },
   {
     "id": 11,
-    "categoria": "deportes",
+    "categoria": "Deportes",
     "subcategoria": "futbol",
     "img": "/productos/futbol_femenino.jpg",
     "nombreActividad": "Fútbol femenino",
@@ -208,7 +208,7 @@
   },
   {
     "id": 12,
-    "categoria": "deportes",
+    "categoria": "Deportes",
     "subcategoria": "Gimnasia Artística",
     "img": "/productos/gimnasia.jpg",
     "nombreActividad": "Gimnasia Artística infantil",
@@ -227,7 +227,7 @@
 
   {
     "id": 13,
-    "categoria": "deportes",
+    "categoria": "Deportes",
     "subcategoria": "Voley",
     "img": "/productos/voley.jpg",
     "nombreActividad": "Voley para Adolescentes",
@@ -245,7 +245,7 @@
   },
   {
     "id": 14,
-    "categoria": "deportes",
+    "categoria": "Deportes",
     "subcategoria": "Natación",
     "img": "/productos/practicas_acuaticas.jpg",
     "nombreActividad": "Natación y prácticas acuáticas",
@@ -263,7 +263,7 @@
   },
   {
     "id": 15,
-    "categoria": "deportes",
+    "categoria": "Deportes",
     "subcategoría": "Básquet",
     "img": "/productos/basquet_silla.jpg",
     "nombreActividad": "Básquet adaptado",
@@ -371,5 +371,25 @@
     "horarios": "Lunes a Viernes de 14 hs. 21 hs.",
     "presencial": "true",
     "virtual": "false"
+  },
+
+  {
+    "id": 21,
+    "categoria": "Deportes",
+    "subcategoria": "Montaña",
+    "img": "/productos/escalada.JPG",
+    "nombreActividad": "Escalada en boulder",
+    "nombreAliado": "Club Andino Bariloche",
+    "dificultad": "avanzado",
+    "edadesAlumnos": ["Niños", "Adolescentes", "Jóvenes", "Adultos"],
+    "valor": 3500,
+    "descuento": 25,
+    "cupos": 20,
+    "descripcion": "Animate a incursionar en el maravilloso mundo de la escalada! Aprendemos la técnica desde 0 y proveemos de una palestra de entrenamiento para que vengas todas las semanas.",
+    "direccion": "José Hernandez 2121, Villa Ballester",
+    "horarios": "Lunes y miercoles de 17 a 18hs",
+    "presencial": true,
+    "virtual": false
   }
+
 ]
