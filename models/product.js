@@ -51,6 +51,7 @@ const model = {
         products[indice].valor = newData.valor;
         products[indice].cupos = newData.cupos;
         products[indice].descripcion = newData.descripcion;
+        products[indice].direccion = newData.direccion;
         products[indice].horarios = newData.horarios;
         products[indice].duracion = newData.duracion;
         products[indice].presencial = newData.presencial;

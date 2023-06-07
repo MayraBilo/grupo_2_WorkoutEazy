@@ -114,6 +114,7 @@
 
                 <div class="actividades-contenedor">
                     <% products.forEach(product=> { %>
+                    <% if (product.categoria === "Danzas") { %>
                     <article class="actividad-ejemplo">
 
                         <div class="foto">
@@ -291,6 +292,7 @@
                         </div>
                     </article>
                     --->
+                    <% } %>
                     <% }) %>
 
                 </div>
