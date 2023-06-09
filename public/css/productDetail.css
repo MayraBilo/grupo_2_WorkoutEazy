@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-*{
-    max-width: 98vw;
-}
+
+
 body {
     font-size: 16px;
     font-family: "Roboto";
 }
+
 .header {
     background-color: rgba(0, 161, 112, 0%);
     border: none;
@@ -14,22 +14,21 @@ body {
 
 .main {
     background-color: whitesmoke;
-    margin: 0 5px;
-    padding-bottom: 30px;
 }
 
-/*MAIN*/
+/* Banner */
+
 .titulo-general {
     text-align: center;
     padding: 20px 5px;
-    background-image: url('/images2/escaladabanner.JPG');
+    background-image: url('/images/diseno/banner-montana1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 50%;
     z-index: 7;
     position: relative;
-    height: 76px;
+    height: 130px;
 
 }
 
@@ -38,36 +37,48 @@ body {
     z-index: 9;
     width: 100vw;
 }
+
 .titulo-h1 {
     opacity: 100%;
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    font-size: 18px;
     text-align: center;
-    padding: 20px 5px;
+    padding: 40px 20px 5px 20px;
     position: absolute;
-    left: 40%;
+    left: 32%;
     top: 0px;
     z-index: 10;
     margin: auto;
 }
 
-.h4 {
-    padding: 0px;
-    margin:0px;
-}
-
+/* Producto */
 
 .img-producto {
     display: flex;
     flex-direction: column;
     width: 270px;
-    margin-left:0px;
-    margin-top: 20px;
+    margin-left: 0px;
     padding-left: 15px;
     border-radius: 0px 40px 0px 0px;
     position: relative;
 }
 
-.boton{
+.container-img-producto {
+    margin-bottom: 30px;
+}
+
+.container-product {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-bottom: 3px grey solid;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boton {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,13 +91,15 @@ body {
     left: 15px;
     z-index: 99;
 }
-    
+
 .reserva:hover {
-    background-color: #1af3bd;
+    background-color: rgba(0, 161, 112);
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: none;
 }
-.reserva{
+
+.reserva {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,72 +115,39 @@ body {
     box-sizing: border-box;
 }
 
-.etiqueta-actividad {
-    background-color: white;
-    width: 60%;
-    box-sizing: border-box;
-    position: relative;
-    top: 45px;
-    text-align: center;
-    padding-top: 5px;
-    z-index: 100;
-}
+/* Busquedas relacionadas */
 
-.etiqueta-actividad p {
-    height: 24px;
-    margin: auto;
-    font-family: 'Roboto', 'sans-serif';
-}
-
-.descripcionProducto {
+.busquedasRelacionadasH6 {
     display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    color: #0084bd;
+    justify-content: center;
+    margin: 10px 20px;
+    font-size: 20px;
 }
-.descripcionProducto h2 {
-    padding: 0;
-    padding-left: 15px;
-    color:#000000;
-    margin: 0px;
-    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
-}
-.descripcionProducto h5 {
-    padding-left: 15px;
-    color:#000000;
-    margin: 0px;
-    font-family: roboto;
-}
-.descripcionProducto p {
-    color:#000000;
-    font-family: roboto;
-    padding:10px;
-    text-align: justify;
-    max-width: 90vw;
-    box-sizing: border-box;
-    margin: 0px;
-}
-.busquedasRelacionadas{
+.container-busquedas {
     display: flex;
     flex-wrap: wrap;
-    font-family: roboto;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.busquedasRelacionadas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: "Roboto";
     margin-bottom: 15px;
 }
 
-.busquedasRelacionadas i{
+/* .busquedasRelacionadas i {
     position: relative;
     top: 70px;
     right: -5px;
     display: none;
-}
-.busquedasRelacionadasH6 {
-    display: flex;
-    color: #0084bd;
-    justify-content: flex-start;
-    margin: 5px 20px;
-}
+} */
+
 .clase-relacionada {
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -176,20 +156,24 @@ body {
     padding: 5px;
     max-width: 95px;
     max-height: 180px;
-    background-color: #97ebd1c0;
+    background-color: rgba(0, 161, 112, 30%);
     border-radius: 0 8px 0 0px;
     font-size: 12px;
     transition: 450ms;
+    overflow: hidden;
 }
+
 .clase-relacionada h5 {
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
     color: #0084bd;
     font-size: 15px;
     margin: 0;
 }
+
 .clase-relacionada p {
     text-align: center;
 }
+
 .clase-relacionada:hover {
     transform: scale(1.1);
 }
@@ -204,17 +188,24 @@ body {
     margin: 2px;
 }
 
+/* Texto actividad */
 
 .texto-actividad {
     text-align: center;
     margin: auto;
     padding: 4px;
-    
+
 }
+
+.texto-producto-container {
+    margin-bottom: 30px;
+}
+
 #nombreActividad {
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
     font-size: 24px;
 }
+
 .h3 {
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
 }
@@ -229,14 +220,10 @@ body {
 
 .descripcion-actividad {
     border-top: 3px grey solid;
-    overflow: hidden;
-    width: 90%;
     margin-left: 10px;
+    margin-right: 10px;
 }
 
-.leermas button {
-    display: none;
-}
 /* Banner promocional */
 
 .banner-promocional {
@@ -254,6 +241,7 @@ body {
     0% {
         transform: scale(1);
     }
+
     100% {
         transform: scale(1.5);
     }
@@ -264,7 +252,9 @@ body {
     width: 32px;
 }
 
-.animacion-regalo, .descuento {
+.animacion-regalo,
+
+.descuento {
     animation: aumentar 2s infinite alternate;
 }
 
@@ -281,8 +271,6 @@ body {
     display: none;
 }
 
-
-
 /*FOOTER*/
 
 .footer {
@@ -290,152 +278,174 @@ body {
     border-radius: 5% 5% 0 0;
 }
 
-
-
-
 @media (min-width: 669px) {
 
-.mainheader-topbar .buscador {
-    width: 50%;
-}
-.formatoTablet {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-align: space-between;
-    align-items: flex-end;
-    gap: 30px;
-}
-.busquedasRelacionadasH6{
-    margin-top: 20px;
-}
-.busquedasRelacionadas {
-    justify-content: center;
-
-}
-
-/* Banner promocional */
-
-.texto-banner {
-    width: 70%;
-    padding: 10px;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.banner-promocional {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-}
-
-.banner-promocional img {
-    display: block;
-    height: 200px;
-
-}
-
-.descuento {
-    font-size: 40px;
-}
-
-.texto-banner h3 {
-    font-size: 30px;
-}
-
-.texto-banner p {
-    font-size: 20px;
-}
-
-/* FOOTER */
-
- footer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 10px;
-    padding-left: 50px;
-}
-
-.footer-columna1 {
-    width: 180px;
-}
-
-.footer-columna2 {
-    width: 180px;
-}
-
-.footer-columna4 {
-    width: 180px;
-}
-
-.footer-columna3 {
-    align-self: left;
-    width: 100%;
-}
-
-.foto {
-    height: 70%;
-}
-
-.nav-filtros select {
-    width: 20%;
-}
-
-
-main {
-margin-bottom: 60px;
-}
-
-.actividad-ejemplo .descripcion-actividad {
-border-top: 0px;
-}
-
-.leermas {
-display: none;
-}
-
-}
-@media (min-width: 1200px) {
-    .header{
-        width: 100vw;
-       }
-    .main {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px
-
-    }
-    .imagen{
-        display: flex;
-        flex-wrap: wrap;
-        gap:20px;
-        
-    }
-    .descripcion{
-        display: flex;
+    .mainheader-topbar .buscador {
         width: 50%;
-        align-self: self-start;
     }
-    .body{
+
+    .titulo-h1 {
+        opacity: 100%;
+        font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+        font-size: 25px;
+        text-align: center;
+        padding: 30px 20px 5px 20px;
+        position: absolute;
+        left: 45%;
+        top: 0px;
+        z-index: 10;
+        margin: auto;
+    }
+
+    /* Actividades */
+
+    .container-product {
+        margin-bottom: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .texto-producto-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .descripcion-actividad {
+        max-width: 100%;
+    }
+
+    .container-img-producto {
+        margin-left: 30%;
+    }
+
+    /* Relacionadas */
+
+    .busquedasRelacionadasH6 {
+        margin-top: 20px;
+    }
+
+    .busquedasRelacionadas {
+        justify-content: center;
+
+    }
+
+    /* Banner promocional */
+
+    .texto-banner {
+        width: 70%;
+        padding: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .banner-promocional {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .banner-promocional img {
+        display: block;
+        height: 200px;
+
+    }
+
+    .descuento {
+        font-size: 40px;
+    }
+
+    .texto-banner h3 {
+        font-size: 30px;
+    }
+
+    .texto-banner p {
+        font-size: 20px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 10px;
+        padding-left: 50px;
+    }
+
+    .footer-columna1 {
+        width: 180px;
+    }
+
+    .footer-columna2 {
+        width: 180px;
+    }
+
+    .footer-columna4 {
+        width: 180px;
+    }
+
+    .footer-columna3 {
+        align-self: left;
+        width: 100%;
+    }
+
+    .foto {
+        height: 70%;
+    }
+
+    .nav-filtros select {
+        width: 20%;
+    }
+
+    main {
+        margin-bottom: 60px;
+    }
+
+    .actividad-ejemplo .descripcion-actividad {
+        border-top: 0px;
+    }
+
+    .leermas {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    
+    .header {
+        width: 100vw;
+    }
+
+    .imagen {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+    }
+
+    .body {
         margin-top: 200px;
     }
-    .busquedasRelacionadas{
+
+    .busquedasRelacionadas {
         justify-content: center;
         gap: 10px;
     }
+
     .busquedasRelacionadasH6 {
         margin: 20px 0px;
         font-size: 20px;
     }
+
     .clase-relacionada {
         display: flex;
         flex-wrap: wrap;
@@ -445,47 +455,40 @@ display: none;
         padding: 5px;
         max-width: 180px;
         max-height: 220px;
-        background-color: #97ebd1;
+        background-color: rgba(0, 161, 112, 30%);
         border-radius: 0 8px 0 0px;
         font-size: 12px;
         transition: 450ms;
     }
+
     .dificultad {
         margin-left: 25px;
         margin-top: 0px;
     }
-    .formatoTablet {
-        width: 100%;
-        justify-content: center;
-        padding-top: 50px;
-        gap: 200px;
-    }
-    .img-producto{
+
+    .img-producto {
         justify-content: flex-start;
     }
 
     /* Banner promocional */
 
-.texto-banner {
-    width: 70%;
-    padding: 10px;
-    flex-direction: row;
-    justify-content: center;
-    gap: 100px;
-}
-
-
-.descuento {
-    font-size: 40px;
-    margin-left: 100px;
-}
-
-
-.texto-banner p {
-    font-size: 20px;
-    margin-left: 10px;
-    margin-top: 0;
-}
-
-
+    .texto-banner {
+        width: 70%;
+        padding: 10px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
     }
+
+    .descuento {
+        font-size: 40px;
+        margin-left: 100px;
+    }
+
+    .texto-banner p {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 0;
+    }
+
+}
