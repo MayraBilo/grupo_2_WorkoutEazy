@@ -1,5 +1,6 @@
 const path = require("path");
 const productModel = require('../models/product');
+const multer = require("multer");
 
 const controller = {
     getList: (req, res) => {
@@ -32,13 +33,12 @@ const controller = {
 
         res.render("productDetail", {products: productoAMostrar })
     },
-    
     deleteProduct: (req, res) => {
         const id = Number(req.params.id);
 
         productModel.deleteById(id);
 
-        res.redirect('/products');
+        res.redirect('/product');
     },
     updateProduct: (req, res) => {
         const id = Number(req.params.id);
@@ -46,7 +46,7 @@ const controller = {
 
         productModel.updateById(id, nuevosDatos);
 
-        res.redirect('/products');
+        res.redirect('/product');
     },
     getCart: (req, res) => {
         let products = productModel.findAll()
@@ -92,14 +92,17 @@ const controller = {
         
         let datos = req.body;
 
+        datos.id = productModel.length + 1;
+
         datos.valor = Number(datos.valor);
        
         datos.img = req.files.map(file => '/images/productos' + file.filename);
 
-        productModel.createOne(datos);
+        productModel.createOne(datos); 
 
-        res.redirect('/products');
-    }
+        res.redirect('/product');
+    },
+
 };
 
 module.exports = controller;

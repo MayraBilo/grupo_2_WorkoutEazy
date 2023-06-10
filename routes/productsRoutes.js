@@ -7,7 +7,7 @@ const productController = require('../controllers/productsControllers');
 const router = express.Router();
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './public/imgs/products');
+        cb(null, './public/imgs/productos');
     },
     filename: (req, file, cb) => {
         console.log(path.extname(file.originalname))
@@ -15,26 +15,27 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage });
-//@GET / products
-router.get('/product/', productController.getList);
 
-// @GET /products/:id/detail ---> /products/5/detail
-router.get('/:id/productDetail', productController.getDetail);
+//@GET / product
+router.get('/', productController.getList);
 
+// @POST /product
+router.post('/', upload.any('img'), productController.postProduct);
 
-// @GET /products/create
+// @GET /product/create
 router.get('/createProduct', productController.getCreate);
 
-// @POST /products
-router.post('/product', upload.any('img'), productController.postProduct);
 
-// @DELETE /products/:id/delete ---> /products/5/delete
+// @GET /product/:id/detail ---> /products/5/detail
+router.get('/:id/productDetail', productController.getDetail);
+
+// @DELETE /product/:id/delete ---> /products/5/delete
 router.delete('/:id/delete', productController.deleteProduct);
 
-// @GET /products/:id/update 
+// @GET /product/:id/update 
 router.get('/:id/editeProduct', productController.getEdit);
 
-// @PUT /products/:id/update ---> /products/5/put
+// @PUT /product/:id/update ---> /products/5/put
 router.put('/:id/editeProduct', productController.updateProduct);
 
 router.get('/productCart', productController.getCart);
@@ -46,5 +47,5 @@ router.get('/productListFitness', productController.getListFitness);
 router.get('/productListDeportes', productController.getListDeportes);
 router.get('/productListDanzas', productController.getListDanzas);
 
-
+module.exports = router;
 

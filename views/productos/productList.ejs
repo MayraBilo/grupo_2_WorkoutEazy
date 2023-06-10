@@ -91,30 +91,30 @@
                         </div>
 
                         <div class="actividades-container">
-                            <% products.forEach(product=> { %>
-                            <% if (product.categoria === "Fitness") { %>
+                            <% products.forEach(products => { %>
+                    
                                 <article class="actividad-ejemplo">
 
                                     <div class="foto">
                                         <div class="etiqueta-actividad">
                                             <p>
-                                                <%= product.categoria %>
+                                                <%= products.categoria %>
                                             </p>
                                         </div>
-                                        <img src="/images/<%= product.img %>" alt="<%= product.subcategoria %>">
+                                        <img src="/images/<%= products.img %>" alt="<%= products.subcategoria %>">
                                     </div>
 
                                     <div clas="info">
                                         <h3 class="texto-actividad bebas">
-                                            <%= product.nombreActividad %>
+                                            <%= products.nombreActividad %>
                                         </h3>
                                         <p class="texto-actividad">
-                                            <%= product.nombreAliado %>
+                                            <%= products.nombreAliado %>
                                         </p>
                                         <p class="texto-actividad">Dificultad</p>
                                         <div class="texto-actividad">
                                             <p class="texto-actividad">
-                                                <%= product.dificultad %>
+                                                <%= products.dificultad %>
                                             </p>
                                             <!-- <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                                 class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
@@ -124,7 +124,7 @@
                                         <div class="seccion-texto">
                                             <p class="texto-actividad">Disponibilidad</p>
                                             <h3>
-                                                <%= product.cupos %>
+                                                <%= products.cupos %>
                                             </h3>
                                         </div>
                                         <div class="seccion-texto">
@@ -134,26 +134,25 @@
                                         <div class="seccion-texto">
                                             <p class="texto-actividad">Valor</p>
                                             <h3>
-                                                <%= product.valor %>
+                                                <%= products.valor %>
                                             </h3>
                                         </div>
 
                                         <div class="descripcion-actividad">
                                             <p>Descripción:</p>
                                             <p>
-                                                <%= product.descripcion %>
+                                                <%= products.descripcion %>
                                             </p>
                                         </div>
-                                        <div class="leermas">
-                                            <button>
-                                                <p>Leer más</p>
-                                            </button>
+                                        <div>
+                                            
+                                              <a href="/product/<%= products.id %>/productDetail"><button>Ver Detalle del producto</button></a>
                                         </div>
                                     </div>
 
                                 </article>
-                                <% } %>
                                 <% }) %>
+                            
 
                         </div>
 
