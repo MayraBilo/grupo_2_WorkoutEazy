@@ -101,6 +101,10 @@ const controller = {
         productModel.createOne(datos); 
 
         res.redirect('/product');
+        res.redirect('/productListDanzas')
+        res.redirect('/productListDeportes')
+        res.redirect('/productListFitness')
+        res.redirect('/productListYoga')
     },
 
 };
