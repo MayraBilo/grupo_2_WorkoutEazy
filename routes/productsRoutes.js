@@ -14,7 +14,7 @@ const uploadFile = require('../middlewares/multerMiddleware.js');
 router.get('/', productController.getList);
 
 // @POST /product
-router.post('/', uploadFile.any('img'), productController.postProduct);
+router.post('/', uploadFile.single('img'), productController.postProduct);
 
 // @GET /product/create
 router.get('/createProduct', productController.getCreate);
@@ -27,10 +27,10 @@ router.get('/:id/productDetail', productController.getDetail);
 router.delete('/:id/delete', productController.deleteProduct);
 
 // @GET /product/:id/update 
-router.get('/:id/editeProduct', productController.getEdit);
+router.get('/:id/editProduct', productController.getEdit);
 
 // @PUT /product/:id/update ---> /products/5/put
-router.put('/:id/editeProduct', productController.updateProduct);
+router.put('/:id/editProduct', uploadFile.single('img'), productController.updateProduct);
 
 router.get('/productCart', productController.getCart);
 

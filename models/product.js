@@ -1,4 +1,3 @@
-const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 
@@ -59,7 +58,7 @@ const model = {
         
         const productsJSON = JSON.stringify(products);
 
-        fs.writeFileSync(path.join(dirname, this.route), productsJSON);
+        fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
 
         return products;
     },

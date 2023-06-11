@@ -1,6 +1,5 @@
 const path = require("path");
 const productModel = require('../models/product');
-const multer = require("multer");
 
 const controller = {
     getList: (req, res) => {
@@ -18,7 +17,7 @@ const controller = {
             return res.send('error de id');
         }
 
-        res.render("editeProduct", {
+        res.render("editProduct", {
             products: productoAModificar
         });
     },
@@ -43,6 +42,7 @@ const controller = {
     updateProduct: (req, res) => {
         const id = Number(req.params.id);
         const nuevosDatos = req.body;
+        nuevosDatos.img = req.file ? req.file.filename : req.body.oldImage
 
         productModel.updateById(id, nuevosDatos);
 
@@ -96,7 +96,9 @@ const controller = {
 
         datos.valor = Number(datos.valor);
        
-        datos.img = req.files.map(file => '/images/productos' + file.filename);
+        /*datos.img = req.files.map(file => `/images/productos/${file.filename}`);*/
+        datos.img = req.file ? req.file.filename : 'sin foto'
+
 
         productModel.createOne(datos); 
 
