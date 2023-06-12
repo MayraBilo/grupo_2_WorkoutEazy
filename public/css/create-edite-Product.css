@@ -8,10 +8,19 @@
 }
 
 /* Body */
-
+h1{
+    letter-spacing: 2px;
+    margin: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
+}
 body {
     background-color: white;
     font-family: 'Roboto', 'sans-serif';    
+}
+label {
+    font-family: 'Bebas Neue';
+    color: #00a170;
+    font-size: 20px;
 }
 
 /* Header */
@@ -37,7 +46,12 @@ form select {
     width: 100%;
     text-align: center;
     color: white;
+    font-family: 'Bebas Neue';
     border-radius: 25px;
+    letter-spacing: 2px;
+}
+form select:hover {
+    background-color: #01c087;
 }
 
 .select-categoria {
@@ -100,12 +114,32 @@ form > div{
     width: 100%;
     padding: 10px;
     background-color: #00a170;
+    border-radius: 8px;
+    font-family: 'Bebas neue';
+    color: white;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 2px;
+    transition: all 0.3s
+}
+.div-submit-button:hover button {
+    background-color: #01c087;
+    transform: scale(1.01);
 }
 
 .div-reset-button button {
     background-color: #0084bd;
+    border-radius: 8px;
+    font-family: 'Bebas neue';
+    color: white;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 2px;
 }
-
+.div-reset-button:hover button{
+    background-color: #0398d8;
+    transform: scale(1.01);
+}
 #formDelete {
     display: flex;
     flex-wrap: wrap;
