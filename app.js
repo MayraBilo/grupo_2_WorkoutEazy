@@ -11,18 +11,21 @@ const app = express();
 app.use(express.static(path.join(__dirname, "./public")));
 
 app.set("view engine", "ejs");
+
 app.set("views", [
-  path.join(__dirname, "./views/main"),
-  path.join(__dirname, "./views/productos"),
-  path.join(__dirname, "./views/user"),
+    path.join(__dirname, "./views/main"),
+    path.join(__dirname, "./views/productos"),
+    path.join(__dirname, "./views/user"),
 ]);
+
 // --- Middlewares ---
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 
-//----routes----//
+//----Routes----//
+
 app.use(mainRoutes);
 app.use("/product", productsRoutes);
 app.use(userRoutes);
