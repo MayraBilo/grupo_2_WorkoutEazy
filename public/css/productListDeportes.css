@@ -210,6 +210,24 @@ select:focus {
     display: none;
 }
 
+/* Detalle botón */
+
+.bebas {
+    font-family: 'Bebas Neue';
+}
+
+.ver-detalle a button {
+    border: #006e52 solid 1px;
+    border-radius: 5px;
+    z-index: 99;
+    color: white;
+    background-color: rgba(0, 161, 112);
+    font-size: 16px;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
 @media (min-width: 669px) {
 
     /* Footer */
