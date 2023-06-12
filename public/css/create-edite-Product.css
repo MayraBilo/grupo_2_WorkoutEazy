@@ -58,6 +58,10 @@ form select:hover {
     display:none;
 }
 
+.select-difficulty {
+    display:none;
+}
+
 input {
     padding: 5px;
     margin-top: 5px;
@@ -151,6 +155,7 @@ form > div{
 
 #delProd.action-button.delete {
     width: 100%;
+    background-color: #d10000;
 }
 
 .right-img {
