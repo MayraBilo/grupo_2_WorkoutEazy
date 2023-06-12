@@ -410,6 +410,7 @@ header input:focus {
 .instructores img {
     width: 250px;
     border-top-right-radius: 40px;
+    align-self: flex-start;
 }
 
 .info-instructor {
@@ -428,6 +429,7 @@ header input:focus {
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 10px;
+    padding-top: 12px;
 }
 
 .masinfo p {
@@ -437,6 +439,10 @@ header input:focus {
 
 .texto-instructor {
     align-self: flex-start;
+}
+
+.texto-instructor h4 h3 {
+    font-size: 18px;
 }
 
 .ejemplos-instructores article {
@@ -784,6 +790,10 @@ footer h2 {
         padding-top: 20px;
         padding-bottom: 10px;
         box-sizing: border-box;
+    }
+
+    .texto-instructor h4 h3 {
+        font-size: 18px;
     }
 
 

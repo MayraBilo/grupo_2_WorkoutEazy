@@ -20,7 +20,7 @@ main {
     opacity: 50%;
     z-index: 7;
     position: relative;
-    height: 76px;
+    height: 82px;
 }
 
 .banner {
@@ -101,7 +101,7 @@ select:focus {
 .edad,
 .dificultad {
     border: 2px #e8e8e8 solid;
-    width: 80px;
+    width: 112px;
     text-align: center;
     padding: 5px;
 }
@@ -330,6 +330,21 @@ select:focus {
 
     .actividad-ejemplo {
         justify-content: space-around;
+    }
+
+    .titulo-h1 {
+        opacity: 100%;
+        text-align: center;
+        padding: 35px 5px;
+        position: absolute;
+        left: 45%;
+        top: 0px;
+        z-index: 10;
+        margin: auto;
+    }
+
+    .titulo-general {
+        height: 130px;
     }
 
 }

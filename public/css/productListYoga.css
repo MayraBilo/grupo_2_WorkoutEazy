@@ -101,7 +101,7 @@ select:focus {
 .edad,
 .dificultad {
     border: 2px #e8e8e8 solid;
-    width: 80px;
+    width: 112px;
     text-align: center;
     padding: 5px;
 }
