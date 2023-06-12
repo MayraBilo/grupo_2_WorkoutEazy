@@ -122,26 +122,24 @@
             </form>
 
             <script>
-                const btnDel = document.getElementaryById('delProd');
+                const btnDel = document.getElementById('delProd');
                 const formDel = document.getElementById('formDelete');
 
             btnDel.addEventListener('click', function(e){
 
+            e.preventDefault();
+
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                title: 'Estás seguro?',
+                text: "El cambio no se puede revertir!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
+                confirmButtonText: 'Sí, lo quiero borrar!'
               }).then((result) => {
                 if (result.isConfirmed) {
-                  Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                  )
+                    formDel.submit();
                 }
               })
             })

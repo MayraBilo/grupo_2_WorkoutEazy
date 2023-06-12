@@ -22,6 +22,28 @@
         "virtual": "true"
     },
     {
+        "id": 2,
+        "categoria": "Yoga",
+        "subcategoria": "Ashtanga",
+        "img": "functional.JPG",
+        "nombreActividad": "Ashtanga Yoga Palermo",
+        "nombreAliado": "Zoe Martinez",
+        "dificultad": "Avanzado",
+        "edadesAlumnos": [
+            "Jóvenes",
+            "Adultos"
+        ],
+        "valor": 8000,
+        "descuento": 25,
+        "cupos": 30,
+        "descripcion": "Una clase para guiarte en tu práctica y elevarla. Resolvemos tus dudas sobre como lograr las Asanas adecuadas para tu serie en un ambiente calmo y relajado.",
+        "direccion": "Soler 2516, Palermo Soho, Buenos Aires, Argentina",
+        "horarios": "Lunes a viernes: 8am, 11am y 18hs",
+        "duracion": "2hs",
+        "presencial": "true",
+        "virtual": "true"
+    },
+    {
         "id": 3,
         "categoria": "Yoga",
         "subcategoria": "Kundalini",
