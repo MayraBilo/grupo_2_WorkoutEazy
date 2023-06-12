@@ -4,6 +4,7 @@
 <head>
     <%- include("../partials/head") %>
         <link rel="stylesheet" href="/css/create-edite-Product.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -113,6 +114,39 @@
                     <img class="right-img" src="/images/editworkouteasy3-b.png" alt="">
                 </div>
             </div>
+
+            <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" style="display: inline-flex" id="formDelete">
+            <div class="div-submit-button">
+            <button id="delProd" type="submit" class="action-button delete">Eliminar</button>
+            </div>
+            </form>
+
+            <script>
+                const btnDel = document.getElementaryById('delProd');
+                const formDel = document.getElementById('formDelete');
+
+            btnDel.addEventListener('click', function(e){
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+                }
+              })
+            })
+            </script>
+
         </main>
         <%- include("../partials/footer") %>
             <button class="consultas">

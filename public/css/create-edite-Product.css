@@ -106,6 +106,19 @@ form > div{
     background-color: #0084bd;
 }
 
+#formDelete {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#delProd.action-button.delete {
+    width: 100%;
+}
+
 .right-img {
     display: none;
 }
