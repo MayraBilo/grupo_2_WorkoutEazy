@@ -95,7 +95,7 @@ header input:focus {
 .lupita {
     background-color: #00a170;
     border: 1px solid #00a170;
-    border-radius: 32px;
+    border-radius: 45px;
     padding: 2%;
 }
 
@@ -559,7 +559,7 @@ footer h2 {
         background-color: #e8e8e8;
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         padding: 4px 8px;
@@ -584,7 +584,7 @@ footer h2 {
         background-color: rgba(0,0,0,0%);
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         padding: 4px 8px;
