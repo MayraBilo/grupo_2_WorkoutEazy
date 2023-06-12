@@ -103,10 +103,17 @@
                         <span class="feedback"></span>
                     </div>
                     <div class="div-submit-button">
-                        <button class="submit-button" type="submit" value="submit">Editar</button>
+                        <button class="submit-button" type="submit" value="submit">Guardar edicion</button>
                     </div>
                     <div class="div-reset-button">
-                        <button class="reset-button" type="reset" value="reset">Borrar</button>
+                        <button class="reset-button" type="reset" value="reset">Borrar campos</button>
+                    </div>
+                    <div>
+                        <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" style="display: inline-flex" id="formDelete">
+                            <div class="div-submit-button">
+                            <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
+                            </div>
+                            </form>
                     </div>
                 </form>
                 <div class="div-right-img">
@@ -114,12 +121,6 @@
                     <img class="right-img" src="/images/editworkouteasy3-b.png" alt="">
                 </div>
             </div>
-
-            <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" style="display: inline-flex" id="formDelete">
-            <div class="div-submit-button">
-            <button id="delProd" type="submit" class="action-button delete">Eliminar</button>
-            </div>
-            </form>
 
             <script>
                 const btnDel = document.getElementById('delProd');
