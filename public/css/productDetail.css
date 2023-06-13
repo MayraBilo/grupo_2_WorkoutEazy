@@ -227,6 +227,9 @@ body {
     margin-left: 10px;
     margin-right: 10px;
 }
+.descripcion-actividad p {
+    display: inline-block;
+}
 
 /* Banner promocional */
 

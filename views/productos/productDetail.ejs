@@ -36,8 +36,8 @@
                 <section class="texto-producto-container">
 
                     <h3 class="texto-actividad" id="nombreActividad"><%= products.nombreActividad %></h3>
-
-                    <p class="texto-actividad"><%= products.nombreAliado %></p>
+                    <label for="profe">Profesor a cargo: </label>
+                    <p class="texto-actividad" name="profe"><%= products.nombreAliado %></p>
 
                     <p class="texto-actividad">Dificultad</p>
 
@@ -71,10 +71,34 @@
                     </div>
 
                     <div class="descripcion-actividad">
-
-                        <p class="titulo-descripcion">Descripción:</p>
-                        <p><%= products.descripcion %></p>
-
+                        <div>
+                            <p class="titulo-descripcion">Descripción:</p>
+                            <p><%= products.descripcion %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Horarios: </p>
+                            <p><%= products.horarios %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Edades: </p>
+                            <p><%= products.edadesAlumnos %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Duración: </p>
+                            <p><%= products.duracion %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Modalidad: </p>
+                            <p><%= products.modalidad %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Direccion: </p>
+                            <p><%= products.direccion %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Ciudad: </p>
+                            <p><%= products.ciudad %></p>
+                        </div>
                     </div>
 
                 </section>
