@@ -16,7 +16,7 @@
                     <div class="div-categorie">
                         <select class="categorie" name="categorie">
                             <option default class="select-categorie" name="categoria" value="<%= products.categoria %>">
-                                Selecciona una categoria -</option>
+                                <%= products.categoria %> -</option>
                             <option name="categoria">Yoga</option>
                             <option name="categoria">Fitness</option>
                             <option name="categoria">Danzas</option>
@@ -27,7 +27,7 @@
                     <div class="div-subcategorie">
                         <select class="categorie" name="subcategoria" value="<%= products.subcategoria %>">
                             <option default class="select-categorie" name="subcategoria" value="select-categorie">-
-                                Selecciona una subcategoria -</option>
+                                <%= products.subcategoria %>  -</option>
                             <option name="subcategoria" value="<%= products.subcategoria %>">1</option>
                             <option name="subcategoria" value="<%= products.subcategoria %>">2</option>
                             <option name="subcategoria" value="<%= products.subcategoria %>">3</option>
@@ -87,7 +87,7 @@
                         <span class="feedback"></span>
                     </div>
                     <div class="div-ages">
-                        <label for="ages">Edades</label>
+                        <label for="ages"><%=products.edadesAlumnos%></label>
                         <div>
                             <input type="checkbox" name="edadesAlumnos" value="<%=products.edadesAlumnos%>">Niños
                         </div>
