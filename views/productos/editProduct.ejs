@@ -28,9 +28,31 @@
                         <select class="categorie" name="subcategoria" value="<%= products.subcategoria %>">
                             <option default class="select-categorie" name="subcategoria" value="select-categorie">-
                                 <%= products.subcategoria %>  -</option>
-                            <option name="subcategoria" value="<%= products.subcategoria %>">1</option>
-                            <option name="subcategoria" value="<%= products.subcategoria %>">2</option>
-                            <option name="subcategoria" value="<%= products.subcategoria %>">3</option>
+                            </option>
+                            <option name="subcategoria">Yoga-Mysore</option>
+                            <option name="subcategoria">Yoga-Ashtanga</option>
+                            <option name="subcategoria">Yoga-Hatha</option>
+                            <option name="subcategoria">Yoga-Kundalini</option>
+                            <option name="subcategoria">Yoga-Flow</option>
+                            <option name="subcategoria">Yoga-Flex</option>
+                            <option name="subcategoria">Fitness-Funcional</option>
+                            <option name="subcategoria">Fitness-Pilates</option>
+                            <option name="subcategoria">Fitness-Musculación</option>
+                            <option name="subcategoria">Fitness-Crossfit</option>
+                            <option name="subcategoria">Fitness-Gimnasio</option>
+                            <option name="subcategoria">Fitness-De combate</option>
+                            <option name="subcategoria">Danzas-Clásico</option>
+                            <option name="subcategoria">Danzas-Urbano</option>
+                            <option name="subcategoria">Danzas-Salsa</option>
+                            <option name="subcategoria">Danzas-Tango</option>
+                            <option name="subcategoria">Danzas-Folklore</option>
+                            <option name="subcategoria">Danzas-Cuarteto</option>
+                            <option name="subcategoria">Danzas-Contemporáneo</option>
+                            <option name="subcategoria">Deportes-Acuáticos</option>
+                            <option name="subcategoria">Deportes-Gimnasia</option>
+                            <option name="subcategoria">Deportes-Extremos</option>
+                            <option name="subcategoria">Deportes-En conjunto</option>
+                            <option name="subcategoria">Deportes-Montaña</option>
                         </select>
                         <span class="feedback"></span>
                     </div>
@@ -39,6 +61,12 @@
                         <input class="lsinput" type="text" name="nombreActividad" value="<%=products.nombreActividad%>">
                         <span class="feedback"></span>
                     </div>
+                    <div class="container-name-service">
+                        <label for="name-service">Nombre del Aliado</label>
+                        <input class="lsinput" type="text" name="nombreActividad" value="<%=products.nombreAliado%>">
+                        <span class="feedback"></span>
+                    </div>
+            
                     <div class="div-value-disc">
                         <div class="div-value">
                             <label for="value">Valor</label>
@@ -52,11 +80,30 @@
                             <span class="feedback"></span>
                         </div>
                     </div>
+                    <div class="container-name-service">
+                        <label for="name-service">Cupos</label>
+                        <input class="lsinput" type="text" name="nombreActividad" value="<%=products.cupos%>">
+                        <span class="feedback"></span>
+                    </div>
+                
                     <div class="div-description">
                         <label for="description">Descripción</label>
                         <input class="lfinput" type="text" name="descripcion" value="<%=products.descripcion%>">
                         <span class="feedback"></span>
                     </div>
+                    <div class="container-name-service">
+                        <label for="name-service">Horarios</label>
+                        <input class="lsinput" type="text" name="nombreActividad" value="<%=products.horarios%>">
+                        <span class="feedback"></span>
+                    </div>
+      
+                    <div class="container-name-service">
+                        <label for="name-service">Duración</label>
+                        <input class="lsinput" type="text" name="nombreActividad" value="<%=products.duracion%>">
+                        <span class="feedback"></span>
+                    </div>
+      
+                
                     <div class="div-add-pictures">
                         <label for="add-pictures">Agregar fotos</label>
                         <input type="hidden" name="oldImage" value="<%= products.img %>">
@@ -66,8 +113,8 @@
                     <div class="div-difficulty">
                         <label for="difficulty">Dificultad</label>
                         <select name="dificultad" class="difficulty" value="<%=products.dificultad%>">
-                            <option class="select-difficulty" default value="select-difficulty">- Selecciona la
-                                dificultad -</i></option>
+                            <option class="select-difficulty" default value="select-difficulty">-
+                                <%=products.dificultad%> -</i></option>
                             <option value="<%=products.dificultad%>">Principiante</i></option>
                             <option value="<%=products.dificultad%>">Facil</i></option>
                             <option value="<%=products.dificultad%>">Intermedio</i></option>
@@ -77,7 +124,7 @@
                         <span class="feedback"></span>
                     </div>
                     <div class="div-complete-direction">
-                        <label for="complete-direction">Direccion Completa</label>
+                        <label for="complete-direction">Dirección Completa</label>
                         <input class="lsinput" type="text" name="direccion" value="<%=products.direccion%>">
                         <span class="feedback"></span>
                     </div>
@@ -102,6 +149,19 @@
                         </div>
                         <span class="feedback"></span>
                     </div>
+
+                    <div class="modalidades">
+                        <label for="modalidades"><%=products.modalidades%></label>
+                        <div>
+                            <input type="checkbox" name="modalidades" value="<%=products.modalidades%>">presencial
+                        </div>
+                        <div>
+                            <input type="checkbox" name="modalidades" value="<%=products.modalidades%>">virtual
+                        </div>
+                        
+                        <span class="feedback"></span>
+                    </div>
+                    
                     <div class="div-submit-button">
                         <button class="submit-button" type="submit" value="submit">Guardar edicion</button>
                     </div>
