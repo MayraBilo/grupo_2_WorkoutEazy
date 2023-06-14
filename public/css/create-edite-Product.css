@@ -8,15 +8,17 @@
 }
 
 /* Body */
-h1{
+h1 {
     letter-spacing: 2px;
     margin: 10px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
 }
+
 body {
     background-color: white;
-    font-family: 'Roboto', 'sans-serif';    
+    font-family: 'Roboto', 'sans-serif';
 }
+
 label {
     font-family: 'Bebas Neue';
     color: #00a170;
@@ -33,7 +35,7 @@ header {
 /* Main */
 
 input.lsinput.horasinput {
-width: 300px;
+    width: 300px;
 }
 
 .containerhoras {
@@ -69,16 +71,17 @@ form select {
     border-radius: 25px;
     letter-spacing: 2px;
 }
+
 form select:hover {
     background-color: #01c087;
 }
 
 .select-categoria {
-    display:none;
+    display: none;
 }
 
 .select-difficulty {
-    display:none;
+    display: none;
 }
 
 input {
@@ -90,7 +93,7 @@ input {
     width: 100%;
 }
 
-form > div{
+form>div {
     margin: 20px 0px;
 }
 
@@ -100,7 +103,8 @@ form > div{
     justify-content: space-between;
 }
 
-.div-value, .div-disc{
+.div-value,
+.div-disc {
     width: 45%;
 }
 
@@ -112,8 +116,8 @@ form > div{
     width: 85%;
 }
 
-.div-disc > p{
-    display:inline-block;
+.div-disc>p {
+    display: inline-block;
 }
 
 .div-description .lfinput {
@@ -133,7 +137,8 @@ form > div{
     margin: 10px 0px;
 }
 
-.div-submit-button button, .div-reset-button button{
+.div-submit-button button,
+.div-reset-button button {
     width: 100%;
     padding: 10px;
     background-color: #00a170;
@@ -145,6 +150,7 @@ form > div{
     letter-spacing: 2px;
     transition: all 0.3s
 }
+
 .div-submit-button:hover button {
     background-color: #01c087;
     transform: scale(1.01);
@@ -164,7 +170,11 @@ form > div{
     letter-spacing: 2px;
 }
 
-.div-reset-button:hover button{
+#reset-button-create {
+    margin-bottom: 20px;
+}
+
+.div-reset-button:hover button {
     background-color: #0398d8;
     transform: scale(1.01);
 }
@@ -174,7 +184,7 @@ form > div{
     margin-bottom: 20px;
 }
 
-#formDelete button{
+#formDelete button {
     width: 100%;
 }
 
@@ -187,9 +197,7 @@ form > div{
     display: none;
 }
 
-@media (min-width: 669px) {
-    
-}
+@media (min-width: 669px) {}
 
 @media (min-width: 1200px) {
     form {
@@ -198,6 +206,7 @@ form > div{
 
     #formDelete {
         width: 50%;
+        margin-bottom: 20px;
     }
 
     .right-img {
@@ -206,30 +215,22 @@ form > div{
     }
 
     .div-right-img {
+        display: flex;
+        flex-direction: column;
         width: 50%;
-    }   
+        justify-content: space-around;
+    }
 
     .form-img {
         display: flex;
     }
 
-    #formDelete {
-        width: 50%;
+    #formDelete button {
+        width: 100%;
     }
 
-#formDelete {
-    width: 100%;
-    margin-bottom: 20px;
+    #delProd.action-button.delete {
+        width: 100%;
+        background-color: #d10000;
+    }
 }
-
-#formDelete button{
-    width: 100%;
-}
-
-#delProd.action-button.delete {
-    width: 100%;
-    background-color: #d10000;
-}
-}
-
-
