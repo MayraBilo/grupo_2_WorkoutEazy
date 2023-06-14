@@ -23,6 +23,7 @@ label {
     font-size: 20px;
 }
 
+
 /* Header */
 
 header {
@@ -30,6 +31,24 @@ header {
 }
 
 /* Main */
+
+input.lsinput.horasinput {
+width: 300px;
+}
+
+.containerhoras {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.containerhoras p {
+    margin-top: 14px;
+}
 
 form {
     padding: 0px 20px 20px 20px;
@@ -183,6 +202,24 @@ form > div{
     .form-img {
         display: flex;
     }
+
+    #formDelete {
+        width: 50%;
+    }
+
+#formDelete {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#formDelete button{
+    width: 100%;
+}
+
+#delProd.action-button.delete {
+    width: 100%;
+    background-color: #d10000;
+}
 }
 
 
