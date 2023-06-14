@@ -154,29 +154,31 @@
                     <div class="div-ages">
                         <label for="modalidad">Modalidad</label>
                         <div>
-                            <input type="checkbox" name="modalidad" value="Presencial"> Presencial
+                            <input type="checkbox" name="modalidad" value="<%=products.modalidad%>"> Presencial
                         </div>
                         <div>
-                            <input type="checkbox" name="modalidad" value="Virtual"> Virtual
+                            <input type="checkbox" name="modalidad" value="<%=products.modalidad%>"> Virtual
                         </div>
                         
                         <span class="feedback"></span>
                     </div>
-                    
+                
                     <div class="div-submit-button">
                             <button class="submit-button" type="submit" value="submit">Guardar edicion</button>
                     </div>
                     <div class="div-reset-button">
                         <button class="reset-button" type="reset" value="reset">Borrar campos</button>
                     </div>
-                    <div>
-                        <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" style="display: inline-flex" id="formDelete">
-                            <div class="div-submit-button">
-                            <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
-                            </div>
-                            </form>
+                </form>
+
+                
+                <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" style="display: inline-flex" id="formDelete">
+                    <div class="div-submit-button">
+                    <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
                     </div>
                 </form>
+               
+
                 <div class="div-right-img">
                     <img class="right-img" src="/images/diseno/editworkouteasy2-b.png" alt="">
                     <img class="right-img" src="/images/diseno/editworkouteasy3-b.png" alt="">

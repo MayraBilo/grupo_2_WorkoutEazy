@@ -18,7 +18,7 @@
         "direccion": "Soler 2516, Palermo Soho, Buenos Aires, Argentina",
         "horarios": "Lunes a viernes: 8am, 11am y 18hs",
         "duracion": 2,
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -43,7 +43,7 @@
         "direccion": "Mitre 3025, Piso 3, Bariloche, Río Negro, Argentina",
         "horarios": "Martes a jueves: 9hs y 19hs",
         "duracion": 1.5,
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -94,7 +94,7 @@
         "direccion": "Libertador 375, Palermo Chico, CABA, Argentina",
         "horarios": "Martes a viernes: 7hs, 9hs y 19hs",
         "duracion": 45,
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -115,7 +115,7 @@
         "descripcion": "Un entrenamiento personal es una de las mejores inversiones que harás en tu salud y bienestar. Te ayuda a alcanzar tus metas mucho más rápido y aprender a hacer tus ejercicios de forma segura.",
         "direccion": "Av. Olivos 4109, B1667 KQU, Tortuguitas, Pcia. de Buenos Aires",
         "horarios": "lunes a viernes 8:00am a 5:00 pm",
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -224,7 +224,7 @@
         "descripcion": "Clases iniciales de Gimnasia Artística con proyección a la competencia. Vení y probá nuestras clases abiertas a partir de los 4 años!",
         "direccion": "Manuel Martí 1784, San Andrés",
         "horarios": "Martes y jueves de 18 a 19hs",
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -249,7 +249,7 @@
         "descripcion": "Clases de entrenamiento de voley para adolescentes que tengan conocimiento previo de la actividad. Si tenés ganas de ampliar tu carrera deportiva, no dudes en sumarte!",
         "direccion": "Abregú 1415, San Isidro",
         "horarios": "Jueves de 18 a 19.30hs y Sábados de 11 a 13hs",
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -275,8 +275,10 @@
         "descripcion": "Aprendé a nadar con nosotros de manera divertida y disfrutando de esta actividad. Desde bebes hasta adultos mayores, todos tienen un espacio en nuestra escuela!",
         "direccion": "Av. de Mayo 1358, José C. Paz",
         "horarios": "De Lunes a Sábados de 17hs a 21hs",
-        "presencial": true,
-        "virtual": false
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
         "id": 15,
@@ -313,7 +315,7 @@
         "descripcion": "Aprender danza clásica te brindara beneficios tanto físicos como mentales...y será divertido.",
         "direccion": "Av. Olivos 4109, B1667 KQU, Tortuguitas, Pcia. de Buenos Aires",
         "horarios": "lunes a viernes 13:00pm a 20:00pm",
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -334,7 +336,7 @@
         "descripcion": "Si te interesa aprender a bailar y disfrutas la música de moda, prueba una de nuestras clases y no dudaras en seguir concurriendo.",
         "direccion": "FLORIDA, 15 Ciudad Autónoma de Buenos Aires",
         "horarios": "lunes a viernes 15:00pm a 19:00pm",
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -355,7 +357,7 @@
         "descripcion": "La mejor opción a la hora de iniciar en el mundo de la danza es la famosa salsa, y podemos ayudarte con eso...",
         "direccion": "Darregueyra 2387, Buenos Aires, Argentina",
         "horarios": "Lunes a Sabado 7:00am a 13:00 pm",
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
@@ -377,7 +379,11 @@
         "direccion": " Pinto, APZ, Buenos Aires, Argentina",
         "horarios": "Lunes a viernes: 13:00 a 20:00, Sábados: 09:00 a 12:00",
         "presencial": "true",
-        "virtual": "false"
+        "virtual": "false",
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
         "id": 17,
@@ -395,8 +401,10 @@
         "descripcion": "Te sentis de madera a la hora de bailar?, tal vez logremos flexibilizarte un poco...",
         "direccion": " AV. ALVAREZ THOMAS 28, Buenos Aires, Argentina",
         "horarios": "Lunes a Viernes de 14 hs. 21 hs.",
-        "presencial": "true",
-        "virtual": "false"
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
         "id": 18,
@@ -419,7 +427,7 @@
         "descripcion": "Animate a incursionar en el maravilloso mundo de la escalada! Aprendemos la técnica desde 0 y proveemos de una palestra de entrenamiento para que vengas todas las semanas.",
         "direccion": "José Hernandez 2121, Villa Ballester",
         "horarios": "Lunes y miercoles de 17 a 18hs",
-        "modalidades": [
+        "modalidad": [
             "Presencial",
             "Virtual"
         ]
