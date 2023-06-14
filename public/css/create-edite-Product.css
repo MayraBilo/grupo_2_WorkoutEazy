@@ -32,7 +32,7 @@ header {
 /* Main */
 
 form {
-    padding: 0px 20px 20px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 h1 {
@@ -131,6 +131,10 @@ form > div{
     transform: scale(1.01);
 }
 
+.div-reset-button {
+    margin-bottom: 0px;
+}
+
 .div-reset-button button {
     background-color: #0084bd;
     border-radius: 8px;
@@ -140,17 +144,19 @@ form > div{
     font-size: 16px;
     letter-spacing: 2px;
 }
+
 .div-reset-button:hover button{
     background-color: #0398d8;
     transform: scale(1.01);
 }
+
 #formDelete {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#formDelete button{
+    width: 100%;
 }
 
 #delProd.action-button.delete {
@@ -169,8 +175,12 @@ form > div{
 @media (min-width: 1200px) {
     form {
         width: 50%;
-        margin: 0;
     }
+
+    #formDelete {
+        width: 50%;
+    }
+
     .right-img {
         display: inline-block;
         width: 100%;

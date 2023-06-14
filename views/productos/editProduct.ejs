@@ -108,20 +108,17 @@
                     <div class="div-reset-button">
                         <button class="reset-button" type="reset" value="reset">Borrar campos</button>
                     </div>
-                    <div>
-                        <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" style="display: inline-flex" id="formDelete">
-                            <div class="div-submit-button">
-                            <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
-                            </div>
-                            </form>
-                    </div>
                 </form>
                 <div class="div-right-img">
                     <img class="right-img" src="/images/diseno/editworkouteasy2-b.png" alt="">
                     <img class="right-img" src="/images/diseno/editworkouteasy3-b.png" alt="">
                 </div>
             </div>
-
+            <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" id="formDelete">
+                <div class="div-submit-button">
+                <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
+                </div>
+                </form>
             <script>
                 const btnDel = document.getElementById('delProd');
                 const formDel = document.getElementById('formDelete');
