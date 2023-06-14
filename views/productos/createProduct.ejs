@@ -11,7 +11,6 @@
       <h1>Publicar servicio</h1>
       <div class="form-img">
         <form action="/product" method="POST" enctype="multipart/form-data">
-
           <div class="div-categoria">
             <select class="categoria" name="categoria">
               <option
@@ -28,7 +27,6 @@
               <option name="categoria">Deportes</option>
             </select>
             <span class="feedback"></span>
-
           </div>
           <div class="div-subcategoria">
             <select class="categoria" name="subcategoria">
@@ -98,7 +96,6 @@
               <p>%</p>
               <span class="feedback"></span>
             </div>
-
           </div>
           <div class="container-name-service">
             <label for="name-service">Cupos</label>
@@ -117,9 +114,10 @@
             <span class="feedback"></span>
           </div>
 
-          <div class="container-name-service">
+          <div class="container-name-service containerhoras">
             <label for="name-service">Duración</label>
-            <input class="lsinput" type="text" name="duracion" />
+            <input class="lsinput horasinput" type="number" name="duracion" />
+            <p>hs</p>
             <span class="feedback"></span>
           </div>
 
@@ -133,7 +131,7 @@
             />
             <span class="feedback"></span>
           </div>
-          
+
           <div class="div-difficulty">
             <label for="dificultad">Dificultad</label>
             <select name="dificultad" class="difficulty">
@@ -159,34 +157,34 @@
             <span class="feedback"></span>
           </div>
           <div class="div-city">
-            <label for="city">Ciudad</label>
-            <input class="lsinput" type="text" name="city" />
+            <label for="ciudad">Ciudad</label>
+            <input class="lsinput" type="text" name="ciudad" />
             <span class="feedback"></span>
           </div>
           <div class="div-ages">
             <label for="ages">Edades</label>
             <div>
-              <input type="checkbox" name="edadesAlumnos" value="kids" />Niños
+              <input type="checkbox" name="edadesAlumnos" value="Niños" />Niños
             </div>
             <div>
               <input
                 type="checkbox"
                 name="edadesAlumnos"
-                value="teen"
+                value="Adolescentes"
               />Adolescentes
             </div>
             <div>
               <input
                 type="checkbox"
                 name="edadesAlumnos"
-                value="young"
+                value="Jóvenes"
               />Jóvenes
             </div>
             <div>
               <input
                 type="checkbox"
                 name="edadesAlumnos"
-                value="adoults"
+                value="Adultos"
               />Adultos
             </div>
             <span class="feedback"></span>
@@ -196,12 +194,12 @@
             <div>
               <input
                 type="checkbox"
-                name="presencial"
+                name="modalidad"
                 value="presencial"
               />Presencial
             </div>
             <div>
-              <input type="checkbox" name="virtual" value="virtual" />Virtual
+              <input type="checkbox" name="modalidad" value="virtual" />Virtual
             </div>
           </div>
           <div class="div-submit-button">
@@ -216,8 +214,16 @@
           </div>
         </form>
         <div class="div-right-img">
-          <img class="right-img" src="/images/diseno/editworkouteasy2-b.png" alt="" />
-          <img class="right-img" src="/images/diseno/editworkouteasy3-b.png" alt="" />
+          <img
+            class="right-img"
+            src="/images/diseno/editworkouteasy2-b.png"
+            alt=""
+          />
+          <img
+            class="right-img"
+            src="/images/diseno/editworkouteasy3-b.png"
+            alt=""
+          />
         </div>
       </div>
     </main>

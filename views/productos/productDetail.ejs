@@ -29,17 +29,18 @@
 
                     <img src="/images/productos/<%= products.img %>" alt="imagenYoga" class="img-producto">
 
-                    <div class="boton"> <button class="reserva">Reservá tu lugar</button></div>
+                    <div class="boton"><button class="reserva">Reservá tu lugar</button></div>
+                    <div class="boton"><a href="/product/<%=products.id%>/editProduct"><button class="editar">Editar producto</button></a></div>
 
                 </div>
 
                 <section class="texto-producto-container">
 
                     <h3 class="texto-actividad" id="nombreActividad"><%= products.nombreActividad %></h3>
+                    
+                    <p class="texto-actividad" name="profe"> <%= products.nombreAliado %></p>
 
-                    <p class="texto-actividad"><%= products.nombreAliado %></p>
-
-                    <p class="texto-actividad">Dificultad</p>
+                    <p class="texto-actividad">Dificultad: <%= products.dificultad %> </p>
 
                     <div class="texto-actividad">
                         <i class="fa-solid fa-star"></i>
@@ -58,23 +59,40 @@
 
                     <div class="seccion-texto">
 
-                        <p class="texto-actividad">Inscriptos</p>
-                        <h3>18</h3>
-
-                    </div>
-
-                    <div class="seccion-texto">
-
                         <p class="texto-actividad">Valor</p>
                         <h3><%= products.valor %></h3>
 
                     </div>
 
                     <div class="descripcion-actividad">
-
-                        <p class="titulo-descripcion">Descripción:</p>
-                        <p><%= products.descripcion %></p>
-
+                        <div>
+                            <p class="titulo-descripcion">Descripción:</p>
+                            <p><%= products.descripcion %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Horarios: </p>
+                            <p><%= products.horarios %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Edades: </p>
+                            <p><%= products.edadesAlumnos %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Duración: </p>
+                            <p><%= products.duracion %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Modalidad: </p>
+                            <p><%= products.modalidad %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Direccion: </p>
+                            <p><%= products.direccion %></p>
+                        </div>
+                        <div>
+                            <p class="titulo-descripcion">Ciudad: </p>
+                            <p><%= products.ciudad %></p>
+                        </div>
                     </div>
 
                 </section>
@@ -98,7 +116,7 @@
                     </article>
 
                     <article class="clase-relacionada">
-                        <img src="/images/yoga1.JPG" alt="yoga1" class="img-relacionada">
+                        <img src="/images/productos/yoga1.JPG" alt="yoga1" class="img-relacionada">
                         <h5>Yoga al aire libre</h5>
                         <p>
                             Disfrutá de todos los beneficios del yoga.

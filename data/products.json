@@ -17,34 +17,14 @@
         "descripcion": "Una clase para guiarte en tu práctica y elevarla. Resolvemos tus dudas sobre como lograr las Asanas adecuadas para tu serie en un ambiente calmo y relajado.",
         "direccion": "Soler 2516, Palermo Soho, Buenos Aires, Argentina",
         "horarios": "Lunes a viernes: 8am, 11am y 18hs",
-        "duracion": "2hs",
-        "presencial": "true",
-        "virtual": "true"
+        "duracion": 2,
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
         "id": 2,
-        "categoria": "Yoga",
-        "subcategoria": "Ashtanga",
-        "img": "yoga-2.JPG",
-        "nombreActividad": "Ashtanga Yoga Palermo",
-        "nombreAliado": "Zoe Martinez",
-        "dificultad": "Avanzado",
-        "edadesAlumnos": [
-            "Jóvenes",
-            "Adultos"
-        ],
-        "valor": 8000,
-        "descuento": 25,
-        "cupos": 30,
-        "descripcion": "Una clase para guiarte en tu práctica y elevarla. Resolvemos tus dudas sobre como lograr las Asanas adecuadas para tu serie en un ambiente calmo y relajado.",
-        "direccion": "Soler 2516, Palermo Soho, Buenos Aires, Argentina",
-        "horarios": "Lunes a viernes: 8am, 11am y 18hs",
-        "duracion": "2hs",
-        "presencial": "true",
-        "virtual": "true"
-    },
-    {
-        "id": 3,
         "categoria": "Yoga",
         "subcategoria": "Kundalini",
         "img": "yoga-3.JPG",
@@ -62,12 +42,14 @@
         "descripcion": "Yoga para todas la edades, vamos a aprender los principios de esta filosofía de vida para poder aplicarlo en tu vida diaria. Mente sana en cuerpo sano.",
         "direccion": "Mitre 3025, Piso 3, Bariloche, Río Negro, Argentina",
         "horarios": "Martes a jueves: 9hs y 19hs",
-        "duracion": "1:40hs",
-        "presencial": "true",
-        "virtual": "false"
+        "duracion": 1.5,
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 4,
+        "id": 3,
         "categoria": "Yoga",
         "subcategoria": "Flow",
         "img": "yoga-3.JPG",
@@ -85,12 +67,14 @@
         "descripcion": "Aramamos un santuario en la playa para que puedas sostener tu rutina en las vacaciones. Un espacio para vos, para encontrar tu centro. Conocé nuestro espacio de encuentro para yoguis en la costa del mar y vení a practicar con atardeceres divinos.",
         "direccion": "Duende azul 463, La Barra, Punta del Este, Uruguay",
         "horarios": "Martes a viernes: 7hs, 9hs y 20hs",
-        "duracion": "2:15hs",
-        "presencial": "true",
-        "virtual": "true"
+        "duracion": 2.15,
+        "modalidades": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 5,
+        "id": 4,
         "categoria": "Yoga",
         "subcategoria": "Flex",
         "img": "yoga-principiantes.jpg",
@@ -109,12 +93,14 @@
         "descripcion": "La clase de yoga flex te brinda la elasticidad que necesitás en tu vida diaria y para practicar otros deportes. Ideal para recuperaciones y apta para todos los niveles.",
         "direccion": "Libertador 375, Palermo Chico, CABA, Argentina",
         "horarios": "Martes a viernes: 7hs, 9hs y 19hs",
-        "duracion": "45min",
-        "presencial": "true",
-        "virtual": "true"
+        "duracion": 45,
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 6,
+        "id": 5,
         "categoria": "Fitness",
         "subcategoria": "Gimnasio",
         "img": "functional.JPG",
@@ -123,16 +109,19 @@
         "dificultad": "Fácil",
         "edadesAlumnos": "Jovenes y Adultos",
         "valor": 3000,
+        "duracion": 3,
         "descuento": 25,
         "cupos": 30,
         "descripcion": "Un entrenamiento personal es una de las mejores inversiones que harás en tu salud y bienestar. Te ayuda a alcanzar tus metas mucho más rápido y aprender a hacer tus ejercicios de forma segura.",
         "direccion": "Av. Olivos 4109, B1667 KQU, Tortuguitas, Pcia. de Buenos Aires",
         "horarios": "lunes a viernes 8:00am a 5:00 pm",
-        "presencial": "true",
-        "virtual": "true"
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 7,
+        "id": 6,
         "categoria": "Fitness",
         "subcategoria": "crossfit",
         "img": "gimnasio.jpg",
@@ -142,26 +131,19 @@
         "edadesAlumnos": "Jovenes y Adultos",
         "valor": 4500,
         "descuento": 25,
+        "duracion": 8,
         "cupos": 50,
         "descripcion": "una excelente modalidad de entrenamiento que propone un trabajo funcional del cuerpo para recuperar la movilidad natural y fortalecer el eje central.",
         "direccion": "FLORIDA, 15 Ciudad Autónoma de Buenos Aires",
         "horarios": "lunes a viernes 8:00am a 5:00 pm",
-        "presencial": "true",
-        "virtual": "true"
+        "modalidades": [
+            "Presencial",
+            "Virtual"
+        ]
     },
+
     {
-        "id": 8,
-        "subcategoria": "Pilates",
-        "img": "1686606845824-.jpg",
-        "nombreActividad": "Pilates",
-        "dificultad": "select-difficulty",
-        "valor": "4900",
-        "descuento": 25,
-        "descripcion": "Conocido por las herramientas de trabajo en las camas reformer, estas clases son ideales para quienes pretenden fortalecer su postura y lograr elasticidad. Todo en un ámbito profesional y relajado. Nuestros profesionales están capacitados para corregir y hacer un seguimiento de cada ejercicio.",
-        "direccion": "Darregueyra 2387, Buenos Aires, Argentina"
-    },
-    {
-        "id": 9,
+        "id": 7,
         "categoria": "Fitness",
         "subcategoria": "Funcional",
         "img": "gimnasio.jpg",
@@ -171,6 +153,7 @@
         "edadesAlumnos": "Adultos",
         "valor": 3800,
         "descuento": 25,
+        "duracion": 3,
         "cupos": 50,
         "descripcion": "El entrenamiento funcional se basa en realizar ejercicios que se adaptan a los movimientos naturales del cuerpo humano para trabajar de forma global músculos y articulaciones. Una de sus principales ventajas es que se adaptan completamente a las condiciones físicas de cada persona, por eso resulta muy efectivo como entrenamiento personal: mejora la movilidad corporal, la agilidad y el equilibrio, desarrolla la salud cardiovascular, corrige la postura, fortalece la masa muscular y ayuda a mantener el peso.",
         "direccion": " Pinto, APZ, Buenos Aires, Argentina",
@@ -179,7 +162,7 @@
         "virtual": false
     },
     {
-        "id": 10,
+        "id": 8,
         "categoria": "Fitness",
         "subcategoria": "De Combate",
         "img": "",
@@ -189,6 +172,7 @@
         "edadesAlumnos": "Adultos",
         "valor": 6190,
         "descuento": 25,
+        "duracion": 2,
         "cupos": 60,
         "descripcion": "Somos un sistema de entrenamiento FUNCIONAL-MILITAR. Funcional, porque entrenamos con principios funcionales que tienen transferencia al mundo real. Militar, porque el sistema fue creado por Guido Van Hemelryck, un ex-Operador de las Fuerzas Especiales de los US Marines (Force Recon), basándose en todo lo que aprendió en sus más de 12 años de servicio activo en una de las unidades militares más reconocidas del planeta y cuatro tours de combate a zonas de guerra (Irak, Afghanistan y Somalía).",
         "direccion": " AV. ALVAREZ THOMAS 28, Buenos Aires, Argentina",
@@ -196,7 +180,7 @@
         "presencial": "true"
     },
     {
-        "id": 11,
+        "id": 9,
         "categoria": "Deportes",
         "subcategoria": "futbol",
         "img": "futbol_femenino.jpg",
@@ -212,6 +196,7 @@
         "valor": 3500,
         "descuento": 25,
         "cupos": 20,
+        "duracion": 2,
         "descripcion": "Clases de fútbol femenino para que las niñas comiencen desde edades tempranas a disfrutar de este deporte! No es necesaria tener experiencia previa, solo tener ganas de divertirse!",
         "direccion": "José Hernandez 2121, Villa Ballester",
         "horarios": "Lunes y miercoles de 17 a 18hs",
@@ -219,7 +204,7 @@
         "virtual": false
     },
     {
-        "id": 12,
+        "id": 10,
         "categoria": "Deportes",
         "subcategoria": "Gimnasia Artística",
         "img": "gimnasia.jpg",
@@ -235,14 +220,17 @@
         "valor": 4200,
         "descuento": 25,
         "cupos": 25,
+        "duracion": 6,
         "descripcion": "Clases iniciales de Gimnasia Artística con proyección a la competencia. Vení y probá nuestras clases abiertas a partir de los 4 años!",
         "direccion": "Manuel Martí 1784, San Andrés",
         "horarios": "Martes y jueves de 18 a 19hs",
-        "presencial": true,
-        "virtual": false
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 13,
+        "id": 11,
         "categoria": "Deportes",
         "subcategoria": "Voley",
         "img": "voley.jpg",
@@ -257,14 +245,17 @@
         "valor": 5500,
         "descuento": 25,
         "cupos": 25,
+        "duracion": 3,
         "descripcion": "Clases de entrenamiento de voley para adolescentes que tengan conocimiento previo de la actividad. Si tenés ganas de ampliar tu carrera deportiva, no dudes en sumarte!",
         "direccion": "Abregú 1415, San Isidro",
         "horarios": "Jueves de 18 a 19.30hs y Sábados de 11 a 13hs",
-        "presencial": true,
-        "virtual": false
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 14,
+        "id": 12,
         "categoria": "Deportes",
         "subcategoria": "Natación",
         "img": "practicas_acuaticas.jpg",
@@ -280,11 +271,14 @@
         "valor": 6000,
         "descuento": 25,
         "cupos": "35",
+        "duracion": 3,
         "descripcion": "Aprendé a nadar con nosotros de manera divertida y disfrutando de esta actividad. Desde bebes hasta adultos mayores, todos tienen un espacio en nuestra escuela!",
         "direccion": "Av. de Mayo 1358, José C. Paz",
         "horarios": "De Lunes a Sábados de 17hs a 21hs",
-        "presencial": true,
-        "virtual": false
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
         "id": 15,
@@ -294,18 +288,20 @@
         "nombreActividad": "Básquet adaptado",
         "nombreAliado": "Club La Identidad Beccar",
         "dificultad": "fácil, intermedio, avanzados",
-        "edadesAlumnos": "A partir de 8 años",
+        "edadesAlumnos": ["Niños"],
         "valor": 4200,
         "descuento": 25,
         "cupos": 20,
         "descripcion": "Vení a descubrir el básquet a través del juego y un ambiente inclusivo. Contamos con la instalaciones necesarias para personas con movilidad reducida.",
         "direccion": "Jáuregui 1645, Vicente López",
         "horarios": "Martes y Jueves de 18 a 20hs y sábados de 9 a 11hs",
-        "presencial": true,
-        "virtual": false
+        "modalidades": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 16,
+        "id": 13,
         "categoria": "Danzas",
         "subcategoria": "Clásico",
         "img": "baileclasico.jpg",
@@ -319,11 +315,13 @@
         "descripcion": "Aprender danza clásica te brindara beneficios tanto físicos como mentales...y será divertido.",
         "direccion": "Av. Olivos 4109, B1667 KQU, Tortuguitas, Pcia. de Buenos Aires",
         "horarios": "lunes a viernes 13:00pm a 20:00pm",
-        "presencial": "true",
-        "virtual": "false"
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 17,
+        "id": 14,
         "categoria": "Danzas",
         "subcategoria": "Urbano",
         "img": "",
@@ -333,15 +331,18 @@
         "edadesAlumnos": "Jovenes y Adultos",
         "valor": 4500,
         "descuento": 25,
+        "duracion": 1,
         "cupos": 50,
         "descripcion": "Si te interesa aprender a bailar y disfrutas la música de moda, prueba una de nuestras clases y no dudaras en seguir concurriendo.",
         "direccion": "FLORIDA, 15 Ciudad Autónoma de Buenos Aires",
         "horarios": "lunes a viernes 15:00pm a 19:00pm",
-        "presencial": "true",
-        "virtual": "false"
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 18,
+        "id": 15,
         "categoria": "Danzas",
         "subcategoria": "Salsa",
         "img": "",
@@ -352,14 +353,17 @@
         "valor": 3000,
         "descuento": 25,
         "cupos": 25,
+        "duracion": 2.5,
         "descripcion": "La mejor opción a la hora de iniciar en el mundo de la danza es la famosa salsa, y podemos ayudarte con eso...",
         "direccion": "Darregueyra 2387, Buenos Aires, Argentina",
         "horarios": "Lunes a Sabado 7:00am a 13:00 pm",
-        "presencial": "true",
-        "virtual": "false"
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 19,
+        "id": 16,
         "categoria": "Danzas",
         "subcategoria": "Tango",
         "img": "tango.jpg",
@@ -369,15 +373,20 @@
         "edadesAlumnos": "Adultos",
         "valor": 3500,
         "descuento": 25,
+        "duracion": 1,
         "cupos": 50,
         "descripcion": "Si hay algo que un buen ciudadano Argentino debe saber, es bailar Tango, inscríbete y dejanos ayudarte.",
         "direccion": " Pinto, APZ, Buenos Aires, Argentina",
         "horarios": "Lunes a viernes: 13:00 a 20:00, Sábados: 09:00 a 12:00",
         "presencial": "true",
-        "virtual": "false"
+        "virtual": "false",
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 20,
+        "id": 17,
         "categoria": "Danzas",
         "subcategoria": "Cuarteto",
         "img": "",
@@ -387,15 +396,18 @@
         "edadesAlumnos": "Jovenes y Adultos",
         "valor": 4200,
         "descuento": 25,
+        "duracion": 3,
         "cupos": 60,
         "descripcion": "Te sentis de madera a la hora de bailar?, tal vez logremos flexibilizarte un poco...",
         "direccion": " AV. ALVAREZ THOMAS 28, Buenos Aires, Argentina",
         "horarios": "Lunes a Viernes de 14 hs. 21 hs.",
-        "presencial": "true",
-        "virtual": "false"
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     },
     {
-        "id": 21,
+        "id": 18,
         "categoria": "Deportes",
         "subcategoria": "Montaña",
         "img": "escalada.JPG",
@@ -411,38 +423,13 @@
         "valor": 3500,
         "descuento": 25,
         "cupos": 20,
+        "duracion": 2,
         "descripcion": "Animate a incursionar en el maravilloso mundo de la escalada! Aprendemos la técnica desde 0 y proveemos de una palestra de entrenamiento para que vengas todas las semanas.",
         "direccion": "José Hernandez 2121, Villa Ballester",
         "horarios": "Lunes y miercoles de 17 a 18hs",
-        "presencial": true,
-        "virtual": false
-    },
-    {
-        "categoria": "Danzas",
-        "subcategoria": "2",
-        "nombreActividad": "NuevaPruebaCateg",
-        "valor": 1526,
-        "descuento": "",
-        "descripcion": "arere3are",
-        "dificultad": "select-difficulty",
-        "direccion": "earefer",
-        "city": "Buenos Aires",
-        "edadesAlumnos": "adoults",
-        "id": 24,
-        "img": []
-    },
-    {
-        "categoria": "Yoga",
-        "subcategoria": "2",
-        "nombreActividad": "yoga",
-        "valor": 6000,
-        "descuento": "",
-        "descripcion": "Una clase para terminar la semana en sintonía con la naturaleza.",
-        "dificultad": "Principiante",
-        "direccion": "sargento cabral 875, Retiro",
-        "city": "CABA",
-        "edadesAlumnos": "adoults",
-        "id": 25,
-        "img": "yoga-3.jpg"
+        "modalidad": [
+            "Presencial",
+            "Virtual"
+        ]
     }
 ]
