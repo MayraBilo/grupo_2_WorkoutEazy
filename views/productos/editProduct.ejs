@@ -14,9 +14,10 @@
             <div class="form-img">
                 <form action="/product/<%=products.id%>/editProduct?_method=put" method="POST" enctype="multipart/form-data">
                     <div class="div-categorie">
-                        <select class="categorie" name="categorie">
-                            <option default class="select-categorie" name="categoria" value="<%= products.categoria %>">
-                                <%= products.categoria %> -</option>
+                        <select class="categoria" name="categoria">
+                            <option default class="select-categoria" name="categoria" value="<%= products.categoria %>">
+                              -  <%= products.categoria %> -
+                            </option>
                             <option name="categoria">Yoga</option>
                             <option name="categoria">Fitness</option>
                             <option name="categoria">Danzas</option>
@@ -25,9 +26,9 @@
                         <span class="feedback"></span>
                     </div>
                     <div class="div-subcategorie">
-                        <select class="categorie" name="subcategoria" value="<%= products.subcategoria %>">
-                            <option default class="select-categorie" name="subcategoria" value="select-categorie">-
-                                <%= products.subcategoria %>  -</option>
+                        <select class="categorie" name="subcategoria" value="subcategoria">
+                            <option default class="select-categorie" name="subcategoria" value="select-categorie">
+                                <%= products.subcategoria %></option>
                             </option>
                             <option name="subcategoria">Yoga-Mysore</option>
                             <option name="subcategoria">Yoga-Ashtanga</option>
@@ -112,8 +113,8 @@
                     </div>
                     <div class="div-difficulty">
                         <label for="difficulty">Dificultad</label>
-                        <select name="dificultad" class="difficulty" value="<%=products.dificultad%>">
-                            <option class="select-difficulty" default value="select-difficulty">-
+                        <select name="dificultad" class="difficulty" value="dificultad">
+                            <option class="select-difficulty" default value="<%=products.dificultad%>">-
                                 <%=products.dificultad%> -</i></option>
                             <option value="<%=products.dificultad%>">Principiante</i></option>
                             <option value="<%=products.dificultad%>">Facil</i></option>
@@ -142,7 +143,7 @@
                             <input type="checkbox" name="edadesAlumnos" value="Adolescentes"> Adolescentes
                         </div>
                         <div>
-                            <input type="checkbox" name="edadesAlumnos" value="Jóvenes"> Jóvenes
+                            <input type="checkbox" name="edadesAlumnos" value="Jovenes"> Jóvenes
                         </div>
                         <div>
                             <input type="checkbox" name="edadesAlumnos" value="Adultos"> Adultos
