@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": 1,
     "firstName": "Shoshana",
     "lastName": "McCoole",
@@ -9,7 +10,8 @@
     "email": "smccoole0@tamu.edu",
     "userName": "smccoole0",
     "password": "w5uIkZ"
-  }, {
+  },
+  {
     "id": 2,
     "firstName": "Salvador",
     "lastName": "Pattini",
@@ -20,7 +22,8 @@
     "email": "spattini1@homestead.com",
     "userName": "spattini1",
     "password": "ogpPN2JeuG"
-  }, {
+  },
+  {
     "id": 3,
     "firstName": "Chelsy",
     "lastName": "Pettifer",
@@ -31,7 +34,8 @@
     "email": "cpettifer2@disqus.com",
     "userName": "cpettifer2",
     "password": "5AseadxOUk"
-  }, {
+  },
+  {
     "id": 4,
     "firstName": "Jillane",
     "lastName": "Ambroisin",
@@ -42,7 +46,8 @@
     "email": "jambroisin3@howstuffworks.com",
     "userName": "jambroisin3",
     "password": "e2msgsqJM"
-  }, {
+  },
+  {
     "id": 5,
     "firstName": "Ki",
     "lastName": "Lapwood",
@@ -53,7 +58,8 @@
     "email": "klapwood4@howstuffworks.com",
     "userName": "klapwood4",
     "password": "CQlQHdh40V"
-  }, {
+  },
+  {
     "id": 6,
     "firstName": "Serena",
     "lastName": "Ivery",
@@ -64,7 +70,8 @@
     "email": "sivery5@pinterest.com",
     "userName": "sivery5",
     "password": "1SrCq9mKsI6"
-  }, {
+  },
+  {
     "id": 7,
     "firstName": "Jillayne",
     "lastName": "Bagnell",
@@ -75,7 +82,8 @@
     "email": "jbagnell6@slate.com",
     "userName": "jbagnell6",
     "password": "Ro5EePy"
-  }, {
+  },
+  {
     "id": 8,
     "firstName": "Thom",
     "lastName": "Ortsmann",
@@ -86,7 +94,8 @@
     "email": "tortsmann7@apple.com",
     "userName": "tortsmann7",
     "password": "4RKihN"
-  }, {
+  },
+  {
     "id": 9,
     "firstName": "Caryn",
     "lastName": "Worsham",
@@ -97,7 +106,8 @@
     "email": "cworsham8@slate.com",
     "userName": "cworsham8",
     "password": "2cxLS7AkBipx"
-  }, {
+  },
+  {
     "id": 10,
     "firstName": "Charmane",
     "lastName": "Skinley",
@@ -108,7 +118,8 @@
     "email": "cskinley9@dailymail.co.uk",
     "userName": "cskinley9",
     "password": "xNbHgovh"
-  }, {
+  },
+  {
     "id": 11,
     "firstName": "Benedetta",
     "lastName": "Rutherfoord",
@@ -119,7 +130,8 @@
     "email": "brutherfoorda@geocities.jp",
     "userName": "brutherfoorda",
     "password": "TUpoq6FmQLBA"
-  }, {
+  },
+  {
     "id": 12,
     "firstName": "Connie",
     "lastName": "Bambery",
@@ -130,7 +142,8 @@
     "email": "cbamberyb@umn.edu",
     "userName": "cbamberyb",
     "password": "l7XIRb"
-  }, {
+  },
+  {
     "id": 13,
     "firstName": "Boigie",
     "lastName": "Leer",
@@ -141,7 +154,8 @@
     "email": "bleerc@ed.gov",
     "userName": "bleerc",
     "password": "c4eACapXrf"
-  }, {
+  },
+  {
     "id": 14,
     "firstName": "Ulrich",
     "lastName": "Worthing",
@@ -152,7 +166,8 @@
     "email": "uworthingd@uiuc.edu",
     "userName": "uworthingd",
     "password": "fJddxmNB"
-  }, {
+  },
+  {
     "id": 15,
     "firstName": "Kendricks",
     "lastName": "Damiral",
@@ -163,7 +178,8 @@
     "email": "kdamirale@networkadvertising.org",
     "userName": "kdamirale",
     "password": "bIl627pQp"
-  }, {
+  },
+  {
     "id": 16,
     "firstName": "Ulrika",
     "lastName": "Minichillo",
@@ -174,7 +190,8 @@
     "email": "uminichillof@home.pl",
     "userName": "uminichillof",
     "password": "3Kg1P60"
-  }, {
+  },
+  {
     "id": 17,
     "firstName": "Gillie",
     "lastName": "Gorrie",
@@ -185,7 +202,8 @@
     "email": "ggorrieg@reuters.com",
     "userName": "ggorrieg",
     "password": "2tURZl"
-  }, {
+  },
+  {
     "id": 18,
     "firstName": "Aurie",
     "lastName": "Martt",
@@ -196,7 +214,8 @@
     "email": "amartth@un.org",
     "userName": "amartth",
     "password": "b6W4jS4g0"
-  }, {
+  },
+  {
     "id": 19,
     "firstName": "Umeko",
     "lastName": "Oldridge",
@@ -207,7 +226,8 @@
     "email": "uoldridgei@sourceforge.net",
     "userName": "uoldridgei",
     "password": "H0nUWEvvUw"
-  }, {
+  },
+  {
     "id": 20,
     "firstName": "Ferdie",
     "lastName": "MacGillreich",
@@ -218,5 +238,5 @@
     "email": "fmacgillreichj@va.gov",
     "userName": "fmacgillreichj",
     "password": "gblLyZRZ"
-  }]
-  
+  }
+]
