@@ -349,7 +349,7 @@ align-items: center;
 }
 .grupo-de-registrosA1 select {
     
-    padding: 6%;
+    padding: 4.5%;
     border-radius: 10px;
     border: solid 1px #006e52;
 }
@@ -472,6 +472,9 @@ align-items: center;
     border-radius: 10px;
     border: solid 1px #006e52;
     text-align: center;
+}
+button, input, optgroup, select, textarea {
+    background-color: white;
 }
   
  .grupo-de-registrosUsuarios input:focus {
