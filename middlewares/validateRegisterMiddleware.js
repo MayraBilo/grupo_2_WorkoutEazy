@@ -2,7 +2,7 @@ const path = require ('path');
 const {body} = require ('express-validator')
 
 const validations = [
-    body('fullName').notEmpty().withMessage('Escribir un nombre'),
+    body('nombre').notEmpty().withMessage('Escribir un nombre'),
     body('user').notEmpty().withMessage('Escribir un usuario'),
     body('password').notEmpty().withMessage('Escribir una contraseña'),
     body('email').notEmpty().withMessage('Escribir un email').bail()

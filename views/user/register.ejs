@@ -39,9 +39,18 @@
                         <div>
                             <label id="nombre" for="nombre">Nombre:</label>
 
-                            <input class="input-selecto" id=" nombre" type="text" name="nombre"
+                
+                            <input class="input-selecto" id=" nombre" type="text" name="nombre" value="<%= locals.oldData ? oldData.name : null %>"
                                 placeholder="Ingresa tu Nombre" required>
                             <span class="feedback"></span>
+                            
+                        
+                            <% if (locals.errors && errors.nombre) { %>
+                                <div class="text-danger">
+                                    <%= errors.nombre.msg %>
+                                </div>
+                            <% } %>
+
                         </div>
 
                         <div>
@@ -110,33 +119,9 @@
                     <div class="grupo-de-registrosUsuarios">
 
                         <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
-
-                        <% if (locals.errors && errors.fullName) { %>
-                
-                            <input 
-                            type="text" 
-                            name="fullName" 
-                            class="input-selecto <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.fullName : null %>"
-                            >
-                        <% } else { %>
-                            <input 
-                            type="text" 
-                            name="fullName" 
-                            id="Nombre Usuari@"
-                            class="input-selecto <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
-                            value="<%= locals.oldData ? oldData.fullName : null %>"
-                            >
-                        <% } %> 
-                        <% if (locals.errors && errors.fullName) { %>
-                            <div class="text-danger">
-                                <%= errors.fullName.msg %>
-                            </div>
-                        <% } %>
-
-                        <!--<input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
+                        <input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
                             placeholder="Crea tu Usuario" required>
-                        <span class="feedback"></span>-->
+                        <span class="feedback"></span>
 
                     </div>
 
