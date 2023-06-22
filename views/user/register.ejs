@@ -3,133 +3,167 @@
 
 <head>
     <%- include("../partials/head") %>
-    <link rel="stylesheet" href="/css/register.css">
+        <link rel="stylesheet" href="/css/register.css">
 </head>
 
 <body>
     <%- include("../partials/header") %>
-<main>
-    <section class="container-1">
-        <img src="./images/images-register-login/editworkouteasy3-a-copy.png" alt="imagen1">
-    </section>
-    <section class="container-2">
-        <h2>Regístrate como:</h2>
-        <form action="/registro" method="POST">
-            <div class="botones">
-                <button id="Usuario" class="button-r" type="button">Usuario</button>
-                <a href="/registerAliados"><button id="Aliado" class="button-r" type="button">Aliado</button></a>
-            </div>
-            <p>Ingresa con tus redes sociales<p>
-                <div class="redes-sociales">
-                    <button id="facebook"><i class="fa-brands fa-facebook-f" style="color:#fff"></i></button>
-                    <button id="apple"><i class="fa-brands fa-apple"></i></button>
-                    <button id="google-logo"><i class="fa-brands fa-google"></i></button>
-            </div>
-            <section class="grupo-de-registrosA1">
-            <div>
-                <label id="nombre" for="nombre">Nombre:</label>
+        <main>
+            <section class="container-1">
+                <img src="./images/images-register-login/editworkouteasy3-a-copy.png" alt="imagen1">
+            </section>
+            <section class="container-2">
+                <h2>Regístrate como:</h2>
 
-                <input class="input-selecto id=" nombre" type="text" name="nombre" placeholder="Ingresa tu Nombre"
-                    required>
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label id="apellidos" for="nombre">Apellidos: </label>
-
-                <input class="input-selecto" id="apellido" type="text" name="apellido"
-                    placeholder="Ingresa tus Apellidos" required>
-                <span class="feedback"></span>
-            </div>
-        </section>
-            <div class="grupo-indicarSexo" required>
                 
-                <label for="">Hombre</label><input type="radio" name="medio" id="hombre" value="hombre">
-                <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
-                <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
-            </div>
-            <section class="grupo-de-registrosA1">
-            <div>
-                <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
+                <div class="botones">
+                    <button id="Usuario" class="button-r" type="button">Usuario</button>
+                    <a href="/registerAliados"><button id="Aliado" class="button-r"
+                        type="button">Aliado</button></a>
+                </div>
 
-                <input class="input-selecto" id="label fecha de nacimiento" type="date" name="fecha de nacimiento"
-                    required>
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label id="ciudad residencia" for="ciudad residencia">Ciudad de Residencia: </label>
+                <!--- Formulario --->
+                
+                <form action="/register" method="POST" enctype="multipart/form-data">
 
-                <select class="option" id="ciudad residencia" name="ciudad residencia" required>>
+                    <p>Ingresa con tus redes sociales</p>
+
+                    <div class="redes-sociales">
+                        <button id="facebook"><i class="fa-brands fa-facebook-f" style="color:#fff"></i></button>
+                        <button id="apple"><i class="fa-brands fa-apple"></i></button>
+                        <button id="google-logo"><i class="fa-brands fa-google"></i></button>
+                    </div>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="nombre" for="nombre">Nombre:</label>
+
+                            <input class="input-selecto" id=" nombre" type="text" name="nombre"
+                                placeholder="Ingresa tu Nombre" required>
+                            <span class="feedback"></span>
+                        </div>
+
+                        <div>
+                            <label id="apellidos" for="nombre">Apellidos: </label>
+
+                            <input class="input-selecto" id="apellido" type="text" name="apellido"
+                                placeholder="Ingresa tus Apellidos" required>
+                            <span class="feedback"></span>
+                        </div>
+
+                    </section>
+
+                    <div class="grupo-indicarSexo" required>
+
+                        <label for="">Hombre</label><input type="radio" name="medio" id="hombre" value="hombre">
+                        <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
+                        <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
+                    </div>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
+
+                            <input class="input-selecto" id="label fecha de nacimiento" type="date"
+                                name="fecha de nacimiento" required>
+                            <span class="feedback"></span>
+                        </div>
+
+                        <div>
+                            <label id="ciudad residencia" for="ciudad residencia">Ciudad de Residencia: </label>
+
+                            <select class="option" id="ciudad residencia" name="ciudad residencia" required>>
+                                <br>
+                                <option>Buenos Aires</option>
+                                <option>Córdoba</option>
+                                <option>Rosario</option>
+                                <option>Tucumán</option>
+                                <option>Mendoza</option>
+                                <option>Mar del plata</option>
+                                <option>Bahía Blanca</option>
+                                <option>Santa Fe</option>
+                            </select>
+                        </div>
+
+                    </section>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="celular" for="celular">N° Celular: </label>
+                            <input class="input-selecto" id="e-mail" type="text" name="e-mail"
+                                placeholder="Ingresa tu # Celular" required>
+                            <span class="feedback"></span>
+                        </div>
+
+                        <div>
+                            <label id="apellido" for="nombre">E-mail: </label>
+                            <input class="input-selecto" id="e-mail" type="text" name="e-mail"
+                                placeholder="Ingresa tu correo electrónico" required>
+                            <span class="feedback"></span>
+                        </div>
+
+                    </section>
+
+                    <div class="grupo-de-registrosUsuarios">
+
+                        <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
+                        <input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
+                            placeholder="Crea tu Usuario" required>
+                        <span class="feedback"></span>
+                    </div>
+
+                    <section class="grupo-de-registrosUsuarios">
+                        <label id="documento" for="documento">Subir foto de perfil:</label>
+                        <input id="documento" type="file" name="avatar">
+                    </section>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="contraseña" for="contraseña">Contraseña:</label>
+                            <input class="input-selecto" id="contraseña" type="password" name="password"
+                                placeholder="Crear Contraseña">
+                            <span class="feedback"></span>
+                        </div>
+
+                        <div>
+                            <label id="confirmar contraseña" for="confirmar contraseña">Confirmar :</label>
+                            <input class="input-selecto" id="confirmar contraseña" type="password"
+                                name="password" placeholder="Confirmar Contraseña">
+                            <span class="feedback"></span>
+                        </div>
+
+                    </section>
                     <br>
-                    <option>Buenos Aires</option>
-                    <option>Córdoba</option>
-                    <option>Rosario</option>
-                    <option>Tucumán</option>
-                    <option>Mendoza</option>
-                    <option>Mar del plata</option>
-                    <option>Bahía Blanca</option>
-                    <option>Santa Fe</option>
-                </select>
-            </div>
+
+                    <div class="condiciones">
+                        <input type="checkbox" name="terminos y condiciones" value="terminos y condiciones">Acepto los
+                        términos
+                        y condiciones de uso del sitio web.
+                        <br>
+                        <input type="checkbox" name="terminos y condiciones" value="Políticas de privacidad">Acepto el
+                        tratamiento de datos personales según la política de privacidad con el fin de ser contactado por
+                        WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
+                        productos/servicios.
+                        <span class="feedback"></span>
+                    </div>
+
+                    <div class="boton">
+                        <input id="enviar" type="submit" value="Registrarse">
+                    </div>
+
+                </form>
+
             </section>
-        <section class="grupo-de-registrosA1"> 
-            <div>
-                <label id="celular" for="celular">N° Celular: </label>
-                <input class="input-selecto" id="e-mail" type="text" name="e-mail" placeholder="Ingresa tu # Celular"
-                    required>
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label id="apellido" for="nombre">E-mail: </label>
-                <input class="input-selecto" id="e-mail" type="text" name="e-mail"
-                    placeholder="Ingresa tu correo electrónico" required>
-                <span class="feedback"></span>
-            </div>
-        </section>
-            <div class="grupo-de-registrosUsuarios">
-                <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
-                <input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
-                    placeholder="Crea tu Usuario" required>
-                <span class="feedback"></span>
-            </div>
-            <section class="grupo-de-registrosUsuarios">
-                <label id="documento" for="documento">Subir foto de perfil:</label>
-                <input id="documento" type="file" name="documento" accept="document/*">
-            </section>
-            <section class="grupo-de-registrosA1">
-            <div>
-                <label id="contraseña" for="contraseña">Contraseña:</label>
-                <input class="input-selecto" id="contraseña" type="password" name="contraseña"
-                    placeholder="Crear Contraseña">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label id="confirmar contraseña" for="confirmar contraseña">Confirmar :</label>
-                <input class="input-selecto" id="confirmar contraseña" type="password" name="confirmar contraseña"
-                    placeholder="Confirmar Contraseña">
-                <span class="feedback"></span>
-            </div>
-        </section>
-            <br>
-            <div class="condiciones">
-                <input type="checkbox" name="terminos y condiciones" value="terminos y condiciones">Acepto los términos
-                y condiciones de uso del sitio web.
-                <br>
-                <input type="checkbox" name="terminos y condiciones" value="Políticas de privacidad">Acepto el
-                tratamiento de datos personales según la política de privacidad con el fin de ser contactado por
-                WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
-                productos/servicios.
-                <span class="feedback"></span>
-            </div>
-            <div class="boton">
-                <input id="enviar" type="submit" value="Registrarse">
-            </div>
-        </form>
-    </section>
-</main>
-<%- include("../partials/footer") %>
-<button class="consultas">
-    <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
-    Consultas</button>
-    
+        </main>
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+
 </body>
+
 </html>
