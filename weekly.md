@@ -14,3 +14,7 @@ Subcategorías: deporte > acuáticos, de red, gimnasia, extremos, en conjunto, m
 Preguntar cómo crear los horarios y cómo crear un calendario integrado.
 
 Cómo pensar subcategorías.
+
+20/6
+
+Organizamos el trello asignando tareas.
