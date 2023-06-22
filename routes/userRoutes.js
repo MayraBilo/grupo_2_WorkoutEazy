@@ -25,5 +25,6 @@ router.post('/register', uploadFile.single('avatar'), userControllers.processReg
 // Perfil de usuario
 
 router.get('/perfilCliente', userControllers.clientProfile);
+router.get('/perfilAliado', userControllers.getAliadoProfile);
 
 module.exports = router;

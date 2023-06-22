@@ -38,7 +38,8 @@ const controller = {
 },
 
     getRegisterAliados: (req, res) => res.render("registerAliados"),
-    clientProfile: (req, res) => {res.render("perfilCliente")}
+    clientProfile: (req, res) => res.render("perfilCliente"),
+    getAliadoProfile: (req, res) => res.render("perfilAliado"),
 };
 
 module.exports = controller;

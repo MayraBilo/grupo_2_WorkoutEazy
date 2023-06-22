@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    background-color: whitesmoke;
+}
+
+.banner-escalada {
+    position: relative;
+    z-index: 9;
+    width: 100vw;
+}
+
+.titulo-general {
+    text-align: center;
+    padding: 20px 5px;
+    background-image: url('/images/diseno/banner2 profileAliados.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 50%;
+    z-index: 7;
+    position: relative;
+    height: 310px;
+
+}
+
+.titulo-h1 {
+    opacity: 100%;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    font-weight: 300;
+    font-size: 18%;
+    text-align: center;
+    padding: 225px 20px 5px 20px;
+    position: absolute;
+    left: 22%;
+    top: 0px;
+    z-index: 10;
+    margin: auto;
+  
+
+}
+
+.contenedorGlobal {
+    display: flex;
+    flex-direction: row;
+  justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 15px;
+    background-color: whitesmoke;
+
+}
+.tituloAliado {
+    display: flex;
+    justify-content: center;
+}
+.soyAliado {
+    
+    text-align: center;
+    background-color: #0084bdb3;
+    border: 1px #0084bd6c solid;
+    border-radius: 14px;
+    color: white;
+    width: 50%;
+    margin-top: 30px;
+    align-self: center;
+}
+.soyAliado h4{
+
+    margin: auto;
+    padding: 5px;
+}
+
+.container1-instructor {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contenedorImagenEntrenador {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.img-entrenador {
+    display: flex;
+    flex-direction: column;
+    width: 282px;
+    margin-left: 0px;
+    border-radius: 0px 40px 0px 0px;
+    position: relative;
+    /*border: solid 3px #0084bd;*/
+    box-shadow: 0px 10px 10px #006ebd;
+}
+
+.container2-datos {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.datosClasAlum {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.datos-basicos {
+    display: flex;
+    text-align: center;
+    font-size: 15px;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.perfilProfesional {
+    text-align: center;
+}
+.profile__description {
+    text-align: center;
+    border-top: 1px solid #006ebd5b;
+    border-bottom: 2px solid #006ebd5b;
+    border-radius: 15px;
+    /*background-color: #006ebd5b;*/
+    padding: 10px;
+    margin-bottom:  1.5rem;
+    margin: 15px
+
+}
+.informacion-contacto {
+    width: 98%;
+    text-align: left;
+    border-bottom: 2px solid #006ebd5b;
+    border-radius: 15px;
+    background-color: #006ebd21;
+    padding: 15px;
+    margin-bottom:  1.5rem;
+    margin: 15px
+}
+.informacion-contacto h4 {
+    text-align: center;
+}
+.editar {
+    border: 1px #006ebd;
+    border-radius: 14px;
+    background-color: #006ebd9c;
+    width: 25%;
+    padding: 5px;
+    margin-top: 20px;
+    align-self: center;
+    transition: all 0.3s ease-in-out;
+}
+.informacion-legal-aliado {
+    width: 100vw;
+    text-align: left;
+    border-bottom: 2px solid #006ebd5b;
+    border-radius: 15px;
+    background-color: #006ebd21;
+    padding: 15px;
+    margin-bottom:  1.5rem;
+    margin: 15px
+}
+.informacion-legal-aliado h4 {
+    text-align: center;
+}
+.clasesAliado {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap ;
+}
+.clasesTitulo h3 {
+    text-align: center;
+    
+}
+
+.clases {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.contenedor-de-clases {
+    border: 1px solid #006ebd;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    padding: 5px;
+    border-radius: 0 8px 0 0px;
+    font-size: 12px;
+    transition: 450ms;
+    overflow: hidden;
+}
+.boton-crearClase {
+    width: 100%;
+    border: 1px #006ebd;
+    border-radius: 14px;
+    background-color: #006ebd9c;
+  color: white;
+    padding: 5px;
+    margin-top: 80px;
+    align-self: center;    
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #0084bd;
+    color: white;
+    transform: scale(1.1);
+}
+
+ .calendario {
+    padding: 20px;
+    margin-left: 10px;
+ }
+ .galeriaImagenes {
+    width: 95vw;
+    text-align: left;
+    border-bottom: 2px solid #006ebd5b;
+    border-radius: 15px;
+    background-color: #006ebd21;
+    padding: 15px;
+    margin-bottom:  1.5rem;
+    margin: 15px
+ }
+ .galeriaImagenes h4 {
+    text-align: center;
+ }
+ .aliados {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    gap: 30px;
+    padding: 30px;
+ }
+
+
+ @media (max-width: 763px) {
+    .titulo-h1 {
+        opacity: 100%;
+        font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+        font-weight: 300;
+        font-size: 18%;
+        text-align: center;
+        padding: 215px 20px 5px 20px;
+        position: absolute;
+        left: 3%;
+        top: 0px;
+        z-index: 10;
+        margin: auto;
+    }
+ }
