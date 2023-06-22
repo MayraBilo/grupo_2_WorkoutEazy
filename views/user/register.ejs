@@ -110,9 +110,34 @@
                     <div class="grupo-de-registrosUsuarios">
 
                         <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
-                        <input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
+
+                        <% if (locals.errors && errors.fullName) { %>
+                
+                            <input 
+                            type="text" 
+                            name="fullName" 
+                            class="input-selecto <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.fullName : null %>"
+                            >
+                        <% } else { %>
+                            <input 
+                            type="text" 
+                            name="fullName" 
+                            id="Nombre Usuari@"
+                            class="input-selecto <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                            value="<%= locals.oldData ? oldData.fullName : null %>"
+                            >
+                        <% } %> 
+                        <% if (locals.errors && errors.fullName) { %>
+                            <div class="text-danger">
+                                <%= errors.fullName.msg %>
+                            </div>
+                        <% } %>
+
+                        <!--<input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
                             placeholder="Crea tu Usuario" required>
-                        <span class="feedback"></span>
+                        <span class="feedback"></span>-->
+
                     </div>
 
                     <section class="grupo-de-registrosUsuarios">
@@ -132,7 +157,7 @@
                         <div>
                             <label id="confirmar contraseña" for="confirmar contraseña">Confirmar :</label>
                             <input class="input-selecto" id="confirmar contraseña" type="password"
-                                name="password" placeholder="Confirmar Contraseña">
+                                name="password-confirm" placeholder="Confirmar Contraseña">
                             <span class="feedback"></span>
                         </div>
 

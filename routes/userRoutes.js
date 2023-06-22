@@ -10,6 +10,7 @@ const userControllers = require("../controllers/userControllers");
 
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware.js');
+const validations = require('../middlewares/validateRegisterMiddleware.js');
 
 
 // Formulario de login
@@ -20,7 +21,7 @@ router.get('/register', userControllers.getRegister);
 router.get('/registerAliados', userControllers.getRegisterAliados);
 
 // Procesar el registro
-router.post('/register', uploadFile.single('avatar'), userControllers.processRegister);
+router.post('/register', uploadFile.single('avatar'), validations, userControllers.processRegister);
 
 // Perfil de usuario
 

@@ -1,5 +1,7 @@
 const path = require("path");
 
+const { validationResult } = require ('express-validator');
+
 const user = require('../models/cliente');
 
 const bcrypt = require('bcryptjs');
@@ -10,7 +12,7 @@ const controller = {
 
     processRegister: (req, res) => {
 
-        /*const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
@@ -25,7 +27,7 @@ const controller = {
             return res.render('register', {
                 errors: {email: {msg: 'Este email ya está registrado'}},
                 oldData: req.body})
-        }*/
+        }
 
         let userToCreate = {
             ...req.body,

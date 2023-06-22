@@ -258,5 +258,21 @@
    "Políticas de privacidad"
   ],
   "avatar": "1687461414990-.jpg"
+ },
+ {
+  "id": 22,
+  "nombre": "Dolores",
+  "apellido": "Saubidet",
+  "medio": "mujer",
+  "fecha de nacimiento": "1964-03-07",
+  "ciudad residencia": "Buenos Aires",
+  "e-mail": [
+   "1163520616",
+   "dolosaubi@gmail.com"
+  ],
+  "nombre usuario": "Dolores",
+  "password": "$2a$10$WhohI2SuKZp4QC.ebH7BjuWLVF3GDparXQakehRxYAccebC7gisSG",
+  "password-confirm": "sosi",
+  "avatar": "1687463442458-.jpg"
  }
 ]
