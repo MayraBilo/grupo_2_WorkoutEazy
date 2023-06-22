@@ -86,3 +86,23 @@ commitear menos y organizar mejor los commit.
 Dejar de hacer:
 
 hablar menos de cosas no relevantes.
+
+Sprint 4:
+
+Reunion semanal 20/6 21hs
+
+Comenzar a hacer:
+
+Mejorar y afianzar la division de tareas a realizar. Pensarlo como "escalera" de tareas, ensambladas unas con otras. Unificar criterios en la seleccion de los nombres de las variables a utilizar.
+
+Más de:
+Intercambiar en la semana sobre los avances de cada uno en sus tareas. Comunicar si hay situaciones personales que impidan la fluidez del trabajo grupal.
+
+Seguir haciendo:
+Sostener los tiempos de entrega de los trabajos. Darle espacio al diálogo
+
+Menos de:
+No comunicar dificultades en la participación del grupo.
+
+Dejar de hacer:
+Ausentarse sin avisar.

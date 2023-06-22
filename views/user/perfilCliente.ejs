@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/perfil.css">
+    </head>
+<body>
+    <%- include("../partials/header") %>
+    <main>
+    
+    <div class="soy-cliente">
+        <h4>Soy cliente</h4>
+    </div>
+
+    <section class="profile">
+        <img src="/images/avatars/avatar-jacinta.jpg" class="logo-aliado1" width="300px">
+        
+        <div class="datos">
+        <h4>Nombre y apellido</h4>
+        <p>Edad</p>
+        <h4>Ciudad</h4>
+        <p>Dirección</p>
+        </div>
+
+        <div class="info-pago">
+            <h4>Información de pago</h4>
+
+            <div class="desplegable">
+            <p>Domicilio de facturación</p>
+            <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
+            </div>
+
+            <div class="desplegable">
+            <p>Tarjetas cargadas</p>
+            <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
+            </div>
+        </div>
+
+        <button class="editar">
+            <h4>Editar</h4>
+        </button>
+    </section>
+
+    <section class="aliados">
+        <div>
+            <h4>Aliados</h4>
+            <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
+        </div>
+        <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px">
+    </section> 
+
+    <section class="calendario">
+
+        <div class="desplegable-calendar">
+            <h2>Calendario</h2>
+            <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
+        </div>
+
+        <h2>Contacto</h2>
+
+        <div class="datos-calendar">
+        <h4>Número de teléfono</h4>
+        <p>Contacto de emergencia</p>
+        <h4>Mail</h4>
+        <p>Dirección</p>
+        </div>
+
+    </section>
+
+    <section class="clases-sugeridas">
+        <h2>Clases sugeridas</h2>
+
+        <section class="busquedasRelacionadas">
+
+            <div class="container-busquedas">
+
+                <article class="clase-relacionada">
+
+                    <img src="/images/productos/functional.JPG" alt="functional" class="img-relacionada">
+                    <h5>Functional</h5>
+                    <p>
+                        Mantenete entrenado con nuestras clases
+                    </p>
+
+                </article>
+
+                <article class="clase-relacionada">
+
+                    <img src="/images/productos/yoga1.JPG" alt="yoga1" class="img-relacionada">
+                    <h5>Yoga al aire libre</h5>
+                    <p>
+                        Disfrutá de todos los beneficios del yoga.
+                    </p>
+                </article>
+
+                <article class="clase-relacionada">
+                    
+                    <img src="/images/productos/gimnasio.JPG" alt="gimnasio" class="img-relacionada">
+                    <h5>Gimnasio Indoor</h5>
+                    <p>
+                        Entrenamiento adaptado a todos los niveles.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    </main>
+    <%- include("../partials/footer") %>
+    <button class="consultas">
+        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+        Consultas</button>
+    
+</body>
+</html>
