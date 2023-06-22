@@ -10,10 +10,10 @@ router.get('/login', userControllers.getLogin);
 // Formulario de registro
 router.get('/register', userControllers.getRegister);
 router.get('/registerAliados', userControllers.getRegisterAliados);
-router.get('/profileAliados', userControllers.getProfileAliados);
 
 // Perfil de usuario
 
 router.get('/perfilCliente', userControllers.clientProfile);
+router.get('/perfilAliado', userControllers.getAliadoProfile);
 
 module.exports = router;
