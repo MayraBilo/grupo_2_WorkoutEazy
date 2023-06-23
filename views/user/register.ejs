@@ -15,15 +15,14 @@
             <section class="container-2">
                 <h2>Regístrate como:</h2>
 
-                
+
                 <div class="botones">
                     <button id="Usuario" class="button-r" type="button">Usuario</button>
-                    <a href="/registerAliados"><button id="Aliado" class="button-r"
-                        type="button">Aliado</button></a>
+                    <a href="/registerAliados"><button id="Aliado" class="button-r" type="button">Aliado</button></a>
                 </div>
 
                 <!--- Formulario --->
-                
+
                 <form action="/register" method="POST" enctype="multipart/form-data">
 
                     <p>Ingresa con tus redes sociales</p>
@@ -37,37 +36,49 @@
                     <section class="grupo-de-registrosA1">
 
                         <div>
-                            <label id="nombre" for="nombre">Nombre:</label>
+                            <label>Nombre:</label>
 
-                
-                            <input class="input-selecto" id=" nombre" type="text" name="nombre" value="<%= locals.oldData ? oldData.name : null %>"
-                                placeholder="Ingresa tu Nombre" required>
-                            <span class="feedback"></span>
-                            
-                        
+                            <input type="text" name="nombre"
+                                class="input-selecto <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Ingresa tu Nombre">
+
                             <% if (locals.errors && errors.nombre) { %>
                                 <div class="text-danger">
                                     <%= errors.nombre.msg %>
                                 </div>
-                            <% } %>
+                                <% } %>
 
                         </div>
 
                         <div>
-                            <label id="apellidos" for="nombre">Apellidos: </label>
+                            <label>Apellidos: </label>
 
-                            <input class="input-selecto" id="apellido" type="text" name="apellido"
-                                placeholder="Ingresa tus Apellidos" required>
-                            <span class="feedback"></span>
+                            <input class="input-selecto <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                                type="text" name="apellido" value="<%= locals.oldData ? oldData.apellido : null %>"
+                                placeholder="Ingresa tus Apellidos">
+
+                            <% if (locals.errors && errors.apellido) { %>
+                                <div class="text-danger">
+                                    <%= errors.apellido.msg %>
+                                </div>
+                                <% } %>
+
                         </div>
 
                     </section>
 
-                    <div class="grupo-indicarSexo" required>
+                    <div class="grupo-indicarSexo">
 
                         <label for="">Hombre</label><input type="radio" name="medio" id="hombre" value="hombre">
                         <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
                         <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
+
+                        <% if (locals.errors && errors.medio) { %>
+                            <div class="text-danger">
+                                <%= errors.medio.msg %>
+                            </div>
+                            <% } %>
+
                     </div>
 
                     <section class="grupo-de-registrosA1">
@@ -75,26 +86,46 @@
                         <div>
                             <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
 
-                            <input class="input-selecto" id="label fecha de nacimiento" type="date"
-                                name="fecha de nacimiento" required>
-                            <span class="feedback"></span>
+                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="nacimiento">
+
+                            <% if (locals.errors && errors.nacimiento) { %>
+                                <div class="text-danger">
+                                    <%= errors.nacimiento.msg %>
+                                </div>
+                                <% } %>
                         </div>
 
                         <div>
-                            <label id="ciudad residencia" for="ciudad residencia">Ciudad de Residencia: </label>
+                            <label>Ciudad de Residencia: </label>
 
-                            <select class="option" id="ciudad residencia" name="ciudad residencia" required>>
+                            <select class="option" name="ciudad">
                                 <br>
-                                <option>Buenos Aires</option>
+                                <option value="">Elegí una ciudad</option>
+
+                                <!---<option>Buenos Aires</option>
                                 <option>Córdoba</option>
                                 <option>Rosario</option>
                                 <option>Tucumán</option>
                                 <option>Mendoza</option>
                                 <option>Mar del plata</option>
                                 <option>Bahía Blanca</option>
-                                <option>Santa Fe</option>
+                                <option>Santa Fe</option>-->
+
+                                <% let ciudades=['Buenos Aires', 'Caracas' , 'Venado Tuerto', 'Bahía Blanca']; %>
+                                    <% for (const oneCity of ciudades) { %>
+                                        <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.ciudad)
+                                            ? 'selected' : null %> >
+                                            <%= oneCity%>
+                                        </option>
+                                        <% }%>
                             </select>
                         </div>
+
+                        <% if (locals.errors && errors.ciudad) { %>
+                            <div class="text-danger">
+                                <%= errors.ciudad.msg %>
+                            </div>
+                            <% } %>
 
                     </section>
 
@@ -102,16 +133,27 @@
 
                         <div>
                             <label id="celular" for="celular">N° Celular: </label>
-                            <input class="input-selecto" id="e-mail" type="text" name="e-mail"
-                                placeholder="Ingresa tu # Celular" required>
-                            <span class="feedback"></span>
+                            <input class="input-selecto" id="e-mail" type="text" name="contacto"
+                                placeholder="Ingresa tu # Celular">
+
+                            <% if (locals.errors && errors.contacto) { %>
+                                <div class="text-danger">
+                                    <%= errors.contacto.msg %>
+                                </div>
+                                <% } %>
                         </div>
 
                         <div>
                             <label id="apellido" for="nombre">E-mail: </label>
-                            <input class="input-selecto" id="e-mail" type="text" name="e-mail"
-                                placeholder="Ingresa tu correo electrónico" required>
-                            <span class="feedback"></span>
+                            <input class="input-selecto <%= locals.errors && errors.email ? 'is-invalid' : null %>" type="email" name="email"
+                            value="<%= locals.oldData ? oldData.email : null %>"
+                                placeholder="Ingresa tu correo electrónico">
+
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                                <% } %>
                         </div>
 
                     </section>
@@ -119,15 +161,27 @@
                     <div class="grupo-de-registrosUsuarios">
 
                         <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
-                        <input class="input-selecto" id="Nombre Usuari@" type="text" name="nombre usuario"
-                            placeholder="Crea tu Usuario" required>
-                        <span class="feedback"></span>
+                        <input class="input-selecto" id="Nombre Usuari@" type="text" name="usuario"
+                            placeholder="Crea tu Usuario">
+
+                        <% if (locals.errors && errors.usuario) { %>
+                            <div class="text-danger">
+                                <%= errors.usuario.msg %>
+                            </div>
+                            <% } %>
 
                     </div>
 
                     <section class="grupo-de-registrosUsuarios">
                         <label id="documento" for="documento">Subir foto de perfil:</label>
-                        <input id="documento" type="file" name="avatar">
+                        <input id="documento" type="file" name="avatar"
+                        value="<%= locals.oldData ? oldData.avatar : null %>">
+
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="text-danger">
+                                <%= errors.avatar.msg %>
+                            </div>
+                        <% } %>
                     </section>
 
                     <section class="grupo-de-registrosA1">
@@ -136,29 +190,45 @@
                             <label id="contraseña" for="contraseña">Contraseña:</label>
                             <input class="input-selecto" id="contraseña" type="password" name="password"
                                 placeholder="Crear Contraseña">
-                            <span class="feedback"></span>
+
                         </div>
 
                         <div>
                             <label id="confirmar contraseña" for="confirmar contraseña">Confirmar :</label>
                             <input class="input-selecto" id="confirmar contraseña" type="password"
                                 name="password-confirm" placeholder="Confirmar Contraseña">
-                            <span class="feedback"></span>
                         </div>
 
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+
                     </section>
+
+
                     <br>
 
                     <div class="condiciones">
-                        <input type="checkbox" name="terminos y condiciones" value="terminos y condiciones">Acepto los
+                        <input type="checkbox" name="condiciones" value="terminos y condiciones">Acepto los
                         términos
                         y condiciones de uso del sitio web.
+                        <% if (locals.errors && errors.condiciones) { %>
+                            <div class="text-danger">
+                                <%= errors.condiciones.msg %>
+                            </div>
+                            <% } %>
                         <br>
-                        <input type="checkbox" name="terminos y condiciones" value="Políticas de privacidad">Acepto el
+                        <input type="checkbox" name="privacidad" value="Políticas de privacidad">Acepto el
                         tratamiento de datos personales según la política de privacidad con el fin de ser contactado por
                         WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
                         productos/servicios.
-                        <span class="feedback"></span>
+                        <% if (locals.errors && errors.privacidad) { %>
+                            <div class="text-danger">
+                                <%= errors.privacidad.msg %>
+                            </div>
+                            <% } %>
                     </div>
 
                     <div class="boton">

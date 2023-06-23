@@ -235,8 +235,8 @@ p {
     margin: 5px;
 }
 
-.is-invalid {
-    border: 1px rgb(184, 32, 32) solid;
+input .input-selecto .is-invalid {
+    border: 3px rgb(184, 32, 32) solid;
 }
 
         /*--------------------------------------footer---------------------------------------------------------------------*/

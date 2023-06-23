@@ -274,5 +274,50 @@
   "password": "$2a$10$WhohI2SuKZp4QC.ebH7BjuWLVF3GDparXQakehRxYAccebC7gisSG",
   "password-confirm": "sosi",
   "avatar": "1687463442458-.jpg"
+ },
+ {
+  "id": 23,
+  "nombre": "Diego",
+  "apellido": "Mayol",
+  "medio": "hombre",
+  "fecha de nacimiento": "1980-04-07",
+  "ciudad residencia": "Buenos Aires",
+  "e-mail": [
+   "1163520612",
+   "dmayol@gmail.com"
+  ],
+  "nombre usuario": "Diego",
+  "password": "$2a$10$QnKAWDYxrJYOV9yEeWJWDO5GLadvo3/hKGaiejEIKoPmrrNQUoqk6",
+  "password-confirm": "estudio",
+  "avatar": "1687522248828-.jpg"
+ },
+ {
+  "id": 24,
+  "nombre": "Mariano",
+  "apellido": "Martinez",
+  "medio": "hombre",
+  "fecha de nacimiento": "2000-06-06",
+  "ciudad residencia": "Buenos Aires",
+  "e-mail": [
+   "1145680614",
+   "mmartinez@gmail.com"
+  ],
+  "nombre usuario": "Mariano",
+  "password": "$2a$10$H/nsK2qkdaoaxXxJPG3ijOmPVqzzNMxdgBo/zNNOopQrLLLKK2xEu",
+  "password-confirm": "lacteos",
+  "avatar": "1687525452061-.jpg"
+ },
+ {
+  "id": 25,
+  "nombre": "Abril",
+  "apellido": "Videla",
+  "fecha de nacimiento": "2000-03-23",
+  "ciudad residencia": "Buenos Aires",
+  "contacto": "1163547892",
+  "email": "api@gmail.com",
+  "nombre usuario": "Api",
+  "password": "$2a$10$0.MmSXXwY5OX9BFGR81JqOhHObBU9nM4WRrwJOS7bJlfsN.tlr3wS",
+  "password-confirm": "apichuela",
+  "avatar": "1687526375644-.jpg"
  }
 ]
