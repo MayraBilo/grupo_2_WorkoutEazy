@@ -76,7 +76,16 @@ const controller = {
 },
 
     getRegisterAliados: (req, res) => res.render("registerAliados"),
-    clientProfile: (req, res) => res.render("perfilCliente"),
+
+    clientProfile: (req, res) => {
+    return res.render("perfilCliente", {cliente: req.session.userLogged})},
+
+    logout: (req, res) => {
+        /*res.clearCookie('userEmail')*/
+        req.session.destroy();
+        return res.redirect('/');
+    },
+
     getAliadoProfile: (req, res) => res.render("perfilAliado"),
 };
 

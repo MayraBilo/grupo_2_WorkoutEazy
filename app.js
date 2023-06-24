@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookies = require('cookie-parser');
 
 const mainRoutes = require('./routes/mainRoutes');
 const productsRoutes = require('./routes/productsRoutes');
@@ -18,11 +19,17 @@ app.set("views", [
     path.join(__dirname, "./views/user"),
 ]);
 
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
 app.use(session({
     secret: "Shhh",
     resave: false,
     saveUninitialized: false,
 }))
+
+app.use(userLoggedMiddleware);
+
+/*app.use(cookies());*/
 
 // --- Middlewares ---
 app.use(express.static('public'));

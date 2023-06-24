@@ -11,16 +11,18 @@ const userControllers = require("../controllers/userControllers");
 // Middlewares
 const uploadFile = require('../middlewares/multerMiddleware.js');
 const validations = require('../middlewares/validateRegisterMiddleware.js');
+const guestMiddleware = require('../middlewares/guestMiddleware.js');
+const authMiddleware = require('../middlewares/authMiddleware.js');
 
 
 // Formulario de login
-router.get('/login', userControllers.getLogin);
+router.get('/login', guestMiddleware, userControllers.getLogin);
 
 // Procesar el login
 router.post('/login', userControllers.processLogin);
 
 // Formulario de registro
-router.get('/register', userControllers.getRegister);
+router.get('/register', guestMiddleware, userControllers.getRegister);
 router.get('/registerAliados', userControllers.getRegisterAliados);
 
 // Procesar el registro
@@ -28,7 +30,11 @@ router.post('/register', uploadFile.single('avatar'), validations, userControlle
 
 // Perfil de usuario
 
-router.get('/perfilCliente', userControllers.clientProfile);
+router.get('/perfilCliente', authMiddleware, userControllers.clientProfile);
 router.get('/perfilAliado', userControllers.getAliadoProfile);
+
+// Logout
+
+router.get('/logout', authMiddleware, userControllers.logout);
 
 module.exports = router;

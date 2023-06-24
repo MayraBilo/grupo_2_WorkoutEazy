@@ -13,10 +13,10 @@
     </div>
 
     <section class="profile">
-        <img src="/images/avatars/avatar-jacinta.jpg" class="logo-aliado1" width="300px">
+        <img src="/images/productos/<%= cliente.avatar %>" class="logo-aliado1" width="300px">
         
         <div class="datos">
-        <h4>Nombre y apellido</h4>
+        <h4><%= cliente.nombre %> <%= cliente.apellido %></h4>
         <p>Edad</p>
         <h4>Ciudad</h4>
         <p>Dirección</p>
@@ -31,7 +31,7 @@
             </div>
 
             <div class="desplegable">
-            <p>Domicilio de facturación</p>
+            <p>Tarjetas cargadas</p>
             <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
             </div>
 
@@ -40,6 +40,11 @@
         <button class="editar">
             <h4>Editar</h4>
         </button>
+
+    <button class="editar">
+    <a href="/logout"><h4>Log out</h4></a>
+    </button>
+    
     </section>
 
     <section class="aliados">

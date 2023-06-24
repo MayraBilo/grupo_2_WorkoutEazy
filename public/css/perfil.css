@@ -108,6 +108,11 @@ main {
     transition: all 0.3s ease-in-out;
 }
 
+.editar a {
+    text-decoration: none;
+    color: black;
+}
+
 .editar h4 {
     margin: auto;
 }
