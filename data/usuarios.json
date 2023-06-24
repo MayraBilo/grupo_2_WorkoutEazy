@@ -319,5 +319,21 @@
   "password": "$2a$10$0.MmSXXwY5OX9BFGR81JqOhHObBU9nM4WRrwJOS7bJlfsN.tlr3wS",
   "password-confirm": "apichuela",
   "avatar": "1687526375644-.jpg"
+ },
+ {
+  "id": 26,
+  "nombre": "Pepe",
+  "apellido": "Mayol",
+  "medio": "hombre",
+  "nacimiento": "2000-06-14",
+  "ciudad": "Buenos Aires",
+  "contacto": "1163547899",
+  "email": "alfremayol@gmail.com",
+  "usuario": "Alfre",
+  "password": "$2a$10$3Xo2hFaJmB4uQ8YNCKaNZeH2cUBTMb2tE.QtPPJkkC8Onb9vm0K4C",
+  "password-confirm": "hindu",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1687546387018-.jpg"
  }
 ]

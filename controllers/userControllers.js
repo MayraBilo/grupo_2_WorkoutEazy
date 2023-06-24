@@ -2,12 +2,48 @@ const path = require("path");
 
 const { validationResult } = require ('express-validator');
 
-const user = require('../models/cliente');
+const cliente = require('../models/cliente');
 
 const bcrypt = require('bcryptjs');
 
 const controller = {
     getLogin: (req, res) => res.render("login"),
+
+    processLogin: (req, res) => {
+
+        let userToLogin = cliente.findByField('email', req.body.email);
+
+        if (userToLogin){
+            let isOkPass = bcrypt.compareSync(req.body.password, userToLogin.password)
+            if (isOkPass) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+
+                /*if(req.body.rememberUser){
+                    res.cookie('userEmail', req.body.email, { maxAge: 1000 * 600 })
+                }*/
+
+                return res.redirect('/perfilCliente')
+            }
+            return res.render('login', {
+                errors: {
+                    email: {
+                    msg: 'Las credenciales son inválidas'
+                }
+            }
+            });
+
+        }
+        
+        return res.render('login', {
+            errors: {
+                email: {
+                msg: 'No se encuentra este email'
+            }
+        }
+        });
+    },
+
     getRegister: (req, res) => res.render("register"),
 
     processRegister: (req, res) => {
@@ -21,14 +57,13 @@ const controller = {
             })
         }
 
-        /*
-        let userInDB = user.findByField('email', req.body.email);
+        let userInDB = cliente.findByField('email', req.body.email);
 
         if (userInDB) {
             return res.render('register', {
                 errors: {email: {msg: 'Este email ya está registrado'}},
                 oldData: req.body})
-        }*/
+        }
 
         let userToCreate = {
             ...req.body,
@@ -36,7 +71,7 @@ const controller = {
             avatar: req.file.filename
         }
 
-        let userCreated = user.create(userToCreate);
+        let userCreated = cliente.create(userToCreate);
         return res.redirect('/login')
 },
 
