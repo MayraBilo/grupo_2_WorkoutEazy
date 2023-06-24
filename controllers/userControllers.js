@@ -19,9 +19,9 @@ const controller = {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
 
-                /*if(req.body.rememberUser){
+                if(req.body.rememberUser){
                     res.cookie('userEmail', req.body.email, { maxAge: 1000 * 600 })
-                }*/
+                }
 
                 return res.redirect('/perfilCliente')
             }
@@ -44,7 +44,9 @@ const controller = {
         });
     },
 
-    getRegister: (req, res) => res.render("register"),
+    getRegister: (req, res) => {
+        /*res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })*/
+        res.render("register")},
 
     processRegister: (req, res) => {
 
@@ -78,6 +80,7 @@ const controller = {
     getRegisterAliados: (req, res) => res.render("registerAliados"),
 
     clientProfile: (req, res) => {
+    /*console.log(req.cookies.userEmail);*/
     return res.render("perfilCliente", {cliente: req.session.userLogged})},
 
     logout: (req, res) => {

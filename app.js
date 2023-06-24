@@ -29,7 +29,7 @@ app.use(session({
 
 app.use(userLoggedMiddleware);
 
-/*app.use(cookies());*/
+app.use(cookies());
 
 // --- Middlewares ---
 app.use(express.static('public'));
