@@ -66,7 +66,7 @@ const model = {
 
     return users;
   },
-  createOne: function (newuser) {
+  createOne: function (newUser) {
     let users = this.findAll();
 
     newUser.id = uuid.v4();

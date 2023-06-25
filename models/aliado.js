@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const uuid = require("uuid");
 
-const model = {
+const aliado = {
   route: "../data/aliados.json",
 
   findAll: function () {
@@ -10,12 +10,13 @@ const model = {
       path.join(__dirname, this.route),
       "utf-8"
     );
+
     const usersAliados = JSON.parse(usersAliadosJSON);
 
     return usersAliados;
   },
 
-  findById: function (email) {
+  findByEmail: function (email) {
     const usersAliados = this.findAll();
 
     let searchedUser = usersAliados.find(
@@ -46,23 +47,25 @@ const model = {
     const indice = usersAliados.findIndex(
       (userAliadoActual) => userAliadoActual.email === email
     );
-    //MODIFICAR SEGUN FORM ALIADOS
-    usersAliados[indice].categoria = newData.categoria;
-    usersAliados[indice].subcategoria = newData.subcategoria;
-    usersAliados[indice].img = newData.img;
-    usersAliados[indice].nombreActividad = newData.nombreActividad;
-    usersAliados[indice].nombreAliado = newData.nombreAliado;
-    usersAliados[indice].dificultad = newData.dificultad;
-    usersAliados[indice].edadesAlumnos = newData.edadesAlumnos;
-    usersAliados[indice].valor = newData.valor;
-    usersAliados[indice].cupos = newData.cupos;
-    usersAliados[indice].descripcion = newData.descripcion;
-    usersAliados[indice].direccion = newData.direccion;
-    usersAliados[indice].ciudad = newData.ciudad;
-    usersAliados[indice].horarios = newData.horarios;
-    usersAliados[indice].duracion = newData.duracion;
-    usersAliados[indice].presencial = newData.presencial;
-    usersAliados[indice].modalidad = newData.modalidad;
+
+    usersAliados[indice].perfilUsuario = newData.perfilUsuario;
+    usersAliados[indice].nombreEmpresa = newData.nombreEmpresa;
+    usersAliados[indice].nombreProfesional = newData.nombreProfesional;
+    usersAliados[indice].apellidoProfesional = newData.apellidoProfesional;
+    usersAliados[indice].profesionServicio = newData.profesionServicio;
+    usersAliados[indice].sexo = newData.sexo;
+    usersAliados[indice].tipoIdentificacion = newData.tipoIdentificacion;
+    usersAliados[indice].numeroIdentificacion = newData.numeroIdentificacion;
+    usersAliados[indice].fechaExpedicion = newData.fechaExpedicion;
+    usersAliados[indice].ciudadResidencia = newData.ciudadResidencia;
+    usersAliados[indice].celular = newData.celular;
+    usersAliados[indice].email = newData.email;
+    usersAliados[indice].fotoPerfil = newData.fotoPerfil;
+    usersAliados[indice].documentosLegales = newData.documentosLegales;
+    usersAliados[indice].tituloProfesional = newData.tituloProfesional;
+    usersAliados[indice].password = newData.password;
+    usersAliados[indice].confirmarContrasena = newData.confirmarContrasena;
+    usersAliados[indice].terminosCondiciones = newData.terminosCondiciones;
 
     const usersAliadosJSON = JSON.stringify(usersAliados);
 
@@ -70,17 +73,19 @@ const model = {
 
     return usersAliados;
   },
-  createOne: function (newUserAliado) {
-    let usersAliados = this.findAll();
-
-    newUserAliado.id = uuid.v4();
-
-    usersAliados.push(newUser);
-
-    const usersAliadosJSON = JSON.stringify(usersAliados);
-
-    fs.writeFileSync(path.join(__dirname, this.route), usersAliadosJSON);
+  create: function (aliadoData) {
+    let allUsers = this.findAll();
+    let newAliado = {
+      id: (aliadoData.id = uuid.v4()),
+      ...aliadoData,
+    };
+    allUsers.push(newAliado);
+    fs.writeFileSync(
+      path.join(__dirname, this.route),
+      JSON.stringify(allUsers, null, " ")
+    );
+    return newAliado;
   },
 };
 
-module.exports = model;
+module.exports = aliado;
