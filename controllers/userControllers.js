@@ -110,6 +110,29 @@ const controller = {
 
   getRegisterAliados: (req, res) => res.render("registerAliados"),
 
+  getEditAliado: (req, res) => {
+    const id = Number(req.params.id);
+
+    const perfilAActualizar = aliado.findById(id);
+
+    if (!perfilAActualizar) {
+      return res.send("error de id");
+    }
+
+    res.render("editPerfilAliado", {
+      aliados: perfilAActualizar,
+    });
+  },
+  uploadAliado: (req, res) => {
+    const id = Number(req.params.id);
+    const nuevosDatos = req.body;
+    nuevosDatos.img = req.file ? req.file.filename : req.body.oldImage;
+
+    aliado.updateById(id, nuevosDatos);
+
+    res.redirect("/:id/perfilAliado");
+  },
+
   clientProfile: (req, res) => {
     /*console.log(req.cookies.userEmail);*/
     return res.render("perfilCliente", { cliente: req.session.userLogged });
@@ -121,7 +144,17 @@ const controller = {
     return res.redirect("/");
   },
 
-  getAliadoProfile: (req, res) => res.render("perfilAliado"),
+  getAliadoProfile: (req, res) => {
+    const id = Number(req.params.id);
+
+    const perfilAMostrar = aliado.findById(id);
+
+    if (!perfilAMostrar) {
+      return res.send("error de id");
+    }
+
+    res.render("perfilAliado", { aliados: perfilAMostrar });
+  },
 };
 
 module.exports = controller;

@@ -16,11 +16,11 @@ const aliado = {
     return usersAliados;
   },
 
-  findByEmail: function (email) {
+  findById: function (id) {
     const usersAliados = this.findAll();
 
     let searchedUser = usersAliados.find(
-      (userAliado) => userAliado.email === email
+      (userAliado) => userAliado.identificacion === id
     );
 
     if (!searchedUser) {
@@ -41,11 +41,11 @@ const aliado = {
     return usersAliados;
   },
 
-  updateById: function (email, newData) {
+  updateById: function (id, newData) {
     let usersAliados = this.findAll();
 
     const indice = usersAliados.findIndex(
-      (userAliadoActual) => userAliadoActual.email === email
+      (userAliadoActual) => userAliadoActual.id === id
     );
 
     usersAliados[indice].perfilUsuario = newData.perfilUsuario;

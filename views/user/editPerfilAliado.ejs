@@ -12,25 +12,23 @@
         <div class="banner-escalada">
             <section class="titulo-general">
             </section>
-            <section class="titulo-h1">
-                <h1>BIENVENID@ <%= aliados.nombreProfesional %> <%= aliados.apellidoProfesional %> A NUESTRO EQUIPO DE ALIADOS</h1>
-            </section>
         </div>
         <section class="tituloAliado">
         <div class="soyAliado">
             <h4>Soy Aliado</h4>
         </div>
         </section>
-
+<form action="/<%=aliados.identificacion%>/editPerfilAliado?_method=put" method="POST"  enctype="multipart/form-data">
 <section class="contenedorGlobal">
         <section class="container1-instructor">
             <div class="contenedorImagenEntrenador">
                 <img src="/images/instructores/<%= aliados.fotoPerfil %>" alt="imagenGim" class="img-entrenador">
             </div>
-            <div>
-                <h4>Perfil del Usuario: <%= aliados.perfilUsuario %></h4>
-                <h4>Nombres y Apellidos: <%= aliados.nombreProfesional%>  <%= aliados.apellidoProfesional%></h4>
-                <h4>Profesión o Servicio: <%= aliados.profesionServicio%></h4>
+            <div>s
+               <h4>Perfil del Usuario: </h4> <input type="text" value="<%= aliados.perfilUsuario %>" >
+                <h4>Nombres: </h4><input type="text" value="<%= aliados.nombreProfesional%>" >
+                <h4>Apellidos: </h4><input type="text" value="<%= aliados.apellidoProfesional %>" >
+                <h4>Profesión o Servicio: </h4><input type="text" value="<%= aliados.profesionServicio %>" >
             </div>
         </section>
         <section class="container2-datos">
@@ -39,30 +37,61 @@
                     <br>
                 <h4>Alumnos: <h4>
             </div>
+            <section class="grupo-de-registrosDocumentos">
+                <label id="fotoPerfil" for="fotoPerfil">Subir Foto Perfil:</label>
+    
+                <input
+                  id="fotoPerfil"
+                  type="file"
+                  name="fotoPerfil"
+                  accept="document/*"
+                />
+              </section>
+              <section class="grupo-de-registrosDocumentos">
+                <label id="documentosLegales" for="docuementosLegales"
+                  >Subir documentos legales:</label
+                >
+    
+                <input
+                  id="documentosLegales"
+                  type="file"
+                  name="documentosLegales"
+                  multimpleaccept="document/*"
+                />
+              </section>
+              <section class="grupo-de-registrosDocumentos">
+                <label id="tituloProfesional" for="tituloProfesional"
+                  >Surbir certificados de enseñanza:</label
+                >
+    
+                <input
+                  id="tituloProfesional"
+                  type="file"
+                  name="tituloProfesional"
+                  multimpleaccept="document/*"
+                />
+              </section>
+    
             <section class="informacion-contacto">
                 <h4>Contacto:</h4>
                 <div class="desplegable">
-                <h5>Ciudad: <%= aliados.ciudadResidencia%></h5>
-                <h5>Dirección:</h5>
-                <h5>Número Celular: <%= aliados.celular%></h5>
-                <h5>E-mail: <%= aliados.email%></h5>
+                <h5>Ciudad: </h5><input type="text" value=" <%= aliados.ciudadResidencia%>" >
+                <h5>Dirección:</h5> 
+                <h5>Número Celular: </h5><input type="text" value=" <%= aliados.celular%>" >
+                <h5>E-mail: </h5><input type="text" value="<%= aliados.email%>" >
                 </div>
             </section>
           
             <div class="perfilProfesional">
                 <h2>Perfil Profesional</h2>
             </div>
-            <div class="profile__description">
-                <p> Ingresa aquí tu perfil profesional </p>
-            </div>
             
-            <a href="/<%= aliados.identificacion%>/editPerfilAliado" ><input type="button" value="Editar" class="editar"></a>
-           
+           <input type="submit" value="Guardar cambios" class="editar">
         </section>
         <section class="informacion-legal-aliado">
             <h4>Certificados:</h4>
             <div class="desplegable">
-                <h5>Cocumentos legales</h5>
+                <h5>Documentos legales</h5>
                 <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
                 </div>
                 <div class="desplegable">
@@ -118,7 +147,7 @@
             <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px">
         </section> 
     </section>
-
+</form>
     </main>
     <%- include("../partials/footer") %>
     <button class="consultas">
