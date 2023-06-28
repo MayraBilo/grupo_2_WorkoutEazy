@@ -138,7 +138,33 @@ const controller = {
   
     } 
   
-  };
+  }; 
   
   module.exports = controller;
+
+
+
+
+  /*getEditAliado: (req, res) => {
+    const id = Number(req.params.id);
+
+    const perfilAActualizar = aliado.findById(id);
+
+    if (!perfilAActualizar) {
+      return res.send("error de id");
+    }
+
+    res.render("editPerfilAliado", {
+      aliados: perfilAActualizar,
+    });
+  },
+  uploadAliado: (req, res) => {
+    const id = Number(req.params.id);
+    const nuevosDatos = req.body;
+    nuevosDatos.img = req.file ? req.file.filename : req.body.oldImage;
+
+    aliado.updateById(id, nuevosDatos);
+
+    res.redirect("/:id/perfilAliado");
+  },*/
   

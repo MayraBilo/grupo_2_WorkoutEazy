@@ -18,3 +18,11 @@ Cómo pensar subcategorías.
 20/6
 
 Organizamos el trello asignando tareas.
+
+27/6
+
+-Terminamos el sprint 5 por la parte del usario-cliente.
+
+-Quedan pendientes un par de detalles para cuando apliquemos la base de datos. Por ejemplo, hashear el confirm-password y la edición de los perfiles de cliente y de aliado.
+
+-Queda pendiente replicar el trabajo de usuario-cliente en el usuario-aliado (el que brinda el servicio y carga los productos).
