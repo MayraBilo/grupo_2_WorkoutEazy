@@ -17,10 +17,10 @@ const model = {
   },
 
   findByEmail: function (email) {
-    const aliados = this.findAll();
+    const usersAliados = this.findAll();
 
-    let searchedAliado = aliados.find(
-      (aliados) => aliados.email === email
+    let searchedUser = usersAliados.find(
+      (userAliado) => userAliado.identificacion === id
     );
 
     if (!searchedAliado) {
@@ -41,11 +41,11 @@ const model = {
     //return aliados;
 
 
-  updateById: function (email, newData) {
-    let aliados = this.findAll();
+  updateById: function (id, newData) {
+    let usersAliados = this.findAll();
 
-    const indice = aliados.findIndex(
-      (aliadoActual) => aliadoActual.email === email
+    const indice = usersAliados.findIndex(
+      (userAliadoActual) => userAliadoActual.id === id
     );
 
     aliados[indice].perfilUsuario = newData.perfilUsuario;

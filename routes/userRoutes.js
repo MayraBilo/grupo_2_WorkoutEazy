@@ -36,7 +36,15 @@ router.post(
 // Perfil de usuario
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
+<<<<<<< HEAD
 
+=======
+router.get("/:id/perfilAliado", userControllers.getAliadoProfile);
+
+// Editar perfil aliado
+router.get("/:id/editPerfilAliado", userControllers.getEditAliado);
+router.put("/:id/editPerfilAliado", userControllers.uploadAliado);
+>>>>>>> e394ed4a2fd21d6c1d3fb16a1f2c809a60e6c8f0
 
 // Logout
 
