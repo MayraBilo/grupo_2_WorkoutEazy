@@ -3,13 +3,21 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const cliente = require("../models/cliente");
-const aliado = require("../models/aliado");
+const aliadoModel = require("../models/aliado");
 const bcrypt = require("bcryptjs");
 const { emitWarning } = require("process");
 
+//usuarios//
 const controller = {
-  getLogin: (req, res) => res.render("login"),
 
+  getLogin: (req, res) => {
+    const error = req.query.error || '';
+
+    res.render('login', {error});
+},
+
+   //(req, res) => { res.render("login"); },
+  
   processLogin: (req, res) => {
     let userToLogin = cliente.findByField("email", req.body.email);
 
@@ -45,10 +53,11 @@ const controller = {
       },
     });
   },
+ 
 
   getRegister: (req, res) => {
-    /*res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })*/
-    res.render("register");
+    res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
+   res.render("register");
   },
 
   processRegister: (req, res) => {
@@ -79,36 +88,8 @@ const controller = {
     let userCreated = cliente.create(userToCreate);
     return res.redirect("/login");
   },
-  processRegisterAliado: (req, res) => {
-    /*const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
-      return res.render("register", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-
-    let userInDB = aliado.findByEmail("email", req.body.email);
-
-    if (userInDB) {
-      return res.render("register", {
-        errors: { email: { msg: "Este email ya está registrado" } },
-        oldData: req.body,
-      });
-    }
-*/
-    let userToCreate = {
-      ...req.body,
-      //password: bcrypt.hashSync(req.body.password, 10),
-      //fotoPerfil: req.file.filename,
-    };
-
-    let userCreated = aliado.create(userToCreate);
-    return res.redirect("/login");
-  },
-
-  getRegisterAliados: (req, res) => res.render("registerAliados"),
+  
 
   clientProfile: (req, res) => {
     /*console.log(req.cookies.userEmail);*/
@@ -121,7 +102,7 @@ const controller = {
     return res.redirect("/");
   },
 
-  getAliadoProfile: (req, res) => res.render("perfilAliado"),
+
 };
 
 module.exports = controller;

@@ -2,61 +2,61 @@ const fs = require("fs");
 const path = require("path");
 const uuid = require("uuid");
 
-const aliado = {
+const model = {
   route: "../data/aliados.json",
 
   findAll: function () {
-    const usersAliadosJSON = fs.readFileSync(
+    const aliadosJSON = fs.readFileSync(
       path.join(__dirname, this.route),
       "utf-8"
     );
 
-    const usersAliados = JSON.parse(usersAliadosJSON);
+    const aliados = JSON.parse(aliadosJSON);
 
-    return usersAliados;
+    return aliados;
   },
 
   findByEmail: function (email) {
-    const usersAliados = this.findAll();
+    const aliados = this.findAll();
 
-    let searchedUser = usersAliados.find(
-      (userAliado) => userAliado.email === email
+    let searchedAliado = aliados.find(
+      (aliados) => aliados.email === email
     );
 
-    if (!searchedUser) {
-      searchedUser = null;
+    if (!searchedAliado) {
+      searchedAliado = null;
     }
-    return searchedUser;
+    return searchedAliado;
   },
   //REVISAR
-  deleteById: function (id) {
-    let usersAliados = this.findAll();
+  //deleteById: function (id) {
+    //let aliados = this.findAll();
 
-    usersAliados = usersAliados.filter((userAliado) => userAliado.id !== id);
+    //aliados = aliados.filter((aliado) => aliado.id !== id);
 
-    const usersAliadosJSON = JSON.stringify(usersAliados);
+    //const aliadosJSON = JSON.stringify(aliados);
 
-    fs.writeFileSync(path.join(__dirname, this.route), usersAliadosJSON);
+    //fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
 
-    return usersAliados;
-  },
+    //return aliados;
+
 
   updateById: function (email, newData) {
-    let usersAliados = this.findAll();
+    let aliados = this.findAll();
 
-    const indice = usersAliados.findIndex(
-      (userAliadoActual) => userAliadoActual.email === email
+    const indice = aliados.findIndex(
+      (aliadoActual) => aliadoActual.email === email
     );
 
-    usersAliados[indice].perfilUsuario = newData.perfilUsuario;
-    usersAliados[indice].nombreEmpresa = newData.nombreEmpresa;
-    usersAliados[indice].nombreProfesional = newData.nombreProfesional;
-    usersAliados[indice].apellidoProfesional = newData.apellidoProfesional;
-    usersAliados[indice].profesionServicio = newData.profesionServicio;
-    usersAliados[indice].sexo = newData.sexo;
-    usersAliados[indice].tipoIdentificacion = newData.tipoIdentificacion;
+    aliados[indice].perfilUsuario = newData.perfilUsuario;
+    aliados[indice].nombreEmpresa = newData.nombreEmpresa;
+    aliados[indice].nombreProfesional = newData.nombreProfesional;
+    aliados[indice].apellidoProfesional = newData.apellidoProfesional;
+    aliados[indice].profesionServicio = newData.profesionServicio;
+    aliados[indice].sexo = newData.sexo;
+    aliados[indice].tipoIdentificacion = newData.tipoIdentificacion;
     usersAliados[indice].numeroIdentificacion = newData.numeroIdentificacion;
-    usersAliados[indice].fechaExpedicion = newData.fechaExpedicion;
+    usersAliados[indice].fechaNacimiento = newData.fechaNacimiento;
     usersAliados[indice].ciudadResidencia = newData.ciudadResidencia;
     usersAliados[indice].celular = newData.celular;
     usersAliados[indice].email = newData.email;
@@ -69,23 +69,60 @@ const aliado = {
 
     const usersAliadosJSON = JSON.stringify(usersAliados);
 
-    fs.writeFileSync(path.join(__dirname, this.route), usersAliadosJSON);
+    fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
 
-    return usersAliados;
+    return aliados;
   },
-  create: function (aliadoData) {
-    let allUsers = this.findAll();
-    let newAliado = {
-      id: (aliadoData.id = uuid.v4()),
-      ...aliadoData,
-    };
-    allUsers.push(newAliado);
-    fs.writeFileSync(
-      path.join(__dirname, this.route),
-      JSON.stringify(allUsers, null, " ")
-    );
-    return newAliado;
-  },
-};
 
-module.exports = aliado;
+  createOne: function (newAliado) {
+    let aliados = this.findAll();
+
+    newAliado.id = uuid.v4();
+
+    aliados.push(newAliado);
+
+    const aliadosJSON = JSON.stringify(aliados);
+
+    fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
+  }
+}
+
+module.exports = model;
+  
+  /*create: function (newAliado) {
+      createOne: function (newUser) {
+    let users = this.findAll();
+
+    newUser.id = uuid.v4();
+
+    users.push(newUser);
+
+    const usersJSON = JSON.stringify(users);
+
+    fs.writeFileSync(path.join(__dirname, this.route), usersJSON);
+  },
+    let aliados = this.findAll();
+
+    newAliado.id = aliados[aliados.length - 1].id + 1;
+
+    aliados.push(newAlido);
+
+    const aliadosJSON = JSON.stringify(aliados);
+
+    fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
+  },
+    //*let allUsers = this.findAll();
+    //let newAliado = {
+      //id: (aliadoData.id = uuid.v4()),
+     // ...aliadoData,
+    //};
+   // allUsers.push(newAliado);
+    //fs.writeFileSync(
+     // path.join(__dirname, this.route),
+     // JSON.stringify(allUsers, null, " ")
+    //);
+    //return newAliado;*/
+  
+
+
+

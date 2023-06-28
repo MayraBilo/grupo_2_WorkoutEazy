@@ -14,6 +14,7 @@ const validations = require("../middlewares/validateRegisterMiddleware.js");
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
 
+
 // Formulario de login
 router.get("/login", guestMiddleware, userControllers.getLogin);
 
@@ -22,7 +23,7 @@ router.post("/login", userControllers.processLogin);
 
 // Formulario de registro
 router.get("/register", guestMiddleware, userControllers.getRegister);
-router.get("/registerAliados", userControllers.getRegisterAliados);
+
 
 // Procesar el registro
 router.post(
@@ -31,16 +32,11 @@ router.post(
   validations,
   userControllers.processRegister
 );
-// Procesar el registroAliados
-router.post(
-  "/registerAliados",
-  uploadFile.single("fotoPerfil"),
-  userControllers.processRegisterAliado
-);
+
 // Perfil de usuario
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
-router.get("/perfilAliado", userControllers.getAliadoProfile);
+
 
 // Logout
 
