@@ -335,5 +335,21 @@
   "condiciones": "terminos y condiciones",
   "privacidad": "Políticas de privacidad",
   "avatar": "1687546387018-.jpg"
+ },
+ {
+  "id": 27,
+  "nombre": "Jose",
+  "apellido": "Miranda",
+  "medio": "hombre",
+  "nacimiento": "2000-07-13",
+  "ciudad": "Caracas",
+  "contacto": "1163678866",
+  "email": "jose@dh.com",
+  "usuario": "Jose",
+  "password": "$2a$10$dGe4ZJwwJsd6R1wWucSPj.fUXmcNh9CuNXXLRl7F7bKBgq8v7H3Zi",
+  "password-confirm": "pepito",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1687912248572-.jpg"
  }
 ]
