@@ -7,6 +7,7 @@ const cookies = require('cookie-parser');
 const mainRoutes = require('./routes/mainRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 const userRoutes = require('./routes/userRoutes');
+const aliadoRoutes = require('./routes/aliadoRoutes');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.set("views", [
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
+
 app.use(session({
     secret: "Shhh",
     resave: false,
@@ -28,6 +30,7 @@ app.use(session({
 }))
 
 app.use(userLoggedMiddleware);
+
 
 app.use(cookies());
 
@@ -41,5 +44,6 @@ app.use(methodOverride('_method'));
 app.use(mainRoutes);
 app.use('/product', productsRoutes);
 app.use(userRoutes);
+app.use(aliadoRoutes);
 
 app.listen(3000, () => console.log("Servidor escuchando en el puerto http://localhost:3000/"));

@@ -6,81 +6,123 @@ const model = {
   route: "../data/aliados.json",
 
   findAll: function () {
-    const usersAliadosJSON = fs.readFileSync(
+    const aliadosJSON = fs.readFileSync(
       path.join(__dirname, this.route),
       "utf-8"
     );
-    const usersAliados = JSON.parse(usersAliadosJSON);
 
-    return usersAliados;
+    const aliados = JSON.parse(aliadosJSON);
+
+    return aliados;
   },
 
-  findById: function (email) {
+  findByEmail: function (email) {
     const usersAliados = this.findAll();
 
     let searchedUser = usersAliados.find(
-      (userAliado) => userAliado.email === email
+      (userAliado) => userAliado.identificacion === id
     );
 
-    if (!searchedUser) {
-      searchedUser = null;
+    if (!searchedAliado) {
+      searchedAliado = null;
     }
-    return searchedUser;
+    return searchedAliado;
   },
   //REVISAR
-  deleteById: function (id) {
-    let usersAliados = this.findAll();
+  //deleteById: function (id) {
+    //let aliados = this.findAll();
 
-    usersAliados = usersAliados.filter((userAliado) => userAliado.id !== id);
+    //aliados = aliados.filter((aliado) => aliado.id !== id);
 
-    const usersAliadosJSON = JSON.stringify(usersAliados);
+    //const aliadosJSON = JSON.stringify(aliados);
 
-    fs.writeFileSync(path.join(__dirname, this.route), usersAliadosJSON);
+    //fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
 
-    return usersAliados;
-  },
+    //return aliados;
 
-  updateById: function (email, newData) {
+
+  updateById: function (id, newData) {
     let usersAliados = this.findAll();
 
     const indice = usersAliados.findIndex(
-      (userAliadoActual) => userAliadoActual.email === email
+      (userAliadoActual) => userAliadoActual.id === id
     );
-    //MODIFICAR SEGUN FORM ALIADOS
-    usersAliados[indice].categoria = newData.categoria;
-    usersAliados[indice].subcategoria = newData.subcategoria;
-    usersAliados[indice].img = newData.img;
-    usersAliados[indice].nombreActividad = newData.nombreActividad;
-    usersAliados[indice].nombreAliado = newData.nombreAliado;
-    usersAliados[indice].dificultad = newData.dificultad;
-    usersAliados[indice].edadesAlumnos = newData.edadesAlumnos;
-    usersAliados[indice].valor = newData.valor;
-    usersAliados[indice].cupos = newData.cupos;
-    usersAliados[indice].descripcion = newData.descripcion;
-    usersAliados[indice].direccion = newData.direccion;
-    usersAliados[indice].ciudad = newData.ciudad;
-    usersAliados[indice].horarios = newData.horarios;
-    usersAliados[indice].duracion = newData.duracion;
-    usersAliados[indice].presencial = newData.presencial;
-    usersAliados[indice].modalidad = newData.modalidad;
+
+    aliados[indice].perfilUsuario = newData.perfilUsuario;
+    aliados[indice].nombreEmpresa = newData.nombreEmpresa;
+    aliados[indice].nombreProfesional = newData.nombreProfesional;
+    aliados[indice].apellidoProfesional = newData.apellidoProfesional;
+    aliados[indice].profesionServicio = newData.profesionServicio;
+    aliados[indice].sexo = newData.sexo;
+    aliados[indice].tipoIdentificacion = newData.tipoIdentificacion;
+    usersAliados[indice].numeroIdentificacion = newData.numeroIdentificacion;
+    usersAliados[indice].fechaNacimiento = newData.fechaNacimiento;
+    usersAliados[indice].ciudadResidencia = newData.ciudadResidencia;
+    usersAliados[indice].celular = newData.celular;
+    usersAliados[indice].email = newData.email;
+    usersAliados[indice].fotoPerfil = newData.fotoPerfil;
+    usersAliados[indice].documentosLegales = newData.documentosLegales;
+    usersAliados[indice].tituloProfesional = newData.tituloProfesional;
+    usersAliados[indice].password = newData.password;
+    usersAliados[indice].confirmarContrasena = newData.confirmarContrasena;
+    usersAliados[indice].terminosCondiciones = newData.terminosCondiciones;
 
     const usersAliadosJSON = JSON.stringify(usersAliados);
 
-    fs.writeFileSync(path.join(__dirname, this.route), usersAliadosJSON);
+    fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
 
-    return usersAliados;
+    return aliados;
   },
-  createOne: function (newUserAliado) {
-    let usersAliados = this.findAll();
 
-    newUserAliado.id = uuid.v4();
+  createOne: function (newAliado) {
+    let aliados = this.findAll();
 
-    usersAliados.push(newUser);
+    newAliado.id = uuid.v4();
 
-    const usersAliadosJSON = JSON.stringify(usersAliados);
+    aliados.push(newAliado);
 
-    fs.writeFileSync(path.join(__dirname, this.route), usersAliadosJSON);
-  },
-};
+    const aliadosJSON = JSON.stringify(aliados);
+
+    fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
+  }
+}
 
 module.exports = model;
+  
+  /*create: function (newAliado) {
+      createOne: function (newUser) {
+    let users = this.findAll();
+
+    newUser.id = uuid.v4();
+
+    users.push(newUser);
+
+    const usersJSON = JSON.stringify(users);
+
+    fs.writeFileSync(path.join(__dirname, this.route), usersJSON);
+  },
+    let aliados = this.findAll();
+
+    newAliado.id = aliados[aliados.length - 1].id + 1;
+
+    aliados.push(newAlido);
+
+    const aliadosJSON = JSON.stringify(aliados);
+
+    fs.writeFileSync(path.join(__dirname, this.route), aliadosJSON);
+  },
+    //*let allUsers = this.findAll();
+    //let newAliado = {
+      //id: (aliadoData.id = uuid.v4()),
+     // ...aliadoData,
+    //};
+   // allUsers.push(newAliado);
+    //fs.writeFileSync(
+     // path.join(__dirname, this.route),
+     // JSON.stringify(allUsers, null, " ")
+    //);
+    //return newAliado;*/
+  
+
+
+

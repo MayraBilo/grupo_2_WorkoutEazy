@@ -4,5 +4,11 @@ function guestMiddleware (req, res, next) {
     }
     next();
     }
+    function guestMiddleware (req, res, next) {
+        if (req.session.aliadoLogged){
+            return res.redirect('/perfilAliado');
+        }
+        next();
+        }
     
     module.exports = guestMiddleware;

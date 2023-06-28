@@ -351,5 +351,37 @@
   "condiciones": "terminos y condiciones",
   "privacidad": "Políticas de privacidad",
   "avatar": "1687912248572-.jpg"
+ },
+ {
+  "id": 27,
+  "nombre": "Elizabeth",
+  "apellido": "Lemos",
+  "medio": "mujer",
+  "nacimiento": "1999-12-12",
+  "ciudad": "Buenos Aires",
+  "contacto": "+54 9 11 1234-5678",
+  "email": "liz0912@hotmail.com",
+  "usuario": "Lunita",
+  "password": "$2a$10$/QW5kJ0gM23CWD6v12GPAOGI9Wwd3tQL5ODkbU2dCv.0PCz.tYLDi",
+  "password-confirm": "Luna8019",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1687826916424-.jpg"
+ },
+ {
+  "id": 28,
+  "nombre": "Elizabeth",
+  "apellido": "Luna",
+  "medio": "mujer",
+  "nacimiento": "1980-09-12",
+  "ciudad": "Bahía Blanca",
+  "contacto": "+54 9 11 1234-5678",
+  "email": "elizabethluna@gmail.com",
+  "usuario": "ElizaLuna",
+  "password": "$2a$10$2psXPRwrYUyCS9DEcRTKluM3gag0gs5fEA/EuiskqD2jPK10BktpK",
+  "password-confirm": "Jlbe8019",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1687910968105-.jpg"
  }
 ]

@@ -13,7 +13,7 @@
             <section class="titulo-general">
             </section>
             <section class="titulo-h1">
-                <h1>BIENVENID@ (nombre de Aliado) A NUESTRO EQUIPO DE ALIADOS</h1>
+                <h1>BIENVENID@ <%= aliados.nombreProfesional %> <%= aliados.apellidoProfesional %> A NUESTRO EQUIPO DE ALIADOS</h1>
             </section>
         </div>
         <section class="tituloAliado">
@@ -25,12 +25,16 @@
 <section class="contenedorGlobal">
         <section class="container1-instructor">
             <div class="contenedorImagenEntrenador">
-                <img src="/images/instructores/entrenador-gym.jpg" alt="imagenGim" class="img-entrenador">
+<<<<<<< HEAD
+                <img src="/images/aliado/<%= aliados.fotoPerfil %>" alt="imagenGim" class="img-entrenador">
+=======
+                <img src="/images/instructores/<%= aliados.fotoPerfil %>" alt="imagenGim" class="img-entrenador">
+>>>>>>> e394ed4a2fd21d6c1d3fb16a1f2c809a60e6c8f0
             </div>
             <div>
-                <h4>Perfil del Usuario: Profesional Físico</h4>
-                <h4>Nombres y Apellidos: Pablo O'connor</h4>
-                <h4>Profesión o Servicio: Personal trainer</h4>
+                <h4>Perfil del Usuario: <%= aliados.perfilUsuario %></h4>
+                <h4>Nombres y Apellidos: <%= aliados.nombreProfesional%>  <%= aliados.apellidoProfesional%></h4>
+                <h4>Profesión o Servicio: <%= aliados.profesionServicio%></h4>
             </div>
         </section>
         <section class="container2-datos">
@@ -42,10 +46,10 @@
             <section class="informacion-contacto">
                 <h4>Contacto:</h4>
                 <div class="desplegable">
-                <h5>Ciudad:</h5>
+                <h5>Ciudad: <%= aliados.ciudadResidencia%></h5>
                 <h5>Dirección:</h5>
-                <h5>Número Celular:</h5>
-                <h5>E-mail:</h5>
+                <h5>Número Celular: <%= aliados.celular%></h5>
+                <h5>E-mail: <%= aliados.email%></h5>
                 </div>
             </section>
           
@@ -55,9 +59,9 @@
             <div class="profile__description">
                 <p> Ingresa aquí tu perfil profesional </p>
             </div>
-            <button class="editar">
-                <h4>Editar</h4>
-            </button>
+            
+            <a href="/<%= aliados.identificacion%>/editPerfilAliado" ><input type="button" value="Editar" class="editar"></a>
+           
         </section>
         <section class="informacion-legal-aliado">
             <h4>Certificados:</h4>
