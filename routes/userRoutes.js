@@ -7,23 +7,32 @@ const path = require("path");
 // Controller
 
 const userControllers = require("../controllers/userControllers");
+const aliadosControllers = require("../controllers/aliadosControllers");
 
 // Middlewares
 const uploadFile = require("../middlewares/multerMiddleware.js");
 const validations = require("../middlewares/validateRegisterMiddleware.js");
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
+ 
+// Middleware Aliados
+const uploadFileAliado = require("../middlewares/multerMiddlewareAliado.js");
+const validationsAliados = require("../middlewares/validateRegisterAliadosMiddleware.js");
+const authMiddlewareAliado = require("../middlewares/authMiddlewareAliado.js");
+const guestMiddlewareAliados = require("../middlewares/guestMiddlewareAliados.js");
+
 
 
 // Formulario de login
 router.get("/login", guestMiddleware, userControllers.getLogin);
+router.get("/loginAliado", aliadosControllers.getLoginAliado);
 
 // Procesar el login
 router.post("/login", userControllers.processLogin);
+router.post("/loginAliado", aliadosControllers.loginAliado);
 
 // Formulario de registro
 router.get("/register", guestMiddleware, userControllers.getRegister);
-
 
 // Procesar el registro
 router.post(
@@ -33,14 +42,25 @@ router.post(
   userControllers.processRegister
 );
 
+// Formulario de registroAliado
+router.get("/registerAliados", aliadosControllers.getRegisterAliados);
+
+// Procesar el registroAliados
+router.post(
+  "/registerAliados",
+  uploadFileAliado.single("fotoPerfil"), validationsAliados, aliadosControllers.registerAliados);
+
 // Perfil de usuario
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
-router.get("/:id/perfilAliado", userControllers.getAliadoProfile);
+
+// Perfil de usuarioAliado
+router.get('/perfilAliado', aliadosControllers.getAliadoProfile);
 
 
 // Logout
 
 router.get("/logout", authMiddleware, userControllers.logout);
+router.get("/logoutAliado", aliadosControllers.logoutAliado);
 
 module.exports = router;

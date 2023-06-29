@@ -3,7 +3,6 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const cliente = require("../models/cliente");
-const aliadoModel = require("../models/aliado");
 const bcrypt = require("bcryptjs");
 const { emitWarning } = require("process");
 
@@ -99,18 +98,6 @@ const controller = {
     req.session.destroy();
     return res.redirect("/");
   },
-
-  getAliadoProfile: (req, res) => {
-    const id = Number(req.params.id);
-
-    const perfilAMostrar = aliado.findById(id);
-
-    if (!perfilAMostrar) {
-      return res.send("error de id");
-    }
-
-    res.render("perfilAliado", { aliados: perfilAMostrar });
-  }
 
 };
 

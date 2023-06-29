@@ -29,8 +29,7 @@
           </h2>
           <div class="datos1">
             <p>
-              Debes tener estos documentos para tu registro y adjuntarlos al
-              formulario:
+              Debes tener estos documentos para adjuntarlos a tu perfil una vez se haga el registro:
             </p>
             <p>
               * Si eres empresa: Código Único de Identificación Tributaria y
@@ -76,6 +75,12 @@
               name="nombreEmpresa"
               placeholder="Empresa"
             />
+            <% if (locals.errors && errors.nombreEmpresa) { %>
+              <div class="text-danger">
+                  <%= errors.nombreEmpresa.msg %>
+              </div>
+              <% } %>
+            
             <span class="feedback"></span>
           </div>
           <section class="grupo-de-registrosA1">
@@ -87,10 +92,10 @@
               <input
                 id="nombreProfesional"
                 type="text"
-                name="nombreProfesional" class="<%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.nombre : null %>"
+                name="nombreProfesional" class="<%= locals.errors && errors.nombreProfesional ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.nombreProfesional : null %>"
                 placeholder="Ingresa tu Nombre">
-                <% if (locals.errors && errors.nombre) { %>
+                <% if (locals.errors && errors.nombreProfesional) { %>
                   <div class="text-danger">
                       <%= errors.nombre.msg %>
                   </div>
@@ -109,9 +114,16 @@
                 id="apellidoProfesional"
                 type="text"
                 name="apellidoProfesional"
-                placeholder="Ingresa tus Apellidos"
-                required
-              />
+                clas="<%= locals.errors && errors.apellidoProfesional ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.apellidoProfesional : null %>"
+                placeholder="Ingresa tus Apellidos">
+                
+                <% if (locals.errors && errors.apellidoProfesional) { %>
+                  <div class="text-danger">
+                      <%= errors.apellidoProfesional.msg %>
+                  </div>
+                  <% } %>
+              
               <span class="feedback"></span>
             </div>
           </section>
@@ -123,11 +135,16 @@
               id="profesionServicio"
               type="text"
               name="profesionServicio"
-              placeholder="profesión o servicio"
-              required
-            />
-            <span class="feedback"></span>
+              placeholder="profesión o servicio"/>
+
+            <% if (locals.errors && errors.profesion) { %>
+              <div class="text-danger">
+                  <%= errors.profesion.msg %>
+              </div>
+              <% } %>
+            
           </div>
+
           <div class="grupo-indicarSexo" required>
             <label for="sexo">Hombre</label
             ><input type="radio" name="sexo" id="hombre" value="hombre" />
@@ -135,6 +152,12 @@
             ><input type="radio" name="sexo" id="mujer" value="mujer" />
             <label for="sexo">Otro</label
             ><input type="radio" name="sexo" id="otro" value="otro" />
+
+            <% if (locals.errors && errors.medio) { %>
+              <div class="text-danger">
+                  <%= errors.medio.msg %>
+              </div>
+              <% } %>
           </div>
 
           <section class="grupo-de-registrosIdentificación">
@@ -162,10 +185,14 @@
                 id="numeroIdentificacion"
                 type="text"
                 name="numeroIdentificacion"
-                placeholder="Ingresa tu Identificación"
-                required
-              />
-              <span class="feedback"></span>
+                placeholder="Ingresa tu Identificación"/>
+
+              <% if (locals.errors && errors.identificacion) { %>
+                <div class="text-danger">
+                    <%= errors.identificacion.msg %>
+                </div>
+                <% } %>
+              
             </div>
           </section>
           <section class="grupo-de-registrosA1">
@@ -177,14 +204,16 @@
               <input
                 id="fechaNacimiento"
                 type="date"
-                name="fechaNacimiento"
-                required
-              />
-              <span class="feedback"></span>
+                name="fechaNacimiento"/>
+              <% if (locals.errors && errors.nacimiento) { %>
+                <div class="text-danger">
+                    <%= errors.nacimiento.msg %>
+                </div>
+                <% } %>
             </div>
             <div>
               <label id="ciudadResidencia" for="ciudadResidencia"
-                >Ciudad:
+                >Ciudad ubicación de servicios:
               </label>
               <br />
               <select
@@ -213,21 +242,31 @@
                 id="celular"
                 type="text"
                 name="celular"
-                placeholder="Ingresa tu # Celular"
-                required
-              />
-              <span class="feedback"></span>
+                placeholder="Ingresa tu # Celular"/>
+
+              <% if (locals.errors && errors.contacto) { %>
+                <div class="text-danger">
+                    <%= errors.contacto.msg %>
+                </div>
+                <% } %>
+
             </div>
             <div>
               <label id="email" for="email">E-mail: </label>
               <input
+              class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
                 id="email"
                 type="email"
+                value="<%= locals.oldData ? oldData.email : null %>"
                 name="email"
-                placeholder="Ingresa tu correo electrónico"
-                required
-              />
-              <span class="feedback"></span>
+                placeholder="Ingresa tu correo electrónico"/>
+
+              <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                    <%= errors.email.msg %>
+                </div>
+                <% } %>
+              
             </div>
           </section>
           <section class="grupo-de-registrosDocumentos">
@@ -237,34 +276,18 @@
               id="fotoPerfil"
               type="file"
               name="fotoPerfil"
-              multimpleaccept="document/*"
+              value="<%= locals.oldData ? oldData.fotoPerfil : null %>"
+              accept="document/*"
             />
-          </section>
-          <section class="grupo-de-registrosDocumentos">
-            <label id="documentosLegales" for="documentosLegales"
-              >Subir documentos legales:</label
-            >
+            
+            <% if (locals.errors && errors.fotoPerfil) { %>
+              <div class="text-danger">
+                  <%= errors.fotoPerfil.msg %>
+              </div>
+          <% } %>
 
-            <input
-              id="documentosLegales"
-              type="file"
-              name="documentosLegales"
-              multimpleaccept="document/*"
-            />
           </section>
-          <section class="grupo-de-registrosDocumentos">
-            <label id="tituloProfesional" for="tituloProfesional"
-              >Surbir certificados de enseñanza:</label
-            >
-
-            <input
-              id="tituloProfesional"
-              type="file"
-              name="tituloProfesional"
-              multimpleaccept="document/*"
-            />
-          </section>
-
+          
           <div class="grupo-de-registrosUsuarios">
             <label id="password" for="password">Contraseña:</label>
             <input
@@ -273,7 +296,12 @@
               name="password"
               placeholder="Crear Contraseña"
             />
-            <span class="feedback"></span>
+            <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                  <%= errors.password.msg %>
+              </div>
+              <% } %>
+
           </div>
           <div class="grupo-de-registrosUsuarios">
             <input
@@ -291,6 +319,12 @@
               name="terminosCondiciones"
               value="terminos y condiciones"
             />Acepto los términos y condiciones de uso del sitio web.
+
+            <% if (locals.errors && errors.condiciones) { %>
+              <div class="text-danger">
+                  <%= errors.condiciones.msg %>
+              </div>
+              <% } %>
             <br />
             <input
               type="checkbox"
@@ -300,7 +334,11 @@
             privacidad con el fin de ser contactado por WorkoutEasy a través de
             los medios suministrados y/o recibir información relacionada con
             productos/servicios.
-            <span class="feedback"></span>
+            <% if (locals.errors && errors.privacidad) { %>
+              <div class="text-danger">
+                  <%= errors.privacidad.msg %>
+              </div>
+              <% } %>
           </div>
           <div class="boton">
             <input id="enviar" type="submit" value="Registrarse" />

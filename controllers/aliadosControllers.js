@@ -1,57 +1,166 @@
-const path = require("path");
+const aliadoModel = require('../models/aliado.js');
+const fs = require("fs");
 
+const bcrypt = require("bcryptjs");
+
+
+const controller = {
+    /*signOut: (req, res) => {
+        res.clearCookie('email');
+
+        req.session.aliado = {};
+
+        res.redirect('/loginAliado');
+    },*/
+
+    getRegisterAliados: (req, res) => {
+        res.render('registerAliados');
+    },
+
+    registerAliados: (req, res) => {
+        const aliados = {
+            ...req.body
+        };
+
+        const newPassword = bcrypt.hashSync(aliados.password, 12);
+
+       aliados.password = newPassword;
+
+        aliadoModel.createOne(aliados);
+
+
+        return res.redirect("/loginAliado");
+
+       // res.send('Se registró el usuario');
+    },
+
+    getLoginAliado: (req, res) => {
+        const error = req.query.error || '';
+
+        res.render('loginAliado', {error});
+    },
+    
+    loginAliado: (req, res) => {
+        const searchedAliado = aliadoModel.findByEmail(req.body.email);
+       
+        
+        if(!searchedAliado){
+            return res.redirect('/loginAliado?error=El mail o la contraseña son incorrectos');
+        }
+        
+        const {password: hashedPw} = searchedAliado;
+        const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
+        
+        if(isCorrect){
+            if(!!req.body.remember){
+                res.cookie('email', searchedAliado.email, {
+                    maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
+                });
+                res.sed("se inicio sesion Aliado");
+            }
+
+            delete searchedAliado.password;
+            delete searchedAliado.id;
+
+            req.session.Aliado = searchedAliado;
+
+            res.redirect('/perfilAliado');
+        } else {
+            return res.redirect('/loginAliado?error=El mail o la contraseña son incorrectos');
+        }
+
+    },
+
+    getAliadoProfile: (req, res) => {
+      /*console.log(req.cookies.userEmail);*/
+      return res.render("perfilAliado");
+},
+
+logoutAliado: (req, res) => {
+  /*res.clearCookie('userEmail')*/
+  req.session.destroy();
+  return res.redirect("/loginAliado");
+},
+
+}
+
+module.exports = controller;
+
+
+
+
+/*const path = require("path");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
-const cliente = require("../models/cliente");
 const aliadoModel = require("../models/aliado");
 const bcrypt = require("bcryptjs");
 const { emitWarning } = require("process");
 
-//usuarios//
 const controller = {
 
+  getLogin: (req, res) => {
+    const error = req.query.error || '';
 
-    getLogin: (req, res) => {
-      const error = req.query.error || '';
-  
-      res.render('login', {error});
+    res.render('login', {error});
   },
 
-  loginAliado: (req, res) => {
-    const searchedAliado = aliadoModel.findByEmail(req.body.email);
+  processLogin: (req, res) => {
+    let aliadoToLogin = aliado.findByField("email", req.body.email);
 
-    
-    if(!searchedAliado){
-        return res.redirect('/login?error=El mail o la contraseña son incorrectos');
-    }
-    
-    const {password: hashedPw} = searchedAliado;
-    const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
-    
-    if(isCorrect){
-        if(!!req.body.remember){
-            res.cookie('email', searchedAliado.email, {
-                maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
-            });
+    if (aliadoToLogin) {
+      let isOkPass = bcrypt.compareSync(
+        req.body.password,
+        aliadoToLogin.password
+      );
+      if (isOkPass) {
+        delete aliadoToLogin.password;
+        req.session.aliadoLogged = aliadoToLogin;
+
+        if (req.body.rememberUser) {
+          res.cookie("aliadoEmail", req.body.email, { maxAge: 1000 * 600 });
         }
 
-        delete searchedAliado.password;
-        delete searchedAliado.id;
-
-        req.session.aliado = searchedAliado;
-
-        res.redirect('/');
-    } else {
-        return res.redirect('/login?error=El mail o la contraseña son incorrectos');
+        return res.redirect("/perfilAliado");
+      }
+      return res.render("login", {
+        errors: {
+          email: {
+            msg: "Las credenciales son inválidas",
+          },
+        },
+      });
     }
-},
-    //Aliados//
-    getRegisterAliados: (req, res) => { 
+
+    return res.render("login", {
+      errors: {
+        email: {
+          msg: "No se encuentra este email",
+        },
+      },
+    });
+  },
+ 
+
+getRegisterAliados: (req, res) => { 
         res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
     res.render("registerAliados");
    },
-  
-    processRegisterAliados: (req, res) => {
+
+   registerAliados: (req, res) => {
+    const aliado = {
+        ...req.body
+    };
+
+    const newPassword = bcrypt.hashSync(aliado.password, 12);
+
+    aliado.password = newPassword;
+
+    aliadoModel.create(aliado);
+
+    res.send('Se registró el usuario');
+},
+
+/*processRegisterAliados: (req, res) => {
       const resultValidation = validationResult(req);
   
       if (resultValidation.errors.length > 0) {
@@ -61,7 +170,7 @@ const controller = {
         });
       }
   
-      let aliadoInDB = aliados.findByField("email", req.body.email);
+      let aliadoInDB = aliado.findByField("email", req.body.email);
   
       if (aliadoInDB) {
         return res.render("registerAliados", {
@@ -77,70 +186,28 @@ const controller = {
       };
   
       let aliadoCreated = aliado.create(aliadoToCreate);
-      return res.redirect("/perfilAliado");
-    },
-    
-    
-    
-    /*(req, res) => {
-      const aliados = {
-        ...req.body
-      }
-      const newPassword = bcrypt.hashSync(aliados.password, 12);
-  
-          aliados.password = newPassword;
-  
-          aliadoModel.createOne(aliados);
-  
-          
-      return res.redirect("/perfilAliado");
+      return res.redirect("/login");
     },*/
 
+  
     
-    //processRegisterAliado: (req, res) => {
-      /*const resultValidation = validationResult(req);
+    /*getAliadoProfile: (req, res) => {
+      return res.render("perfilAliado", { aliado: req.session.aliadoLogged });
   
-      if (resultValidation.errors.length > 0) {
-        return res.render("register", {
-          errors: resultValidation.mapped(),
-          oldData: req.body,
-        });
-      }
-  
-      let userInDB = aliado.findByEmail("email", req.body.email);
-  
-      if (userInDB) {
-        return res.render("register", {
-          errors: { email: { msg: "Este email ya está registrado" } },
-          oldData: req.body,
-        });
-      }
-  */
-      //let userToCreate = {
-        //...req.body,
-        //password: bcrypt.hashSync(req.body.password, 10),
-        //fotoPerfil: req.file.filename,
-     // };
-  
-      //let userCreated = aliado.create(userToCreate);
-     // return res.redirect("/login");
-   // },
+    },
   
    
     logout: (req, res) => {
       /*res.clearCookie('userEmail')*/
-      req.session.destroy();
-      return res.redirect("/");
-    },
+      //req.session.destroy();
+     // return res.redirect("/");
+    
   
-    getAliadoProfile: (req, res) => {
-      return res.render("perfilAliado", { aliado: req.session.aliadoLogged });
   
-    } 
   
-  }; 
-  
-  module.exports = controller;
+
+
+  //module.exports = controller;*/
 
 
 

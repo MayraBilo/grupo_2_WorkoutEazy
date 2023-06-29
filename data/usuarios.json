@@ -383,5 +383,20 @@
   "condiciones": "terminos y condiciones",
   "privacidad": "Políticas de privacidad",
   "avatar": "1687910968105-.jpg"
+ },
+ {
+  "id": 29,
+  "nombre": "Lorena",
+  "apellido": "Lopez",
+  "medio": "mujer",
+  "nacimiento": "2000-01-01",
+  "ciudad": "Caracas",
+  "contacto": "123456825",
+  "email": "lorenalopez@gmail.com",
+  "usuario": "lorena",
+  "password": "$2a$10$aYbYIR8cdNQVIe76kM80YuPJwy7lTN8nPRDjMYzpOcAhsbDotibWe",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1688078411703-.jpg"
  }
 ]
