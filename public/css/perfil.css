@@ -59,16 +59,32 @@ main {
 
 .profile {
     background-color: #e8e8e8;
-    border: 1px  #e8e8e8 solid;
+    border: 1px #e8e8e8 solid;
     border-top-right-radius: 40px;
-    padding: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
     padding-left: 20px;
     margin-top: 30px;
+    padding-bottom: 30px;
 }
 
 .profile img {
     border-top-right-radius: 40px;
     margin-bottom: 10px;
+}
+
+.ciudad {
+    color: #00a170;
+    font-weight: 700; 
+}
+
+.nombre-cliente {
+    background-color: #00a170;
+    border: 1px #00a170 solid;
+    border-radius: 14px;
+    color: white;
+    padding: 10px;
+    max-width: 200px;
 }
 
 .info-pago {
@@ -77,6 +93,10 @@ main {
     border-radius: 14px;
     padding: 12px;
     margin-top: 10px;
+}
+
+.info-pago h4{
+    font-weight: 700;
 }
 
 .profile p {
@@ -119,8 +139,8 @@ main {
 
 .editar:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  }
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
 
 /* Banner 1 */
 
@@ -153,11 +173,12 @@ main {
 
 .calendario {
     background-color: rgba(0, 161, 112, 30%);
-    border: 1px  rgba(0, 161, 112, 30%);
+    border: 1px rgba(0, 161, 112, 30%);
     border-bottom-left-radius: 40px;
     padding-left: 20px;
     margin-bottom: 30px;
     padding-bottom: 20px;
+    padding-top: 30px;
 }
 
 .calendario h2 {
@@ -183,9 +204,11 @@ main {
 
 .clases-sugeridas {
     background-color: #e8e8e8;
-    border: 1px  #e8e8e8 solid;
+    border: 1px #e8e8e8 solid;
     border-top-right-radius: 40px;
     padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 /* Busquedas relacionadas */
@@ -277,19 +300,26 @@ footer h2 {
 
 .consultas:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  }
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
 
 
 @media (min-width: 669px) {
     .desplegable p {
         text-align: center;
     }
-} 
+
+    .datos-calendar {
+        background-color: #e8e8e8;
+        padding: 20px;
+        border: 1px #e8e8e8 solid;
+        border-top-right-radius: 40px;
+    }
+}
 
 @media (min-width: 763px) {
 
-.profile img {
+    .profile img {
         align-self: center;
     }
 
@@ -302,6 +332,7 @@ footer h2 {
 
     .datos-calendar {
         align-self: center;
+        width: 25%;
     }
 
     .datos h4 {
@@ -318,5 +349,17 @@ footer h2 {
 
     .datos-calendar p {
         text-align: center;
+        background-color: #00a170;
+        border: 1px #00a170 solid;
+        border-radius: 14px;
+        color: white;
     }
-} 
+
+    .calendario h2 {
+        align-self: center;
+    }
+
+    .desplegable-calendar h2 {
+        text-align: center;
+    }
+}

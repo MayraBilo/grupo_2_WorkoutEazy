@@ -17,6 +17,7 @@ const authMiddleware = require("../middlewares/authMiddleware.js");
  
 // Middleware Aliados
 const uploadFileAliado = require("../middlewares/multerMiddlewareAliado.js");
+const uploadFileCliente = require("../middlewares/multerMiddlewareCliente.js");
 const validationsAliados = require("../middlewares/validateRegisterAliadosMiddleware.js");
 const authMiddlewareAliado = require("../middlewares/authMiddlewareAliado.js");
 const guestMiddlewareAliados = require("../middlewares/guestMiddlewareAliados.js");
@@ -29,7 +30,7 @@ router.get("/loginAliado", aliadosControllers.getLoginAliado);
 
 // Procesar el login
 router.post("/login", userControllers.processLogin);
-router.post("/loginAliado", aliadosControllers.loginAliado);
+router.post("/login", aliadosControllers.loginAliado);
 
 // Formulario de registro
 router.get("/register", guestMiddleware, userControllers.getRegister);
@@ -37,13 +38,13 @@ router.get("/register", guestMiddleware, userControllers.getRegister);
 // Procesar el registro
 router.post(
   "/register",
-  uploadFile.single("avatar"),
+  uploadFileCliente.single("avatar"),
   validations,
   userControllers.processRegister
 );
 
 // Formulario de registroAliado
-router.get("/registerAliados", aliadosControllers.getRegisterAliados);
+router.get("/registerAliados", guestMiddlewareAliados, aliadosControllers.getRegisterAliados);
 
 // Procesar el registroAliados
 router.post(
@@ -55,12 +56,12 @@ router.post(
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
 
 // Perfil de usuarioAliado
-router.get('/perfilAliado', aliadosControllers.getAliadoProfile);
+router.get('/perfilAliado', authMiddlewareAliado, aliadosControllers.getAliadoProfile);
 
 
 // Logout
 
 router.get("/logout", authMiddleware, userControllers.logout);
-router.get("/logoutAliado", aliadosControllers.logoutAliado);
+router.get("/logoutAliado", authMiddlewareAliado, aliadosControllers.logoutAliado);
 
 module.exports = router;

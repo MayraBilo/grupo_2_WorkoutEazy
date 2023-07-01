@@ -10,6 +10,7 @@ const validations = [
     body('ciudad').notEmpty().withMessage('Elegir una ciudad de residencia'),
     body('medio').notEmpty().withMessage('Elegir un género'),
     body('nacimiento').notEmpty().withMessage('Elegir una fecha de nacimiento'),
+    body('direccion').notEmpty().withMessage('Brindar un domicilio de facturación'),
     body('email').notEmpty().withMessage('Escribir un email').bail()
     .isEmail().withMessage('Debes escribir un mail válido'),
     body('avatar').custom((value, {req}) => {

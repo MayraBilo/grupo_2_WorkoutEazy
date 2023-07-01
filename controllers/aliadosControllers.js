@@ -1,7 +1,9 @@
 const aliadoModel = require('../models/aliado.js');
 const fs = require("fs");
+const { validationResult } = require("express-validator");
 
 const bcrypt = require("bcryptjs");
+const aliado = require("../models/aliado");
 
 
 const controller = {
@@ -18,7 +20,8 @@ const controller = {
     },
 
     registerAliados: (req, res) => {
-        const aliados = {
+
+        /*const aliados = {
             ...req.body
         };
 
@@ -31,20 +34,47 @@ const controller = {
 
         return res.redirect("/loginAliado");
 
-       // res.send('Se registró el usuario');
+       // res.send('Se registró el usuario');*/
+
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("registerAliados", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
+    let userInDB = aliado.findByField("email", req.body.email);
+
+    if (userInDB) {
+      return res.render("registerAliados", {
+        errors: { email: { msg: "Este email ya está registrado" } },
+        oldData: req.body,
+      });
+    }
+
+    let userToCreate = {
+      ...req.body,
+      password: bcrypt.hashSync(req.body.password, 10),
+      fotoPerfil: req.file.filename,
+    };
+
+    let userCreated = aliado.createOne(userToCreate);
+    return res.redirect("/loginAliado");
+
     },
 
     getLoginAliado: (req, res) => {
         const error = req.query.error || '';
 
-        res.render('loginAliado', {error});
+        res.render('login', {error});
     },
     
     loginAliado: (req, res) => {
-        const searchedAliado = aliadoModel.findByEmail(req.body.email);
+        const userToLogin = aliado.findByField(req.body.email);
        
-        
-        if(!searchedAliado){
+        /*if(!searchedAliado){
             return res.redirect('/loginAliado?error=El mail o la contraseña son incorrectos');
         }
         
@@ -67,7 +97,38 @@ const controller = {
             res.redirect('/perfilAliado');
         } else {
             return res.redirect('/loginAliado?error=El mail o la contraseña son incorrectos');
+        }*/
+
+      
+        if (userToLogin) {
+          let isOkPass = bcrypt.compareSync(
+            req.body.password,
+            userToLogin.password
+          );
+          if (isOkPass) {
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin;
+    
+            return res.redirect("/perfilAliado");
+          }
+
+          return res.render("login", {
+            errors: {
+              email: {
+                msg: "Las credenciales son inválidas",
+              },
+            },
+          });
+
         }
+    
+        return res.render("login", {
+          errors: {
+            email: {
+              msg: "No se encuentra este email",
+            },
+          },
+        }); 
 
     },
 

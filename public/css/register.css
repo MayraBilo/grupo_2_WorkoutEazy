@@ -140,7 +140,12 @@ margin-right: 5px;
     transition: 0.5s;
 }
 
-button:hover {
+button:active {
+    background-color: #0084bd;
+    color: white;
+}
+
+button.clicked {
     background-color: #0084bd;
     color: white;
 }
@@ -151,6 +156,7 @@ button:hover {
     padding: 2%;
 
 }
+
 .dos-registros {
     display: flex;
     flex-direction: row;

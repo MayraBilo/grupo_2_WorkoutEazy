@@ -2,13 +2,15 @@ const path = require ('path');
 const {body} = require ('express-validator')
 
 const validationsAliados = [
-    body('profesion o servicio').notEmpty().withMessage('Escribir un profesión o servicio'),
+    body('nombreEmpresa').notEmpty().withMessage('Escribir un nombre'),
+    body('nombreProfesional').notEmpty().withMessage('Escribir un nombre'),
+    body('apellidoProfesional').notEmpty().withMessage('Escribir un nombre'),
+    body('profesion').notEmpty().withMessage('Escribir un profesión o servicio'),
     body('medio').notEmpty().withMessage('Elegir un género'),
     body('identificacion').notEmpty().withMessage('Escribir identificación'),
     body('nacimiento').notEmpty().withMessage('Elegir una fecha de nacimiento'),
-    body('celular').notEmpty().withMessage('Escribir número celular'),
+    body('contacto').notEmpty().withMessage('Escribir número celular'),
     body('password').notEmpty().withMessage('Crear una contraseña'),
-    body('confirmarContraseña').notEmpty().withMessage('Escribir nuevamente contraseña'),
     body('email').notEmpty().withMessage('Escribir un email').bail()
     .isEmail().withMessage('Debes escribir un mail válido'),
 
@@ -27,7 +29,6 @@ const validationsAliados = [
         return true;
     }),
 
-  
     body('condiciones').notEmpty().withMessage('Debes aceptar los términos y condiciones'),
     body('privacidad').notEmpty().withMessage('Debes aceptar las políticas de privacidad')
 ]

@@ -23,6 +23,7 @@ app.set("views", [
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 
+
 app.use(session({
     secret: "Shhh",
     resave: false,
@@ -30,6 +31,7 @@ app.use(session({
 }))
 
 app.use(userLoggedMiddleware);
+
 
 
 

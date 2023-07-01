@@ -4,7 +4,7 @@ const { validationResult } = require("express-validator");
 const fs = require("fs");
 const cliente = require("../models/cliente");
 const bcrypt = require("bcryptjs");
-const { emitWarning } = require("process");
+/*const { emitWarning } = require("process");*/
 
 //usuarios//
 const controller = {
