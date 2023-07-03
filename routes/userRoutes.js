@@ -14,7 +14,6 @@ const validations = require("../middlewares/validateRegisterMiddleware.js");
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
 
-
 // Formulario de login
 router.get("/login", guestMiddleware, userControllers.getLogin);
 
@@ -23,7 +22,6 @@ router.post("/login", userControllers.processLogin);
 
 // Formulario de registro
 router.get("/register", guestMiddleware, userControllers.getRegister);
-
 
 // Procesar el registro
 router.post(
@@ -37,7 +35,6 @@ router.post(
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
 router.get("/:id/perfilAliado", userControllers.getAliadoProfile);
-
 
 // Logout
 

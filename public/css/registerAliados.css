@@ -227,24 +227,6 @@ p {
     font-size: 10px;
 }
 
-/*----------validaciones--------------*/
-
-.text-danger {
-    color: rgb(184, 32, 32);
-    margin: 5px;
-}
-
-input .input-selecto .is-invalid {
-    border: 3px rgb(184, 32, 32) solid;
-}
-
-        /*--------------------------------------footer---------------------------------------------------------------------*/
-
- footer {
-    background-color: whitesmoke;
-    margin: 0;
- }       
-
  /*-----------------------------------------------body RegistroAlidos---------------------------------------------------------*/
 
  .mainRegister2 {
@@ -494,6 +476,23 @@ button, input, optgroup, select, textarea {
 }
 
 
+/*----------validaciones--------------*/
+
+.text-danger {
+    color: rgb(184, 32, 32);
+    margin: 5px;
+}
+
+input .input-selecto .is-invalid {
+    border: 3px rgb(184, 32, 32) solid;
+}
+
+/*--------------------------------------footer---------------------------------------------------------------------*/
+
+ footer {
+    background-color: whitesmoke;
+    margin: 0;
+ }       
 
 
 
