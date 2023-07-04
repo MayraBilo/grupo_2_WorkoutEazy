@@ -7,7 +7,6 @@ const cookies = require("cookie-parser");
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const userRoutes = require("./routes/userRoutes");
-const aliadoRoutes = require("./routes/aliadoRoutes");
 
 const app = express();
 
@@ -44,7 +43,6 @@ app.use(methodOverride("_method"));
 app.use(mainRoutes);
 app.use("/product", productsRoutes);
 app.use(userRoutes);
-app.use(aliadoRoutes);
 
 //----404 not-found ----//
 

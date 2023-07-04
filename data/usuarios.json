@@ -371,7 +371,7 @@
  {
   "id": 28,
   "nombre": "Elizabeth",
-  "apellido": "Luna",
+  "apellido": "Lunas",
   "medio": "mujer",
   "nacimiento": "1980-09-12",
   "ciudad": "Bahía Blanca",
@@ -383,5 +383,52 @@
   "condiciones": "terminos y condiciones",
   "privacidad": "Políticas de privacidad",
   "avatar": "1687910968105-.jpg"
+ },
+ {
+  "id": 29,
+  "nombre": "Lorena",
+  "apellido": "Lopez",
+  "medio": "mujer",
+  "nacimiento": "2000-01-01",
+  "ciudad": "Caracas",
+  "contacto": "123456825",
+  "email": "lorenalopez@gmail.com",
+  "usuario": "lorena",
+  "password": "$2a$10$aYbYIR8cdNQVIe76kM80YuPJwy7lTN8nPRDjMYzpOcAhsbDotibWe",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1688078411703-.jpg"
+ },
+ {
+  "id": 30,
+  "nombre": "Martin",
+  "apellido": "Demarchi",
+  "medio": "hombre",
+  "nacimiento": "1992-03-12",
+  "ciudad": "Caracas",
+  "contacto": "1163544789",
+  "email": "tincho@gmail.com",
+  "usuario": "Tincho",
+  "password": "$2a$10$Tkf4jB6tKf6o6DBm7wm5XOuv1sYMXdxuD0Fpd8nFu2v49/RFj3XT.",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1688211607582-.jpg"
+ },
+ {
+  "id": 31,
+  "nombre": "Dama",
+  "apellido": "Mayol",
+  "medio": "mujer",
+  "nacimiento": "1973-07-18",
+  "ciudad": "Buenos Aires",
+  "direccion": "sargento cabral 875, Retiro",
+  "contacto": "1163547892",
+  "contacto-emergencia": "1140843944",
+  "email": "dudu@gmail.com",
+  "usuario": "Dudu",
+  "password": "$2a$10$YMz9naxC/k80keX.CSFHFepmZ0lML8ZhwxRW2nE4HPnRDy6UR0kga",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1688222215310-.jpg"
  }
 ]

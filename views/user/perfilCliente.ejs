@@ -14,14 +14,15 @@
 
     <section class="profile">
         <img src="/images/productos/<%= cliente.avatar %>" class="logo-aliado1" width="300px">
-        
+        <br>
         <div class="datos">
-        <h4><%= cliente.nombre %> <%= cliente.apellido %></h4>
-        <p>Edad</p>
-        <h4>Ciudad</h4>
-        <p>Dirección</p>
+        <h4 class="nombre-cliente"><%= cliente.nombre %> <%= cliente.apellido %></h4>
+        <br>
+        <p><%= cliente.nacimiento %></p>
+        <br>
+        <h4 class="ciudad"><%= cliente.ciudad %></h4>
         </div>
-
+        <br>
         <div class="info-pago">
             <h4>Información de pago</h4>
 
@@ -62,13 +63,23 @@
             <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
         </div>
 
+        <br> 
+
         <h2>Contacto</h2>
 
         <div class="datos-calendar">
-        <h4>Número de teléfono</h4>
+        <p>Móvil</p>
+        <h4><%= cliente.contacto %></h4>
+        <br>
         <p>Contacto de emergencia</p>
-        <h4>Mail</h4>
+        <h4><%= cliente.contacto %></h4>
+        <br>
+        <p>Email</p>
+        <h4><%= cliente.email %></h4>
+        <br>
         <p>Dirección</p>
+        <h4><%= cliente.direccion %></h4>
+        <br>
         </div>
 
     </section>
