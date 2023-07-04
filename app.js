@@ -44,6 +44,12 @@ app.use(mainRoutes);
 app.use("/product", productsRoutes);
 app.use(userRoutes);
 
+//--- ERROR 404 ---//
+
+app.use((req, res, next) => {
+  res.status(404).render("404-error");
+});
+
 app.listen(3000, () =>
   console.log("Servidor escuchando en el puerto http://localhost:3000/")
 );
