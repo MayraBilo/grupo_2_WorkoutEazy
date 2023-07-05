@@ -8,6 +8,7 @@ const router = express.Router();
 // Middlewares
 
 const uploadFile = require('../middlewares/multerMiddleware.js');
+const authMiddleware = require("../middlewares/authMiddleware.js");
 
 
 //@GET / product
@@ -32,7 +33,7 @@ router.get('/:id/editProduct', productController.getEdit);
 // @PUT /product/:id/update ---> /products/5/put
 router.put('/:id/editProduct', uploadFile.single('img'), productController.updateProduct);
 
-router.get('/productCart', productController.getCart);
+router.get('/productCart', authMiddleware, productController.getCart);
 
 router.get('/profileServices', productController.getService);
 
