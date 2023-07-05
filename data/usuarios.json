@@ -430,5 +430,22 @@
   "condiciones": "terminos y condiciones",
   "privacidad": "Políticas de privacidad",
   "avatar": "1688222215310-.jpg"
+ },
+ {
+  "id": 32,
+  "nombre": "Mono",
+  "apellido": "Mayol",
+  "medio": "hombre",
+  "nacimiento": "1968-04-22",
+  "ciudad": "Buenos Aires",
+  "direccion": "sargento cabral 875, Retiro",
+  "contacto": "1163547899",
+  "contacto-emergencia": "1140843944",
+  "email": "mono@gmail.com",
+  "usuario": "mono",
+  "password": "$2a$10$Ao/IZKBMdEIP.4.3ZsQWjePnPYT8JJu3BThWGWmNS9thhoWG5W4YW",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1688333401733-.jpg"
  }
 ]
