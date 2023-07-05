@@ -22,7 +22,7 @@ main {
     border-top: solid 2px #00a170;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin: 0 5px;
+    margin: 0 10px;
     padding-bottom: 30px;
 }
 
@@ -117,6 +117,10 @@ main {
     text-align: left;
 }
 
+.datos .nombre-cliente {
+    text-align: center;
+}
+
 .editar {
     border: 1px rgba(0, 161, 112, 40%);
     border-radius: 14px;
@@ -140,6 +144,10 @@ main {
 .editar:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+section.login {
+    display: none;
 }
 
 /* Banner 1 */
@@ -315,6 +323,10 @@ footer h2 {
         border: 1px #e8e8e8 solid;
         border-top-right-radius: 40px;
     }
+
+    section.login {
+        display: flex;
+    }
 }
 
 @media (min-width: 763px) {
@@ -361,5 +373,10 @@ footer h2 {
 
     .desplegable-calendar h2 {
         text-align: center;
+    }
+
+    main {
+        margin-left: 60px;
+        margin-right: 60px;
     }
 }
