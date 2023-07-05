@@ -56,7 +56,7 @@ router.post(
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
 
 // Perfil de usuarioAliado
-router.get('/perfilAliado', authMiddlewareAliado, aliadosControllers.getAliadoProfile);
+router.get('/perfilAliado', aliadosControllers.getAliadoProfile);
 
 
 // Logout

@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const uuid = require('uuid');
 
-const model = {
+const aliado = {
   // Ruta del archivo JSON
   route: '../data/aliados.json',
 
@@ -54,7 +54,7 @@ const model = {
   }
 }
 
-module.exports = model;
+module.exports = aliado;
 
 /*const aliado = {
   fileName: "./data/aliados.json",

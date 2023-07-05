@@ -427,5 +427,24 @@
         "privacidad": "on",
         "fotoPerfil": "1688218912695-.jpg",
         "id": "28d10086-60be-49bd-8cd3-81b5c5d54a58"
+    },
+    {
+        "perfilUsuario": "Empresa Deportiva",
+        "nombreEmpresa": "Alma Yoga",
+        "nombreProfesional": "Jacinta",
+        "apellidoProfesional": "Saubidet",
+        "profesion": "Personal Trainer",
+        "medio": "on",
+        "tipoIdentificacion": "DNI",
+        "identificacion": "37888809",
+        "nacimiento": "2023-01-12",
+        "ciudad": "Buenos Aires",
+        "contacto": "1163547999",
+        "email": "jacisaubi@gmail.com",
+        "password": "$2a$10$IuAkVcA1fhw68lbjwXQa8.H3058vdTRCc61fjBhkofwvZRWhrDC.u",
+        "condiciones": "on",
+        "privacidad": "on",
+        "fotoPerfil": "1688560113693-.png",
+        "id": "5a0502e7-53c0-48b9-ae34-128d58ada784"
     }
 ]

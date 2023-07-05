@@ -1,4 +1,4 @@
-const aliadoModel = require('../models/aliado.js');
+
 const fs = require("fs");
 const { validationResult } = require("express-validator");
 
@@ -7,34 +7,12 @@ const aliado = require("../models/aliado");
 
 
 const controller = {
-    /*signOut: (req, res) => {
-        res.clearCookie('email');
-
-        req.session.aliado = {};
-
-        res.redirect('/loginAliado');
-    },*/
 
     getRegisterAliados: (req, res) => {
         res.render('registerAliados');
     },
 
     registerAliados: (req, res) => {
-
-        /*const aliados = {
-            ...req.body
-        };
-
-        const newPassword = bcrypt.hashSync(aliados.password, 12);
-
-       aliados.password = newPassword;
-
-        aliadoModel.createOne(aliados);
-
-
-        return res.redirect("/loginAliado");
-
-       // res.send('Se registró el usuario');*/
 
     const resultValidation = validationResult(req);
 
@@ -64,7 +42,7 @@ const controller = {
     return res.redirect("/loginAliado");
 
     },
-
+    
     getLoginAliado: (req, res) => {
         const error = req.query.error || '';
 
@@ -73,32 +51,6 @@ const controller = {
     
     loginAliado: (req, res) => {
         const userToLogin = aliado.findByField(req.body.email);
-       
-        /*if(!searchedAliado){
-            return res.redirect('/loginAliado?error=El mail o la contraseña son incorrectos');
-        }
-        
-        const {password: hashedPw} = searchedAliado;
-        const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
-        
-        if(isCorrect){
-            if(!!req.body.remember){
-                res.cookie('email', searchedAliado.email, {
-                    maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
-                });
-                res.sed("se inicio sesion Aliado");
-            }
-
-            delete searchedAliado.password;
-            delete searchedAliado.id;
-
-            req.session.Aliado = searchedAliado;
-
-            res.redirect('/perfilAliado');
-        } else {
-            return res.redirect('/loginAliado?error=El mail o la contraseña son incorrectos');
-        }*/
-
       
         if (userToLogin) {
           let isOkPass = bcrypt.compareSync(
