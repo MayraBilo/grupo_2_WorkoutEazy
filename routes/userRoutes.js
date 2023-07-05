@@ -23,7 +23,6 @@ const authMiddlewareAliado = require("../middlewares/authMiddlewareAliado.js");
 const guestMiddlewareAliados = require("../middlewares/guestMiddlewareAliados.js");
 
 
-
 // Formulario de login
 router.get("/login", guestMiddleware, userControllers.getLogin);
 router.get("/loginAliado", aliadosControllers.getLoginAliado);
@@ -57,7 +56,6 @@ router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
 
 // Perfil de usuarioAliado
 router.get('/perfilAliado', aliadosControllers.getAliadoProfile);
-
 
 // Logout
 
