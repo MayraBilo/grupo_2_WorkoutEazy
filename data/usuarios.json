@@ -447,5 +447,22 @@
   "condiciones": "terminos y condiciones",
   "privacidad": "Políticas de privacidad",
   "avatar": "1688333401733-.jpg"
+ },
+ {
+  "id": 33,
+  "nombre": "Eli",
+  "apellido": "Martinez",
+  "medio": "mujer",
+  "nacimiento": "2023-03-02",
+  "ciudad": "Caracas",
+  "direccion": "sargento cabral 875, Retiro",
+  "contacto": "1163678866",
+  "contacto-emergencia": "1140843944",
+  "email": "elim@gmail.com",
+  "usuario": "Eli M",
+  "password": "$2a$10$hNq8M29jbLPE6//Eo/Eo2.9qq9eGCFPqdEt89i46m7gJm1.o/talm",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1688598348607-.jpg"
  }
 ]
