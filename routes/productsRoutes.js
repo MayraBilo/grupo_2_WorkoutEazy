@@ -8,7 +8,7 @@ const router = express.Router();
 // Middlewares
 
 const uploadFile = require('../middlewares/multerMiddleware.js');
-
+const authMiddleware = require("../middlewares/authMiddleware.js");
 
 //@GET / product
 router.get("/", productController.getList);
