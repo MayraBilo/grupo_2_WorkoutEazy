@@ -29,7 +29,7 @@ router.get("/loginAliado", aliadosControllers.getLoginAliado);
 
 // Procesar el login
 router.post("/login", userControllers.processLogin);
-router.post("/login", aliadosControllers.loginAliado);
+router.post("/loginAliado", aliadosControllers.loginAliado);
 
 // Formulario de registro
 router.get("/register", guestMiddleware, userControllers.getRegister);

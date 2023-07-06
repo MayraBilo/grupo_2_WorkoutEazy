@@ -46,25 +46,31 @@ const controller = {
     getLoginAliado: (req, res) => {
         const error = req.query.error || '';
 
-        res.render('login', {error});
+        res.render('loginAliado', {error});
     },
     
     loginAliado: (req, res) => {
-        const userToLogin = aliado.findByField(req.body.email);
-      
+        const userToLogin = aliado.findByField("email", req.body.email);
+        console.log("hola aca estoy")
         if (userToLogin) {
+          console.log("usuario encontrado")
           let isOkPass = bcrypt.compareSync(
             req.body.password,
             userToLogin.password
           );
           if (isOkPass) {
+            console.log("password coincide")
             delete userToLogin.password;
             req.session.userLogged = userToLogin;
+
+            if (req.body.rememberUser) {
+              res.cookie("userEmail", req.body.email, { maxAge: 1000 * 600 });
+            }
     
             return res.redirect("/perfilAliado");
           }
 
-          return res.render("login", {
+          return res.render("loginAliado", {
             errors: {
               email: {
                 msg: "Las credenciales son inválidas",
@@ -74,7 +80,7 @@ const controller = {
 
         }
     
-        return res.render("login", {
+        return res.render("loginAliado", {
           errors: {
             email: {
               msg: "No se encuentra este email",
@@ -86,11 +92,12 @@ const controller = {
 
     getAliadoProfile: (req, res) => {
       /*console.log(req.cookies.userEmail);*/
-      return res.render("perfilAliado");
+      return res.render("perfilAliado", {aliado: req.session.userLogged});
 },
 
 logoutAliado: (req, res) => {
-  /*res.clearCookie('userEmail')*/
+  console.log('logoutaliado')
+  res.clearCookie('userEmail')
   req.session.destroy();
   return res.redirect("/loginAliado");
 },

@@ -12,6 +12,8 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "./public")));
 
+app.use(cookies());
+
 app.set("view engine", "ejs");
 app.set("views", [
   path.join(__dirname, "./views/main"),
@@ -20,6 +22,7 @@ app.set("views", [
 ]);
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+const userLoggedMiddlewareAliado = require("./middlewares/aliadoLoggedMiddleware");
 
 app.use(
   session({
@@ -29,15 +32,16 @@ app.use(
   })
 );
 
-app.use(userLoggedMiddleware);
 
-app.use(cookies());
 
 // --- Middlewares ---
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
+
+app.use(userLoggedMiddleware);
+app.use(userLoggedMiddlewareAliado);
 
 //----routes----//
 app.use(mainRoutes);

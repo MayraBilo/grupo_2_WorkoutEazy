@@ -1,18 +1,21 @@
-const user = require('../models/aliado')
+const aliado = require('../models/aliado')
 
-function aliadoLoggedMiddleware (req, res, next) {
-     if(req.cookies.email){
-         const aliadoModel = require('./models/aliado');
- 
-         const aliado = aliadoModel.findByEmail(req.cookies.email);
- 
-         delete aliado.id;
-         delete aliado.password;
- 
-         req.session.aliado = aliado;
+function userLoggedMiddleware (req, res ,next) {
+     res.locals.isLogged = false;
+     
+     if (req.session && req.session.userLogged) {
+     res.locals.isLogged = true;
+     res.locals.userLogged = req.session.userLogged;
+      }
+
+     let emailInCookie = req.cookies.userEmail;
+     let userFromCookie =  aliado.findByField('email', emailInCookie) 
+     
+     if(userFromCookie) {
+          req.session.userLogged = userFromCookie
      }
- 
-     next();
- };
+     
+     next() 
+}
 
-module.exports = aliadoLoggedMiddleware;
+module.exports = userLoggedMiddleware;

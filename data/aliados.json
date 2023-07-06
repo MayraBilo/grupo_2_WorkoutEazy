@@ -446,5 +446,43 @@
         "privacidad": "on",
         "fotoPerfil": "1688560113693-.png",
         "id": "5a0502e7-53c0-48b9-ae34-128d58ada784"
+    },
+    {
+        "perfilUsuario": "Profesional Físico",
+        "nombreEmpresa": "Sport Club",
+        "nombreProfesional": "Valeria",
+        "apellidoProfesional": "Mayol",
+        "profesion": "Personal Trainer",
+        "medio": "on",
+        "tipoIdentificacion": "DNI",
+        "identificacion": "37455632",
+        "nacimiento": "2023-04-06",
+        "ciudad": "Caracas",
+        "contacto": "1163547892",
+        "email": "valem@gmail.com",
+        "password": "$2a$10$M1R0WnjeCqXEnw/XGe92VeXi.eIui5vBsu0QxMI48TBOS5UlZ/Msa",
+        "condiciones": "on",
+        "privacidad": "on",
+        "fotoPerfil": "1688604872144-.jpg",
+        "id": "c1724723-48dd-4f45-943e-45a3ae923566"
+    },
+    {
+        "perfilUsuario": "Profesional Físico",
+        "nombreEmpresa": "Sport Club",
+        "nombreProfesional": "Eliza",
+        "apellidoProfesional": "Digital",
+        "profesion": "Personal Trainer",
+        "medio": "on",
+        "tipoIdentificacion": "DNI",
+        "identificacion": "37455632",
+        "nacimiento": "2023-04-05",
+        "ciudad": "Caracas",
+        "contacto": "1163547892",
+        "email": "elizad@gmail.com",
+        "password": "$2a$10$siY2E3408KT/gYNVeJZOfu8cbfqJEqu1ivlGyPzD1pAZYkWBPfQMu",
+        "condiciones": "on",
+        "privacidad": "on",
+        "fotoPerfil": "1688608367621-.jpg",
+        "id": "4b53a297-8240-44b3-a227-769bb26596b0"
     }
 ]
