@@ -3,8 +3,8 @@ const {body} = require ('express-validator')
 
 const validationsAliados = [
     body('nombreEmpresa').notEmpty().withMessage('Escribir un nombre'),
-    body('nombreProfesional').notEmpty().withMessage('Escribir un nombre'),
-    body('apellidoProfesional').notEmpty().withMessage('Escribir un nombre'),
+    body('nombre').notEmpty().withMessage('Escribir un nombre'),
+    body('apellido').notEmpty().withMessage('Escribir un apellido'),
     body('profesion').notEmpty().withMessage('Escribir un profesión o servicio'),
     body('medio').notEmpty().withMessage('Elegir un género'),
     body('identificacion').notEmpty().withMessage('Escribir identificación'),
@@ -14,7 +14,7 @@ const validationsAliados = [
     body('email').notEmpty().withMessage('Escribir un email').bail()
     .isEmail().withMessage('Debes escribir un mail válido'),
 
-    body('fotoPerfil').custom((value, {req}) => {
+    body('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
         

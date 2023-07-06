@@ -48,7 +48,7 @@ router.get("/registerAliados", guestMiddlewareAliados, aliadosControllers.getReg
 // Procesar el registroAliados
 router.post(
   "/registerAliados",
-  uploadFileAliado.single("fotoPerfil"), validationsAliados, aliadosControllers.registerAliados);
+  uploadFileAliado.single("avatar"), validationsAliados, aliadosControllers.registerAliados);
 
 // Perfil de usuario
 

@@ -84,14 +84,14 @@
               <label>Nombre de profesional deportivo:</label>
               <br />
 
-              <input type="text" name="nombreProfesional"
-                class="<%= locals.errors && errors.nombreProfesional ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.nombreProfesional : null %>" placeholder="Ingresa tu Nombre">
+              <input type="text" name="nombre"
+                class="<%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Ingresa tu Nombre">
 
-              <% if (locals.errors && errors.nombreProfesional) { %>
+              <% if (locals.errors && errors.nombre) { %>
 
                 <div class="text-danger">
-                  <%= errors.nombreProfesional.msg %>
+                  <%= errors.nombre.msg %>
                 </div>
                 <% } %>
 
@@ -100,17 +100,17 @@
             </div>
 
             <div>
-              <label id="apellidoProfesional" for="apellidoProfesional">Apellidos de profesional deportivo:
+              <label id="apellido" for="apellido">Apellidos de profesional deportivo:
               </label>
 
               <br />
-              <input type="text" name="apellidoProfesional"
-                class="<%= locals.errors && errors.apellidoProfesional ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.apellidoProfesional : null %>" placeholder="Ingresa tus Apellidos">
+              <input type="text" name="apellido"
+                class="<%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.apellido : null %>" placeholder="Ingresa tus Apellidos">
 
-              <% if (locals.errors && errors.apellidoProfesional) { %>
+              <% if (locals.errors && errors.apellido) { %>
                 <div class="text-danger">
-                  <%= errors.apellidoProfesional.msg %>
+                  <%= errors.apellido.msg %>
                 </div>
                 <% } %>
 
@@ -245,11 +245,11 @@
           <section class="grupo-de-registrosDocumentos">
             <label>Subir Foto Perfil:</label>
 
-            <input name="fotoPerfil" type="file" value="<%= locals.oldData ? oldData.fotoPerfil : null %>">
+            <input name="avatar" type="file" value="<%= locals.oldData ? oldData.avatar : null %>">
 
-            <% if (locals.errors && errors.fotoPerfil) { %>
+            <% if (locals.errors && errors.avatar) { %>
               <div class="text-danger">
-                <%= errors.fotoPerfil.msg %>
+                <%= errors.avatar.msg %>
               </div>
               <% } %>
 
