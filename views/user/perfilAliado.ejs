@@ -25,12 +25,12 @@
 <section class="contenedorGlobal">
         <section class="container1-instructor">
             <div class="contenedorImagenEntrenador">
-                <img src="/images/avatars/<%= aliado.avatar %>" alt="imagenGim" class="img-entrenador">
+                <img src="/images/avatars/<%= locals.userLogged.avatar %>" alt="imagenGim" class="img-entrenador">
             </div>
             <div>
-                <h4>Perfil del Usuario: <%= aliado.perfilUsuario %></h4>
-                <h4>Nombres y Apellidos: <%= aliado.nombre %>  <%= aliado.apellido %></h4>
-                <h4>Profesión o Servicio: <%= aliado.profesion %></h4>
+                <h4>Perfil del Usuario: <%= locals.userLogged.perfilUsuario %></h4>
+                <h4>Nombres y Apellidos: <%= locals.userLogged.nombre %>  <%= locals.userLogged.apellido %></h4>
+                <h4>Profesión o Servicio: <%= locals.userLogged.profesion %></h4>
             </div>
         </section>
         <section class="container2-datos">
@@ -42,10 +42,10 @@
             <section class="informacion-contacto">
                 <h4>Contacto:</h4>
                 <div class="desplegable">
-                <h5>Ciudad: <%= aliado.ciudad %></h5>
+                <h5>Ciudad: <%= locals.userLogged.ciudad %></h5>
                 <h5>Dirección:</h5>
-                <h5>Número Celular: <%= aliado.contacto %></h5>
-                <h5>E-mail: <%= aliado.email %></h5>
+                <h5>Número Celular: <%= locals.userLogged.contacto %></h5>
+                <h5>E-mail: <%= locals.userLogged.email %></h5>
                 </div>
             </section>
           
@@ -56,7 +56,7 @@
                 <p> Ingresa aquí tu perfil profesional </p>
             </div>
             
-            <a href="/<%= aliado.identificacion%>/editPerfilAliado" ><input type="button" value="Editar" class="editar"></a>
+            <a href="/<%= locals.userLogged.identificacion%>/editPerfilAliado" ><input type="button" value="Editar" class="editar"></a>
            
         </section>
         <section class="informacion-legal-aliado">

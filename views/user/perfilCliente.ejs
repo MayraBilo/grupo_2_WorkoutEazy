@@ -13,14 +13,14 @@
     </div>
 
     <section class="profile">
-        <img src="/images/avatars/<%= cliente.avatar %>" class="logo-aliado1" width="300px">
+        <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px">
         <br>
         <div class="datos">
-        <h4 class="nombre-cliente"><%= cliente.nombre %> <%= cliente.apellido %></h4>
+        <h4 class="nombre-cliente"><%= locals.userLogged.nombre %> <%= locals.userLogged.apellido %></h4>
         <br>
-        <p><%= cliente.nacimiento %></p>
+        <p><%= locals.userLogged.nacimiento %></p>
         <br>
-        <h4 class="ciudad"><%= cliente.ciudad %></h4>
+        <h4 class="ciudad"><%= locals.userLogged.ciudad %></h4>
         </div>
         <br>
         <div class="info-pago">
@@ -69,16 +69,16 @@
 
         <div class="datos-calendar">
         <p>Móvil</p>
-        <h4><%= cliente.contacto %></h4>
+        <h4><%= locals.userLogged.contacto %></h4>
         <br>
         <p>Contacto de emergencia</p>
-        <h4><%= cliente.contacto %></h4>
+        <h4><%= locals.userLogged.contacto %></h4>
         <br>
         <p>Email</p>
-        <h4><%= cliente.email %></h4>
+        <h4><%= locals.userLogged.email %></h4>
         <br>
         <p>Dirección</p>
-        <h4><%= cliente.direccion %></h4>
+        <h4><%= locals.userLogged.direccion %></h4>
         <br>
         </div>
 
