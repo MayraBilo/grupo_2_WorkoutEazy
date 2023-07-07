@@ -272,5 +272,22 @@
   "condiciones": "terminos y condiciones",
   "privacidad": "Políticas de privacidad",
   "avatar": "1688608499689-.jpg"
+ },
+ {
+  "id": 23,
+  "nombre": "eliza",
+  "apellido": "lopez",
+  "medio": "mujer",
+  "nacimiento": "2000-02-02",
+  "ciudad": "Buenos Aires",
+  "direccion": "afpiorjepoirjeisa",
+  "contacto": "1234568",
+  "contacto-emergencia": "12345568",
+  "email": "elizalopez@gmail.com",
+  "usuario": "Elopez",
+  "password": "$2a$10$n.EvefEZoP2a/nEsFscezeFkompbHLeo3go2UogbN265FF7RrCf4.",
+  "condiciones": "terminos y condiciones",
+  "privacidad": "Políticas de privacidad",
+  "avatar": "1688765513016-.jpg"
  }
 ]
