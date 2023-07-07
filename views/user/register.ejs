@@ -160,20 +160,6 @@
 
                     </section>
 
-                    <div class="grupo-de-registrosUsuarios">
-
-                        <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
-                        <input class="input-selecto" id="Nombre Usuari@" type="text" name="usuario"
-                            placeholder="Crea tu Usuario">
-
-                        <% if (locals.errors && errors.usuario) { %>
-                            <div class="text-danger">
-                                <%= errors.usuario.msg %>
-                            </div>
-                            <% } %>
-
-                    </div>
-
                     <section class="grupo-de-registrosUsuarios">
                         <label id="avatar" for="avatar">Subir foto de perfil:</label>
                         <input id="avatar" type="file" name="avatar"
