@@ -15,14 +15,39 @@
             <input type="text"></input>
             <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
         </div>
-        <section class="login">
+
+        <%if (locals.isLogged) { %>
+            <section class="login">
+                <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="60px" style="border-radius: 100%">
+                <p class="bienvenida">¡ Hola <%= locals.userLogged.nombre %> <%= locals.userLogged.apellido %> ! </p>
+                <a href="/perfilCliente"><button class="registro">
+                        <p>Perfil</p>
+                    </button></a>
+                <a href="/logout"><button class="ingreso">
+                        <p>Log out</p>
+                    </button></a>
+            </section>
+            <% } else { %>
+    
+            <section class="login">
+                <a href="/register"><button class="registro">
+                        <p>Registro</p>
+                    </button></a>
+                <a href="/login"><button class="ingreso">
+                        <p>Ingresar</p>
+                    </button></a>
+            </section>
+            
+            <% } %>
+
+        <!---<section class="login">
             <a href="/register"><button class="registro">
                     <p>Registro</p>
                 </button></a>
             <a href="/login"><button class="ingreso">
                     <p>Ingresar</p>
                 </button></a>
-        </section>
+        </section>-->
     </section>
     <nav class="main-navbar">
         <ul>
@@ -30,7 +55,7 @@
             <li><a href="/product" id="productos">Productos</a></li>
             <li><a id="promociones">Promociones</a></li>
             <li><a id="blog">Blog</a></li>
-            <li><a id="compras">Compras</a></li>
+            <li><a href="/product/productCart" id="compras">Compras</a></li>
         </ul>
     </nav>
 </header>

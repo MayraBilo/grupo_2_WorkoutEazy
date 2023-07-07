@@ -1,0 +1,157 @@
+<!---<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/perfilAliado.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+    <main class="main">
+        <div class="banner-escalada">
+            <section class="titulo-general">
+            </section>
+        </div>
+        <section class="tituloAliado">
+        <div class="soyAliado">
+            <h4>Soy Aliado</h4>
+        </div>
+        </section>
+<form action="/<%=aliados.identificacion%>/editPerfilAliado?_method=put" method="POST"  enctype="multipart/form-data">
+<section class="contenedorGlobal">
+        <section class="container1-instructor">
+            <div class="contenedorImagenEntrenador">
+                <img src="/images/instructores/<%= aliados.fotoPerfil %>" alt="imagenGim" class="img-entrenador">
+            </div>
+            <div>s
+               <h4>Perfil del Usuario: </h4> <input type="text" value="<%= aliados.perfilUsuario %>" >
+                <h4>Nombres: </h4><input type="text" value="<%= aliados.nombreProfesional%>" >
+                <h4>Apellidos: </h4><input type="text" value="<%= aliados.apellidoProfesional %>" >
+                <h4>Profesión o Servicio: </h4><input type="text" value="<%= aliados.profesionServicio %>" >
+            </div>
+        </section>
+        <section class="container2-datos">
+            <div class="datosClasAlum">
+                <h4>Clases: <h4>  
+                    <br>
+                <h4>Alumnos: <h4>
+            </div>
+            <section class="grupo-de-registrosDocumentos">
+                <label id="fotoPerfil" for="fotoPerfil">Subir Foto Perfil:</label>
+    
+                <input
+                  id="fotoPerfil"
+                  type="file"
+                  name="fotoPerfil"
+                  accept="document/*"
+                />
+              </section>
+              <section class="grupo-de-registrosDocumentos">
+                <label id="documentosLegales" for="docuementosLegales"
+                  >Subir documentos legales:</label
+                >
+    
+                <input
+                  id="documentosLegales"
+                  type="file"
+                  name="documentosLegales"
+                  multimpleaccept="document/*"
+                />
+              </section>
+              <section class="grupo-de-registrosDocumentos">
+                <label id="tituloProfesional" for="tituloProfesional"
+                  >Surbir certificados de enseñanza:</label
+                >
+    
+                <input
+                  id="tituloProfesional"
+                  type="file"
+                  name="tituloProfesional"
+                  multimpleaccept="document/*"
+                />
+              </section>
+    
+            <section class="informacion-contacto">
+                <h4>Contacto:</h4>
+                <div class="desplegable">
+                <h5>Ciudad: </h5><input type="text" value=" <%= aliados.ciudadResidencia%>" >
+                <h5>Dirección:</h5> 
+                <h5>Número Celular: </h5><input type="text" value=" <%= aliados.celular%>" >
+                <h5>E-mail: </h5><input type="text" value="<%= aliados.email%>" >
+                </div>
+            </section>
+          
+            <div class="perfilProfesional">
+                <h2>Perfil Profesional</h2>
+            </div>
+            
+           <input type="submit" value="Guardar cambios" class="editar">
+        </section>
+        <section class="informacion-legal-aliado">
+            <h4>Certificados:</h4>
+            <div class="desplegable">
+                <h5>Documentos legales</h5>
+                <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
+                </div>
+                <div class="desplegable">
+                    <h5>Certificados de enseñanza</h5>
+                    <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
+                    </div>
+        </section>
+        <section class="clasesTitulo">
+            <h3>Clases:</h3>
+
+            <div class="clasesAliado">
+            <div class="clases">
+            <div class="contenedor-de-clases">
+                <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
+            </div>
+        </div>
+            <div class="clases">
+                <div class="contenedor-de-clases">
+                    <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
+                </div>
+            </div>
+                <div class="clases">
+                    <div class="contenedor-de-clases">
+                <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
+                    </div>
+                </div>
+                    <div class="clases">
+                        <div class="contenedor-de-clases">
+                            <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
+                        </div>
+        </div>  
+            </div>
+         
+        </section>
+        <section>
+            <div class="calendario">
+            <h4>Calendario:</h4>
+            <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
+        </div>
+            <br>
+            <div class="galeriaImagenes">
+            <h4>Galeria de imágenes:</h4>
+            
+            <h5>Fotos de entrenamiento y clases con alumnos</h5>
+            <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
+        </div>
+        </section>
+        <section class="aliados">
+            <div>
+                <h4>Aliados</h4>
+                <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
+            </div>
+            <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px">
+        </section> 
+    </section>
+</form>
+    </main>
+    <%- include("../partials/footer") %>
+    <button class="consultas">
+        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+        Consultas</button>
+</body>
+</html>--->

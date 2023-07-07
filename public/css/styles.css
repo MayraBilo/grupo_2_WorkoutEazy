@@ -55,6 +55,14 @@ header {
     display: none;
 }
 
+.login p {
+    margin: auto;
+}
+
+.bienvenida {
+    font-weight:600;
+}
+
 /* Buscador */
 
 header .buscador {
