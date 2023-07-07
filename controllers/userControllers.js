@@ -1,12 +1,40 @@
-
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const cliente = require("../models/cliente");
 const bcrypt = require("bcryptjs");
+const uuid = require("uuid");
 
 //usuarios//
 const controller = {
+  // Sequelize
 
+  create: async (req, res) => {
+    const nuevoCliente = {
+      id: uuid.v4(),
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      genre: req.body.genre,
+      birth_date: req.body.birth_date,
+      city: req.body.city,
+      contact_number: req.body.contact_number,
+      email: req.body.email,
+      image: req.body.image,
+      password: req.body.password,
+    };
+    try {
+      const datos = await Cliente.create(nuevoCliente);
+    } catch (error) {
+      res.send("Ha habido un error");
+    }
+    res.redirect("/login");
+  },
+};
+
+module.exports = controller;
+
+//JSON
+
+/*
   getLogin: (req, res) => {
     const error = req.query.error || '';
 
@@ -87,7 +115,7 @@ const controller = {
   },
 
   clientProfile: (req, res) => {
-    /*console.log(req.cookies.userEmail);*/
+    //console.log(req.cookies.userEmail);
     return res.render("perfilCliente", { cliente: req.session.userLogged });
   },
 
@@ -97,7 +125,4 @@ const controller = {
     req.session.destroy();
     return res.redirect("/");
   },
-
-};
-
-module.exports = controller;
+*/
