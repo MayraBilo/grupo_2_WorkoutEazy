@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/productListFitness.css">
+    </head>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+
+            <div class="banner">
+                <section class="titulo-general">
+                </section>
+
+                <section class="titulo-h1">
+                    <h1>FITNESS</h1>
+                </section>
+            </div>
+
+            <section class="nav-filtros">
+                <select>
+                    <option>Todos</option>
+                    <option>Fitness</option>
+                    <option>Yoga</option>
+                    <option>Deportes</option>
+                    <option>Danzas</option>
+                </select>
+            </section>
+
+            <section class="filtros-container">
+
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfitness" value="functional"> Functional</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfitness" value="pilates"> Pilates</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfitness" value="musuclación"> Musculación</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfitness" value="crossfit"> Crossfit</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfitness" value="decombate"> De combate</input>
+                    <span class="checkmark"></span>
+                </div>
+                <div class="contenedor-check"><input type="checkbox" name="filtrosfitness" value="gimnasio"> Gimnasio</input>
+                    <span class="checkmark"></span>
+                </div>
+            </section>
+
+            <section class="side-bar">
+                <button class="edad">
+                    <h4>Edad</h4>
+                </button>
+                
+                <button class="dificultad">
+                    <h4>Dificultad</h4>
+                </button>
+            </section>
+
+            <section class="sidebar-desplegables">
+                <div class="check-edad">
+                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <div class="check-dificultad">
+                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="productos-display">
+
+                <div class="actividades-contenedor">
+
+                    <% products.forEach(product=> { %>
+                    <% if (product.categoria === "Fitness") { %>
+
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p><%= product.categoria %></p>
+                            </div>
+                            <img src="/images/productos/<%= product.img %>" alt="<%= product.subcategoria %>">
+                        </div>
+
+                        <div class="info">
+                            <h3 class="texto-actividad bebas">
+                                <%= product.nombreActividad %>
+                            </h3>
+                        <p class="texto-actividad"><%= product.nombreAliado %></p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad">
+
+                            <p class="texto-actividad">
+                                <%= product.dificultad %>
+                                </p>
+
+                                <!--<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i>--->
+                        </div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>40</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3><%= product.valor %></h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p><%= product.descripcion %></p>
+                        </div>
+                        <div class="ver-detalle">
+                            <a href="/product/<%= product.id %>/productDetail"><button class="bebas">Ver Detalle del producto</button></a>
+                        </div>
+                        </div>
+
+                    </article>
+                    <!-----
+                    <article class="actividad-ejemplo">
+
+                        <div class="foto">
+                            <div class="etiqueta-actividad">
+                                <p>Fitness</p>
+                            </div>
+                            <img src="/images/productos/boxeo.JPG" alt="clasebox">
+                        </div>
+
+                        <div class="info">
+                        <h3 class="texto-actividad">Box Fit</h3>
+                        <p class="texto-actividad">Mayra Bilo</p>
+                        <p class="texto-actividad">Dificultad</p>
+                        <div class="texto-actividad"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-regular fa-star"></i></i><i class="fa-regular fa-star"></i></i><i
+                                class="fa-regular fa-star"></i></div>
+
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Disponibilidad</p>
+                            <h3>20</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Inscriptos</p>
+                            <h3>10</h3>
+                        </div>
+                        <div class="seccion-texto">
+                            <p class="texto-actividad">Valor</p>
+                            <h3>$6.500</h3>
+                        </div>
+
+                        <div class="descripcion-actividad">
+                            <p>Descripción:</p>
+                            <p>Clases de box para todos los niveles. Enseñamos toda la técnica desde cero.</p>
+                        </div>
+                        <div class="leermas">
+                            <button>
+                                <p>Leer más</p>
+                            </button>
+                        </div>
+                        </div>
+                    </article>
+                    ----->
+                    <% } %>
+                    <% }) %>
+                </div>
+
+            </section>
+
+        </main>
+        
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+</body>
+
+</html>

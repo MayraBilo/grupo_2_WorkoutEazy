@@ -8,7 +8,7 @@ Sprint 1
 2. Más de:
 
 - Más comunicación por ausencias.
-- Trabajar en conjunto por Figma y compartiendo pantalla.  
+- Trabajar en conjunto por Figma y compartiendo pantalla.
 
 3. Seguir haciendo:
 
@@ -41,7 +41,7 @@ Sprint 2
 2. Más de:
 
 - Más comunicación por ausencias.
-- Trabajar en ser más proactivos y pulir la tarea de cada uno. 
+- Trabajar en ser más proactivos y pulir la tarea de cada uno.
 
 3. Seguir haciendo:
 
@@ -49,7 +49,7 @@ Sprint 2
 - Entregar las tareas a tiempo siendo proactivos.
 - Continuar con la comunicación por discord y whatsapp.
 - Material extra curricular para compartir.
-- Pensar el protecto de forma global. 
+- Pensar el protecto de forma global.
 
 4. Menos de:
 
@@ -59,3 +59,30 @@ Sprint 2
 5. Dejar de hacer:
 
 - Ausentarse sin avisar.
+
+Sprint 3
+
+Reunión semanal martes 21:00 a 22:30.
+
+Comenzar a hacer:
+
+Dividir mejor las tareas.
+Comunicarnos más sobre los avances diarios.
+
+Más de:
+
+tener una lista de spotify.
+
+Seguir haciendo:
+
+continuar el diálogo y el trabajo en equipo.
+seguir cumpliendo con los sprints en tiempo y forma.
+
+Menos de:
+
+escuchar más a nuestros compañeros.
+commitear menos y organizar mejor los commit.
+
+Dejar de hacer:
+
+hablar menos de cosas no relevantes.

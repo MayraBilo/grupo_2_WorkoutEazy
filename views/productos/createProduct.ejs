@@ -1,101 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include("../partials/head") %>
-        <link rel="stylesheet" href="/css/create-edite-Product.css">
-</head>
+    <link rel="stylesheet" href="/css/create-edite-Product.css" />
+  </head>
 
-<body>
+  <body>
     <%- include("../partials/header") %>
-        <main>
-            <h1>Publicar servicio</h1>
-            <div class="form-img">
-                <form action="/" method="POST">
-                    <div class="div-categorie">
-                        <select class="categorie" name="categorie">
-                            <option default class="select-categorie" name="categorie" value="select-categorie">-
-                                Selecciona una categoria -</option>
-                            <option name="categorie" value="combat-cat">De combate</option>
-                            <option name="categorie" value="net-cat">De red</option>
-                            <option name="categorie" value="mechanic-cat">Mecanicos</option>
-                        </select>
-                    </div>
-                    <div class="container-name-service">
-                        <label for="name-service">Nombre del servicio</label>
-                        <input class="lsinput" type="text" name="name-service">
-                    </div>
-                    <div class="div-value-disc">
-                        <div class="div-value">
-                            <label for="value">Valor</label>
-                            <input class="sinput" type="number" name="value">
-                        </div>
-                        <div class="div-disc">
-                            <label for="apply-disc">Aplicar descuento</label>
-                            <input class="sinput" placeholder="(opcional)" type="number" name="apply-disc">
-                            <p>%</p>
-                        </div>
-                    </div>
-                    <div class="div-description">
-                        <label for="description">Descripción</label>
-                        <input class="lfinput" type="text" name="description">
-                    </div>
-                    <div class="div-add-pictures">
-                        <label for="add-pictures">Agregar fotos</label>
-                        <input class="add-pictures" type="file" name="add-pictures" accept="image/*">
-                    </div>
-                    <div class="div-difficulty">
-                        <label for="difficulty">Dificultad</label>
-                        <select name="difficulty" class="difficulty">
-                            <option class="select-difficulty" default value="select-difficulty">- Selecciona la
-                                dificultad -</i></option>
-                            <option value="1">Muy facil</i></option>
-                            <option value="2">Facil</i></option>
-                            <option value="3">Intermedio</i></option>
-                            <option value="4">Dificil</i></option>
-                            <option value="5">Muy dificil</i></option>
-                        </select>
-                    </div>
-                    <div class="div-complete-direction">
-                        <label for="complete-direction">Direccion Completa</label>
-                        <input class="lsinput" type="text" name="complete-direction">
-                    </div>
-                    <div class="div-city">
-                        <label for="city">Ciudad</label>
-                        <input class="lsinput" type="text" name="city">
-                    </div>
-                    <div class="div-ages">
-                        <label for="ages">Edades</label>
-                        <div>
-                            <input type="checkbox" name="ages" value="kids">Niños
-                        </div>
-                        <div>
-                            <input type="checkbox" name="ages" value="teen">Adolescentes
-                        </div>
-                        <div>
-                            <input type="checkbox" name="ages" value="young">Jóvenes
-                        </div>
-                        <div>
-                            <input type="checkbox" name="ages" value="adoults">Adultos
-                        </div>
-                    </div>
-                    <div class="div-submit-button">
-                        <button class="submit-button" type="submit" value="submit">Enviar</button>
-                    </div>
-                    <div class="div-reset-button">
-                        <button class="reset-button" type="reset" value="reset">Borrar</button>
-                    </div>
-                </form>
-                <div class="div-right-img">
-                    <img class="right-img" src="/images/editworkouteasy2-b.png" alt="">
-                    <img class="right-img" src="/images/editworkouteasy3-b.png" alt="">
-                </div>
-            </div>
-        </main>
-        <%- include("../partials/footer") %>
-            <button class="consultas">
-                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
-                Consultas</button>
-</body>
+    <main>
+      <h1>Publicar servicio</h1>
+      <div class="form-img">
+        <form action="/product" method="POST" enctype="multipart/form-data">
+          <div class="div-categoria">
+            <select class="categoria" name="categoria">
+              <option
+                default
+                class="select-categoria"
+                name="categoria"
+                value="select-categoria"
+              >
+                - Selecciona una categoria -
+              </option>
+              <option name="categoria">Yoga</option>
+              <option name="categoria">Fitness</option>
+              <option name="categoria">Danzas</option>
+              <option name="categoria">Deportes</option>
+            </select>
+            <span class="feedback"></span>
+          </div>
+          <div class="div-subcategoria">
+            <select class="categoria" name="subcategoria">
+              <option
+                default
+                class="select-categoria"
+                name="subcategoria"
+                value="select-categoria"
+              >
+                - Selecciona una subcategoria -
+              </option>
+              <option name="subcategoria">Yoga-Mysore</option>
+              <option name="subcategoria">Yoga-Ashtanga</option>
+              <option name="subcategoria">Yoga-Hatha</option>
+              <option name="subcategoria">Yoga-Kundalini</option>
+              <option name="subcategoria">Yoga-Flow</option>
+              <option name="subcategoria">Yoga-Flex</option>
+              <option name="subcategoria">Fitness-Funcional</option>
+              <option name="subcategoria">Fitness-Pilates</option>
+              <option name="subcategoria">Fitness-Musculación</option>
+              <option name="subcategoria">Fitness-Crossfit</option>
+              <option name="subcategoria">Fitness-Gimnasio</option>
+              <option name="subcategoria">Fitness-De combate</option>
+              <option name="subcategoria">Danzas-Clásico</option>
+              <option name="subcategoria">Danzas-Urbano</option>
+              <option name="subcategoria">Danzas-Salsa</option>
+              <option name="subcategoria">Danzas-Tango</option>
+              <option name="subcategoria">Danzas-Folklore</option>
+              <option name="subcategoria">Danzas-Cuarteto</option>
+              <option name="subcategoria">Danzas-Contemporáneo</option>
+              <option name="subcategoria">Deportes-Acuáticos</option>
+              <option name="subcategoria">Deportes-Gimnasia</option>
+              <option name="subcategoria">Deportes-Extremos</option>
+              <option name="subcategoria">Deportes-En conjunto</option>
+              <option name="subcategoria">Deportes-Montaña</option>
+            </select>
+            <span class="feedback"></span>
+          </div>
 
+          <div class="container-name-service">
+            <label for="name-service">Nombre del servicio</label>
+            <input class="lsinput" type="text" name="nombreActividad" />
+            <span class="feedback"></span>
+          </div>
+
+          <div class="container-name-service">
+            <label for="name-service">Nombre del Aliado</label>
+            <input class="lsinput" type="text" name="nombreAliado" />
+            <span class="feedback"></span>
+          </div>
+
+          <div class="div-value-disc">
+            <div class="div-value">
+              <label for="value">Valor</label>
+              <input class="sinput" type="number" name="valor" />
+              <span class="feedback"></span>
+            </div>
+
+            <div class="div-disc">
+              <label for="apply-disc">Aplicar descuento</label>
+              <input
+                class="sinput"
+                placeholder="(opcional)"
+                type="number"
+                name="descuento"
+              />
+              <p>%</p>
+              <span class="feedback"></span>
+            </div>
+          </div>
+          <div class="container-name-service">
+            <label for="name-service">Cupos</label>
+            <input class="lsinput" type="number" name="cupos" />
+            <span class="feedback"></span>
+          </div>
+          <div class="div-description">
+            <label for="description">Descripción</label>
+            <input class="lfinput" type="text" name="descripcion" />
+            <span class="feedback"></span>
+          </div>
+
+          <div class="div-description">
+            <label for="description">Horarios</label>
+            <input class="lfinput" type="text" name="horarios" />
+            <span class="feedback"></span>
+          </div>
+
+          <div class="container-name-service containerhoras">
+            <label for="name-service">Duración</label>
+            <input class="lsinput horasinput" type="number" name="duracion" />
+            <p>hs</p>
+            <span class="feedback"></span>
+          </div>
+
+          <div class="div-add-pictures">
+            <label for="add-pictures">Agregar fotos</label>
+            <input
+              class="add-pictures"
+              type="file"
+              name="img"
+              accept="image/*"
+            />
+            <span class="feedback"></span>
+          </div>
+
+          <div class="div-difficulty">
+            <label for="dificultad">Dificultad</label>
+            <select name="dificultad" class="difficulty">
+              <option
+                default
+                class="select-difficulty"
+                name="dificultad"
+                value="select-difficulty"
+              >
+                - Selecciona una dificultad -
+              </option>
+              <option name="dificultad">Principiante</option>
+              <option name="dificultad">Facil</option>
+              <option name="dificultad">Intermedio</option>
+              <option name="dificultad">Dificil</option>
+              <option name="dificultad">Avanzado</option>
+            </select>
+            <span class="feedback"></span>
+          </div>
+          <div class="div-complete-direction">
+            <label for="complete-direction">Direccion Completa</label>
+            <input class="lsinput" type="text" name="direccion" />
+            <span class="feedback"></span>
+          </div>
+          <div class="div-city">
+            <label for="ciudad">Ciudad</label>
+            <input class="lsinput" type="text" name="ciudad" />
+            <span class="feedback"></span>
+          </div>
+          <div class="div-ages">
+            <label for="ages">Edades</label>
+            <div>
+              <input type="checkbox" name="edadesAlumnos" value="Niños" />Niños
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="edadesAlumnos"
+                value="Adolescentes"
+              />Adolescentes
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="edadesAlumnos"
+                value="Jóvenes"
+              />Jóvenes
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="edadesAlumnos"
+                value="Adultos"
+              />Adultos
+            </div>
+            <span class="feedback"></span>
+          </div>
+          <div class="div-ages">
+            <label for="modalidad">Modalidad</label>
+            <div>
+              <input
+                type="checkbox"
+                name="modalidad"
+                value="presencial"
+              />Presencial
+            </div>
+            <div>
+              <input type="checkbox" name="modalidad" value="virtual" />Virtual
+            </div>
+          </div>
+          <div class="div-submit-button">
+            <button class="submit-button" type="submit" value="submit">
+              Publicar servicio
+            </button>
+          </div>
+          <div class="div-reset-button">
+            <button id="reset-button-create" class="reset-button" type="reset" value="reset">
+              Borrar campos
+            </button>
+          </div>
+        </form>
+        <div class="div-right-img">
+          <img
+            class="right-img"
+            src="/images/diseno/editworkouteasy2-b.png"
+            alt=""
+          />
+          <img
+            class="right-img"
+            src="/images/diseno/editworkouteasy3-b.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer") %>
+    <button class="consultas">
+      <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
+      Consultas
+    </button>
+  </body>
 </html>

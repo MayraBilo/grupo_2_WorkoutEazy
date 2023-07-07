@@ -8,11 +8,23 @@
 }
 
 /* Body */
+h1 {
+    letter-spacing: 2px;
+    margin: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);
+}
 
 body {
     background-color: white;
-    font-family: 'Roboto', 'sans-serif';    
+    font-family: 'Roboto', 'sans-serif';
 }
+
+label {
+    font-family: 'Bebas Neue';
+    color: #00a170;
+    font-size: 20px;
+}
+
 
 /* Header */
 
@@ -22,8 +34,26 @@ header {
 
 /* Main */
 
+input.lsinput.horasinput {
+    width: 300px;
+}
+
+.containerhoras {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.containerhoras p {
+    margin-top: 14px;
+}
+
 form {
-    padding: 0px 20px 20px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 h1 {
@@ -37,11 +67,21 @@ form select {
     width: 100%;
     text-align: center;
     color: white;
+    font-family: 'Bebas Neue';
     border-radius: 25px;
+    letter-spacing: 2px;
 }
 
-.select-categorie {
-    display:none;
+form select:hover {
+    background-color: #01c087;
+}
+
+.select-categoria {
+    display: none;
+}
+
+.select-difficulty {
+    display: none;
 }
 
 input {
@@ -53,7 +93,7 @@ input {
     width: 100%;
 }
 
-form > div{
+form>div {
     margin: 20px 0px;
 }
 
@@ -63,7 +103,8 @@ form > div{
     justify-content: space-between;
 }
 
-.div-value, .div-disc{
+.div-value,
+.div-disc {
     width: 45%;
 }
 
@@ -75,8 +116,8 @@ form > div{
     width: 85%;
 }
 
-.div-disc > p{
-    display:inline-block;
+.div-disc>p {
+    display: inline-block;
 }
 
 .div-description .lfinput {
@@ -96,41 +137,100 @@ form > div{
     margin: 10px 0px;
 }
 
-.div-submit-button button, .div-reset-button button{
+.div-submit-button button,
+.div-reset-button button {
     width: 100%;
     padding: 10px;
     background-color: #00a170;
+    border-radius: 8px;
+    font-family: 'Bebas neue';
+    color: white;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 2px;
+    transition: all 0.3s
+}
+
+.div-submit-button:hover button {
+    background-color: #01c087;
+    transform: scale(1.01);
+}
+
+.div-reset-button {
+    margin-bottom: 0px;
 }
 
 .div-reset-button button {
     background-color: #0084bd;
+    border-radius: 8px;
+    font-family: 'Bebas neue';
+    color: white;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+#reset-button-create {
+    margin-bottom: 20px;
+}
+
+.div-reset-button:hover button {
+    background-color: #0398d8;
+    transform: scale(1.01);
+}
+
+#formDelete {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#formDelete button {
+    width: 100%;
+}
+
+#delProd.action-button.delete {
+    width: 100%;
+    background-color: #d10000;
 }
 
 .right-img {
     display: none;
 }
 
-@media (min-width: 669px) {
-    
-}
+@media (min-width: 669px) {}
 
 @media (min-width: 1200px) {
     form {
         width: 50%;
-        margin: 0;
     }
+
+    #formDelete {
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
     .right-img {
         display: inline-block;
         width: 100%;
     }
 
     .div-right-img {
+        display: flex;
+        flex-direction: column;
         width: 50%;
-    }   
+        justify-content: space-around;
+    }
 
     .form-img {
         display: flex;
     }
+
+    #formDelete button {
+        width: 100%;
+    }
+
+    #delProd.action-button.delete {
+        width: 100%;
+        background-color: #d10000;
+    }
 }
-
-

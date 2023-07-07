@@ -10,7 +10,7 @@
     <%- include("../partials/header") %>
         <main class="mainRegister2">
             <section class="container-1A">
-                <img src="/images/registro-Aliados.jpg" alt="imagen1">
+                <img src="./images/images-register-login/registro-Aliados.jpg" alt="imagen1">
                 <div class="part2">
                     <h1>Registro Aliados: Prestadores de Servicios</h1>
                     <br>
@@ -32,7 +32,7 @@
             </section>
                     <section class="container-2A">
                         <h2>Comencemos...</h2>
-                <form action="/registro" method="POST">
+                <form action="/registro" method="POST" enctype="multipart/form-data">
                     
                     <div class="grupo-de-registrosPerfil">
                         <label id="pefil de usuario" for="perfil de usuario">Perfil de Usuario:</label>
@@ -136,7 +136,7 @@
                 <section class="grupo-de-registrosDocumentos">
                     <label id="documentos" for="docuementos">Subir documentos requeridos:</label>
                     <br>
-                    <input id="documentos" type="file" name="documentos" accept="document/*">
+                    <input id="documentos" type="file" name="documentos" multimpleaccept="document/*">
                 </section>
                     <div class="grupo-de-registrosUsuarios">
                         <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>

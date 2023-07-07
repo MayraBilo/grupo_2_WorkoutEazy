@@ -349,7 +349,7 @@ align-items: center;
 }
 .grupo-de-registrosA1 select {
     
-    padding: 6%;
+    padding: 4.5%;
     border-radius: 10px;
     border: solid 1px #006e52;
 }
@@ -473,6 +473,9 @@ align-items: center;
     border: solid 1px #006e52;
     text-align: center;
 }
+button, input, optgroup, select, textarea {
+    background-color: white;
+}
   
  .grupo-de-registrosUsuarios input:focus {
     outline: none;
@@ -484,7 +487,21 @@ align-items: center;
 
 
 /*------------------------------------------------------- Media Queries-----------------------------------------------------------*/
-
+@media (min-width: 669px) { 
+.registro {
+    width: 80px;
+    height: 40px;
+    border-radius: 14px;
+    border: 0px;
+    background-color: rgba(0,0,0,0%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px;
+}
+}
 
 @media (min-width: 669px) {
     .ingreso {

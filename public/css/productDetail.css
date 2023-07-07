@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,400;0,700;1,300&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 body {
-    background-color: rgba(0, 161, 112, 30%);
     font-size: 16px;
     font-family: "Roboto";
 }
+
 .header {
     background-color: rgba(0, 161, 112, 0%);
     border: none;
@@ -13,164 +13,180 @@ body {
 
 .main {
     background-color: whitesmoke;
-    border-radius: 30px 30px 0 0;
-    margin: 0 5px;
-    padding-bottom: 30px;
-    width: 1200px;
 }
 
-/*MAIN*/
+/* Banner */
 
+.titulo-general {
+    text-align: center;
+    padding: 20px 5px;
+    background-image: url('/images/diseno/banner-montana1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 50%;
+    z-index: 7;
+    position: relative;
+    height: 130px;
 
-.h1 {
-    display: flex;
-    align-items: center;
-    color:#00a170;
+}
+
+.banner-escalada {
+    position: relative;
+    z-index: 9;
+    width: 100vw;
+}
+
+.titulo-h1 {
+    opacity: 100%;
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
-    font-weight: 200;
-    font-size: 30px;
-    margin: 0vh 2vw;
-    padding: 0;
-    height: 10vh;
+    font-size: 18px;
+    text-align: center;
+    padding: 40px 20px 5px 20px;
+    position: absolute;
+    left: 32%;
+    top: 0px;
+    z-index: 10;
+    margin: auto;
 }
-.h4 {
-    padding: 0px;
-    margin:0px;
-}
-.dificultad {
-    display: flex;
-    align-items: center;
-    padding: 0px;
-    margin-top: 0;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    color: black;
-    font-style: italic;
-    font-family: 'Roboto', 'sans-serif';
-    font-weight: lighter;
-    font-size: 14px;
 
-
-}
+/* Producto */
 
 .img-producto {
     display: flex;
     flex-direction: column;
-    width: 270px;
-    margin-left:0px;
+    width: 282px;
+    margin-left: 0px;
     padding-left: 15px;
     border-radius: 0px 40px 0px 0px;
     position: relative;
 }
 
-.boton{
+.container-img-producto {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.container-product {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-bottom: 3px grey solid;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boton {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    width: 100px;
-    height: 20px;
+    align-items: center;
+    width: 270px;
+    height: 50px;
     border: #006e52 solid 1px;
-    border-radius: 20px;
-    position: absolute;
-    bottom: 5px;
-    left: 35px;
+    border-radius: 5px;
+    margin: 8px 0px;
+    position: relative;
+    left: 15px;
     z-index: 99;
 }
-    
+
 .reserva:hover {
-    background-color: #1af3bd;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    background-color: rgba(0, 161, 112);
+    transform: scale(1.01);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: none;
 }
-.reserva{
+.editar:hover {
+    background-color: #0398d8(0, 161, 112);
+    transform: scale(1.01);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+
+.reserva, .editar {
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: 8px;
+    border-radius: 2px;
     background-color: #006e52;
     color: white;
-    font-size: 12px;
-    font-weight: bold;
-    font-family: roboto;
-    width: 100px;
-    height: 30px;
+    font-size: 24px;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    width: 270px;
+    height: 50px;
     transition: all 0.3s ease-in-out;
     box-sizing: border-box;
 }
-    
+.editar{
+    background-color: #0084bd;
+}
+/* Busquedas relacionadas */
 
-.descripcionProducto {
+.busquedasRelacionadasH6 {
     display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    color: #0084bd;
+    justify-content: center;
+    margin: 10px 20px;
+    font-size: 20px;
 }
-.descripcionProducto h2 {
-    padding: 0;
-    padding-left: 15px;
-    color:#000000;
-    margin: 0px;
-    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
-}
-.descripcionProducto h5 {
-    padding-left: 15px;
-    color:#000000;
-    margin: 0px;
-    font-family: roboto;
-}
-.descripcionProducto p {
-    color:#000000;
-    font-family: roboto;
-    padding:10px;
-    text-align: justify;
-    max-width: 90vw;
-    box-sizing: border-box;
-    margin: 0px;
-}
-.busquedasRelacionadas{
+.container-busquedas {
     display: flex;
     flex-wrap: wrap;
-    font-family: roboto;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.busquedasRelacionadas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: "Roboto";
     margin-bottom: 15px;
 }
 
-.busquedasRelacionadas i{
+/* .busquedasRelacionadas i {
     position: relative;
     top: 70px;
     right: -5px;
     display: none;
-}
-.busquedasRelacionadasH6 {
-    display: flex;
-    color: #0084bd;
-    justify-content: flex-start;
-    margin: 5px 20px;
-}
+} */
+
 .clase-relacionada {
+
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     margin-left: 8px;
     padding: 5px;
-    max-width: 100px;
+    max-width: 95px;
     max-height: 180px;
-    background-color: #97ebd1;
+    background-color: rgba(0, 161, 112, 30%);
     border-radius: 0 8px 0 0px;
     font-size: 12px;
     transition: 450ms;
+    overflow: hidden;
 }
+
 .clase-relacionada h5 {
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
     color: #0084bd;
     font-size: 15px;
     margin: 0;
 }
+
 .clase-relacionada p {
     text-align: center;
 }
+
 .clase-relacionada:hover {
     transform: scale(1.1);
 }
@@ -185,6 +201,93 @@ body {
     margin: 2px;
 }
 
+/* Texto actividad */
+
+.texto-actividad {
+    text-align: center;
+    margin: auto;
+    padding: 4px;
+
+}
+
+.texto-producto-container {
+    margin-bottom: 30px;
+    
+}
+
+#nombreActividad {
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    font-size: 24px;
+}
+
+.h3 {
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+}
+
+.seccion-texto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.descripcion-actividad {
+    border-top: 3px grey solid;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.descripcion-actividad p {
+    display: inline-block;
+}
+
+/* Banner promocional */
+
+.banner-promocional {
+    background-color: black;
+    min-height: 200px;
+    color: whitesmoke;
+    border: 10px #006e7f solid;
+}
+
+.texto-banner p {
+    color: whitesmoke;
+}
+
+@keyframes aumentar {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.animacion-regalo {
+    padding: 20px;
+    width: 32px;
+}
+
+.animacion-regalo,
+
+.descuento {
+    animation: aumentar 2s infinite alternate;
+}
+
+.texto-banner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.banner-promocional img {
+    display: none;
+}
+
 /*FOOTER*/
 
 .footer {
@@ -192,72 +295,174 @@ body {
     border-radius: 5% 5% 0 0;
 }
 
+@media (min-width: 669px) {
 
-
-
-@media (min-width: 763px) {
-.header{
-    width: 100vw;
-   }
-.mainheader-topbar .buscador {
-    width: 40%;
-}
-.main {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100vw;
-    gap: 20px
-}
-.imagen{
-    display: flex;
-    flex-wrap: wrap;
-    gap:20px;
-}
-.descripcion{
-    width: 50%;
-    align-self: center;
-}
-.body{
-    margin-top: 280px;
-
-}
-
-
-}
-@media (min-width: 1200px) {
-    .header{
-        width: 100vw;
-       }
-    .main {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px
-
-    }
-    .imagen{
-        display: flex;
-        flex-wrap: wrap;
-        gap:20px;
-        
-    }
-    .descripcion{
-        display: flex;
+    .mainheader-topbar .buscador {
         width: 50%;
-        align-self: self-start;
     }
-    .body{
+
+    .titulo-h1 {
+        opacity: 100%;
+        font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+        font-size: 25px;
+        text-align: center;
+        padding: 30px 20px 5px 20px;
+        position: absolute;
+        left: 45%;
+        top: 0px;
+        z-index: 10;
+        margin: auto;
+    }
+
+    /* Actividades */
+
+    .container-product {
+        margin-bottom: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .texto-producto-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .descripcion-actividad {
+        max-width: 100%;
+    }
+
+    .container-img-producto {
+        margin-left: 30%;
+    }
+
+    /* Relacionadas */
+
+    .busquedasRelacionadasH6 {
+        margin-top: 20px;
+    }
+
+    .busquedasRelacionadas {
+        justify-content: center;
+
+    }
+
+    /* Banner promocional */
+
+    .texto-banner {
+        width: 70%;
+        padding: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .banner-promocional {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .banner-promocional img {
+        display: block;
+        height: 200px;
+
+    }
+
+    .descuento {
+        font-size: 40px;
+    }
+
+    .texto-banner h3 {
+        font-size: 30px;
+    }
+
+    .texto-banner p {
+        font-size: 20px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 10px;
+        padding-left: 50px;
+    }
+
+    .footer-columna1 {
+        width: 180px;
+    }
+
+    .footer-columna2 {
+        width: 180px;
+    }
+
+    .footer-columna4 {
+        width: 180px;
+    }
+
+    .footer-columna3 {
+        align-self: left;
+        width: 100%;
+    }
+
+    .foto {
+        height: 70%;
+    }
+
+    .nav-filtros select {
+        width: 20%;
+    }
+
+    main {
+        margin-bottom: 60px;
+    }
+
+    .actividad-ejemplo .descripcion-actividad {
+        border-top: 0px;
+    }
+
+    .leermas {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    
+    .header {
+        width: 100vw;
+    }
+
+    .imagen {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+    }
+
+    .body {
         margin-top: 200px;
     }
-    .busquedasRelacionadas{
+
+    .busquedasRelacionadas {
         justify-content: center;
         gap: 10px;
     }
+
     .busquedasRelacionadasH6 {
-        margin-top: 20px;
+        margin: 20px 0px;
         font-size: 20px;
     }
+
     .clase-relacionada {
         display: flex;
         flex-wrap: wrap;
@@ -267,14 +472,40 @@ body {
         padding: 5px;
         max-width: 180px;
         max-height: 220px;
-        background-color: #97ebd1;
+        background-color: rgba(0, 161, 112, 30%);
         border-radius: 0 8px 0 0px;
         font-size: 12px;
         transition: 450ms;
     }
+
     .dificultad {
         margin-left: 25px;
         margin-top: 0px;
     }
 
+    .img-producto {
+        justify-content: flex-start;
     }
+
+    /* Banner promocional */
+
+    .texto-banner {
+        width: 70%;
+        padding: 10px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .descuento {
+        font-size: 40px;
+        margin-left: 100px;
+    }
+
+    .texto-banner p {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-top: 0;
+    }
+
+}

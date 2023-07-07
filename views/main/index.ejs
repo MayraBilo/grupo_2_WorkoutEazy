@@ -9,12 +9,58 @@
     <%- include("../partials/header") %>
     <main>
 
-        <section class="slider-home">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+    
+            <div class="carousel-inner">
+    
+              <div class="carousel-item active">
+                <div class="imagen1"><img src="/images/inicio/JacintaYoga.JPG" class="d-block w-100" alt="yoga"></div>
+                <div class="imagen2"><img src="/images/inicio/yogaplantilla.png" class="d-block w-100" alt="yoga"></div>
+                </div>
+    
+              <div class="carousel-item">
+                <div class="imagen1"><img src="/images/inicio/JacintaYoga2.jpg" class="d-block w-100" alt="yoga"></div>
+                <div class="imagen2"><img src="/images/inicio/montanaplantilla.png" class="d-block w-100" alt="montana"></div>
+              </div>
+    
+              
+              <div class="carousel-item">
+                <div class="imagen1"><img src="/images/inicio/danceclassic.jpg" class="d-block w-100" alt="danza"></div>
+                <div class="imagen2"><img src="/images/inicio/baileplantilla.png" class="d-block w-100" alt="danza"></div>
+              </div>
+    
+    
+            </div>
+    
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+            <div class="textoSlider">
+                <h5 class="rutina">ARMÁ TU RUTINA HOY</h5>
+                <p class="tarjeta">Enviá una tarjeta de regalo</p>
+            </div>
+    
+        </div>
+
+
+        <!---<section class="slider-home">
 
             <div class="slider-fotos">
                 <i class="fa-solid fa-caret-left fa-2xl" style="color: #000000;"></i>
-                <img src="/images/JacintaYoga.JPG" class="imagen-slider1">
-                <img src="/images/JacintaYoga2.JPG" class="imagen-slider2">
+                <img src="/images/inicio/JacintaYoga.JPG" class="imagen-slider1">
+                <img src="/images/inicio/JacintaYoga2.JPG" class="imagen-slider2">
                 <i class="fa-solid fa-caret-right fa-2xl" style="color: #080808;"></i>
             </div>
 
@@ -25,14 +71,14 @@
             </button>
             <p class="tarjeta">Enviá una tarjeta de regalo</p>
 
-        </section>
+        </section>--->
 
         <section class="aliados">
             <div>
                 <h4>Aliados</h4>
                 <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
             </div>
-            <img src="/images/ALMAYOGA.png" class="logo-aliado1" width="100px">
+            <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px">
         </section>
 
         <section class="actividades">
@@ -41,7 +87,7 @@
 
             <div class="ejemplos-actividades">
                 <a href="/productDetail"><article class="actividad-1">
-                <img src="/images/escalada copy.JPG" class="actividades-imagen1">
+                <img src="/images/inicio/escaladaPalestraJovenes.JPG" class="actividades-imagen1">
                 <div class="titulo-actividad">
                     <h4>Escalada</h4>
                     <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
@@ -57,7 +103,7 @@
             </article></a>
 
             <article class="actividad-2">
-                <img src="/images/gimnasio.JPG" class="actividades-imagen2">
+                <img src="/images/inicio/gimnasio.JPG" class="actividades-imagen2">
                 <div class="titulo-actividad">
                     <h4>Gym</h4>
                     <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
@@ -71,7 +117,7 @@
             </article>
 
             <article class="actividad-3">
-                <img src="/images/functional.JPG" class="actividades-imagen3">
+                <img src="/images/inicio/functional.JPG" class="actividades-imagen3">
                 <div class="titulo-actividad">
                     <h4>Functional</h4>
                     <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
@@ -85,7 +131,7 @@
             </article>
 
             <article class="actividad-4">
-                <img src="/images/yoga-airelibre.JPG" class="actividades-imagen4">
+                <img src="/images/inicio/yoga-al-airelibre.jpg" class="actividades-imagen4">
                 <div class="titulo-actividad">
                     <h4>Yoga al aire libre</h4>
                     <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
@@ -108,7 +154,7 @@
             <p>hacé click aquí para obtener el cupón de descuento</p>
             <div class="animacion-regalo"><i class="fa-solid fa-gift fa-2xl" style="color: #199eb3;"></i></div>
             </div>
-            <img src="/images/editworkouteasy2-b.png" class="imagenbanner">
+            <img src="/images/diseno/editworkouteasy2-b.png" class="imagenbanner">
         </section>
 
         <section class="instructores">
@@ -124,7 +170,7 @@
 
             <div class="ejemplos-instructores">
             <article class="info-instructor">
-                <img src="/images/Perfil-Jacinta.JPG" class="perfil-instructor1">
+                <img src="/images/instructores/Perfil-Jacinta.JPG" class="perfil-instructor1">
                 <div class="texto-instructor">
                     <h3>Jacinta Mayol</h3>
                     <h4>Yoga Flow</h4>
@@ -132,7 +178,7 @@
             </article>
 
             <article class="info-instructor">
-                <img src="/images/entrenador-boxeo.jpg" class="perfil-instructor2">
+                <img src="/images/instructores/entrenador-boxeo.jpg" class="perfil-instructor2">
                 <div class="texto-instructor">
                     <h3>Jaime Hernandez</h3>
                     <h4>Boxeo</h4>
@@ -140,7 +186,7 @@
             </article>
 
             <article class="info-instructor">
-                <img src="/images/entrenador-gym.jpg" class="perfil-instructor3">
+                <img src="/images/instructores/entrenador-gym.jpg" class="perfil-instructor3">
                 <div class="texto-instructor">
                     <h3>Pablo O'connor</h3>
                     <h4>Personal trainer</h4>
@@ -148,7 +194,7 @@
             </article>
 
             <article class="info-instructor">
-                <img src="/images/entrenadora-functional.jpg" class="perfil-instructor4">
+                <img src="/images/instructores/entrenadora-functional.jpg" class="perfil-instructor4">
                 <div class="texto-instructor">
                     <h3>Maria Arias</h3>
                     <h4>Profesora de gimnasia functional</h4>

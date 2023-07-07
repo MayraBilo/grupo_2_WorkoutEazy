@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/create-edite-Product.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+            <h1>Editar servicio</h1>
+            <div class="form-img">
+                <form action="/product/<%=products.id%>/editProduct?_method=put" method="POST" enctype="multipart/form-data">
+                    <div class="div-categorie">
+                        <select class="categoria" name="categoria">
+                            <option default class="select-categoria" name="categoria" value="<%= products.categoria %>">
+                              -  <%= products.categoria %> -
+                            </option>
+                            <option name="categoria">Yoga</option>
+                            <option name="categoria">Fitness</option>
+                            <option name="categoria">Danzas</option>
+                            <option name="categoria">Deportes</option>
+                        </select>
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="div-subcategorie">
+                        <select class="categorie" name="subcategoria" value="subcategoria">
+                            <option default class="select-categorie" name="subcategoria" value="select-categorie">
+                                <%= products.subcategoria %></option>
+                            </option>
+                            <option name="subcategoria">Yoga-Mysore</option>
+                            <option name="subcategoria">Yoga-Ashtanga</option>
+                            <option name="subcategoria">Yoga-Hatha</option>
+                            <option name="subcategoria">Yoga-Kundalini</option>
+                            <option name="subcategoria">Yoga-Flow</option>
+                            <option name="subcategoria">Yoga-Flex</option>
+                            <option name="subcategoria">Fitness-Funcional</option>
+                            <option name="subcategoria">Fitness-Pilates</option>
+                            <option name="subcategoria">Fitness-Musculación</option>
+                            <option name="subcategoria">Fitness-Crossfit</option>
+                            <option name="subcategoria">Fitness-Gimnasio</option>
+                            <option name="subcategoria">Fitness-De combate</option>
+                            <option name="subcategoria">Danzas-Clásico</option>
+                            <option name="subcategoria">Danzas-Urbano</option>
+                            <option name="subcategoria">Danzas-Salsa</option>
+                            <option name="subcategoria">Danzas-Tango</option>
+                            <option name="subcategoria">Danzas-Folklore</option>
+                            <option name="subcategoria">Danzas-Cuarteto</option>
+                            <option name="subcategoria">Danzas-Contemporáneo</option>
+                            <option name="subcategoria">Deportes-Acuáticos</option>
+                            <option name="subcategoria">Deportes-Gimnasia</option>
+                            <option name="subcategoria">Deportes-Extremos</option>
+                            <option name="subcategoria">Deportes-En conjunto</option>
+                            <option name="subcategoria">Deportes-Montaña</option>
+                        </select>
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="container-name-service">
+                        <label for="name-service">Nombre del servicio</label>
+                        <input class="lsinput" type="text" name="nombreActividad" value="<%=products.nombreActividad%>">
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="container-name-service">
+                        <label for="name-service">Nombre del Aliado</label>
+                        <input class="lsinput" type="text" name="nombreAliado" value="<%=products.nombreAliado%>">
+                        <span class="feedback"></span>
+                    </div>
+            
+                    <div class="div-value-disc">
+                        <div class="div-value">
+                            <label for="value">Valor</label>
+                            <input class="sinput" type="number" name="valor" value="<%=products.valor%>">
+                            <span class="feedback"></span>
+                        </div>
+                        <div class="div-disc">
+                            <label for="apply-disc">Aplicar descuento</label>
+                            <input class="sinput" placeholder="(opcional)" type="number" name="descuento" value="<%=products.descuento%>">
+                            <p>%</p>
+                            <span class="feedback"></span>
+                        </div>
+                    </div>
+                    <div class="container-name-service">
+                        <label for="name-service">Cupos</label>
+                        <input class="lsinput" type="text" name="cupos" value="<%=products.cupos%>">
+                        <span class="feedback"></span>
+                    </div>
+                
+                    <div class="div-description">
+                        <label for="description">Descripción</label>
+                        <input class="lfinput" type="text" name="descripcion" value="<%=products.descripcion%>">
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="container-name-service">
+                        <label for="name-service">Horarios</label>
+                        <input class="lsinput" type="text" name="horarios" value="<%=products.horarios%>">
+                        <span class="feedback"></span>
+                    </div>
+      
+                    <div class="container-name-service">
+                        <label for="name-service">Duración</label>
+                        <input class="lsinput" type="text" name="duracion" value="<%=products.duracion%>">
+                        <span class="feedback"></span>
+                    </div>
+      
+                
+                    <div class="div-add-pictures">
+                        <label for="add-pictures">Agregar fotos</label>
+                        <input type="hidden" name="oldImage" value="<%= products.img %>">
+                        <input class="add-pictures" type="file" name="img" accept="image/*" value="<%= products.img %>">
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="div-difficulty">
+                        <label for="difficulty">Dificultad</label>
+                        <select name="dificultad" class="difficulty" value="dificultad">
+                            <option class="select-difficulty" default value="<%=products.dificultad%>">-
+                                <%=products.dificultad%> -</i></option>
+                            <option value="<%=products.dificultad%>">Principiante</i></option>
+                            <option value="<%=products.dificultad%>">Facil</i></option>
+                            <option value="<%=products.dificultad%>">Intermedio</i></option>
+                            <option value="<%=products.dificultad%>">Dificil</i></option>
+                            <option value="<%=products.dificultad%>">Avanzado</i></option>
+                        </select>
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="div-complete-direction">
+                        <label for="complete-direction">Dirección Completa</label>
+                        <input class="lsinput" type="text" name="direccion" value="<%=products.direccion%>">
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="div-city">
+                        <label for="city">Ciudad</label>
+                        <input class="lsinput" type="text" name="ciudad" value="<%=products.ciudad%>">
+                        <span class="feedback"></span>
+                    </div>
+                    <div class="div-ages">
+                        <label for="edadesAlumnos">Edades</label>
+                        <div>
+                            <input type="checkbox" name="edadesAlumnos" value="Niños"> Niños
+                        </div>
+                        <div>
+                            <input type="checkbox" name="edadesAlumnos" value="Adolescentes"> Adolescentes
+                        </div>
+                        <div>
+                            <input type="checkbox" name="edadesAlumnos" value="Jovenes"> Jóvenes
+                        </div>
+                        <div>
+                            <input type="checkbox" name="edadesAlumnos" value="Adultos"> Adultos
+                        </div>
+                        <span class="feedback"></span>
+                    </div>
+
+                    <div class="div-ages">
+                        <label for="modalidad">Modalidad</label>
+                        <div>
+                            <input type="checkbox" name="modalidad" value="<%=products.modalidad%>"> Presencial
+                        </div>
+                        <div>
+                            <input type="checkbox" name="modalidad" value="<%=products.modalidad%>"> Virtual
+                        </div>
+                        
+                        <span class="feedback"></span>
+                    </div>
+                
+                    <div class="div-submit-button">
+                            <button class="submit-button" type="submit" value="submit">Guardar edicion</button>
+                    </div>
+                    <div class="div-reset-button">
+                        <button class="reset-button" type="reset" value="reset">Borrar campos</button>
+                    </div>
+                </form>
+                <div class="div-right-img">
+                    <img class="right-img" src="/images/diseno/editworkouteasy2-b.png" alt="">
+                    <img class="right-img" src="/images/diseno/editworkouteasy3-b.png" alt="">
+                </div>
+            </div>
+            <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" id="formDelete">
+                <div class="div-submit-button">
+                <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
+                </div>
+                </form>
+            <script>
+                const btnDel = document.getElementById('delProd');
+                const formDel = document.getElementById('formDelete');
+
+            btnDel.addEventListener('click', function(e){
+
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Estás seguro?',
+                text: "El cambio no se puede revertir!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, lo quiero borrar!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    formDel.submit();
+                }
+              })
+            })
+            </script>
+
+        </main>
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+</body>
+
+</html>
