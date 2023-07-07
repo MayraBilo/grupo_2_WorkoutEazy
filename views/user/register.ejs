@@ -128,21 +128,6 @@
                                 <%= errors.ciudad.msg %>
                             </div>
                             <% } %>
-
-                            <div>
-                                <label>Dirección:</label>
-    
-                                <input type="text" name="direccion"
-                                    class="input-selecto <%= locals.errors && errors.direccion ? 'is-invalid' : null %>"
-                                    value="<%= locals.oldData ? oldData.direccion : null %>" placeholder="Ingresa tu Dirección">
-    
-                                <% if (locals.errors && errors.nombre) { %>
-                                    <div class="text-danger">
-                                        <%= errors.direccion.msg %>
-                                    </div>
-                                    <% } %>
-    
-                            </div>
     
 
                     </section>
@@ -162,19 +147,7 @@
                         </div>
 
                         <div>
-                            <label id="celular-emergencia" for="celular-emergencia">N° Celular de emergencia: </label>
-                            <input class="input-selecto" id="e-mail" type="text" name="contacto-emergencia"
-                                placeholder="Ingresa un # Celular">
-
-                            <% if (locals.errors && errors.contacto) { %>
-                                <div class="text-danger">
-                                    <%= errors.contacto.msg %>
-                                </div>
-                                <% } %>
-                        </div>
-
-                        <div>
-                            <label id="apellido" for="nombre">E-mail: </label>
+                            <label id="email" for="email">E-mail: </label>
                             <input class="input-selecto <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                                 type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>"
                                 placeholder="Ingresa tu correo electrónico">
@@ -188,23 +161,10 @@
 
                     </section>
 
-                    <div class="grupo-de-registrosUsuarios">
-
-                        <label id="nombre usuario" for="nombre usuari@">Nombre de Usuario:</label>
-                        <input class="input-selecto" id="Nombre Usuari@" type="text" name="usuario"
-                            placeholder="Crea tu Usuario">
-
-                        <% if (locals.errors && errors.usuario) { %>
-                            <div class="text-danger">
-                                <%= errors.usuario.msg %>
-                            </div>
-                            <% } %>
-
-                    </div>
 
                     <section class="grupo-de-registrosUsuarios">
-                        <label id="documento" for="documento">Subir foto de perfil:</label>
-                        <input id="documento" type="file" name="avatar"
+                        <label id="avatar" for="avatar">Subir foto de perfil:</label>
+                        <input id="avatar" type="file" name="avatar"
                             value="<%= locals.oldData ? oldData.avatar : null %>">
 
                         <% if (locals.errors && errors.avatar) { %>
