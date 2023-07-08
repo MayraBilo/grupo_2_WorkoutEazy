@@ -38,7 +38,7 @@ router.post(
   "/register",
   uploadFileCliente.single("avatar"),
   validations,
-  userControllers.processRegister
+  userControllers.create
 );
 
 // Formulario de registroAliado
@@ -59,6 +59,10 @@ router.post(
 // Perfil de usuario
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
+
+router.get("/editPerfilCliente", authMiddleware, userControllers.updateCliente);
+
+router.put("/editPerfilCliente", authMiddleware, userControllers.updateClienteProcess);
 
 // Perfil de usuarioAliado
 router.get("/perfilAliado", aliadosControllers.getAliadoProfile);

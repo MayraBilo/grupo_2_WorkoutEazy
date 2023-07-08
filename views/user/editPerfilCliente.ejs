@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+            <section class="container-1">
+                <img src="./images/images-register-login/editworkouteasy3-a-copy.png" alt="imagen1">
+            </section>
+            <section class="container-2">
+                <h2>Regístrate como:</h2>
+
+
+                <div class="botones">
+                    <button id="Usuario" class="button-r" type="button">Cliente</button>
+
+                    <script>
+                    const miBoton = document.getElementById('Usuario');
+
+                    miBoton.addEventListener('click', function() {
+                    miBoton.classList.add('clicked');
+                    });
+                    </script>
+
+
+                    <a href="/registerAliados"><button id="Aliado" class="button-r" type="button">Aliado</button></a>
+                </div>
+
+                <!--- Formulario --->
+
+                <form action="/editPerfilCliente/?_method=put" method="POST" enctype="multipart/form-data">
+
+                    <p>Ingresa con tus redes sociales</p>
+
+                    <div class="redes-sociales">
+                        <button id="facebook"><i class="fa-brands fa-facebook-f" style="color:#fff"></i></button>
+                        <button id="apple"><i class="fa-brands fa-apple"></i></button>
+                        <button id="google-logo"><i class="fa-brands fa-google"></i></button>
+                    </div>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label>Nombre:</label>
+
+                            <input type="text" name="nombre"
+                                class="input-selecto <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Ingresa tu Nombre">
+
+                            <% if (locals.errors && errors.nombre) { %>
+                                <div class="text-danger">
+                                    <%= errors.nombre.msg %>
+                                </div>
+                                <% } %>
+
+                        </div>
+
+                        <div>
+                            <label>Apellidos: </label>
+
+                            <input class="input-selecto <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                                type="text" name="apellido" value="<%= locals.oldData ? oldData.apellido : null %>"
+                                placeholder="Ingresa tus Apellidos">
+
+                            <% if (locals.errors && errors.apellido) { %>
+                                <div class="text-danger">
+                                    <%= errors.apellido.msg %>
+                                </div>
+                                <% } %>
+
+                        </div>
+
+                    </section>
+
+                    <div class="grupo-indicarSexo">
+
+                        <label for="">Hombre</label><input type="radio" name="medio" id="hombre" value="hombre">
+                        <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
+                        <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
+
+                        <% if (locals.errors && errors.medio) { %>
+                            <div class="text-danger">
+                                <%= errors.medio.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
+
+                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="nacimiento">
+
+                            <% if (locals.errors && errors.nacimiento) { %>
+                                <div class="text-danger">
+                                    <%= errors.nacimiento.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+
+                        <div>
+                            <label>Ciudad de Residencia: </label>
+
+                            <select class="option" name="ciudad">
+                                <br>
+                                <option value="">Elegí una ciudad</option>
+
+                            
+                                <% let ciudades=['Buenos Aires', 'Caracas' , 'Venado Tuerto' , 'Bahía Blanca' ]; %>
+                                    <% for (const oneCity of ciudades) { %>
+                                        <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.ciudad)
+                                            ? 'selected' : null %> >
+                                            <%= oneCity%>
+                                        </option>
+                                        <% }%>
+                            </select>
+                        </div>
+
+                        <% if (locals.errors && errors.ciudad) { %>
+                            <div class="text-danger">
+                                <%= errors.ciudad.msg %>
+                            </div>
+                            <% } %>
+    
+
+                    </section>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="celular" for="celular">N° Celular: </label>
+                            <input class="input-selecto" id="e-mail" type="text" name="contacto"
+                                placeholder="Ingresa tu # Celular">
+
+                            <% if (locals.errors && errors.contacto) { %>
+                                <div class="text-danger">
+                                    <%= errors.contacto.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+
+                        <div>
+                            <label id="email" for="email">E-mail: </label>
+                            <input class="input-selecto <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>"
+                                placeholder="Ingresa tu correo electrónico">
+
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+
+                    </section>
+
+
+                    <section class="grupo-de-registrosUsuarios">
+                        <label id="avatar" for="avatar">Subir foto de perfil:</label>
+                        <input id="avatar" type="file" name="avatar"
+                            value="<%= locals.oldData ? oldData.avatar : null %>">
+
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="text-danger">
+                                <%= errors.avatar.msg %>
+                            </div>
+                            <% } %>
+                    </section>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="contraseña" for="contraseña">Contraseña:</label>
+                            <input class="input-selecto" id="contraseña" type="password" name="password"
+                                placeholder="Crear Contraseña">
+
+                        </div>
+
+                        <!---<div>
+                            <label id="confirmar contraseña" for="confirmar contraseña">Confirmar :</label>
+                            <input class="input-selecto" id="confirmar contraseña" type="password"
+                                name="password-confirm" placeholder="Confirmar Contraseña">
+                        </div>--->
+
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+
+                    </section>
+
+
+                    <br>
+
+                    <div class="condiciones">
+                        <input type="checkbox" name="condiciones" value="terminos y condiciones">Acepto los
+                        términos
+                        y condiciones de uso del sitio web.
+                        <% if (locals.errors && errors.condiciones) { %>
+                            <div class="text-danger">
+                                <%= errors.condiciones.msg %>
+                            </div>
+                            <% } %>
+                                <br>
+                                <input type="checkbox" name="privacidad" value="Políticas de privacidad">Acepto el
+                                tratamiento de datos personales según la política de privacidad con el fin de ser
+                                contactado por
+                                WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
+                                productos/servicios.
+                                <% if (locals.errors && errors.privacidad) { %>
+                                    <div class="text-danger">
+                                        <%= errors.privacidad.msg %>
+                                    </div>
+                                    <% } %>
+                    </div>
+
+                    <div class="boton">
+                        <input id="enviar" type="submit" value="Registrarse">
+                    </div>
+
+                </form>
+
+            </section>
+        </main>
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+
+</body>
+
+</html>

@@ -1,12 +1,26 @@
 const { validationResult } = require("express-validator");
 const fs = require("fs");
-const cliente = require("../models/cliente");
+const Cliente = require("../database/models/Cliente");
 const bcrypt = require("bcryptjs");
 const uuid = require("uuid");
 
 //usuarios//
 const controller = {
   // Sequelize
+
+  getRegister: async (req, res) => {
+    res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
+    res.render("register");
+  },
+
+  /* updateCliente: async (req, res) => {
+    try {
+      const clienteAEditar = await Cliente.findByPk(req.params.id)
+      res.render("/editPerfilCliente", {clienteAEditar})
+    } catch(error) {
+      res.send("hubo un error")
+    }
+  }, */
 
   create: async (req, res) => {
     const nuevoCliente = {
@@ -27,6 +41,16 @@ const controller = {
       res.send("Ha habido un error");
     }
     res.redirect("/login");
+  },
+
+  update: async (req, res) => {
+    const newData = req.body
+    try {
+      await Cliente.update(newData, { where: { id: req.params.id } })
+      res.redirect("/perfilCliente")
+    } catch (error) {
+      res.send("Hubo un error")
+    }
   },
 };
 
@@ -77,12 +101,6 @@ module.exports = controller;
         },
       },
     });
-  },
- 
-
-  getRegister: (req, res) => {
-    res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
-   res.render("register");
   },
 
   processRegister: (req, res) => {
