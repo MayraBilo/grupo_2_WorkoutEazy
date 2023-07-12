@@ -82,6 +82,10 @@ const Producto = sequelize.define(alias, cols, config);
         as: "cliente",
         foreignKey: "cliente_id"
     })
+    Producto.belongsTo(models.Aliado, {
+        as: "aliado",
+        foreignKey: "aliado_id"
+    })
  }
 
 
