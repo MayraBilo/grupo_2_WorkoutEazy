@@ -1,12 +1,64 @@
-
 const { validationResult } = require("express-validator");
 const fs = require("fs");
-const cliente = require("../models/cliente");
+const Cliente = require("../database/models/Cliente");
 const bcrypt = require("bcryptjs");
+const uuid = require("uuid");
 
 //usuarios//
 const controller = {
+  // Sequelize
 
+  getRegister: async (req, res) => {
+    res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
+    res.render("register");
+  },
+
+  /* updateCliente: async (req, res) => {
+    try {
+      const clienteAEditar = await Cliente.findByPk(req.params.id)
+      res.render("/editPerfilCliente", {clienteAEditar})
+    } catch(error) {
+      res.send("hubo un error")
+    }
+  }, */
+
+  create: async (req, res) => {
+    const nuevoCliente = {
+      id: uuid.v4(),
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      genre: req.body.genre,
+      birth_date: req.body.birth_date,
+      city: req.body.city,
+      contact_number: req.body.contact_number,
+      email: req.body.email,
+      image: req.body.image,
+      password: req.body.password,
+    };
+    try {
+      const datos = await Cliente.create(nuevoCliente);
+    } catch (error) {
+      res.send("Ha habido un error");
+    }
+    res.redirect("/login");
+  },
+
+  update: async (req, res) => {
+    const newData = req.body
+    try {
+      await Cliente.update(newData, { where: { id: req.params.id } })
+      res.redirect("/perfilCliente")
+    } catch (error) {
+      res.send("Hubo un error")
+    }
+  },
+};
+
+module.exports = controller;
+
+//JSON
+
+/*
   getLogin: (req, res) => {
     const error = req.query.error || '';
 
@@ -50,12 +102,6 @@ const controller = {
       },
     });
   },
- 
-
-  getRegister: (req, res) => {
-    res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
-   res.render("register");
-  },
 
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
@@ -87,7 +133,7 @@ const controller = {
   },
 
   clientProfile: (req, res) => {
-    /*console.log(req.cookies.userEmail);*/
+    //console.log(req.cookies.userEmail);
     return res.render("perfilCliente", { cliente: req.session.userLogged });
   },
 
@@ -97,7 +143,4 @@ const controller = {
     req.session.destroy();
     return res.redirect("/");
   },
-
-};
-
-module.exports = controller;
+*/

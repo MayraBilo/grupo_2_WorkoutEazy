@@ -27,7 +27,7 @@ module.exports = (sequelize, Datatype) => {
             type: dataTypes.STRING  
         },
         price: {
-            type: dataTypes.INTEGER    
+            type: dataTypes.DOUBLE    
         },
         discount: {
             type: dataTypes.INTEGER    
@@ -36,7 +36,7 @@ module.exports = (sequelize, Datatype) => {
             type: dataTypes.INTEGER    
         },
         schedule: {
-            type: dataTypes.DATE   
+            type: dataTypes.DATETIME  
         },
         length: {
             type: dataTypes.TIME
@@ -74,23 +74,21 @@ module.exports = (sequelize, Datatype) => {
 const Producto = sequelize.define(alias, cols, config); 
 
  Producto.associate = function(models) {
-    Producto.belongsToMany(models.Cliente, {
-        as: "cliente",
-        foreignKey: "cliente_id"
+    Producto.belongsTo(models.Carrito, {
+        as: "carrito",
+        foreignKey: "carrito_id"
     })
- };
-
- Producto.associate = function(models) {
     Producto.belongsTo(models.Aliado, {
         as: "aliado",
         foreignKey: "aliado_id"
     })
- };
-
- Producto.associate = function(models) {
-    Producto.belongsTo(models.Carrito, {
-        as: "carrito",
-        foreignKey: "carrito_id"
+    Producto.belongsToMany(models.Cliente, {
+        as: "cliente",
+        foreignKey: "cliente_id"
+    })
+    Producto.belongsTo(models.Aliado, {
+        as: "aliado",
+        foreignKey: "aliado_id"
     })
  }
 
@@ -98,4 +96,3 @@ const Producto = sequelize.define(alias, cols, config);
 return Producto;
 
 }
->>>>>>> 2da0dc0c42d758c9321b0906e7aa027764abb867

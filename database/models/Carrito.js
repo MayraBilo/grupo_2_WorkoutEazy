@@ -1,4 +1,4 @@
-module.exports = (sequelize, Datatype) => {
+module.exports = (sequelize, dataTypes) => {
     const alias = 'Carrito';
 
     const cols = {
@@ -23,12 +23,16 @@ module.exports = (sequelize, Datatype) => {
             type: dataTypes.INTEGER    
         },
         cliente_id: {
-            type: dataTypes.INTEGER  
+            type: dataTypes.INTEGER,
+            references: {
+                model: "cliente",
+                key: "id"
+            }
         }
     }
 
  const config = {
-    tableName: 'carrito',
+    tableName: 'shopping_cart',
     timestamps: false
  }
 const Carrito = sequelize.define(alias, cols, config); 
@@ -37,6 +41,10 @@ Carrito.associate = function(models) {
     Carrito.hasMany(models.Producto, {
         as: "producto",
         foreignKey: "producto_id"
+    })
+    Carrito.belongsTo(models.Cliente, {
+        as: "cliente",
+        foreignKey: "cliente_id"
     })
  };
 
