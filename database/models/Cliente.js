@@ -39,14 +39,15 @@ module.exports = (sequelize, dataTypes) => {
       references: {
         model: "product",
         key: "id",
-      },
+      }
+    },
+
     shopping_cart_id: {
       type: dataTypes.INTEGER,
       references: {
         model: "carrito",
         key: "id",
       }
-    }
     },
     password: {
       type: dataTypes.STRING,
@@ -63,14 +64,14 @@ module.exports = (sequelize, dataTypes) => {
 
   Cliente.associate = function (models) {
     Cliente.hasMany(models.Producto, {
-      as: "producto",
+      as: "producto_cliente",
       foreignKey: "product_id"
     })
     Cliente.belongsTo(models.Carrito, {
-      as: "carrito",
+      as: "cliente_carrito",
       foreignKey: "shopping_cart_id"
     })
-    return Cliente;
   }
+  return Cliente;
 };
 

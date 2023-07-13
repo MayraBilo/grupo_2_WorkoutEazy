@@ -3,7 +3,6 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
-const { Cliente, Aliado } = "./database/models";
 
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
@@ -46,7 +45,7 @@ app.use(userLoggedMiddlewareAliado);
 app.use(mainRoutes);
 app.use("/product", productsRoutes);
 app.use(userRoutes);
-app.use("/database", (req, res) => {});
+
 
 //--- ERROR 404 ---//
 

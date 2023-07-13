@@ -1,14 +1,15 @@
 const path = require("path");
 const productModel = require("../models/product");
-const db = require("../database/models");
+const DB = require("../database/models");
 
 const controller = {
+
   getList: async (req, res) => {
     try {
-      const productos = await db.Producto.findAll({ raw: true });
+      const productos = await DB.Producto.findAll({ raw: true });
       res.render("productList", { productos });
     } catch(error) {
-      res.render("productList", {productos: []})
+      res.render("productList", {productos:[]})
     }
   },
   getEdit: (req, res) => {

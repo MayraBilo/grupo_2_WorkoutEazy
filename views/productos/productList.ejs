@@ -91,30 +91,30 @@
                         </div>--->
 
                         <div class="actividades-container">
-                            <% products.forEach(products => { %>
+                            <% productos.forEach(producto => { %>
                     
                                 <article class="actividad-ejemplo">
 
                                     <div class="foto">
                                         <div class="etiqueta-actividad">
                                             <p>
-                                                <%= products.categoria %>
+                                                <%= producto.category %>
                                             </p>
                                         </div>
-                                        <img src="/images/productos/<%= products.img %>" alt="<%= products.subcategoria %>">
+                                        <img src="/images/productos/<%= producto.image %>" alt="<%= producto.subcategory %>">
                                     </div>
 
                                     <div clas="info">
                                         <h3 class="texto-actividad bebas">
-                                            <%= products.nombreActividad %>
+                                            <%= producto.activity_name %>
                                         </h3>
                                         <p class="texto-actividad">
-                                            <%= products.nombreAliado %>
+                                            <%= products[i].aliado_id %>
                                         </p>
                                         <p class="texto-actividad">Dificultad</p>
                                         <div class="texto-actividad">
                                             <p class="texto-actividad">
-                                                <%= products.dificultad %>
+                                                <%= producto.difficulty %>
                                             </p>
                                             <!-- <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                                 class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
@@ -124,24 +124,24 @@
                                         <div class="seccion-texto">
                                             <p class="texto-actividad">Disponibilidad</p>
                                             <h3>
-                                                <%= products.cupos %>
+                                                <%= producto.spots %>
                                             </h3>
                                         </div>
                                         <div class="seccion-texto">
                                             <p class="texto-actividad">Valor</p>
                                             <h3>
-                                                <%= products.valor %>
+                                                <%= producto.price %>
                                             </h3>
                                         </div>
 
                                         <div class="descripcion-actividad">
                                             <p>Descripción:</p>
                                             <p>
-                                                <%= products.descripcion %>
+                                                <%= producto.product_description %>
                                             </p>
                                         </div>
                                         <div class="ver-detalle">
-                                              <a href="/product/<%= products.id %>/productDetail"><button>Ver Detalle del producto</button></a>
+                                              <a href="/product/<%= producto.id %>/productDetail"><button>Ver Detalle del producto</button></a>
                                         </div>
                                     </div>
 

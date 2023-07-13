@@ -1,5 +1,5 @@
 
-const fs = require("fs");
+/*const fs = require("fs");
 const { validationResult } = require("express-validator");
 
 const bcrypt = require("bcryptjs");
@@ -89,12 +89,11 @@ const controller = {
         }); 
 
     },
-
-    getAliadoProfile: (req, res) => {
-      /*console.log(req.cookies.userEmail);*/
+    
+ getAliadoProfile: (req, res) => {
+   
       return res.render("perfilAliado", {aliado: req.session.userLogged});
 },
-
 logoutAliado: (req, res) => {
   console.log('logoutaliado')
   res.clearCookie('userEmail')

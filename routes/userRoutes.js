@@ -4,6 +4,7 @@ const router = express.Router();
 
 const path = require("path");
 
+/*
 // Controller
 
 const userControllers = require("../controllers/clienteController");
@@ -75,5 +76,6 @@ router.get(
   authMiddlewareAliado,
   aliadosControllers.logoutAliado
 );
+*/
 
 module.exports = router;

@@ -39,11 +39,11 @@ const Carrito = sequelize.define(alias, cols, config);
 
 Carrito.associate = function(models) {
     Carrito.hasMany(models.Producto, {
-        as: "producto",
+        as: "carrito",
         foreignKey: "producto_id"
     })
     Carrito.belongsTo(models.Cliente, {
-        as: "cliente",
+        as: "cliente_carrito",
         foreignKey: "cliente_id"
     })
  };

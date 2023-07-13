@@ -1,10 +1,11 @@
-const { validationResult } = require("express-validator");
+/*const { validationResult } = require("express-validator");
 const fs = require("fs");
 const Cliente = require("../database/models/Cliente");
 const bcrypt = require("bcryptjs");
 const uuid = require("uuid");
 
 //usuarios//
+
 const controller = {
   // Sequelize
 
@@ -12,6 +13,8 @@ const controller = {
     res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
     res.render("register");
   },
+
+  */
 
   /* updateCliente: async (req, res) => {
     try {
@@ -21,7 +24,7 @@ const controller = {
       res.send("hubo un error")
     }
   }, */
-
+/*
   create: async (req, res) => {
     const nuevoCliente = {
       id: uuid.v4(),
@@ -55,6 +58,8 @@ const controller = {
 };
 
 module.exports = controller;
+
+*/
 
 //JSON
 
