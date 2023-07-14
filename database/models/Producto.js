@@ -70,24 +70,28 @@ module.exports = (sequelize, dataTypes) => {
  }
 const Producto = sequelize.define(alias, cols, config); 
 
- /*Producto.associate = function(models) {
-
-    Producto.belongsTo(models.Carrito, {
+Producto.associate = function(models) {
+    
+    // relación OK
+    Producto.belongsToMany(models.Carrito, {
         as: "carrito",
-        foreignKey: "carrito_id"
+        foreignKey: "carrito_id",
+        through: "carrito_producto"
     })
-
+    // Relación no funciona
+    /*
     Producto.belongsTo(models.Aliado, {
         as: "aliado_producto",
         foreignKey: "aliado_id"
-    })
+    })*/
+
+    // Relación Ok
     Producto.belongsToMany(models.Cliente, {
         as: "producto_cliente",
         foreignKey: "cliente_id",
         through: "cliente_producto"
     })
-    
- }*/
+ }
 
 
 return Producto;

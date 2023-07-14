@@ -7,9 +7,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        product_id: {
-            type: dataTypes.INTEGER    
-        },
         quantity: {
             type: dataTypes.INTEGER    
         },
@@ -28,6 +25,13 @@ module.exports = (sequelize, dataTypes) => {
                 model: "cliente",
                 key: "id"
             }
+        },
+        product_id: {
+            type: dataTypes.INTEGER,
+            references: {
+                model: "product",
+                key: "id"
+            }
         }
     }
 
@@ -37,16 +41,20 @@ module.exports = (sequelize, dataTypes) => {
  }
 const Carrito = sequelize.define(alias, cols, config); 
 
-/*Carrito.associate = function(models) {
-    Carrito.hasMany(models.Producto, {
+Carrito.associate = function(models) {
+
+    // Relación Ok
+    Carrito.belongsToMany(models.Producto, {
         as: "carrito",
-        foreignKey: "product_id"
+        foreignKey: "product_id",
+        through: "carrito_producto"
     })
+    // Relación OK
     Carrito.belongsTo(models.Cliente, {
         as: "cliente_carrito",
         foreignKey: "cliente_id"
     })
- };*/
+ };
 
 return Carrito;
 

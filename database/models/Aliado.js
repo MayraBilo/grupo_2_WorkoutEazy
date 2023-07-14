@@ -61,7 +61,7 @@ module.exports = (sequelize, dataTypes) => {
             references: {
                 model: "product",
                 key: "id",
-            },
+            }
         },
         password: {
             type: dataTypes.STRING,
@@ -76,7 +76,9 @@ module.exports = (sequelize, dataTypes) => {
 
     const Aliado = sequelize.define(alias, cols, config);
 
-    /*Aliado.associate = function(models) {
+    // Relación no funciona
+    /*
+    Aliado.associate = function(models) {
         Aliado.hasMany(models.Producto, {
             as: "aliado_producto",
             foreignKey: "product_id"

@@ -1,5 +1,5 @@
 
-/*const fs = require("fs");
+const fs = require("fs");
 const { validationResult } = require("express-validator");
 
 const bcrypt = require("bcryptjs");
@@ -89,11 +89,12 @@ const controller = {
         }); 
 
     },
-    
- getAliadoProfile: (req, res) => {
-   
+
+    getAliadoProfile: (req, res) => {
+      /*console.log(req.cookies.userEmail);*/
       return res.render("perfilAliado", {aliado: req.session.userLogged});
 },
+
 logoutAliado: (req, res) => {
   console.log('logoutaliado')
   res.clearCookie('userEmail')
@@ -105,10 +106,11 @@ logoutAliado: (req, res) => {
 
 module.exports = controller;
 
+//Sequelize
 
+/*
 
-
-/*const path = require("path");
+const path = require("path");
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const aliadoModel = require("../models/aliado");
@@ -179,7 +181,7 @@ getRegisterAliados: (req, res) => {
     res.send('Se registró el usuario');
 },
 
-/*processRegisterAliados: (req, res) => {
+processRegisterAliados: (req, res) => {
       const resultValidation = validationResult(req);
   
       if (resultValidation.errors.length > 0) {
@@ -206,30 +208,22 @@ getRegisterAliados: (req, res) => {
   
       let aliadoCreated = aliado.create(aliadoToCreate);
       return res.redirect("/login");
-    },*/
+    },
 
-  
-    
-    /*getAliadoProfile: (req, res) => {
+    getAliadoProfile: (req, res) => {
       return res.render("perfilAliado", { aliado: req.session.aliadoLogged });
   
     },
   
    
     logout: (req, res) => {
-      /*res.clearCookie('userEmail')*/
-      //req.session.destroy();
-     // return res.redirect("/");
+      req.session.destroy();
+     return res.redirect("/");
     
-  
-  
-  
+  module.exports = controller;*/
 
 
-  //module.exports = controller;*/
-
-
-
+//Edición perfil aliado
 
   /*getEditAliado: (req, res) => {
     const id = Number(req.params.id);

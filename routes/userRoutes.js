@@ -4,10 +4,9 @@ const router = express.Router();
 
 const path = require("path");
 
-/*
 // Controller
 
-const userControllers = require("../controllers/clienteController");
+const userControllers = require("../controllers/userControllers");
 const aliadosControllers = require("../controllers/aliadosControllers");
 
 // Middlewares
@@ -15,13 +14,14 @@ const uploadFile = require("../middlewares/multerMiddleware.js");
 const validations = require("../middlewares/validateRegisterMiddleware.js");
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
-
+ 
 // Middleware Aliados
 const uploadFileAliado = require("../middlewares/multerMiddlewareAliado.js");
 const uploadFileCliente = require("../middlewares/multerMiddlewareCliente.js");
 const validationsAliados = require("../middlewares/validateRegisterAliadosMiddleware.js");
 const authMiddlewareAliado = require("../middlewares/authMiddlewareAliado.js");
 const guestMiddlewareAliados = require("../middlewares/guestMiddlewareAliados.js");
+
 
 // Formulario de login
 router.get("/login", guestMiddleware, userControllers.getLogin);
@@ -39,43 +39,27 @@ router.post(
   "/register",
   uploadFileCliente.single("avatar"),
   validations,
-  userControllers.create
+  userControllers.processRegister
 );
 
 // Formulario de registroAliado
-router.get(
-  "/registerAliados",
-  guestMiddlewareAliados,
-  aliadosControllers.getRegisterAliados
-);
+router.get("/registerAliados", guestMiddlewareAliados, aliadosControllers.getRegisterAliados);
 
 // Procesar el registroAliados
 router.post(
   "/registerAliados",
-  uploadFileAliado.single("avatar"),
-  validationsAliados,
-  aliadosControllers.registerAliados
-);
+  uploadFileAliado.single("avatar"), validationsAliados, aliadosControllers.registerAliados);
 
 // Perfil de usuario
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
 
-router.get("/editPerfilCliente", authMiddleware, userControllers.updateCliente);
-
-router.put("/editPerfilCliente", authMiddleware, userControllers.updateClienteProcess);
-
 // Perfil de usuarioAliado
-router.get("/perfilAliado", aliadosControllers.getAliadoProfile);
+router.get('/perfilAliado', aliadosControllers.getAliadoProfile);
 
 // Logout
 
 router.get("/logout", authMiddleware, userControllers.logout);
-router.get(
-  "/logoutAliado",
-  authMiddlewareAliado,
-  aliadosControllers.logoutAliado
-);
-*/
+router.get("/logoutAliado", authMiddlewareAliado, aliadosControllers.logoutAliado);
 
 module.exports = router;

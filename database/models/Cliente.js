@@ -61,17 +61,20 @@ module.exports = (sequelize, dataTypes) => {
 
   const Cliente = sequelize.define(alias, cols, config);
 
-  /*Cliente.associate = function (models) {
+  Cliente.associate = function (models) {
+    // Relación OK
     Cliente.belongsToMany(models.Producto, {
       as: "producto_cliente",
       foreignKey: "product_id",
       through: "cliente_producto"
     })
+
+    // Relación OK
     Cliente.belongsTo(models.Carrito, {
       as: "cliente_carrito",
       foreignKey: "shopping_cart_id"
     })
-  }*/
+  }
   return Cliente;
 };
 
