@@ -4,6 +4,8 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 
+
+
 const mainRoutes = require("./routes/mainRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -53,6 +55,6 @@ app.use((req, res, next) => {
   res.status(404).render("404-error");
 });
 
-app.listen(3000, () =>
+app.listen(3000, () => {
   console.log("Servidor escuchando en el puerto http://localhost:3000/")
-);
+});

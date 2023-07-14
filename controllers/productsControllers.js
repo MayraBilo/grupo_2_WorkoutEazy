@@ -1,17 +1,15 @@
-const path = require("path");
 const productModel = require("../models/product");
-const DB = require("../database/models");
+const db = require("../database/models");
 
 const controller = {
 
-  getList: async (req, res) => {
-    try {
-      const productos = await DB.Producto.findAll({ raw: true });
-      res.render("productList", { productos });
-    } catch(error) {
-      res.render("productList", {productos:[]})
-    }
+  getList: function(req,res) {
+    db.Producto.findAll()
+        .then(function(productos){
+            res.render("productList", {productos:productos})
+        })
   },
+ 
   getEdit: (req, res) => {
     const id = Number(req.params.id);
 

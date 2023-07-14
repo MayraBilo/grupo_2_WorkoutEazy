@@ -76,12 +76,12 @@ module.exports = (sequelize, dataTypes) => {
 
     const Aliado = sequelize.define(alias, cols, config);
 
-    Aliado.associate = function(models) {
+    /*Aliado.associate = function(models) {
         Aliado.hasMany(models.Producto, {
             as: "aliado_producto",
-            foreignKey: "producto_id"
+            foreignKey: "product_id"
         })
-     };
+     };*/
     
     return Aliado;
 };

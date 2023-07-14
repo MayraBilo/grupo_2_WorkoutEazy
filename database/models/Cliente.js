@@ -41,11 +41,10 @@ module.exports = (sequelize, dataTypes) => {
         key: "id",
       }
     },
-
     shopping_cart_id: {
       type: dataTypes.INTEGER,
       references: {
-        model: "carrito",
+        model: "shopping_cart",
         key: "id",
       }
     },
@@ -62,16 +61,17 @@ module.exports = (sequelize, dataTypes) => {
 
   const Cliente = sequelize.define(alias, cols, config);
 
-  Cliente.associate = function (models) {
-    Cliente.hasMany(models.Producto, {
+  /*Cliente.associate = function (models) {
+    Cliente.belongsToMany(models.Producto, {
       as: "producto_cliente",
-      foreignKey: "product_id"
+      foreignKey: "product_id",
+      through: "cliente_producto"
     })
     Cliente.belongsTo(models.Carrito, {
       as: "cliente_carrito",
       foreignKey: "shopping_cart_id"
     })
-  }
+  }*/
   return Cliente;
 };
 

@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING  
         },
         difficulty: {
-            type: dataTypes.INTEGER    
+            type: dataTypes.STRING    
         },
         adress: {
             type: dataTypes.STRING  
@@ -51,7 +51,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING  
         },
         age: {
-            type: dataTypes.INTEGER 
+            type: dataTypes.STRING 
         },
         mode: {
             type: dataTypes.STRING  
@@ -65,12 +65,12 @@ module.exports = (sequelize, dataTypes) => {
     }
 
  const config = {
-    tableName: 'productos',
+    tableName: 'product',
     timestamps: false
  }
 const Producto = sequelize.define(alias, cols, config); 
 
- Producto.associate = function(models) {
+ /*Producto.associate = function(models) {
 
     Producto.belongsTo(models.Carrito, {
         as: "carrito",
@@ -81,13 +81,13 @@ const Producto = sequelize.define(alias, cols, config);
         as: "aliado_producto",
         foreignKey: "aliado_id"
     })
-    /*Producto.belongsToMany(models.Cliente, {
+    Producto.belongsToMany(models.Cliente, {
         as: "producto_cliente",
         foreignKey: "cliente_id",
-        through: 
-    })*/
+        through: "cliente_producto"
+    })
     
- }
+ }*/
 
 
 return Producto;
