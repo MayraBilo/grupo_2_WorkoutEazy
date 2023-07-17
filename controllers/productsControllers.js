@@ -36,6 +36,7 @@ const controller = {
 
     res.redirect("/product");
   },
+
   updateProduct: (req, res) => {
     db.Producto.update({
       activity_name: req.body.activity_name,
@@ -53,55 +54,78 @@ const controller = {
       id: req.params.id
   }})
   },
+
   getCart: (req, res) => {
     let products = productModel.findAll();
     res.render("productCart", {
       products: products,
     });
   },
+
   getCreate: (req, res) => {
     res.render("createProduct");
   },
+
   getService: (req, res) => {
     res.render("profileServices");
   },
 
-  getListYoga: (req, res) => {
-    const productos = productModel.findAll();
-    res.render("productListYoga", {
-      products: productos,
-    });
+  getListYoga: function(req, res) {
+    db.Producto.findAll()
+    .then(function(productos){
+      res.render("productListYoga", {productos:productos})
+  })
   },
 
   getListFitness: (req, res) => {
-    const productos = productModel.findAll();
-    res.render("productListFitness", {
-      products: productos,
-    });
+    db.Producto.findAll()
+    .then(function(productos){
+      res.render("productListFitness", {productos:productos})
+  })
   },
 
   getListDeportes: (req, res) => {
-    const productos = productModel.findAll();
-    res.render("productListDeportes", {
-      products: productos,
-    });
+    db.Producto.findAll()
+    .then(function(productos){
+      res.render("productListDeportes", {productos:productos})
+  })
   },
 
-  getListDanzas: (req, res) => {
-    const productos = productModel.findAll();
-    res.render("productListDanzas", {
-      products: productos,
-    });
+  getListDanzas: function(req, res) {
+    db.Producto.findAll()
+    .then(function(productos){
+      res.render("productListDanzas", {productos:productos})
+  })
+
   },
 
   postProduct: (req, res) => {
+
+    db.Producto.create({
+      activity_name: req.body.activity_name,
+      aliado: req.body.aliado_id,
+      price: req.body.price,
+      discount: req.body.discount,
+      spots: req.body.spots,
+      description: req.body.product_description,
+      schedule: req.body.schedule,
+      length: req.body.length,
+      difficulty: req.body.difficulty,
+      city: req.body.city
+      })
+  res.redirect("/product");
+  res.redirect("/productListDanzas");
+  res.redirect("/productListDeportes");
+  res.redirect("/productListFitness");
+  res.redirect("/productListYoga");
+
+    /*
     let datos = req.body;
 
     datos.id = productModel.length + 1;
 
     datos.valor = Number(datos.valor);
 
-    /*datos.img = req.files.map(file => `/images/productos/${file.filename}`);*/
     datos.img = req.file ? req.file.filename : "sin foto";
 
     productModel.createOne(datos);
@@ -111,7 +135,10 @@ const controller = {
     res.redirect("/productListDeportes");
     res.redirect("/productListFitness");
     res.redirect("/productListYoga");
+    */
+
   },
+  
 };
 
 module.exports = controller;

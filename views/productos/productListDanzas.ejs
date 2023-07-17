@@ -113,26 +113,26 @@
             <section class="productos-display">
 
                 <div class="actividades-contenedor">
-                    <% products.forEach(product=> { %>
-                    <% if (product.categoria === "Danzas") { %>
+                    <% productos.forEach(product=> { %>
+                    <% if (product.category === "Danzas") { %>
                     <article class="actividad-ejemplo">
 
                         <div class="foto">
                             <div class="etiqueta-actividad">
-                                <p><%= product.categoria %></p>
+                                <p><%= product.category %></p>
                             </div>
-                            <img src="/images/productos/<%= product.img %>" alt="<%= product.subcategoria %>">
+                            <img src="/images/productos/<%= product.image %>" alt="<%= product.subcategory %>">
                         </div>
 
                         <div class="info">
                             <h3 class="texto-actividad bebas">
-                                <%= product.nombreActividad %>
+                                <%= product.activity_name %>
                             </h3>
-                        <p class="texto-actividad"><%= product.nombreAliado %></p>
+                        <p class="texto-actividad"><%= product.aliado_id %></p>
                         <p class="texto-actividad">Dificultad</p>
                         <div class="texto-actividad">
                                 <p class="texto-actividad">
-                                <%= product.dificultad %>
+                                <%= product.difficulty %>
                                 </p>
                                 <!---<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
                                 class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></i><i
@@ -149,12 +149,12 @@
                         </div>
                         <div class="seccion-texto">
                             <p class="texto-actividad">Valor</p>
-                            <h3><%= product.valor %></h3>
+                            <h3><%= product.price %></h3>
                         </div>
 
                         <div class="descripcion-actividad">
                             <p>Descripción:</p>
-                            <p><%= product.descripcion %></p>
+                            <p><%= product.product_description %></p>
                         </div>
                         <div class="ver-detalle">
                             <a href="/product/<%= product.id %>/productDetail"><button class="bebas">Ver Detalle del producto</button></a>
