@@ -2,7 +2,7 @@ const productModel = require("../models/product");
 const db = require("../database/models");
 
 const controller = {
-
+  // OK
   getList: function(req,res) {
     db.Producto.findAll()
         .then(function(productos){
@@ -11,28 +11,23 @@ const controller = {
   },
  
   getEdit: (req, res) => {
-    const id = Number(req.params.id);
 
-    const productoAModificar = productModel.findById(id);
+    db.Producto.findByPk(req.params.id)
 
-    if (!productoAModificar) {
-      return res.send("error de id");
-    }
+    .then(function(producto){
+    res.render("editProduct", {producto: producto})
+    })
 
-    res.render("editProduct", {
-      products: productoAModificar,
-    });
   },
   getDetail: (req, res) => {
-    const id = Number(req.params.id);
 
-    const productoAMostrar = productModel.findById(id);
+    db.Producto.findByPk(req.params.id)
 
-    if (!productoAMostrar) {
-      return res.send("error de id");
-    }
+    .then(function(producto){
+        res.render("productDetail", {producto: producto})
+    })
 
-    res.render("productDetail", { products: productoAMostrar });
+
   },
   deleteProduct: (req, res) => {
     const id = Number(req.params.id);
@@ -42,13 +37,21 @@ const controller = {
     res.redirect("/product");
   },
   updateProduct: (req, res) => {
-    const id = Number(req.params.id);
-    const nuevosDatos = req.body;
-    nuevosDatos.img = req.file ? req.file.filename : req.body.oldImage;
-
-    productModel.updateById(id, nuevosDatos);
-
-    res.redirect("/product");
+    db.Producto.update({
+      activity_name: req.body.activity_name,
+      aliado: req.body.aliado_id,
+      price: req.body.price,
+      discount: req.body.discount,
+      spots: req.body.spots,
+      description: req.body.product_description,
+      schedule: req.body.schedule,
+      length: req.body.length,
+      difficulty: req.body.difficulty,
+      city: req.body.city
+      }, {
+  where: {
+      id: req.params.id
+  }})
   },
   getCart: (req, res) => {
     let products = productModel.findAll();

@@ -12,11 +12,11 @@
         <main>
             <h1>Editar servicio</h1>
             <div class="form-img">
-                <form action="/product/<%=products.id%>/editProduct?_method=put" method="POST" enctype="multipart/form-data">
+                <form action="/product/<%=producto.id%>/editProduct?_method=put" method="POST" enctype="multipart/form-data">
                     <div class="div-categorie">
                         <select class="categoria" name="categoria">
-                            <option default class="select-categoria" name="categoria" value="<%= products.categoria %>">
-                              -  <%= products.categoria %> -
+                            <option default class="select-categoria" name="categoria" value="<%= producto.category %>">
+                              -  <%= producto.category %> -
                             </option>
                             <option name="categoria">Yoga</option>
                             <option name="categoria">Fitness</option>
@@ -28,7 +28,7 @@
                     <div class="div-subcategorie">
                         <select class="categorie" name="subcategoria" value="subcategoria">
                             <option default class="select-categorie" name="subcategoria" value="select-categorie">
-                                <%= products.subcategoria %></option>
+                                <%= producto.subcategory %></option>
                             </option>
                             <option name="subcategoria">Yoga-Mysore</option>
                             <option name="subcategoria">Yoga-Ashtanga</option>
@@ -59,79 +59,79 @@
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Nombre del servicio</label>
-                        <input class="lsinput" type="text" name="nombreActividad" value="<%=products.nombreActividad%>">
+                        <input class="lsinput" type="text" name="nombreActividad" value="<%=producto.activity_name%>">
                         <span class="feedback"></span>
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Nombre del Aliado</label>
-                        <input class="lsinput" type="text" name="nombreAliado" value="<%=products.nombreAliado%>">
+                        <input class="lsinput" type="text" name="nombreAliado" value="<%=producto.aliado_id%>">
                         <span class="feedback"></span>
                     </div>
             
                     <div class="div-value-disc">
                         <div class="div-value">
                             <label for="value">Valor</label>
-                            <input class="sinput" type="number" name="valor" value="<%=products.valor%>">
+                            <input class="sinput" type="number" name="valor" value="<%=producto.price%>">
                             <span class="feedback"></span>
                         </div>
                         <div class="div-disc">
                             <label for="apply-disc">Aplicar descuento</label>
-                            <input class="sinput" placeholder="(opcional)" type="number" name="descuento" value="<%=products.descuento%>">
+                            <input class="sinput" placeholder="(opcional)" type="number" name="descuento" value="<%=producto.discount%>">
                             <p>%</p>
                             <span class="feedback"></span>
                         </div>
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Cupos</label>
-                        <input class="lsinput" type="text" name="cupos" value="<%=products.cupos%>">
+                        <input class="lsinput" type="text" name="cupos" value="<%=producto.spots%>">
                         <span class="feedback"></span>
                     </div>
                 
                     <div class="div-description">
                         <label for="description">Descripción</label>
-                        <input class="lfinput" type="text" name="descripcion" value="<%=products.descripcion%>">
+                        <input class="lfinput" type="text" name="descripcion" value="<%=producto.product_description%>">
                         <span class="feedback"></span>
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Horarios</label>
-                        <input class="lsinput" type="text" name="horarios" value="<%=products.horarios%>">
+                        <input class="lsinput" type="text" name="horarios" value="<%=producto.schedule%>">
                         <span class="feedback"></span>
                     </div>
       
                     <div class="container-name-service">
                         <label for="name-service">Duración</label>
-                        <input class="lsinput" type="text" name="duracion" value="<%=products.duracion%>">
+                        <input class="lsinput" type="text" name="duracion" value="<%=producto.length%>">
                         <span class="feedback"></span>
                     </div>
       
                 
                     <div class="div-add-pictures">
                         <label for="add-pictures">Agregar fotos</label>
-                        <input type="hidden" name="oldImage" value="<%= products.img %>">
-                        <input class="add-pictures" type="file" name="img" accept="image/*" value="<%= products.img %>">
+                        <input type="hidden" name="oldImage" value="<%= producto.image %>">
+                        <input class="add-pictures" type="file" name="img" accept="image/*" value="<%= producto.image %>">
                         <span class="feedback"></span>
                     </div>
                     <div class="div-difficulty">
                         <label for="difficulty">Dificultad</label>
                         <select name="dificultad" class="difficulty" value="dificultad">
-                            <option class="select-difficulty" default value="<%=products.dificultad%>">-
-                                <%=products.dificultad%> -</i></option>
-                            <option value="<%=products.dificultad%>">Principiante</i></option>
-                            <option value="<%=products.dificultad%>">Facil</i></option>
-                            <option value="<%=products.dificultad%>">Intermedio</i></option>
-                            <option value="<%=products.dificultad%>">Dificil</i></option>
-                            <option value="<%=products.dificultad%>">Avanzado</i></option>
+                            <option class="select-difficulty" default value="<%=producto.difficulty%>">-
+                                <%=producto.difficulty%> -</i></option>
+                            <option value="<%=producto.difficulty%>">Principiante</i></option>
+                            <option value="<%=producto.difficulty%>">Facil</i></option>
+                            <option value="<%=producto.difficulty%>">Intermedio</i></option>
+                            <option value="<%=producto.difficulty%>">Dificil</i></option>
+                            <option value="<%=producto.difficulty%>">Avanzado</i></option>
                         </select>
                         <span class="feedback"></span>
                     </div>
                     <div class="div-complete-direction">
                         <label for="complete-direction">Dirección Completa</label>
-                        <input class="lsinput" type="text" name="direccion" value="<%=products.direccion%>">
+                        <input class="lsinput" type="text" name="direccion" value="<%=producto.direccion%>">
                         <span class="feedback"></span>
                     </div>
                     <div class="div-city">
                         <label for="city">Ciudad</label>
-                        <input class="lsinput" type="text" name="ciudad" value="<%=products.ciudad%>">
+                        <input class="lsinput" type="text" name="ciudad" value="<%=producto.city%>">
                         <span class="feedback"></span>
                     </div>
                     <div class="div-ages">
@@ -154,10 +154,10 @@
                     <div class="div-ages">
                         <label for="modalidad">Modalidad</label>
                         <div>
-                            <input type="checkbox" name="modalidad" value="<%=products.modalidad%>"> Presencial
+                            <input type="checkbox" name="modalidad" value="<%=producto.mode%>"> Presencial
                         </div>
                         <div>
-                            <input type="checkbox" name="modalidad" value="<%=products.modalidad%>"> Virtual
+                            <input type="checkbox" name="modalidad" value="<%=producto.mode%>"> Virtual
                         </div>
                         
                         <span class="feedback"></span>
@@ -175,7 +175,7 @@
                     <img class="right-img" src="/images/diseno/editworkouteasy3-b.png" alt="">
                 </div>
             </div>
-            <form action="/product/<%=products.id%>/delete?_method=delete" method="POST" id="formDelete">
+            <form action="/product/<%=producto.id%>/delete?_method=delete" method="POST" id="formDelete">
                 <div class="div-submit-button">
                 <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
                 </div>
