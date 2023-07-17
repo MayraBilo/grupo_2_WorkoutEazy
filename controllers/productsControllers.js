@@ -3,38 +3,40 @@ const db = require("../database/models");
 
 const controller = {
   // OK
-  getList: function(req,res) {
+  getList: function (req, res) {
     db.Producto.findAll()
-        .then(function(productos){
-            res.render("productList", {productos:productos})
-        })
+      .then(function (productos) {
+        res.render("productList", { productos: productos })
+      })
   },
- 
+
   getEdit: (req, res) => {
 
     db.Producto.findByPk(req.params.id)
 
-    .then(function(producto){
-    res.render("editProduct", {producto: producto})
-    })
+      .then(function (producto) {
+        res.render("editProduct", { producto: producto })
+      })
 
   },
   getDetail: (req, res) => {
 
     db.Producto.findByPk(req.params.id)
 
-    .then(function(producto){
-        res.render("productDetail", {producto: producto})
-    })
+      .then(function (producto) {
+        res.render("productDetail", { producto: producto })
+      })
 
 
   },
   deleteProduct: (req, res) => {
-    const id = Number(req.params.id);
+    db.Producto.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.redirect("/product")
 
-    productModel.deleteById(id);
-
-    res.redirect("/product");
   },
 
   updateProduct: (req, res) => {
@@ -49,10 +51,11 @@ const controller = {
       length: req.body.length,
       difficulty: req.body.difficulty,
       city: req.body.city
-      }, {
-  where: {
-      id: req.params.id
-  }})
+    }, {
+      where: {
+        id: req.params.id
+      }
+    })
   },
 
   getCart: (req, res) => {
@@ -70,54 +73,57 @@ const controller = {
     res.render("profileServices");
   },
 
-  getListYoga: function(req, res) {
+  getListYoga: function (req, res) {
     db.Producto.findAll()
-    .then(function(productos){
-      res.render("productListYoga", {productos:productos})
-  })
+      .then(function (productos) {
+        res.render("productListYoga", { productos: productos })
+      })
   },
 
   getListFitness: (req, res) => {
     db.Producto.findAll()
-    .then(function(productos){
-      res.render("productListFitness", {productos:productos})
-  })
+      .then(function (productos) {
+        res.render("productListFitness", { productos: productos })
+      })
   },
 
   getListDeportes: (req, res) => {
     db.Producto.findAll()
-    .then(function(productos){
-      res.render("productListDeportes", {productos:productos})
-  })
+      .then(function (productos) {
+        res.render("productListDeportes", { productos: productos })
+      })
   },
 
-  getListDanzas: function(req, res) {
+  getListDanzas: function (req, res) {
     db.Producto.findAll()
-    .then(function(productos){
-      res.render("productListDanzas", {productos:productos})
-  })
+      .then(function (productos) {
+        res.render("productListDanzas", { productos: productos })
+      })
 
   },
 
   postProduct: (req, res) => {
 
-    db.Producto.create({
+      let datos = {
       activity_name: req.body.activity_name,
       aliado: req.body.aliado_id,
       price: req.body.price,
       discount: req.body.discount,
       spots: req.body.spots,
       description: req.body.product_description,
+      image: req.body.image,
       schedule: req.body.schedule,
       length: req.body.length,
       difficulty: req.body.difficulty,
-      city: req.body.city
-      })
-  res.redirect("/product");
-  res.redirect("/productListDanzas");
-  res.redirect("/productListDeportes");
-  res.redirect("/productListFitness");
-  res.redirect("/productListYoga");
+      city: req.body.city}
+   
+        db.Producto.create(datos);
+
+    res.redirect("/product");
+    res.redirect("/productListDanzas");
+    res.redirect("/productListDeportes");
+    res.redirect("/productListFitness");
+    res.redirect("/productListYoga");
 
     /*
     let datos = req.body;
@@ -138,7 +144,7 @@ const controller = {
     */
 
   },
-  
+
 };
 
 module.exports = controller;

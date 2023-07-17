@@ -12,76 +12,76 @@
       <div class="form-img">
         <form action="/product" method="POST" enctype="multipart/form-data">
           <div class="div-categoria">
-            <select class="categoria" name="categoria">
+            <select class="categoria" name="category">
               <option
                 default
                 class="select-categoria"
-                name="categoria"
-                value="select-categoria"
+                name="category"
+                value="category"
               >
-                - Selecciona una categoria -
+                - Selecciona una categoría -
               </option>
-              <option name="categoria">Yoga</option>
-              <option name="categoria">Fitness</option>
-              <option name="categoria">Danzas</option>
-              <option name="categoria">Deportes</option>
+              <option name="category" value="Yoga">Yoga</option>
+              <option name="category" value="Fitness">Fitness</option>
+              <option name="category" value="Danzas">Danzas</option>
+              <option name="category" value="Deportes">Deportes</option>
             </select>
             <span class="feedback"></span>
           </div>
-          <div class="div-subcategoria">
-            <select class="categoria" name="subcategoria">
+          <div class="div-subcategory">
+            <select class="categoria" name="subcategory">
               <option
                 default
                 class="select-categoria"
-                name="subcategoria"
-                value="select-categoria"
+                name="subcategory"
+                value="subcategory"
               >
-                - Selecciona una subcategoria -
+                - Selecciona una subcategoría -
               </option>
-              <option name="subcategoria">Yoga-Mysore</option>
-              <option name="subcategoria">Yoga-Ashtanga</option>
-              <option name="subcategoria">Yoga-Hatha</option>
-              <option name="subcategoria">Yoga-Kundalini</option>
-              <option name="subcategoria">Yoga-Flow</option>
-              <option name="subcategoria">Yoga-Flex</option>
-              <option name="subcategoria">Fitness-Funcional</option>
-              <option name="subcategoria">Fitness-Pilates</option>
-              <option name="subcategoria">Fitness-Musculación</option>
-              <option name="subcategoria">Fitness-Crossfit</option>
-              <option name="subcategoria">Fitness-Gimnasio</option>
-              <option name="subcategoria">Fitness-De combate</option>
-              <option name="subcategoria">Danzas-Clásico</option>
-              <option name="subcategoria">Danzas-Urbano</option>
-              <option name="subcategoria">Danzas-Salsa</option>
-              <option name="subcategoria">Danzas-Tango</option>
-              <option name="subcategoria">Danzas-Folklore</option>
-              <option name="subcategoria">Danzas-Cuarteto</option>
-              <option name="subcategoria">Danzas-Contemporáneo</option>
-              <option name="subcategoria">Deportes-Acuáticos</option>
-              <option name="subcategoria">Deportes-Gimnasia</option>
-              <option name="subcategoria">Deportes-Extremos</option>
-              <option name="subcategoria">Deportes-En conjunto</option>
-              <option name="subcategoria">Deportes-Montaña</option>
+              <option name="subcategory" value="Yoga-Mysore">Yoga-Mysore</option>
+              <option name="subcategory">Yoga-Ashtanga</option>
+              <option name="subcategory">Yoga-Hatha</option>
+              <option name="subcategory">Yoga-Kundalini</option>
+              <option name="subcategory">Yoga-Flow</option>
+              <option name="subcategory">Yoga-Flex</option>
+              <option name="subcategory">Fitness-Funcional</option>
+              <option name="subcategory">Fitness-Pilates</option>
+              <option name="subcategory">Fitness-Musculación</option>
+              <option name="subcategory">Fitness-Crossfit</option>
+              <option name="subcategory">Fitness-Gimnasio</option>
+              <option name="subcategory">Fitness-De combate</option>
+              <option name="subcategory">Danzas-Clásico</option>
+              <option name="subcategory">Danzas-Urbano</option>
+              <option name="subcategory">Danzas-Salsa</option>
+              <option name="subcategory">Danzas-Tango</option>
+              <option name="subcategory">Danzas-Folklore</option>
+              <option name="subcategory">Danzas-Cuarteto</option>
+              <option name="subcategory">Danzas-Contemporáneo</option>
+              <option name="subcategory">Deportes-Acuáticos</option>
+              <option name="subcategory">Deportes-Gimnasia</option>
+              <option name="subcategory">Deportes-Extremos</option>
+              <option name="subcategory">Deportes-En conjunto</option>
+              <option name="subcategory">Deportes-Montaña</option>
             </select>
             <span class="feedback"></span>
           </div>
 
           <div class="container-name-service">
             <label for="name-service">Nombre del servicio</label>
-            <input class="lsinput" type="text" name="nombreActividad" />
+            <input class="lsinput" type="text" name="activity_name">
             <span class="feedback"></span>
           </div>
 
           <div class="container-name-service">
             <label for="name-service">Nombre del Aliado</label>
-            <input class="lsinput" type="text" name="nombreAliado" />
+            <input class="lsinput" type="text" name="aliado_id">
             <span class="feedback"></span>
           </div>
 
           <div class="div-value-disc">
             <div class="div-value">
               <label for="value">Valor</label>
-              <input class="sinput" type="number" name="valor" />
+              <input class="sinput" type="text" name="price">
               <span class="feedback"></span>
             </div>
 
@@ -90,33 +90,33 @@
               <input
                 class="sinput"
                 placeholder="(opcional)"
-                type="number"
-                name="descuento"
-              />
+                type="text"
+                name="discount"
+              >
               <p>%</p>
               <span class="feedback"></span>
             </div>
           </div>
           <div class="container-name-service">
             <label for="name-service">Cupos</label>
-            <input class="lsinput" type="number" name="cupos" />
+            <input class="lsinput" type="text" name="spots">
             <span class="feedback"></span>
           </div>
           <div class="div-description">
             <label for="description">Descripción</label>
-            <input class="lfinput" type="text" name="descripcion" />
+            <input class="lfinput" type="text" name="product_description">
             <span class="feedback"></span>
           </div>
 
           <div class="div-description">
             <label for="description">Horarios</label>
-            <input class="lfinput" type="text" name="horarios" />
+            <input class="lfinput" type="date" name="schedule">
             <span class="feedback"></span>
           </div>
 
           <div class="container-name-service containerhoras">
             <label for="name-service">Duración</label>
-            <input class="lsinput horasinput" type="number" name="duracion" />
+            <input class="lsinput horasinput" type="time" name="length">
             <p>hs</p>
             <span class="feedback"></span>
           </div>
@@ -126,80 +126,80 @@
             <input
               class="add-pictures"
               type="file"
-              name="img"
+              name="image"
               accept="image/*"
             />
             <span class="feedback"></span>
           </div>
 
           <div class="div-difficulty">
-            <label for="dificultad">Dificultad</label>
-            <select name="dificultad" class="difficulty">
+            <label for="difficulty">difficulty</label>
+            <select name="difficulty" class="difficulty">
               <option
                 default
                 class="select-difficulty"
-                name="dificultad"
-                value="select-difficulty"
+                name="difficulty"
+                value="difficulty"
               >
                 - Selecciona una dificultad -
               </option>
-              <option name="dificultad">Principiante</option>
-              <option name="dificultad">Facil</option>
-              <option name="dificultad">Intermedio</option>
-              <option name="dificultad">Dificil</option>
-              <option name="dificultad">Avanzado</option>
+              <option name="difficulty">Principiante</option>
+              <option name="difficulty">Facil</option>
+              <option name="difficulty">Intermedio</option>
+              <option name="difficulty">Dificil</option>
+              <option name="difficulty">Avanzado</option>
             </select>
             <span class="feedback"></span>
           </div>
           <div class="div-complete-direction">
-            <label for="complete-direction">Direccion Completa</label>
-            <input class="lsinput" type="text" name="direccion" />
+            <label for="complete-direction">Dirección Completa</label>
+            <input class="lsinput" type="text" name="adress">
             <span class="feedback"></span>
           </div>
           <div class="div-city">
             <label for="ciudad">Ciudad</label>
-            <input class="lsinput" type="text" name="ciudad" />
+            <input class="lsinput" type="text" name="city">
             <span class="feedback"></span>
           </div>
           <div class="div-ages">
-            <label for="ages">Edades</label>
+            <label for="age">Edades</label>
             <div>
-              <input type="checkbox" name="edadesAlumnos" value="Niños" />Niños
+              <input type="checkbox" name="age" value="Niños" />Niños
             </div>
             <div>
               <input
                 type="checkbox"
-                name="edadesAlumnos"
+                name="age"
                 value="Adolescentes"
               />Adolescentes
             </div>
             <div>
               <input
                 type="checkbox"
-                name="edadesAlumnos"
+                name="age"
                 value="Jóvenes"
               />Jóvenes
             </div>
             <div>
               <input
                 type="checkbox"
-                name="edadesAlumnos"
+                name="age"
                 value="Adultos"
               />Adultos
             </div>
             <span class="feedback"></span>
           </div>
           <div class="div-ages">
-            <label for="modalidad">Modalidad</label>
+            <label for="mode">Modalidad</label>
             <div>
               <input
                 type="checkbox"
-                name="modalidad"
+                name="mode"
                 value="presencial"
               />Presencial
             </div>
             <div>
-              <input type="checkbox" name="modalidad" value="virtual" />Virtual
+              <input type="checkbox" name="mode" value="virtual" />Virtual
             </div>
           </div>
           <div class="div-submit-button">
