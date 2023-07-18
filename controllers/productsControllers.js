@@ -42,16 +42,20 @@ const controller = {
   updateProduct: (req, res) => {
     db.Producto.update({
       activity_name: req.body.activity_name,
+      category: req.body.category,
+      product_description: req.body.product_description,
       aliado: req.body.aliado_id,
       price: req.body.price,
       discount: req.body.discount,
       spots: req.body.spots,
-      description: req.body.product_description,
       schedule: req.body.schedule,
       length: req.body.length,
       difficulty: req.body.difficulty,
+      adress: req.body.adress,
       city: req.body.city,
-      age: req.body.age
+      image: req.body.image,
+      age: req.body.age,
+      mode: req.body.mode
     }, {
       where: {
         id: req.params.id
@@ -133,23 +137,6 @@ const controller = {
       } catch (error) {
         console.log(error)
       }
-    /*
-    let datos = req.body;
-
-    datos.id = productModel.length + 1;
-
-    datos.valor = Number(datos.valor);
-
-    datos.img = req.file ? req.file.filename : "sin foto";
-
-    productModel.createOne(datos);
-
-    res.redirect("/product");
-    res.redirect("/productListDanzas");
-    res.redirect("/productListDeportes");
-    res.redirect("/productListFitness");
-    res.redirect("/productListYoga");
-    */
 
   },
 
