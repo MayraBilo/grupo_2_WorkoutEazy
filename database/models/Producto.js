@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING  
         },
         aliado_id: {
-            type: dataTypes.INTEGER    
+            type: dataTypes.INTEGER,   
         },
         category: {
             type: dataTypes.STRING  
@@ -79,6 +79,7 @@ Producto.associate = function(models) {
         through: "carrito_producto"
     })
     // Relación no funciona
+    // Trae una columna inexistente llamada 'AliadoId', puede ser porque todavía no haya aliados cargados.
     /*
     Producto.belongsTo(models.Aliado, {
         as: "aliado_producto",

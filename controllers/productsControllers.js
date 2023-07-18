@@ -107,25 +107,28 @@ const controller = {
 
       const newProduct = {
       activity_name: req.body.activity_name,
+      category: req.body.category,
+      product_description: req.body.product_description,
       aliado: req.body.aliado_id,
       price: req.body.price,
       discount: req.body.discount,
       spots: req.body.spots,
-      description: req.body.product_description,
-      image: req.body.image,
       schedule: req.body.schedule,
       length: req.body.length,
       difficulty: req.body.difficulty,
       adress: req.body.adress,
       city: req.body.city,
+      image: req.body.image,
       age: req.body.age,
       mode: req.body.mode}
 
+      newProduct.image = req.file ? req.file.filename : "sin foto";
+
       try {
 
-    const producto = await db.Producto.create(newProduct)
+    const productos = await db.Producto.create(newProduct)
 
-    res.render("productList", {producto});
+    res.render("productList", {productos});
     
       } catch (error) {
         console.log(error)

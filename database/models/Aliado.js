@@ -77,13 +77,13 @@ module.exports = (sequelize, dataTypes) => {
     const Aliado = sequelize.define(alias, cols, config);
 
     // Relación no funciona
+    // Borrar columna product_id
     /*
     Aliado.associate = function(models) {
         Aliado.hasMany(models.Producto, {
-            as: "aliado_producto",
-            foreignKey: "product_id"
+            as: "aliado_productos",
         })
-     };*/
-    
+     };
+    */
     return Aliado;
 };
