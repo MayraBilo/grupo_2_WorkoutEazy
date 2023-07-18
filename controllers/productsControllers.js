@@ -50,7 +50,8 @@ const controller = {
       schedule: req.body.schedule,
       length: req.body.length,
       difficulty: req.body.difficulty,
-      city: req.body.city
+      city: req.body.city,
+      age: req.body.age
     }, {
       where: {
         id: req.params.id
@@ -102,9 +103,9 @@ const controller = {
 
   },
 
-  postProduct: (req, res) => {
+  postProduct: async (req, res) => {
 
-      let datos = {
+      const newProduct = {
       activity_name: req.body.activity_name,
       aliado: req.body.aliado_id,
       price: req.body.price,
@@ -115,16 +116,20 @@ const controller = {
       schedule: req.body.schedule,
       length: req.body.length,
       difficulty: req.body.difficulty,
-      city: req.body.city}
-   
-        db.Producto.create(datos);
+      adress: req.body.adress,
+      city: req.body.city,
+      age: req.body.age,
+      mode: req.body.mode}
 
-    res.redirect("/product");
-    res.redirect("/productListDanzas");
-    res.redirect("/productListDeportes");
-    res.redirect("/productListFitness");
-    res.redirect("/productListYoga");
+      try {
 
+    const producto = await db.Producto.create(newProduct)
+
+    res.render("productList", {producto});
+    
+      } catch (error) {
+        console.log(error)
+      }
     /*
     let datos = req.body;
 
