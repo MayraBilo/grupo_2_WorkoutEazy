@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+
+        <main>
+            <h4>Bienvenidos a nuestro blog, donde vas a poder compartir experiencias, viajes, recetas, tips y mucho
+                más...</h4>
+            <br>
+            <div class="contenedor-logo"><img src="/images/blog copy.png" width="18%"></div>
+            <br>
+
+            <section class="container-blog">
+
+            <div class="publicaciones">
+
+            <article class="publicacion1">
+
+                <h5>Fecha</h5>
+                <h2>Título</h2>
+                <h2>Autor</h2>
+                <br>
+                
+                <div class="container-img">
+                    <div class="img"></div>
+                    <div class="img"></div>
+                    <div class="img"></div>
+                </div>
+
+                <div class="texto-publicacion">
+                <p>esta es una publicación</p>
+                </div>
+
+            </article>
+
+            <br>
+            <article class="publicacion2">
+                <p>esta es una publicación</p>
+            </article>
+            </div>
+
+            <div class="archivo-blog">
+                <h4>Blog Archive</h4>
+                <br>
+                <div class="fechas">
+                <p><i class="fa-solid fa-caret-right fa-xl" style="color: #0d0d0d;"></i>  2022</p>
+                <p><i class="fa-solid fa-caret-right fa-xl" style="color: #0d0d0d;"></i>  2023</p>
+                <p><i class="fa-solid fa-caret-right fa-xl" style="color: #0d0d0d;"></i>  2024</p>
+                </div>
+                <br>
+                <button class="publicar">Crear una nueva publicación</button>
+            </div>
+
+
+        </section>
+        </main>
+
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+</body>
+
+</html>

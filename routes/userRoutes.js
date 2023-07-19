@@ -62,4 +62,5 @@ router.get('/perfilAliado', aliadosControllers.getAliadoProfile);
 router.get("/logout", authMiddleware, userControllers.logout);
 router.get("/logoutAliado", authMiddlewareAliado, aliadosControllers.logoutAliado);
 
+
 module.exports = router;

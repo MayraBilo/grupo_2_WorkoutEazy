@@ -94,6 +94,7 @@ body {
     position: relative;
     left: 15px;
     z-index: 99;
+    text-decoration: none;
 }
 
 .reserva:hover {
@@ -107,6 +108,10 @@ body {
     transform: scale(1.01);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border: none;
+}
+
+.boton a {
+    text-decoration: none;
 }
 
 
@@ -124,10 +129,63 @@ body {
     height: 50px;
     transition: all 0.3s ease-in-out;
     box-sizing: border-box;
+    text-decoration: none;
 }
 .editar{
     background-color: #0084bd;
+    text-decoration: none;
 }
+
+
+/* Reviews */
+
+.reviews {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px grey solid;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.comentario {
+    width: 75%;
+}
+
+textarea {
+    border: 2px #006e7f solid;
+    padding: 2px;
+}
+textarea:focus{
+    border-color: #00a170;
+}
+
+.titulo-reviews {
+    font-family: "Bebas Neue";
+}
+
+.boton-reviews {
+    width: 150px;
+    height: 40px;
+    border: #006e52 solid 1px;
+    border-radius: 5px;
+    background-color:#006e52 ;
+    color: white;
+    font-size: 24px;
+    font-family: "Bebas Neue";
+}
+
+.boton-reviews:hover {
+    background-color: rgba(0, 161, 112);
+    transform: scale(1.01);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
 /* Busquedas relacionadas */
 
 .busquedasRelacionadasH6 {
