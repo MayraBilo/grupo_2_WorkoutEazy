@@ -186,6 +186,35 @@ textarea:focus{
     border: none;
 }
 
+
+.comentario-cliente1 {
+    background-color: rgba(0, 161, 112, 30%);
+    border: rgba(0, 161, 112, 30%) 2px;
+    border-top-right-radius: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 75%;
+}
+
+.comentario-cliente2 {
+    background-color: rgba(92, 93, 91, 30%);
+    border: rgba(92, 93, 91, 30%) 2px;
+    border-bottom-left-radius: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 75%;
+}
+
 /* Busquedas relacionadas */
 
 .busquedasRelacionadasH6 {
