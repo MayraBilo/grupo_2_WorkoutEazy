@@ -52,6 +52,12 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING,
       allowNull: false,
     },
+    condiciones: {
+      type: dataTypes.STRING,
+    },
+    privacidad: {
+      type: dataTypes.STRING,
+    }
   };
 
   const config = {

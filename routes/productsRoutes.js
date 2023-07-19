@@ -14,7 +14,7 @@ const authMiddleware = require("../middlewares/authMiddleware.js");
 router.get("/", productController.getList);
 
 // @POST /product
-router.post("/", uploadFile.single("img"), productController.postProduct);
+router.post("/", uploadFile.single("image"), productController.postProduct);
 
 // @GET /product/create
 router.get("/createProduct", productController.getCreate);

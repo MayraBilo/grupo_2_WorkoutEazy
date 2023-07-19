@@ -121,14 +121,15 @@ const controller = {
       length: req.body.length,
       difficulty: req.body.difficulty,
       adress: req.body.adress,
-      city: req.body.city,
       image: req.body.image,
+      city: req.body.city,
       age: req.body.age,
       mode: req.body.mode}
 
       newProduct.image = req.file ? req.file.filename : "sin foto";
 
       try {
+      
 
     const productos = await db.Producto.create(newProduct)
 

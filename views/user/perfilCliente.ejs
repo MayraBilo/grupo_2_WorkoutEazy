@@ -16,11 +16,11 @@
         <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px">
         <br>
         <div class="datos">
-        <h4 class="nombre-cliente"><%= locals.userLogged.nombre %> <%= locals.userLogged.apellido %></h4>
+        <h4 class="nombre-cliente"><%= locals.userLogged.first_name %> <%= locals.userLogged.last_name %></h4>
         <br>
-        <p><%= locals.userLogged.nacimiento %></p>
+        <p><%= locals.userLogged.birth_date %></p>
         <br>
-        <h4 class="ciudad"><%= locals.userLogged.ciudad %></h4>
+        <h4 class="ciudad"><%= locals.userLogged.city %></h4>
         </div>
         <br>
         <div class="info-pago">
@@ -69,16 +69,10 @@
 
         <div class="datos-calendar">
         <p>Móvil</p>
-        <h4><%= locals.userLogged.contacto %></h4>
-        <br>
-        <p>Contacto de emergencia</p>
-        <h4><%= locals.userLogged.contacto %></h4>
+        <h4><%= locals.userLogged.contact_number %></h4>
         <br>
         <p>Email</p>
         <h4><%= locals.userLogged.email %></h4>
-        <br>
-        <p>Dirección</p>
-        <h4><%= locals.userLogged.direccion %></h4>
         <br>
         </div>
 

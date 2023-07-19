@@ -3,6 +3,9 @@ const fs = require("fs");
 const cliente = require("../models/cliente");
 const bcrypt = require("bcryptjs");
 
+const db = require("../database/models");
+const uuid = require("uuid");
+
 //Cliente 
 
 const controller = {
@@ -15,8 +18,13 @@ const controller = {
 
    //(req, res) => { res.render("login"); },
   
-  processLogin: (req, res) => {
-    let userToLogin = cliente.findByField("email", req.body.email);
+  processLogin: async (req, res) => {
+
+    try{
+
+    let userToLogin = await db.Cliente.findOne({
+      where: {email: req.body.email}
+    });
 
     if (userToLogin) {
       let isOkPass = bcrypt.compareSync(
@@ -49,15 +57,19 @@ const controller = {
         },
       },
     });
+
+  }catch(error){
+    return res.send('Hubo un error');
+  }
   },
  
 
   getRegister: (req, res) => {
-    res.cookie('testing', 'hola!', { maxAge: 1000 * 30 })
    res.render("register");
   },
 
-  processRegister: (req, res) => {
+  processRegister: async (req, res) => {
+
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
@@ -67,7 +79,36 @@ const controller = {
       });
     }
 
-    let userInDB = cliente.findByField("email", req.body.email);
+    try {
+      const userData = req.body;
+      
+      console.log(userData)
+
+      const hashedPassword = bcrypt.hashSync(userData.password, 10);
+
+      const userToCreate = {
+        ...userData,
+        password: hashedPassword
+      }
+
+      console.log(userToCreate)
+
+      const userCreated = await db.Cliente.create(userToCreate)
+     
+      return res.render("/login")
+
+    } catch(error){
+      res.send('Hubo un error')
+    }
+
+
+    /*
+    try{
+
+    let userInDB = db.Cliente.findAll({
+      where: {
+        email: req.body.email
+      }});
 
     if (userInDB) {
       return res.render("register", {
@@ -76,14 +117,20 @@ const controller = {
       });
     }
 
-    let userToCreate = {
+    let userToCreate = await {
       ...req.body,
       password: bcrypt.hashSync(req.body.password, 10),
       avatar: req.file.filename,
     };
 
-    let userCreated = cliente.create(userToCreate);
+    let userCreated = db.Cliente.create(userToCreate);
+
     return res.redirect("/login");
+
+  } catch (error){
+    res.send('Hubo un error')
+  }*/
+
   },
 
   clientProfile: (req, res) => {

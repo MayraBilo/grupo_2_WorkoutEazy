@@ -20,11 +20,11 @@
                     <button id="Usuario" class="button-r" type="button">Cliente</button>
 
                     <script>
-                    const miBoton = document.getElementById('Usuario');
+                        const miBoton = document.getElementById('Usuario');
 
-                    miBoton.addEventListener('click', function() {
-                    miBoton.classList.add('clicked');
-                    });
+                        miBoton.addEventListener('click', function () {
+                            miBoton.classList.add('clicked');
+                        });
                     </script>
 
 
@@ -46,30 +46,31 @@
                     <section class="grupo-de-registrosA1">
 
                         <div>
-                            <label>Nombre:</label>
+                            <label>Name:</label>
 
-                            <input type="text" name="nombre"
-                                class="input-selecto <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
-                                value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Ingresa tu Nombre">
+                            <input type="text" name="first_name"
+                                class="input-selecto <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.first_name : null %>"
+                                placeholder="Ingresa tu nombre">
 
-                            <% if (locals.errors && errors.nombre) { %>
+                            <% if (locals.errors && errors.first_name) { %>
                                 <div class="text-danger">
-                                    <%= errors.nombre.msg %>
+                                    <%= errors.first_name.msg %>
                                 </div>
                                 <% } %>
 
                         </div>
 
                         <div>
-                            <label>Apellidos: </label>
+                            <label>Apellido: </label>
 
-                            <input class="input-selecto <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
-                                type="text" name="apellido" value="<%= locals.oldData ? oldData.apellido : null %>"
-                                placeholder="Ingresa tus Apellidos">
+                            <input class="input-selecto <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
+                                type="text" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>"
+                                placeholder="Ingresa tu apellido">
 
-                            <% if (locals.errors && errors.apellido) { %>
+                            <% if (locals.errors && errors.last_name) { %>
                                 <div class="text-danger">
-                                    <%= errors.apellido.msg %>
+                                    <%= errors.last_name.msg %>
                                 </div>
                                 <% } %>
 
@@ -79,13 +80,13 @@
 
                     <div class="grupo-indicarSexo">
 
-                        <label for="">Hombre</label><input type="radio" name="medio" id="hombre" value="hombre">
-                        <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
-                        <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
+                        <label for="">Hombre</label><input type="radio" name="genre" id="hombre" value="hombre">
+                        <label for="">Mujer</label><input type="radio" name="genre" id="mujer" value="mujer">
+                        <label for="">Otro</label><input type="radio" name="genre" id="otro" value="otro">
 
-                        <% if (locals.errors && errors.medio) { %>
+                        <% if (locals.errors && errors.genre) { %>
                             <div class="text-danger">
-                                <%= errors.medio.msg %>
+                                <%= errors.genre.msg %>
                             </div>
                             <% } %>
 
@@ -94,13 +95,13 @@
                     <section class="grupo-de-registrosA1">
 
                         <div>
-                            <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
+                            <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de nacimiento: </label>
 
-                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="nacimiento">
+                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="birth_date">
 
-                            <% if (locals.errors && errors.nacimiento) { %>
+                            <% if (locals.errors && errors.birth_date) { %>
                                 <div class="text-danger">
-                                    <%= errors.nacimiento.msg %>
+                                    <%= errors.birth_date.msg %>
                                 </div>
                                 <% } %>
                         </div>
@@ -108,14 +109,14 @@
                         <div>
                             <label>Ciudad de Residencia: </label>
 
-                            <select class="option" name="ciudad">
+                            <select class="option" name="city">
                                 <br>
                                 <option value="">Elegí una ciudad</option>
 
-                            
+
                                 <% let ciudades=['Buenos Aires', 'Caracas' , 'Venado Tuerto' , 'Bahía Blanca' ]; %>
                                     <% for (const oneCity of ciudades) { %>
-                                        <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.ciudad)
+                                        <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.city)
                                             ? 'selected' : null %> >
                                             <%= oneCity%>
                                         </option>
@@ -123,12 +124,12 @@
                             </select>
                         </div>
 
-                        <% if (locals.errors && errors.ciudad) { %>
+                        <% if (locals.errors && errors.city) { %>
                             <div class="text-danger">
-                                <%= errors.ciudad.msg %>
+                                <%= errors.city.msg %>
                             </div>
                             <% } %>
-    
+
 
                     </section>
 
@@ -136,12 +137,12 @@
 
                         <div>
                             <label id="celular" for="celular">N° Celular: </label>
-                            <input class="input-selecto" id="e-mail" type="text" name="contacto"
+                            <input class="input-selecto" id="e-mail" type="text" name="contact_number"
                                 placeholder="Ingresa tu # Celular">
 
-                            <% if (locals.errors && errors.contacto) { %>
+                            <% if (locals.errors && errors.contact_number) { %>
                                 <div class="text-danger">
-                                    <%= errors.contacto.msg %>
+                                    <%= errors.contact_number.msg %>
                                 </div>
                                 <% } %>
                         </div>
@@ -167,11 +168,11 @@
                         <input id="avatar" type="file" name="avatar"
                             value="<%= locals.oldData ? oldData.avatar : null %>">
 
-                        <% if (locals.errors && errors.avatar) { %>
+                        <!---<% if (locals.errors && errors.avatar) { %>
                             <div class="text-danger">
                                 <%= errors.avatar.msg %>
                             </div>
-                            <% } %>
+                            <% } %>--->
                     </section>
 
                     <section class="grupo-de-registrosA1">
@@ -201,7 +202,7 @@
                     <br>
 
                     <div class="condiciones">
-                        <input type="checkbox" name="condiciones" value="terminos y condiciones">Acepto los
+                        <input type="checkbox" name="condiciones" value="true">Acepto los
                         términos
                         y condiciones de uso del sitio web.
                         <% if (locals.errors && errors.condiciones) { %>
@@ -210,10 +211,10 @@
                             </div>
                             <% } %>
                                 <br>
-                                <input type="checkbox" name="privacidad" value="Políticas de privacidad">Acepto el
+                                <input type="checkbox" name="privacidad" value="true">Acepto el
                                 tratamiento de datos personales según la política de privacidad con el fin de ser
                                 contactado por
-                                WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
+                                WorkoutEasy a través de los genres suministrados y/o recibir información relacionada con
                                 productos/servicios.
                                 <% if (locals.errors && errors.privacidad) { %>
                                     <div class="text-danger">
