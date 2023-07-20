@@ -6,101 +6,89 @@ const bcrypt = require("bcryptjs");
 const db = require("../database/models");
 const uuid = require("uuid");
 
-//Cliente 
+//Cliente
 
 const controller = {
-
   getLogin: (req, res) => {
-    const error = req.query.error || '';
+    const error = req.query.error || "";
 
-    res.render('login', {error});
-},
+    res.render("login", { error });
+  },
 
-   //(req, res) => { res.render("login"); },
-  
+  //(req, res) => { res.render("login"); },
+
   processLogin: async (req, res) => {
+    try {
+      let userToLogin = await db.Cliente.findOne({
+        where: { email: req.body.email },
+      });
 
-    try{
+      if (userToLogin) {
+        let isOkPass = bcrypt.compareSync(
+          req.body.password,
+          userToLogin.password
+        );
+        if (isOkPass) {
+          delete userToLogin.password;
+          req.session.userLogged = userToLogin;
 
-    let userToLogin = await db.Cliente.findOne({
-      where: {email: req.body.email}
-    });
+          if (req.body.rememberUser) {
+            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 600 });
+          }
 
-    if (userToLogin) {
-      let isOkPass = bcrypt.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-      if (isOkPass) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-
-        if (req.body.rememberUser) {
-          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 600 });
+          return res.redirect("/perfilCliente");
         }
-
-        return res.redirect("/perfilCliente");
+        return res.render("login", {
+          errors: {
+            email: {
+              msg: "Las credenciales son inválidas",
+            },
+          },
+        });
       }
+
       return res.render("login", {
         errors: {
           email: {
-            msg: "Las credenciales son inválidas",
+            msg: "No se encuentra este email",
           },
         },
       });
+    } catch (error) {
+      return res.send("Hubo un error");
     }
-
-    return res.render("login", {
-      errors: {
-        email: {
-          msg: "No se encuentra este email",
-        },
-      },
-    });
-
-  }catch(error){
-    return res.send('Hubo un error');
-  }
   },
- 
 
   getRegister: (req, res) => {
-   res.render("register");
+    res.render("register");
   },
 
   processRegister: async (req, res) => {
-
-    const resultValidation = validationResult(req);
-
-    if (resultValidation.errors.length > 0) {
-      return res.render("register", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-
     try {
+      const resultValidation = validationResult(req);
+
+      if (resultValidation.errors.length > 0) {
+        return res.render("register", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+        });
+      }
+
       const userData = req.body;
-      
-      console.log(userData)
 
       const hashedPassword = bcrypt.hashSync(userData.password, 10);
 
       const userToCreate = {
         ...userData,
-        password: hashedPassword
-      }
+        password: hashedPassword,
+      };
 
-      console.log(userToCreate)
+      await db.Cliente.create(userToCreate);
 
-      const userCreated = await db.Cliente.create(userToCreate)
-     
-      return res.render("/login")
-
-    } catch(error){
-      res.send('Hubo un error')
+      res.redirect("/login");
+    } catch (error) {
+      res.send("Ha ocurrido un error");
     }
-
 
     /*
     try{
@@ -130,7 +118,6 @@ const controller = {
   } catch (error){
     res.send('Hubo un error')
   }*/
-
   },
 
   clientProfile: (req, res) => {
@@ -139,12 +126,11 @@ const controller = {
   },
 
   logout: (req, res) => {
-    console.log('logout cliente')
-    res.clearCookie('userEmail')
+    console.log("logout cliente");
+    res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
   },
-
 };
 
 module.exports = controller;
@@ -206,4 +192,3 @@ const controller = {
 }
 
 */
-
