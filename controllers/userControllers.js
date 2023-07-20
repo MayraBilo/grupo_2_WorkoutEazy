@@ -93,9 +93,9 @@ const controller = {
 
       console.log(userToCreate)
 
-      const userCreated = await db.Cliente.create(userToCreate)
+      await db.Cliente.create(userToCreate)
      
-      return res.render("/login")
+      return res.redirect("/login")
 
     } catch(error){
       res.send('Hubo un error')

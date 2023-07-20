@@ -31,7 +31,7 @@ router.get("/:id/editProduct", productController.getEdit);
 // @PUT /product/:id/update ---> /products/5/put
 router.put(
   "/:id/editProduct",
-  uploadFile.single("img"),
+  uploadFile.single("image"),
   productController.updateProduct
 );
 
