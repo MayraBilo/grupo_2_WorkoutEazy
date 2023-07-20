@@ -85,9 +85,11 @@ const controller = {
 
       await db.Cliente.create(userToCreate);
 
+
       res.redirect("/login");
-    } catch (error) {
-      res.send("Ha ocurrido un error");
+
+    } catch(error) {
+    res.json(error)
     }
 
     /*
