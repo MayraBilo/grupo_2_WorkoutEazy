@@ -53,7 +53,7 @@ const controller = {
       difficulty: req.body.difficulty,
       adress: req.body.adress,
       city: req.body.city,
-      image: req.body.image,
+      image: req.file ? req.file.filename : "sin foto",
       age: req.body.age,
       mode: req.body.mode
     }, {
@@ -109,6 +109,8 @@ const controller = {
 
   postProduct: async (req, res) => {
 
+      try{
+
       const newProduct = {
       activity_name: req.body.activity_name,
       category: req.body.category,
@@ -121,19 +123,15 @@ const controller = {
       length: req.body.length,
       difficulty: req.body.difficulty,
       adress: req.body.adress,
-      image: req.body.image,
+      image: req.file ? req.file.filename : "sin foto",
       city: req.body.city,
       age: req.body.age,
       mode: req.body.mode}
-
-      newProduct.image = req.file ? req.file.filename : "sin foto";
-
-      try {
       
 
-    const productos = await db.Producto.create(newProduct)
+    await db.Producto.create(newProduct)
 
-    res.render("productList", {productos});
+    res.redirect("/product");
     
       } catch (error) {
         console.log(error)
