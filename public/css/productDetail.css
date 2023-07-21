@@ -82,6 +82,8 @@ body {
     margin-right: 10px;
 }
 
+
+
 .boton {
     display: flex;
     flex-direction: column;
@@ -217,75 +219,76 @@ textarea:focus{
 
 /* Busquedas relacionadas */
 
-.busquedasRelacionadasH6 {
-    display: flex;
-    color: #0084bd;
-    justify-content: center;
-    margin: 10px 20px;
-    font-size: 20px;
+.busquedash6 {
+    text-align: center;
+    font-family: "Bebas Neue";
+    font-weight: 800;
+    font-size: 30px;
 }
-.container-busquedas {
-    display: flex;
+
+.busquedas-relacionadas {
+    display:flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
-.busquedasRelacionadas {
+.clasesAliado {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.clasesTitulo h3 {
+    text-align: center;
+    
+}
+
+.clases {
+    
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    font-family: "Roboto";
-    margin-bottom: 15px;
+    justify-content: space-around;
+    align-items: center;
 }
 
-/* .busquedasRelacionadas i {
-    position: relative;
-    top: 70px;
-    right: -5px;
-    display: none;
-} */
-
-.clase-relacionada {
-
+.contenedor-de-clases {
+    border: 1px solid #006ebd;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     margin-left: 8px;
     padding: 5px;
-    max-width: 95px;
-    max-height: 180px;
-    background-color: rgba(0, 161, 112, 30%);
     border-radius: 0 8px 0 0px;
     font-size: 12px;
     transition: 450ms;
     overflow: hidden;
+    width: 300px;
+    height: 350px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
-.clase-relacionada h5 {
-    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
-    color: #0084bd;
-    font-size: 15px;
-    margin: 0;
+.boton-crearClase {
+    width: 100%;
+    border: 1px #006ebd;
+    border-radius: 14px;
+    background-color: #006ebd9c;
+    color: white;
+    padding: 5px;
+    margin: auto;  
+    transition: 0.5s;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
-.clase-relacionada p {
-    text-align: center;
-}
-
-.clase-relacionada:hover {
+button:hover {
+    background-color: #0084bd;
+    color: white;
     transform: scale(1.1);
-}
-
-.img-relacionada {
-    display: flex;
-    flex-direction: column;
-    max-width: 80%;
-    max-height: 35%;
-    align-items: center;
-    border-radius: 0 8px 0 0px;
-    margin: 2px;
 }
 
 /* Texto actividad */
@@ -304,7 +307,8 @@ textarea:focus{
 
 #nombreActividad {
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
-    font-size: 24px;
+    font-size: 30px;
+    margin-top: 20px;
 }
 
 .h3 {
@@ -320,10 +324,20 @@ textarea:focus{
 }
 
 .descripcion-actividad {
-    border-top: 3px grey solid;
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 20px;
 }
+
+.titulo-descripcion {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.info-container {
+    border-bottom: 3px grey solid;
+}
+
 .descripcion-actividad p {
     display: inline-block;
 }

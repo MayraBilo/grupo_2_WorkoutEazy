@@ -20,7 +20,9 @@
                 </section>
 
                 <section class="titulo-h1">
-                    <h1><%= producto.category %></h1>
+                    <h1>
+                        <%= producto.category %>
+                    </h1>
                 </section>
             </div>
 
@@ -31,17 +33,27 @@
                     <img src="/images/productos/<%= producto.image %>" alt="imagenYoga" class="img-producto">
 
                     <div class="boton"><button class="reserva">Reservá tu lugar</button></div>
-                    <div class="boton"><a href="/product/<%=producto.id%>/editProduct"><button class="editar">Editar producto</button></a></div>
-                
+                    <div class="boton"><a href="/product/<%=producto.id%>/editProduct"><button class="editar">Editar
+                                producto</button></a></div>
+
                 </div>
 
                 <section class="texto-producto-container">
 
-                    <h3 class="texto-actividad" id="nombreActividad"><%= producto.activity_name %></h3>
-                    
-                    <p class="texto-actividad" name="profe"> <%= producto.aliado_id %></p>
+                    <div class="info-container">
 
-                    <p class="texto-actividad">Dificultad: <%= producto.difficulty %> </p>
+                    <h3 class="texto-actividad" id="nombreActividad">
+                        <%= producto.activity_name %>
+                    </h3>
+
+                    <p class="texto-actividad" name="profe">
+                        <%= producto.aliado_id %>
+                    </p>
+
+                    <br>
+
+                    <p class="texto-actividad">Dificultad: <%= producto.difficulty %>
+                    </p>
 
                     <div class="texto-actividad">
                         <i class="fa-solid fa-star"></i>
@@ -51,48 +63,68 @@
                         <i class="fa-regular fa-star"></i>
                     </div>
 
+                    <br>
+
                     <div class="seccion-texto">
 
-                        <p class="texto-actividad">Disponibilidad</p>
+                        <p class="titulo-descripcion">Disponibilidad</p>
                         <h3>12</h3>
 
                     </div>
 
                     <div class="seccion-texto">
 
-                        <p class="texto-actividad">Valor</p>
-                        <h3><%= producto.price %></h3>
+                        <p class="titulo-descripcion">Valor</p>
+                        <h3>
+                            <%= producto.price %>
+                        </h3>
+
+                    </div>
 
                     </div>
 
                     <div class="descripcion-actividad">
                         <div>
                             <p class="titulo-descripcion">Descripción:</p>
-                            <p><%= producto.product_description %></p>
+                            <p>
+                                <%= producto.product_description %>
+                            </p>
                         </div>
                         <div>
                             <p class="titulo-descripcion">Horarios: </p>
-                            <p><%= producto.schedule %></p>
+                            <p>
+                                <%= producto.schedule %>
+                            </p>
                         </div>
                         <div>
                             <p class="titulo-descripcion">Edades: </p>
-                            <p><%= producto.age %></p>
+                            <p>
+                                <%= producto.age %>
+                            </p>
                         </div>
                         <div>
                             <p class="titulo-descripcion">Duración: </p>
-                            <p><%= producto.length %></p>
+                            <p>
+                                <%= producto.length %>
+                            </p>
                         </div>
                         <div>
                             <p class="titulo-descripcion">Modalidad: </p>
-                            <p><%= producto.mode %></p>
+                            <p>
+                                <%= producto.mode %>
+                            </p>
                         </div>
                         <div>
                             <p class="titulo-descripcion">Direccion: </p>
-                            <p><%= producto.city %></p>
+                            <p>
+                                <%= producto.city %>
+                            </p>
                         </div>
                         <div>
                             <p class="titulo-descripcion">Ciudad: </p>
-                            <p><%= producto.city %></p>
+                            <p>
+                                <%= producto.city %>
+                            </p>
                         </div>
                     </div>
 
@@ -101,62 +133,54 @@
             </section>
 
             <section class="reviews">
-            <h4 class="titulo-reviews"> Reviews y comentarios!</h4>
-            <h5 class="titulo-reviews">Dejanos tu opinión y observaciones sobre la actividad</h5>
-            <br>
+                <h4 class="titulo-reviews"> Reviews y comentarios!</h4>
+                <h5 class="titulo-reviews">Dejanos tu opinión y observaciones sobre la actividad</h5>
+                <br>
                 <textarea rows="4" cols="50" class="comentario">
 
                 </textarea>
-            <br>
-            <div><button class="boton-reviews">Enviar</button></div>
-            <br>
+                <br>
+                <div><button class="boton-reviews">Enviar</button></div>
+                <br>
             </section>
             <section class="reviews">
                 <h4 class="titulo-reviews"> Comentarios de nuestros clientes</h4>
                 <h5 class="titulo-reviews">Conozcamos a nuestra comunidad...</h5>
                 <br>
-                    <div class="comentario-cliente1">
-                        <p>este es un comentario.</p>
-                    </div>
-                    <br>
-                    <div class="comentario-cliente2">
-                        <p>este es un comentario.</p>
-                    </div>
+                <div class="comentario-cliente1">
+                    <p>este es un comentario.</p>
+                </div>
                 <br>
-                </section>
+                <div class="comentario-cliente2">
+                    <p>este es un comentario.</p>
+                </div>
+                <br>
+            </section>
 
-            <section class="busquedasRelacionadas">
+            <h6 class="busquedash6">Búsquedas relacionadas</h6>
 
-                <h6 class="busquedasRelacionadasH6">Búsquedas relacionadas</h6>
+            <section class="busquedas-relacionadas">
 
-                <div class="container-busquedas">
+                <div class="clases">
+                    <div class="contenedor-de-clases">
+                        <a href="/product/createProduct"><button id="crearClase" class="boton-crearClase"
+                                type="button">Crear Clase</button></a>
+                    </div>
+                </div>
 
-                    <article class="clase-relacionada">
+                <div class="clases">
+                    <div class="contenedor-de-clases">
+                        <a href="/product/createProduct"><button id="crearClase" class="boton-crearClase"
+                                type="button">Crear Clase</button></a>
+                    </div>
+                </div>
 
-                        <img src="/images/productos/functional.JPG" alt="functional" class="img-relacionada">
-                        <h5>Functional</h5>
-                        <p>
-                            Mantenete entrenado con nuestras clases
-                        </p>
-
-                    </article>
-
-                    <article class="clase-relacionada">
-                        <img src="/images/productos/yoga1.JPG" alt="yoga1" class="img-relacionada">
-                        <h5>Yoga al aire libre</h5>
-                        <p>
-                            Disfrutá de todos los beneficios del yoga.
-                        </p>
-                    </article>
-
-                    <article class="clase-relacionada">
-                        <img src="/images/productos/gimnasio.JPG" alt="gimnasio" class="img-relacionada">
-                        <h5>Gimnasio Indoor</h5>
-                        <p>
-                            Entrenamiento adaptado a todos los niveles.
-                        </p>
-                    </article>
-
+                <div class="clases">
+                    <div class="contenedor-de-clases">
+                        <a href="/product/createProduct"><button id="crearClase" class="boton-crearClase"
+                                type="button">Crear Clase</button></a>
+                    </div>
+                </div>
                 </div>
 
             </section>
@@ -174,7 +198,7 @@
                     <p>hacé click aquí para obtener el cupón de descuento</p>
 
                     <div class="animacion-regalo"><i class="fa-solid fa-gift fa-2xl" style="color: #199eb3;"></i></div>
-                
+
                 </div>
 
                 <img src="/images/diseno/editworkouteasy2-b.png" class="imagenbanner">

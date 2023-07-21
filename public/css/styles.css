@@ -211,33 +211,6 @@ header input:focus {
     margin-bottom: 10px;
 }
 
-
-/*.slider-home {
-    background-color: rgba(0, 161, 112, 30%);
-    height: 600px;
-    border: rgba(0, 161, 112, 30%) 2px;
-    border-bottom-left-radius: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider-fotos {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 25px;
-}
-
-.slider-fotos img {
-    width: 300px;
-    border-top-right-radius: 40px;
-}*/
-
 .tarjeta {
     text-decoration: underline;
 }
@@ -260,9 +233,6 @@ header input:focus {
     color: #006e7f;
 }
 
-/*.imagen-slider2 {
-    display: none;
-}*/
 
 /* Banner 1 */
 
@@ -421,6 +391,10 @@ header input:focus {
     align-self: flex-start;
 }
 
+.instructores img:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
 .info-instructor {
     display: flex;
     flex-wrap: wrap;
@@ -447,6 +421,7 @@ header input:focus {
 
 .texto-instructor {
     align-self: flex-start;
+    margin-top: 10px;
 }
 
 .texto-instructor h4 h3 {
