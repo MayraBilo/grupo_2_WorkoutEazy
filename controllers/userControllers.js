@@ -74,7 +74,19 @@ const controller = {
         });
       }
 
-      const userData = req.body;
+      const userData = {
+      avatar: req.file ? req.file.filename : "sin foto",
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      genre: req.body.genre,
+      birth_date: req.body.birth_date,
+      city: req.body.city,
+      contact_number: req.body.contact_number,
+      email: req.body.email,
+      password: req.body.password,
+      condiciones: req.body.condiciones,
+      privacidad: req.body.privacidad
+      }
 
       const hashedPassword = bcrypt.hashSync(userData.password, 10);
 
