@@ -815,6 +815,7 @@ footer h2 {
         align-items: flex-start;
         gap: 10px;
         padding-left: 50px;
+        margin-top: 20px;
     }
 
     .footer-columna1 {
