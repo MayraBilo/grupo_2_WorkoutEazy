@@ -135,7 +135,6 @@ const controller = {
   },
 
   clientProfile: (req, res) => {
-    /*console.log(req.cookies.userEmail);*/
     return res.render("perfilCliente", { cliente: req.session.userLogged });
   },
 
