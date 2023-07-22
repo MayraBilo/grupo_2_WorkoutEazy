@@ -1,6 +1,5 @@
 const { validationResult } = require("express-validator");
 const fs = require("fs");
-const cliente = require("../models/cliente");
 const bcrypt = require("bcryptjs");
 
 const db = require("../database/models");
@@ -75,18 +74,18 @@ const controller = {
       }
 
       const userData = {
-      avatar: req.file ? req.file.filename : "sin foto",
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      genre: req.body.genre,
-      birth_date: req.body.birth_date,
-      city: req.body.city,
-      contact_number: req.body.contact_number,
-      email: req.body.email,
-      password: req.body.password,
-      condiciones: req.body.condiciones,
-      privacidad: req.body.privacidad
-      }
+        avatar: req.file ? req.file.filename : "sin foto",
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        genre: req.body.genre,
+        birth_date: req.body.birth_date,
+        city: req.body.city,
+        contact_number: req.body.contact_number,
+        email: req.body.email,
+        password: req.body.password,
+        condiciones: req.body.condiciones,
+        privacidad: req.body.privacidad,
+      };
 
       const hashedPassword = bcrypt.hashSync(userData.password, 10);
 
@@ -97,11 +96,9 @@ const controller = {
 
       await db.Cliente.create(userToCreate);
 
-
       res.redirect("/login");
-
-    } catch(error) {
-    res.json(error)
+    } catch (error) {
+      res.json(error);
     }
 
     /*
@@ -132,6 +129,39 @@ const controller = {
   } catch (error){
     res.send('Hubo un error')
   }*/
+  },
+  getUpdateCliente: (req, res) => {
+    db.Cliente.findByPk(req.params.id).then(function (cliente) {
+      res.render("editPerfilCliente", { cliente: cliente });
+    });
+  },
+
+  updateProfile: async (req, res) => {
+    const newData = {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      birth_date: req.body.birth_date,
+      city: req.body.city,
+      avatar: req.file ? req.file.filename : "sin foto",
+      contact_number: req.body.contact_number,
+      email: req.body.email,
+    };
+    console.log(newData);
+    try {
+      await db.Cliente.update(newData, { where: { id: req.params.id } });
+      res.redirect("/perfilCliente");
+    } catch (error) {
+      res.send("Hubo un error");
+    }
+  },
+
+  deleteProfile: (req, res) => {
+    db.Cliente.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.redirect("/login");
   },
 
   clientProfile: (req, res) => {

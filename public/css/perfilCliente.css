@@ -18,7 +18,7 @@ body {
 /*----MAIN----*/
 
 main {
-    background-color: whitesmoke;
+    background-color: #e8e8e8;
     border-top: solid 2px #00a170;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
@@ -34,6 +34,7 @@ main {
 }
 
 .soy-cliente {
+    font-family: 'bebas neue';
     text-align: center;
     background-color: #00a170;
     border: 1px #00a170 solid;
@@ -53,11 +54,9 @@ main {
 
 .profile {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-}
-
-.profile {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-family: 'bebas neue';
     background-color: #e8e8e8;
     border: 1px #e8e8e8 solid;
     border-top-right-radius: 40px;
@@ -65,46 +64,44 @@ main {
     padding-top: 10px;
     padding-left: 20px;
     margin-top: 30px;
-    padding-bottom: 30px;
+  
 }
-
+.profile form{
+    display: flex;
+}
+.profile p {
+    margin: auto;
+}
 .profile img {
     border-top-right-radius: 40px;
     margin-bottom: 10px;
 }
 
+
+.profile p img {
+    margin-top: 4px;
+}
 .ciudad {
-    color: #00a170;
-    font-weight: 700; 
+    font-family: 'bebas neue';
+    color: #212529;
 }
 
 .nombre-cliente {
-    background-color: #00a170;
-    border: 1px #00a170 solid;
-    border-radius: 14px;
-    color: white;
-    padding: 10px;
+    font-family: 'bebas neue';
+    color: #212529;
     max-width: 200px;
 }
 
 .info-pago {
     background-color: rgba(92, 93, 92, 40%);
     border: 1px rgba(92, 93, 92, 40%);
-    border-radius: 14px;
+    border-top-right-radius: 40px;
     padding: 12px;
-    margin-top: 10px;
+    font-family: 'bebas neue';
 }
 
 .info-pago h4{
     font-weight: 700;
-}
-
-.profile p {
-    margin: auto;
-}
-
-.profile p img {
-    margin-top: 4px;
 }
 
 .desplegable {
@@ -117,17 +114,25 @@ main {
     text-align: left;
 }
 
-.datos .nombre-cliente {
-    text-align: center;
+.datos p{
+   color: #212529;
 }
 
+.botones {
+    display: flex;
+    justify-content: space-around;
+}
+.botones h4{
+    font-size: 16px;
+}
 .editar {
+    font-family: 'bebas neue';
     border: 1px rgba(0, 161, 112, 40%);
     border-radius: 14px;
     background-color: rgba(0, 161, 112, 40%);
-    width: 25%;
+    width: 15%;
     padding: 5px;
-    margin-top: 20px;
+    margin-top: 5px;
     align-self: center;
     transition: all 0.3s ease-in-out;
 }
@@ -142,17 +147,29 @@ main {
 }
 
 .editar:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+#eliminar {
+    background-color: rgba(252, 10, 10, 0.795);
 }
 
 section.login {
     display: none;
 }
+.avatar{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.avatar img {
+    flex-grow: 1;
+}
 
 /* Banner 1 */
 
 .aliados {
+    font-family: 'bebas neue';
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -182,11 +199,11 @@ section.login {
 .calendario {
     background-color: rgba(0, 161, 112, 30%);
     border: 1px rgba(0, 161, 112, 30%);
-    border-bottom-left-radius: 40px;
+    border-top-right-radius: 40px;
     padding-left: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    padding-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .calendario h2 {
@@ -194,6 +211,7 @@ section.login {
 }
 
 .desplegable-calendar {
+    font-family: 'bebas neue';
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -205,9 +223,10 @@ section.login {
 }
 
 .datos-calendar {
+    font-family: 'bebas neue';
+    color: #212529;
     margin-top: 20px;
 }
-
 /* Clases sugeridas */
 
 .clases-sugeridas {
@@ -341,18 +360,25 @@ footer h2 {
     .datos {
         align-self: center;
     }
+    .datos h3{
+        font-size: 16px;
+        font-family: 'bebas neue';
+        text-align: center;
+        background-color: #00a170;
+        border: 1px #00a170 solid;
+        border-radius: 14px;
+        color: white;
+
+    }
+    .datos p, h4{
+        font-size: 24px;
+        font-family: 'bebas neue';
+        text-align: center;
+    }
 
     .datos-calendar {
         align-self: center;
         width: 25%;
-    }
-
-    .datos h4 {
-        text-align: center;
-    }
-
-    .datos p {
-        text-align: center;
     }
 
     .datos-calendar h4 {
