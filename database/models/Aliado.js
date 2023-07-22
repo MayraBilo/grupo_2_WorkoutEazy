@@ -73,6 +73,9 @@ module.exports = (sequelize, dataTypes) => {
         privacidad: {
             type: dataTypes.STRING,
         },
+        rol: {
+            type: dataTypes.STRING,
+        },
     };
 
     const config = {

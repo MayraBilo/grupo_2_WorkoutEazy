@@ -20,9 +20,19 @@
             <section class="login">
                 <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="60px" style="border-radius: 100%">
                 <p class="bienvenida">¡ Hola <%= locals.userLogged.first_name %> <%= locals.userLogged.last_name %> ! </p>
-                <a href="/perfilCliente"><button class="registro">
+
+                <% if (locals.userLogged.rol == 'admin') { %>
+                    <a href="/perfilAliado"><button class="registro">
                         <p>Perfil</p>
                     </button></a>
+                    <% } else { %>
+
+                    <a href="/perfilCliente"><button class="registro">
+                        <p>Perfil</p>
+                    </button></a>
+
+                    <% } %>
+    
                 <a href="/logout"><button class="ingreso">
                         <p>Log out</p>
                     </button></a>

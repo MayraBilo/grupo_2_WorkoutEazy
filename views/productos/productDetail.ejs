@@ -33,9 +33,12 @@
                     <img src="/images/productos/<%= producto.image %>" alt="imagenYoga" class="img-producto">
 
                     <div class="boton"><button class="reserva">Reservá tu lugar</button></div>
-                    <div class="boton"><a href="/product/<%=producto.id%>/editProduct"><button class="editar">Editar
-                                producto</button></a></div>
 
+                    <% if (locals.userLogged.rol == 'admin') { %>
+                        <div class="boton"><a href="/product/<%=producto.id%>/editProduct"><button class="editar">Editar
+                            producto</button></a></div>
+                        <% } %>
+                    
                 </div>
 
                 <section class="texto-producto-container">
