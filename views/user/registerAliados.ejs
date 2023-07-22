@@ -53,7 +53,7 @@
 
             <label id="perfilUsuario" for="perfilUsuario">Perfil de Usuario:</label>
             <br />
-            <select id="perfilUsuario" name="perfilUsuario">
+            <select id="perfilUsuario" name="aliado_profile">
               <br />
               <option value="Empresa Deportiva">Empresa Deportiva</option>
               <option value="Profesional Físico">Profesional Físico</option>
@@ -67,12 +67,12 @@
 
             <br />
 
-            <input type="text" name="nombreEmpresa" placeholder="Empresa"
-              class="<%= locals.errors && errors.nombreEmpresa ? 'is-invalid' : null %>"
-              value="<%= locals.oldData ? oldData.nombreEmpresa : null %>">
-            <% if (locals.errors && errors.nombreEmpresa) { %>
+            <input type="text" name="entity_name" placeholder="Empresa"
+              class="<%= locals.errors && errors.entity_name ? 'is-invalid' : null %>"
+              value="<%= locals.oldData ? oldData.entity_name : null %>">
+            <% if (locals.errors && errors.entity_name) { %>
               <div class="text-danger">
-                <%= errors.nombreEmpresa.msg %>
+                <%= errors.entity_name.msg %>
               </div>
               <% } %>
 
@@ -84,14 +84,14 @@
               <label>Nombre de profesional deportivo:</label>
               <br />
 
-              <input type="text" name="nombre"
-                class="<%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Ingresa tu Nombre">
+              <input type="text" name="first_name"
+                class="<%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.first_name : null %>" placeholder="Ingresa tu Nombre">
 
-              <% if (locals.errors && errors.nombre) { %>
+              <% if (locals.errors && errors.first_name) { %>
 
                 <div class="text-danger">
-                  <%= errors.nombre.msg %>
+                  <%= errors.first_name.msg %>
                 </div>
                 <% } %>
 
@@ -104,13 +104,13 @@
               </label>
 
               <br />
-              <input type="text" name="apellido"
-                class="<%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.apellido : null %>" placeholder="Ingresa tus Apellidos">
+              <input type="text" name="last_name"
+                class="<%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.last_name : null %>" placeholder="Ingresa tus Apellidos">
 
-              <% if (locals.errors && errors.apellido) { %>
+              <% if (locals.errors && errors.last_name) { %>
                 <div class="text-danger">
-                  <%= errors.apellido.msg %>
+                  <%= errors.last_name.msg %>
                 </div>
                 <% } %>
 
@@ -119,25 +119,25 @@
 
           <div class="grupo-de-registrosUsuarios">
             <label>Profesión o Servicio:</label>
-            <input type="text" name="profesion" placeholder="profesión o servicio"
-              value="<%= locals.oldData ? oldData.profesion : null %>">
+            <input type="text" name="services" placeholder="profesión o servicio"
+              value="<%= locals.oldData ? oldData.services : null %>">
 
-            <% if (locals.errors && errors.profesion) { %>
+            <% if (locals.errors && errors.services) { %>
               <div class="text-danger">
-                <%= errors.profesion.msg %>
+                <%= errors.services.msg %>
               </div>
               <% } %>
 
           </div>
 
           <div class="grupo-indicarSexo">
-            <label for="sexo">Hombre</label><input type="radio" name="medio">
-            <label for="sexo">Mujer</label><input type="radio" name="medio">
-            <label for="sexo">Otro</label><input type="radio" name="medio">
+            <label for="sexo">Hombre</label><input type="radio" name="genre">
+            <label for="sexo">Mujer</label><input type="radio" name="genre">
+            <label for="sexo">Otro</label><input type="radio" name="genre">
 
-            <% if (locals.errors && errors.medio) { %>
+            <% if (locals.errors && errors.genre) { %>
               <div class="text-danger">
-                <%= errors.medio.msg %>
+                <%= errors.genre.msg %>
               </div>
               <% } %>
           </div>
@@ -147,7 +147,7 @@
             <div>
               <label>Tipo:</label>
               <br />
-              <select name="tipoIdentificacion">
+              <select name="document">
 
                 <br />
                 <option value="DNI">DNI</option>
@@ -159,12 +159,12 @@
 
               <label>Número de Identificación:</label>
               <br />
-              <input type="text" name="identificacion" placeholder="Ingresa tu Identificación"
-                value="<%= locals.oldData ? oldData.identificacion : null %>">
+              <input type="text" name="document_number" placeholder="Ingresa tu Identificación"
+                value="<%= locals.oldData ? oldData.document_number : null %>">
 
-              <% if (locals.errors && errors.identificacion) { %>
+              <% if (locals.errors && errors.document_number) { %>
                 <div class="text-danger">
-                  <%= errors.identificacion.msg %>
+                  <%= errors.document_number.msg %>
                 </div>
                 <% } %>
 
@@ -176,11 +176,11 @@
               <label>Fecha de Nacimiento:
               </label>
               <br />
-              <input type="date" name="nacimiento">
+              <input type="date" name="birth_date">
 
-              <% if (locals.errors && errors.nacimiento) { %>
+              <% if (locals.errors && errors.birth_date) { %>
                 <div class="text-danger">
-                  <%= errors.nacimiento.msg %>
+                  <%= errors.birth_date.msg %>
                 </div>
                 <% } %>
             </div>
@@ -188,7 +188,7 @@
               <label>Ciudad ubicación de servicios:
               </label>
               <br />
-              <select name="ciudad">
+              <select name="services_city">
 
                 <br />
                 <!---<option>Buenos Aires</option>
@@ -204,7 +204,7 @@
 
                 <% let ciudades=['Buenos Aires', 'Caracas' , 'Venado Tuerto' , 'Bahía Blanca' ]; %>
                   <% for (const oneCity of ciudades) { %>
-                    <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.ciudad) ? 'selected' : null %>
+                    <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.services_city) ? 'selected' : null %>
                       >
                       <%= oneCity%>
                     </option>
@@ -217,12 +217,12 @@
           <section class="grupo-de-registrosA1">
             <div>
               <label>N° Celular: </label>
-              <input name="contacto" placeholder="Ingresa tu # Celular" type="text"
-                value="<%= locals.oldData ? oldData.contacto : null %>">
+              <input name="contact_number" placeholder="Ingresa tu # Celular" type="text"
+                value="<%= locals.oldData ? oldData.contact_number : null %>">
 
-              <% if (locals.errors && errors.contacto) { %>
+              <% if (locals.errors && errors.contact_number) { %>
                 <div class="text-danger">
-                  <%= errors.contacto.msg %>
+                  <%= errors.contact_number.msg %>
                 </div>
                 <% } %>
 
@@ -282,7 +282,7 @@
           <br />
           <div class="condiciones">
 
-            <input type="checkbox" name="condiciones">Acepto los términos y
+            <input type="checkbox" value="true" name="condiciones">Acepto los términos y
             condiciones de uso del sitio web.
 
             <% if (locals.errors && errors.condiciones) { %>
@@ -292,7 +292,7 @@
               <% } %>
 
                 <br />
-                <input type="checkbox" name="privacidad">Acepto el
+                <input type="checkbox" value="true" name="privacidad">Acepto el
                 tratamiento de datos personales según la política de
                 privacidad con el fin de ser contactado por WorkoutEasy a través de
                 los medios suministrados y/o recibir información relacionada con

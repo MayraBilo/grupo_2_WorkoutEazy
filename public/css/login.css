@@ -23,6 +23,35 @@ body {
 
 /*----MAIN----*/
 
+
+.aliado {
+    text-align: center;
+    background-color: #00a170;
+    border: 1px #00a170 solid;
+    border-radius: 14px;
+    color: white;
+    margin-top: 20px;
+    font-size: 28px;
+    font-family: "Bebas Neue";
+    background-color: #00a170;
+    padding: 10px;
+}
+
+.aliado:hover {
+    background-color: #0398d8;
+    transform: scale(1.01);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 1px #0398d8 solid;
+}
+
+.left-main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .login-main {
     background-color: whitesmoke;
     border-top: solid 2px #00a170;

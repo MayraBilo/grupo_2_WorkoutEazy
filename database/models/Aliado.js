@@ -53,7 +53,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false,
         },
-        image: {
+        avatar: {
             type: dataTypes.STRING,
         },
         product_id: {
@@ -67,11 +67,20 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false,
         },
+        condiciones: {
+            type: dataTypes.STRING,
+        },
+        privacidad: {
+            type: dataTypes.STRING,
+        },
+        rol: {
+            type: dataTypes.STRING,
+        },
     };
 
     const config = {
         tableName: "aliado",
-        timeStamps: false,
+        timestamps: false,
     };
 
     const Aliado = sequelize.define(alias, cols, config);

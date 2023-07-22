@@ -20,7 +20,7 @@
 .titulo-general {
     text-align: center;
     padding: 20px 5px;
-    background-image: url('/images/diseno/banner2 profileAliados.jpg');
+    background-image: url('/images/diseno/team.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,7 +39,6 @@
     text-align: center;
     padding: 225px 20px 5px 20px;
     position: absolute;
-    left: 22%;
     top: 0px;
     z-index: 10;
     margin: auto;
@@ -183,11 +182,13 @@
 .informacion-legal-aliado h4 {
     text-align: center;
 }
+
 .clasesAliado {
     display: flex;
     justify-content: center;
     flex-wrap: wrap ;
 }
+
 .clasesTitulo h3 {
     text-align: center;
     
@@ -200,30 +201,36 @@
     justify-content: space-around;
     align-items: center;
 }
+
 .contenedor-de-clases {
     border: 1px solid #006ebd;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     margin-left: 8px;
     padding: 5px;
     border-radius: 0 8px 0 0px;
     font-size: 12px;
     transition: 450ms;
     overflow: hidden;
+    width: 200px;
+    height: 250px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
+
 .boton-crearClase {
     width: 100%;
     border: 1px #006ebd;
     border-radius: 14px;
     background-color: #006ebd9c;
-  color: white;
+    color: white;
     padding: 5px;
-    margin-top: 80px;
-    align-self: center;    
+    margin: auto;  
     transition: 0.5s;
+    margin-bottom: 10px;
 }
 
 button:hover {
@@ -268,7 +275,6 @@ button:hover {
         text-align: center;
         padding: 215px 20px 5px 20px;
         position: absolute;
-        left: 3%;
         top: 0px;
         z-index: 10;
         margin: auto;

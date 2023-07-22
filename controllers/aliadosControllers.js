@@ -3,7 +3,9 @@ const fs = require("fs");
 const { validationResult } = require("express-validator");
 
 const bcrypt = require("bcryptjs");
-const aliado = require("../models/aliado");
+
+const db = require("../database/models");
+const uuid = require("uuid");
 
 
 const controller = {
@@ -12,35 +14,51 @@ const controller = {
         res.render('registerAliados');
     },
 
-    registerAliados: (req, res) => {
-
-    const resultValidation = validationResult(req);
-
-    if (resultValidation.errors.length > 0) {
-      return res.render("registerAliados", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-
-    let userInDB = aliado.findByField("email", req.body.email);
-
-    if (userInDB) {
-      return res.render("registerAliados", {
-        errors: { email: { msg: "Este email ya está registrado" } },
-        oldData: req.body,
-      });
-    }
-
-    let userToCreate = {
-      ...req.body,
-      password: bcrypt.hashSync(req.body.password, 10),
-      avatar: req.file.filename,
-    };
-
-    let userCreated = aliado.createOne(userToCreate);
-    return res.redirect("/loginAliado");
-
+    registerAliados: async (req, res) => {
+      try {
+        const resultValidation = validationResult(req);
+  
+        if (resultValidation.errors.length > 0) {
+          return res.render("registerAliados", {
+            errors: resultValidation.mapped(),
+            oldData: req.body,
+          });
+        }
+  
+        const userData = {
+        avatar: req.file ? req.file.filename : "sin foto",
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        genre: req.body.genre,
+        birth_date: req.body.birth_date,
+        services_city: req.body.services_city,
+        contact_number: req.body.contact_number,
+        email: req.body.email,
+        password: req.body.password,
+        condiciones: req.body.condiciones,
+        privacidad: req.body.privacidad,
+        document: req.body.document,
+        document_number: req.body.document_number,
+        entity_name: req.body.entity_name,
+        aliado_profile: req.body.aliado_profile,
+        services: req.body.services
+        }
+  
+        const hashedPassword = bcrypt.hashSync(userData.password, 10);
+  
+        const userToCreate = {
+          ...userData,
+          password: hashedPassword,
+        };
+  
+        await db.Aliado.create(userToCreate);
+  
+  
+        res.redirect("/loginAliado");
+  
+      } catch(error) {
+      res.json(error)
+      }
     },
     
     getLoginAliado: (req, res) => {
@@ -49,9 +67,13 @@ const controller = {
         res.render('loginAliado', {error});
     },
     
-    loginAliado: (req, res) => {
-        const userToLogin = aliado.findByField("email", req.body.email);
-        console.log("hola aca estoy")
+    loginAliado: async (req, res) => {
+
+      try {
+      let userToLogin = await db.Aliado.findOne({
+        where: { email: req.body.email },
+      });
+
         if (userToLogin) {
           console.log("usuario encontrado")
           let isOkPass = bcrypt.compareSync(
@@ -76,7 +98,7 @@ const controller = {
                 msg: "Las credenciales son inválidas",
               },
             },
-          });
+          })
 
         }
     
@@ -86,7 +108,10 @@ const controller = {
               msg: "No se encuentra este email",
             },
           },
-        }); 
+        })
+      }catch(error){
+        return res.json(error)
+      }
 
     },
 
