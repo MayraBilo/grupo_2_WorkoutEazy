@@ -119,6 +119,9 @@ const controller = {
       /*console.log(req.cookies.userEmail);*/
       return res.render("perfilAliado", {aliado: req.session.userLogged});
 },
+getUpdateAliado: (req, res) => {
+      return res.render("editPerfilAliado", {aliado: req.session.userLogged})
+    },
 
 logoutAliado: (req, res) => {
   console.log('logoutaliado')

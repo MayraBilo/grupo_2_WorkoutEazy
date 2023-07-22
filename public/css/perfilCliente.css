@@ -17,6 +17,24 @@ body {
 
 /*----MAIN----*/
 
+/* Aliado */
+.soy-aliado {
+    font-family: 'bebas neue';
+    text-align: center;
+    background-color: #00a170;
+    border: 1px #00a170 solid;
+    border-radius: 14px;
+    color: white;
+    width: 50%;
+    margin-top: 30px;
+    align-self: center;
+}
+
+.soy-aliado h4 {
+    margin: auto;
+    padding: 5px;
+}
+
 main {
     background-color: #e8e8e8;
     border-top: solid 2px #00a170;
@@ -50,37 +68,10 @@ main {
     padding: 5px;
 }
 
+
 /* Profile */
 
-.profile {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    font-family: 'bebas neue';
-    background-color: #e8e8e8;
-    border: 1px #e8e8e8 solid;
-    border-top-right-radius: 40px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-left: 20px;
-    margin-top: 30px;
-  
-}
-.profile form{
-    display: flex;
-}
-.profile p {
-    margin: auto;
-}
-.profile img {
-    border-top-right-radius: 40px;
-    margin-bottom: 10px;
-}
 
-
-.profile p img {
-    margin-top: 4px;
-}
 .ciudad {
     font-family: 'bebas neue';
     color: #212529;
@@ -89,7 +80,6 @@ main {
 .nombre-cliente {
     font-family: 'bebas neue';
     color: #212529;
-    max-width: 200px;
 }
 
 .info-pago {
@@ -100,7 +90,7 @@ main {
     font-family: 'bebas neue';
 }
 
-.info-pago h4{
+.info-pago h4 {
     font-weight: 700;
 }
 
@@ -114,17 +104,19 @@ main {
     text-align: left;
 }
 
-.datos p{
-   color: #212529;
+.datos p {
+    color: #212529;
 }
 
 .botones {
     display: flex;
     justify-content: space-around;
 }
-.botones h4{
+
+.botones h4 {
     font-size: 16px;
 }
+
 .editar {
     font-family: 'bebas neue';
     border: 1px rgba(0, 161, 112, 40%);
@@ -150,6 +142,7 @@ main {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
 #eliminar {
     background-color: rgba(252, 10, 10, 0.795);
 }
@@ -157,13 +150,35 @@ main {
 section.login {
     display: none;
 }
-.avatar{
+
+.profile form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    justify-content: center;
 }
+
+.profile form div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile form div h3,h4,p{
+    text-align: center;
+    align-content: center;
+}
+
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+
+.avatar div label, input{
+    text-align: center;
+}
+
 .avatar img {
-    flex-grow: 1;
+    display: none;
 }
 
 /* Banner 1 */
@@ -227,6 +242,7 @@ section.login {
     color: #212529;
     margin-top: 20px;
 }
+
 /* Clases sugeridas */
 
 .clases-sugeridas {
@@ -346,21 +362,78 @@ footer h2 {
     section.login {
         display: flex;
     }
+    
 }
 
 @media (min-width: 763px) {
+    .avatar,.datos {
+        width: 50%;
+    }
+
+    .avatar img {
+        display: inline-block;
+        flex-grow: 1;
+        width: 100%;
+    }
 
     .profile img {
         align-self: center;
     }
 
+    .profile {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        font-family: 'bebas neue';
+        background-color: #e8e8e8;
+        border: 1px #e8e8e8 solid;
+        border-top-right-radius: 40px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-left: 20px;
+        margin-top: 30px;
+
+    }
+
+    .profile form {
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .profile p {
+        margin: auto;
+    }
+
+    .profile img {
+        border-top-right-radius: 40px;
+        margin-bottom: 10px;
+    }
+
+    .profile p img {
+        margin-top: 4px;
+    }
+   
+    .datos h3 {
+        font-size: 16px;
+        font-family: 'bebas neue';
+        text-align: center;
+        background-color: #00a170;
+        border: 1px #00a170 solid;
+        border-radius: 14px;
+        color: white;
+        max-width: 200px;
+    }
 }
 
 @media (min-width: 1200px) {
     .datos {
         align-self: center;
     }
-    .datos h3{
+
+    .datos h3 {
         font-size: 16px;
         font-family: 'bebas neue';
         text-align: center;
@@ -370,7 +443,9 @@ footer h2 {
         color: white;
 
     }
-    .datos p, h4{
+
+    .datos p,
+    h4 {
         font-size: 24px;
         font-family: 'bebas neue';
         text-align: center;

@@ -1,157 +1,421 @@
-<!---<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <%- include("../partials/head") %>
-        <link rel="stylesheet" href="/css/perfilAliado.css">
+        <link rel="stylesheet" href="/css/perfilCliente.css" />
 </head>
 
 <body>
     <%- include("../partials/header") %>
-    <main class="main">
-        <div class="banner-escalada">
-            <section class="titulo-general">
-            </section>
-        </div>
-        <section class="tituloAliado">
-        <div class="soyAliado">
-            <h4>Soy Aliado</h4>
-        </div>
-        </section>
-<form action="/<%=aliados.identificacion%>/editPerfilAliado?_method=put" method="POST"  enctype="multipart/form-data">
-<section class="contenedorGlobal">
-        <section class="container1-instructor">
-            <div class="contenedorImagenEntrenador">
-                <img src="/images/instructores/<%= aliados.fotoPerfil %>" alt="imagenGim" class="img-entrenador">
+        <main>
+            <div class="soy-aliado">
+                <h4>Soy aliado</h4>
             </div>
-            <div>s
-               <h4>Perfil del Usuario: </h4> <input type="text" value="<%= aliados.perfilUsuario %>" >
-                <h4>Nombres: </h4><input type="text" value="<%= aliados.nombreProfesional%>" >
-                <h4>Apellidos: </h4><input type="text" value="<%= aliados.apellidoProfesional %>" >
-                <h4>Profesión o Servicio: </h4><input type="text" value="<%= aliados.profesionServicio %>" >
-            </div>
-        </section>
-        <section class="container2-datos">
-            <div class="datosClasAlum">
-                <h4>Clases: <h4>  
-                    <br>
-                <h4>Alumnos: <h4>
-            </div>
-            <section class="grupo-de-registrosDocumentos">
-                <label id="fotoPerfil" for="fotoPerfil">Subir Foto Perfil:</label>
-    
-                <input
-                  id="fotoPerfil"
-                  type="file"
-                  name="fotoPerfil"
-                  accept="document/*"
-                />
-              </section>
-              <section class="grupo-de-registrosDocumentos">
-                <label id="documentosLegales" for="docuementosLegales"
-                  >Subir documentos legales:</label
-                >
-    
-                <input
-                  id="documentosLegales"
-                  type="file"
-                  name="documentosLegales"
-                  multimpleaccept="document/*"
-                />
-              </section>
-              <section class="grupo-de-registrosDocumentos">
-                <label id="tituloProfesional" for="tituloProfesional"
-                  >Surbir certificados de enseñanza:</label
-                >
-    
-                <input
-                  id="tituloProfesional"
-                  type="file"
-                  name="tituloProfesional"
-                  multimpleaccept="document/*"
-                />
-              </section>
-    
-            <section class="informacion-contacto">
-                <h4>Contacto:</h4>
-                <div class="desplegable">
-                <h5>Ciudad: </h5><input type="text" value=" <%= aliados.ciudadResidencia%>" >
-                <h5>Dirección:</h5> 
-                <h5>Número Celular: </h5><input type="text" value=" <%= aliados.celular%>" >
-                <h5>E-mail: </h5><input type="text" value="<%= aliados.email%>" >
-                </div>
-            </section>
-          
-            <div class="perfilProfesional">
-                <h2>Perfil Profesional</h2>
-            </div>
-            
-           <input type="submit" value="Guardar cambios" class="editar">
-        </section>
-        <section class="informacion-legal-aliado">
-            <h4>Certificados:</h4>
-            <div class="desplegable">
-                <h5>Documentos legales</h5>
-                <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
-                </div>
-                <div class="desplegable">
-                    <h5>Certificados de enseñanza</h5>
-                    <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
-                    </div>
-        </section>
-        <section class="clasesTitulo">
-            <h3>Clases:</h3>
 
-            <div class="clasesAliado">
-            <div class="clases">
-            <div class="contenedor-de-clases">
-                <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
-            </div>
-        </div>
-            <div class="clases">
-                <div class="contenedor-de-clases">
-                    <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
-                </div>
-            </div>
-                <div class="clases">
-                    <div class="contenedor-de-clases">
-                <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
-                    </div>
-                </div>
-                    <div class="clases">
-                        <div class="contenedor-de-clases">
-                            <a href="/createProduct"><button id="crearClase" class="boton-crearClase" type="button">Crear Clase</button></a>
+            <section class="profile">
+                <form action="/<%= locals.userLogged.id %>/editPerfilCliente?_method=put" method="post">
+                    <div class="avatar">
+                        <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px" />
+                        <div>
+                            <label id="avatar" for="avatar">Cambiar foto de perfil:</label>
+                            <input id="avatar" type="file" name="avatar">
                         </div>
-        </div>  
+                    </div>
+                    <div class="datos">
+                        <h3>Nombre cliente </h3>
+                        <h4 class="nombre-cliente">
+                            <input type="text" name="first_name" value="<%= locals.userLogged.first_name %>">
+                        </h4>
+                        <h3>Apellido cliente </h3>
+                        <h4 class="nombre-cliente">
+                            <input type="text" name="last_name" value="<%= locals.userLogged.last_name%> ">
+                        </h4>
+
+                        <h3>Fecha de nacimiento </h3>
+                        <p><input type="text" name="birth_date" value="<%= locals.userLogged.birth_date%> "></p>
+
+                        <h3>Ciudad</h3>
+                        <h4 class="ciudad"><input type="text" name="city"
+                                value="<%= locals.userLogged.services_city%> "></h4>
+                        <h3>Móvil</h3>
+                        <h4><input type="text" name="contact_number" value="<%= locals.userLogged.contact_number%> ">
+                        </h4>
+
+                        <h3>Email</h3>
+                        <h4><input type="text" name="email" value="<%= locals.userLogged.email%> "></h4>
+
+                        <div class="botones">
+                            <button class="editar" type="submit" value="submit">
+                                <h4>Guardar cambios</h4>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+
+            <form action="/<%= locals.userLogged.id %>/delete?_method=delete" method="POST" id="formDelete">
+                <section class="botones">
+                    <button class="editar" id="delUser" type="submit" value="submit">
+                        Eliminar usuario
+                    </button>
+
+                </section>
+            </form>
+
+            <script>
+                const botonDel = document.getElementById('delUser');
+                const formDelete = document.getElementById('formDelete');
+
+                botonDel.addEventListener('click', function (a) {
+
+                    a.preventDefault();
+
+                    Swal.fire({
+                        title: 'Estás seguro?',
+                        text: "El cambio no se puede revertir!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, quiero borrar mi usuario!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            formDelete.submit();
+                        }
+                    })
+                })
+            </script>
+
+
+
+            <section class="calendario">
+                <div class="desplegable-calendar">
+                    <h2>Calendario</h2>
+                    <p>
+                        Desplegar
+                        <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+                    </p>
+                </div>
+
+                <br />
+
+            </section>
+            <br />
+            <div class="info-pago">
+                <h4>Información de pago</h4>
+
+                <div class="desplegable">
+                    <p>Domicilio de facturación</p>
+                    <p>
+                        Desplegar
+                        <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+                    </p>
+                </div>
+
+                <div class="desplegable">
+                    <p>Tarjetas cargadas</p>
+                    <p>
+                        Desplegar
+                        <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+                    </p>
+                </div>
             </div>
-         
-        </section>
-        <section>
-            <div class="calendario">
-            <h4>Calendario:</h4>
-            <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
-        </div>
-            <br>
-            <div class="galeriaImagenes">
-            <h4>Galeria de imágenes:</h4>
-            
-            <h5>Fotos de entrenamiento y clases con alumnos</h5>
-            <p>Desplegar <img src="/images/diseno/caret-down-solid.svg" width="15px"></p>
-        </div>
-        </section>
-        <section class="aliados">
-            <div>
-                <h4>Aliados</h4>
-                <i class="fa-solid fa-caret-right fa-lg" style="color: #000000;"></i>
-            </div>
-            <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px">
-        </section> 
-    </section>
-</form>
-    </main>
-    <%- include("../partials/footer") %>
-    <button class="consultas">
-        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
-        Consultas</button>
+
+            </section>
+            <section class="botones">
+                <form action="/perfilCliente/<%= locals.userLogged %>/_method?=DELETE" method="post">
+                    <button class="editar" id="eliminar">
+                        <h4>Eliminar usuario</h4>
+                    </button>
+                </form>
+            </section>
+            <section class="aliados">
+                <div>
+                    <h4>Aliados</h4>
+                    <i class="fa-solid fa-caret-right fa-lg" style="color: #000000"></i>
+                </div>
+                <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px" />
+            </section>
+
+
+
+            <section class="clases-sugeridas">
+                <h2>Clases sugeridas</h2>
+
+                <section class="busquedasRelacionadas">
+                    <div class="container-busquedas">
+                        <article class="clase-relacionada">
+                            <img src="/images/productos/functional.JPG" alt="functional" class="img-relacionada" />
+                            <h5>Functional</h5>
+                            <p>Mantenete entrenado con nuestras clases</p>
+                        </article>
+
+                        <article class="clase-relacionada">
+                            <img src="/images/productos/yoga1.JPG" alt="yoga1" class="img-relacionada" />
+                            <h5>Yoga al aire libre</h5>
+                            <p>Disfrutá de todos los beneficios del yoga.</p>
+                        </article>
+
+                        <article class="clase-relacionada">
+                            <img src="/images/productos/gimnasio.JPG" alt="gimnasio" class="img-relacionada" />
+                            <h5>Gimnasio Indoor</h5>
+                            <p>Entrenamiento adaptado a todos los niveles.</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
+                Consultas
+            </button>
 </body>
-</html>--->
+
+</html>
+
+
+<!-- 
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+            <section class="container-1">
+                <img src="./images/images-register-login/editworkouteasy3-a-copy.png" alt="imagen1">
+            </section>
+            <section class="container-2">
+                <h2>Regístrate como:</h2>
+
+
+                <div class="botones">
+                    <button id="Usuario" class="button-r" type="button">Cliente</button>
+
+                    <script>
+                    const miBoton = document.getElementById('Usuario');
+
+                    miBoton.addEventListener('click', function() {
+                    miBoton.classList.add('clicked');
+                    });
+                    </script>
+
+
+                    <a href="/registerAliados"><button id="Aliado" class="button-r" type="button">Aliado</button></a>
+                </div>
+
+                <!--- Formulario --->
+<!--
+                <form action="/editPerfilCliente/?_method=put" method="POST" enctype="multipart/form-data">
+
+                    <p>Ingresa con tus redes sociales</p>
+
+                    <div class="redes-sociales">
+                        <button id="facebook"><i class="fa-brands fa-facebook-f" style="color:#fff"></i></button>
+                        <button id="apple"><i class="fa-brands fa-apple"></i></button>
+                        <button id="google-logo"><i class="fa-brands fa-google"></i></button>
+                    </div>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label>Nombre:</label>
+
+                            <input type="text" name="nombre"
+                                class="input-selecto <%= locals.errors && errors.nombre ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>" placeholder="Ingresa tu Nombre">
+
+                            <% if (locals.errors && errors.nombre) { %>
+                                <div class="text-danger">
+                                    <%= errors.nombre.msg %>
+                                </div>
+                                <% } %>
+
+                        </div>
+
+                        <div>
+                            <label>Apellidos: </label>
+
+                            <input class="input-selecto <%= locals.errors && errors.apellido ? 'is-invalid' : null %>"
+                                type="text" name="apellido" value="<%= locals.oldData ? oldData.apellido : null %>"
+                                placeholder="Ingresa tus Apellidos">
+
+                            <% if (locals.errors && errors.apellido) { %>
+                                <div class="text-danger">
+                                    <%= errors.apellido.msg %>
+                                </div>
+                                <% } %>
+
+                        </div>
+
+                    </section>
+
+                    <div class="grupo-indicarSexo">
+
+                        <label for="">Hombre</label><input type="radio" name="medio" id="hombre" value="hombre">
+                        <label for="">Mujer</label><input type="radio" name="medio" id="mujer" value="mujer">
+                        <label for="">Otro</label><input type="radio" name="medio" id="otro" value="otro">
+
+                        <% if (locals.errors && errors.medio) { %>
+                            <div class="text-danger">
+                                <%= errors.medio.msg %>
+                            </div>
+                            <% } %>
+
+                    </div>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de Nacimiento: </label>
+
+                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="nacimiento">
+
+                            <% if (locals.errors && errors.nacimiento) { %>
+                                <div class="text-danger">
+                                    <%= errors.nacimiento.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+
+                        <div>
+                            <label>Ciudad de Residencia: </label>
+
+                            <select class="option" name="ciudad">
+                                <br>
+                                <option value="">Elegí una ciudad</option>
+
+                            
+                                <% let ciudades=['Buenos Aires', 'Caracas' , 'Venado Tuerto' , 'Bahía Blanca' ]; %>
+                                    <% for (const oneCity of ciudades) { %>
+                                        <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.ciudad)
+                                            ? 'selected' : null %> >
+                                            <%= oneCity%>
+                                        </option>
+                                        <% }%>
+                            </select>
+                        </div>
+
+                        <% if (locals.errors && errors.ciudad) { %>
+                            <div class="text-danger">
+                                <%= errors.ciudad.msg %>
+                            </div>
+                            <% } %>
+    
+
+                    </section>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="celular" for="celular">N° Celular: </label>
+                            <input class="input-selecto" id="e-mail" type="text" name="contacto"
+                                placeholder="Ingresa tu # Celular">
+
+                            <% if (locals.errors && errors.contacto) { %>
+                                <div class="text-danger">
+                                    <%= errors.contacto.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+
+                        <div>
+                            <label id="email" for="email">E-mail: </label>
+                            <input class="input-selecto <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>"
+                                placeholder="Ingresa tu correo electrónico">
+
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="text-danger">
+                                    <%= errors.email.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+
+                    </section>
+
+
+                    <section class="grupo-de-registrosUsuarios">
+                        <label id="avatar" for="avatar">Subir foto de perfil:</label>
+                        <input id="avatar" type="file" name="avatar"
+                            value="<%= locals.oldData ? oldData.avatar : null %>">
+
+                        <% if (locals.errors && errors.avatar) { %>
+                            <div class="text-danger">
+                                <%= errors.avatar.msg %>
+                            </div>
+                            <% } %>
+                    </section>
+
+                    <section class="grupo-de-registrosA1">
+
+                        <div>
+                            <label id="contraseña" for="contraseña">Contraseña:</label>
+                            <input class="input-selecto" id="contraseña" type="password" name="password"
+                                placeholder="Crear Contraseña">
+
+                        </div>
+                    -->
+<!---<div>
+                            <label id="confirmar contraseña" for="confirmar contraseña">Confirmar :</label>
+                            <input class="input-selecto" id="confirmar contraseña" type="password"
+                                name="password-confirm" placeholder="Confirmar Contraseña">
+                        </div>--->
+<!--
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+
+                    </section>
+
+
+                    <br>
+
+                    <div class="condiciones">
+                        <input type="checkbox" name="condiciones" value="terminos y condiciones">Acepto los
+                        términos
+                        y condiciones de uso del sitio web.
+                        <% if (locals.errors && errors.condiciones) { %>
+                            <div class="text-danger">
+                                <%= errors.condiciones.msg %>
+                            </div>
+                            <% } %>
+                                <br>
+                                <input type="checkbox" name="privacidad" value="Políticas de privacidad">Acepto el
+                                tratamiento de datos personales según la política de privacidad con el fin de ser
+                                contactado por
+                                WorkoutEasy a través de los medios suministrados y/o recibir información relacionada con
+                                productos/servicios.
+                                <% if (locals.errors && errors.privacidad) { %>
+                                    <div class="text-danger">
+                                        <%= errors.privacidad.msg %>
+                                    </div>
+                                    <% } %>
+                    </div>
+
+                    <div class="boton">
+                        <input id="enviar" type="submit" value="Registrarse">
+                    </div>
+
+                </form>
+
+            </section>
+        </main>
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+                Consultas</button>
+
+</body>
+
+</html>
+--->

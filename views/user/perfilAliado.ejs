@@ -29,11 +29,16 @@
                             class="img-entrenador">
                     </div>
                     <div>
-                        <h4><%= locals.userLogged.first_name %>
+                        <h4>
+                            <%= locals.userLogged.first_name %>
                                 <%= locals.userLogged.last_name %>
                         </h4>
-                        <h4> <%= locals.userLogged.aliado_profile %> </h4>
-                        <h4> <%= locals.userLogged.services %> </h4>
+                        <h4>
+                            <%= locals.userLogged.aliado_profile %>
+                        </h4>
+                        <h4>
+                            <%= locals.userLogged.services %>
+                        </h4>
                     </div>
                 </section>
                 <section class="container2-datos">
@@ -44,15 +49,15 @@
                     </div>
                     <section class="informacion-contacto">
                         <h4>Contacto:</h4>
-                        <div class="desplegable"> 
-                        
+                        <div class="desplegable">
+
                             <h5>Ciudad de los Servicios: <%= locals.userLogged.services_city %>
                             </h5>
                             <h5>Dirección:</h5>
                             <h5>Número Celular: <%= locals.userLogged.contact_number %>
                             </h5>
                             <h5>Número de Identificación: <%= locals.userLogged.document %>
-                                <%= locals.userLogged.document_number %>
+                                    <%= locals.userLogged.document_number %>
                             </h5>
                             <h5>E-mail: <%= locals.userLogged.email %>
                             </h5>
@@ -66,10 +71,8 @@
                         <p> Ingresa aquí tu perfil profesional </p>
                     </div>
 
-                    <a href="/<%= locals.userLogged.document %>
-                        <%= locals.userLogged.document_number %>/editPerfilAliado"><input type="button"
-                            value="Editar" class="editar"></a>
-
+                    <a href="<%= locals.userLogged.document_number %>/editPerfilAliado">
+                        <input type="button" value="Editar" class="editar"></a>
                 </section>
                 <section class="informacion-legal-aliado">
                     <h4>Certificados:</h4>
@@ -107,7 +110,7 @@
                                         type="button">Crear Clase</button></a>
                             </div>
                         </div>
-                        
+
                         <div class="clases">
                             <div class="contenedor-de-clases">
                                 <a href="/product/createProduct"><button id="crearClase" class="boton-crearClase"

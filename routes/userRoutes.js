@@ -56,6 +56,18 @@ router.post(
   aliadosControllers.registerAliados
 );
 
+// Edit Perfil de Aliado
+router.get(
+  "/:id/editPerfilAliado",
+  guestMiddlewareAliados,
+  aliadosControllers.getUpdateAliado
+);
+router.put(
+  "/:id/editPerfilAliado",
+  [guestMiddlewareAliados, uploadFileCliente.single("avatar")],
+  userControllers.updateProfile
+);
+
 // Perfil de usuario
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
