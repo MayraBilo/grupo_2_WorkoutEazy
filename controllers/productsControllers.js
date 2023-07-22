@@ -134,7 +134,7 @@ const controller = {
     res.redirect("/product");
     
       } catch (error) {
-        console.log(error)
+        res.json(error)
       }
 
   },
