@@ -5,6 +5,8 @@ const bcrypt = require("bcryptjs");
 const db = require("../database/models");
 const uuid = require("uuid");
 
+//uuid.v4()
+
 //Cliente
 
 const controller = {
@@ -89,9 +91,12 @@ const controller = {
 
       const hashedPassword = bcrypt.hashSync(userData.password, 10);
 
+      // const idUnico = uuid.v4()
+
       const userToCreate = {
         ...userData,
         password: hashedPassword,
+        //id: idUnico
       };
 
       await db.Cliente.create(userToCreate);
