@@ -1,194 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/head") %>
-    <link rel="stylesheet" href="/css/perfilCliente.css" />
-  </head>
-  <body>
-    <%- include("../partials/header") %>
-    <main>
-      <div class="soy-cliente">
-        <h4>Soy cliente</h4>
-      </div>
 
-      <section class="profile">
-          <form action="/<%= locals.userLogged.id %>/editPerfilCliente?_method=put" method="post">
-                <div class="avatar">
-                    <img
-                    src="/images/avatars/<%= locals.userLogged.avatar %>"
-                    class="logo-aliado1"
-                    width="300px"
-                    />
-                    <div>
-                    <label id="avatar" for="avatar">Cambiar foto de perfil:</label>
-                    <input id="avatar" type="file" name="avatar">
+<head>
+    <%- include("../partials/head") %>
+        <link rel="stylesheet" href="/css/perfilCliente.css" />
+</head>
+
+<body>
+    <%- include("../partials/header") %>
+        <main>
+            <div class="soy-cliente">
+                <h4>Soy cliente</h4>
+            </div>
+
+            <section class="profile">
+                <form action="/<%= locals.userLogged.id %>/editPerfilCliente?_method=put" method="post">
+                    <div class="avatar">
+                        <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px" />
+                        <div>
+                            <label id="avatar" for="avatar">Cambiar foto de perfil:</label>
+                            <input id="avatar" type="file" name="avatar">
+                        </div>
                     </div>
-                </div>
-                <div class="datos">
-                    <h3>Nombre cliente </h3>
+                    <div class="datos">
+                        <h3>Nombre cliente </h3>
                         <h4 class="nombre-cliente">
                             <input type="text" name="first_name" value="<%= locals.userLogged.first_name %>">
                         </h4>
-                    <h3>Apellido cliente </h3>
+                        <h3>Apellido cliente </h3>
                         <h4 class="nombre-cliente">
                             <input type="text" name="last_name" value="<%= locals.userLogged.last_name%> ">
                         </h4>
-            
-                    <h3>Fecha de nacimiento </h3>
-                        <p><input type="text" name="birth_date" value="<%= locals.userLogged.birth_date%> "></p>
-                
-                    <h3>Ciudad</h3>
-                        <h4 class="ciudad"><input type="text" name="city" value="<%= locals.userLogged.city%> "></h4>
-                    <h3>Móvil</h3>
-                        <h4><input type="text" name="contact_number" value="<%= locals.userLogged.contact_number%> "></h4>
-                    
-                    <h3>Email</h3>
-                        <h4><input type="text" name="email" value="<%= locals.userLogged.email%> "></h4>
-                
-                        <div class="botones">
-                                <button class="editar" type="submit" value="submit" >
-                                    <h4>Guardar cambios</h4>
-                                </button>
-                        </div>
-                </div>
-                    
-        </form>
-    </section>
 
-    <form action="/<%= locals.userLogged.id %>/delete?_method=delete" method="POST" id="formDelete">
-    <section class="botones"> 
-                <button class="editar" id="delUser" type="submit" value="submit">
-                    Eliminar usuario
-                </button>
-                
+                        <h3>Fecha de nacimiento </h3>
+                        <p><input type="text" name="birth_date" value="<%= locals.userLogged.birth_date%> "></p>
+
+                        <h3>Ciudad</h3>
+                        <h4 class="ciudad"><input type="text" name="city" value="<%= locals.userLogged.city%> "></h4>
+                        <h3>Móvil</h3>
+                        <h4><input type="text" name="contact_number" value="<%= locals.userLogged.contact_number%> ">
+                        </h4>
+
+                        <h3>Email</h3>
+                        <h4><input type="text" name="email" value="<%= locals.userLogged.email%> "></h4>
+
+                        <div class="botones">
+                            <button class="editar" type="submit" value="submit">
+                                <h4>Guardar cambios</h4>
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </section>
-            </form>
-         
+            <div class="big-div-delete-button">
+                <div class="div-delete-button">
+                    <form action="/<%= locals.userLogged.id %>/delete?_method=delete" method="POST" id="formDelete">
+                        <section class="botones">
+                            <button class="eliminar" id="delUser" type="submit" value="submit">
+                                Eliminar usuario
+                            </button>
+                        </section>
+                    </form>
+                </div>
+            </div>
             <script>
                 const botonDel = document.getElementById('delUser');
                 const formDelete = document.getElementById('formDelete');
 
-            botonDel.addEventListener('click', function(a){
+                botonDel.addEventListener('click', function (a) {
 
-            a.preventDefault();
+                    a.preventDefault();
 
-            Swal.fire({
-                title: 'Estás seguro?',
-                text: "El cambio no se puede revertir!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, quiero borrar mi usuario!'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    formDelete.submit();
-                }
-              })
-            })
+                    Swal.fire({
+                        title: 'Estás seguro?',
+                        text: "El cambio no se puede revertir!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, quiero borrar mi usuario!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            formDelete.submit();
+                        }
+                    })
+                })
             </script>
 
-        
-        
-        <section class="calendario">
-            <div class="desplegable-calendar">
-              <h2>Calendario</h2>
-              <p>
-                Desplegar
-                <img src="/images/diseno/caret-down-solid.svg" width="15px" />
-              </p>
-            </div>
-    
+
+
+            <section class="calendario">
+                <div class="desplegable-calendar">
+                    <h2>Calendario</h2>
+                    <p>
+                        Desplegar
+                        <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+                    </p>
+                </div>
+
+                <br />
+
+            </section>
             <br />
-    
-          </section>
-        <br />
-        <div class="info-pago">
-          <h4>Información de pago</h4>
+            <div class="info-pago">
+                <h4>Información de pago</h4>
 
-          <div class="desplegable">
-            <p>Domicilio de facturación</p>
-            <p>
-              Desplegar
-              <img src="/images/diseno/caret-down-solid.svg" width="15px" />
-            </p>
-          </div>
+                <div class="desplegable">
+                    <p>Domicilio de facturación</p>
+                    <p>
+                        Desplegar
+                        <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+                    </p>
+                </div>
 
-          <div class="desplegable">
-            <p>Tarjetas cargadas</p>
-            <p>
-              Desplegar
-              <img src="/images/diseno/caret-down-solid.svg" width="15px" />
-            </p>
-          </div>
-        </div>
+                <div class="desplegable">
+                    <p>Tarjetas cargadas</p>
+                    <p>
+                        Desplegar
+                        <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+                    </p>
+                </div>
+            </div>
 
-      </section>
-      <section class="botones"> 
-         <form action="/perfilCliente/<%= locals.userLogged %>/_method?=DELETE" method="post">
-            <button class="editar" id="eliminar">
-                <h4>Eliminar usuario</h4>
+            </section>
+            <!-- <section class="botones">
+                <form action="/perfilCliente/<%= locals.userLogged %>/_method?=DELETE" method="post">
+                    <button class="editar" id="eliminar">
+                        <h4>Eliminar usuario</h4>
+                    </button>
+                </form>
+            </section> -->
+            <section class="aliados">
+                <div>
+                    <h4>Aliados</h4>
+                    <i class="fa-solid fa-caret-right fa-lg" style="color: #000000"></i>
+                </div>
+                <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px" />
+            </section>
+
+
+
+            <section class="clases-sugeridas">
+                <h2>Clases sugeridas</h2>
+
+                <section class="busquedasRelacionadas">
+                    <div class="container-busquedas">
+                        <article class="clase-relacionada">
+                            <img src="/images/productos/functional.JPG" alt="functional" class="img-relacionada" />
+                            <h5>Functional</h5>
+                            <p>Mantenete entrenado con nuestras clases</p>
+                        </article>
+
+                        <article class="clase-relacionada">
+                            <img src="/images/productos/yoga1.JPG" alt="yoga1" class="img-relacionada" />
+                            <h5>Yoga al aire libre</h5>
+                            <p>Disfrutá de todos los beneficios del yoga.</p>
+                        </article>
+
+                        <article class="clase-relacionada">
+                            <img src="/images/productos/gimnasio.JPG" alt="gimnasio" class="img-relacionada" />
+                            <h5>Gimnasio Indoor</h5>
+                            <p>Entrenamiento adaptado a todos los niveles.</p>
+                        </article>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <%- include("../partials/footer") %>
+            <button class="consultas">
+                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
+                Consultas
             </button>
-        </form>
-        </section>
-      <section class="aliados">
-        <div>
-          <h4>Aliados</h4>
-          <i class="fa-solid fa-caret-right fa-lg" style="color: #000000"></i>
-        </div>
-        <img
-          src="/images/diseno/logoAlmaYoga.png"
-          class="logo-aliado1"
-          width="100px"
-        />
-      </section>
-      
-      
+</body>
 
-      <section class="clases-sugeridas">
-        <h2>Clases sugeridas</h2>
-
-        <section class="busquedasRelacionadas">
-          <div class="container-busquedas">
-            <article class="clase-relacionada">
-              <img
-                src="/images/productos/functional.JPG"
-                alt="functional"
-                class="img-relacionada"
-              />
-              <h5>Functional</h5>
-              <p>Mantenete entrenado con nuestras clases</p>
-            </article>
-
-            <article class="clase-relacionada">
-              <img
-                src="/images/productos/yoga1.JPG"
-                alt="yoga1"
-                class="img-relacionada"
-              />
-              <h5>Yoga al aire libre</h5>
-              <p>Disfrutá de todos los beneficios del yoga.</p>
-            </article>
-
-            <article class="clase-relacionada">
-              <img
-                src="/images/productos/gimnasio.JPG"
-                alt="gimnasio"
-                class="img-relacionada"
-              />
-              <h5>Gimnasio Indoor</h5>
-              <p>Entrenamiento adaptado a todos los niveles.</p>
-            </article>
-          </div>
-        </section>
-      </section>
-    </main>
-    <%- include("../partials/footer") %>
-    <button class="consultas">
-      <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
-      Consultas
-    </button>
-  </body>
 </html>
 
 
@@ -378,7 +362,7 @@
 
                         </div>
                     -->
-                        <!---<div>
+<!---<div>
                             <label id="confirmar contraseña" for="confirmar contraseña">Confirmar :</label>
                             <input class="input-selecto" id="confirmar contraseña" type="password"
                                 name="password-confirm" placeholder="Confirmar Contraseña">
