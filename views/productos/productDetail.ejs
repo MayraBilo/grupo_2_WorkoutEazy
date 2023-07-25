@@ -34,7 +34,7 @@
 
                     <div class="boton"><button class="reserva">Reservá tu lugar</button></div>
 
-                    <% if (locals.userLogged.rol == 'admin') { %>
+                    <% if (locals.userLogged?.rol == 'admin') { %>
                         <div class="boton"><a href="/product/<%=producto.id%>/editProduct"><button class="editar">Editar
                             producto</button></a></div>
                         <% } %>
