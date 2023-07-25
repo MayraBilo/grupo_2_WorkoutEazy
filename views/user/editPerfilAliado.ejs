@@ -14,7 +14,7 @@
             </div>
 
             <section class="profile">
-                <form action="/<%= locals.userLogged.id %>/editPerfilCliente?_method=put" method="post">
+                <form action="/<%= locals.userLogged.id %>/editPerfilAliado?_method=put" method="post">
                     <div class="avatar">
                         <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px" />
                         <div>
@@ -22,7 +22,7 @@
                             <input id="avatar" type="file" name="avatar">
                         </div>
                     </div>
-                    <div class="datos">
+                    <div class="datos-aliado">
                         <h3>Nombre cliente </h3>
                         <h4 class="nombre-cliente">
                             <input type="text" name="first_name" value="<%= locals.userLogged.first_name %>">
@@ -46,7 +46,7 @@
                         <h4><input type="text" name="email" value="<%= locals.userLogged.email%> "></h4>
 
                         <div class="botones">
-                            <button class="editar" type="submit" value="submit">
+                            <button class="editar-aliado" type="submit" value="submit">
                                 <h4>Guardar cambios</h4>
                             </button>
                         </div>
@@ -54,14 +54,18 @@
 
                 </form>
             </section>
-
-            <form action="/<%= locals.userLogged.id %>/delete?_method=delete" method="POST" id="formDelete">
-                <section class="botones">
-                    <button class="editar" id="delUser" type="submit" value="submit">
-                        Eliminar usuario
-                    </button>
-
-                </section>
+            <div class="big-div-delete-button">
+                <div class="div-delete-button">
+                    <form action="/<%= locals.userLogged.id %>/delete?_method=delete" method="POST" id="formDelete">
+                        <section class="botones">
+                            <button class="eliminar" id="delUser" type="submit" value="submit">
+                                Eliminar usuario
+                            </button>
+                        </section>
+                    </form>
+                </div>
+            </div>
+            </section>
             </form>
 
             <script>
@@ -124,13 +128,13 @@
             </div>
 
             </section>
-            <section class="botones">
+            <!-- <section class="botones">
                 <form action="/perfilCliente/<%= locals.userLogged %>/_method?=DELETE" method="post">
                     <button class="editar" id="eliminar">
                         <h4>Eliminar usuario</h4>
                     </button>
                 </form>
-            </section>
+            </section> -->
             <section class="aliados">
                 <div>
                     <h4>Aliados</h4>

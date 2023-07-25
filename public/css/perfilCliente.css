@@ -17,12 +17,11 @@ body {
 
 /*----MAIN----*/
 
-/* Aliado */
 .soy-aliado {
     font-family: 'bebas neue';
     text-align: center;
-    background-color: #00a170;
-    border: 1px #00a170 solid;
+    background-color: #0084bd;
+    border: 1px #0084bd solid;
     border-radius: 14px;
     color: white;
     width: 50%;
@@ -108,6 +107,10 @@ main {
     color: #212529;
 }
 
+.datos-aliado p {
+    color: #212529;
+}
+
 .botones {
     display: flex;
     justify-content: space-around;
@@ -117,11 +120,48 @@ main {
     font-size: 16px;
 }
 
+.div-delete-button {
+    width: 50%;
+    float: right;
+}
+.div-delete-button {
+    width: 50%;
+    float: right;
+}
+
+.big-div-delete-button {
+    padding: 0px 10px 0px 20px 
+}
+
 .editar {
     font-family: 'bebas neue';
-    border: 1px rgba(0, 161, 112, 40%);
+    border: 1px #00a170;
     border-radius: 14px;
-    background-color: rgba(0, 161, 112, 40%);
+    background-color: #00a170;
+    width: 15%;
+    padding: 5px;
+    margin-top: 5px;
+    align-self: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.editar-aliado {
+    font-family: 'bebas neue';
+    border: 1px #0084bd;
+    border-radius: 14px;
+    background-color: #0084bd;
+    width: 15%;
+    padding: 5px;
+    margin-top: 5px;
+    align-self: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.eliminar {
+    font-family: 'bebas neue';
+    border: 1px rgba(252, 10, 10, 0.795);
+    border-radius: 14px;
+    background-color: rgba(252, 10, 10, 0.795);
     width: 15%;
     padding: 5px;
     margin-top: 5px;
@@ -134,7 +174,15 @@ main {
     color: black;
 }
 
+.eliminar a {
+    text-decoration: none;
+    color: black;
+}
+
 .editar h4 {
+    margin: auto;
+}
+.eliminar h4 {
     margin: auto;
 }
 
@@ -143,9 +191,14 @@ main {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-#eliminar {
-    background-color: rgba(252, 10, 10, 0.795);
+.eliminar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
+/* #eliminar {
+    background-color: rgba(252, 10, 10, 0.795);
+} */
 
 section.login {
     display: none;
@@ -170,6 +223,7 @@ section.login {
 
 .avatar{
     display: flex;
+    align-self: center;
     justify-content: center;
 }
 
@@ -370,6 +424,10 @@ footer h2 {
         width: 50%;
     }
 
+    .avatar,.datos-aliado {
+        width: 50%;
+    }
+
     .avatar img {
         display: inline-block;
         flex-grow: 1;
@@ -420,16 +478,35 @@ footer h2 {
         font-size: 16px;
         font-family: 'bebas neue';
         text-align: center;
+        align-self: center;
         background-color: #00a170;
         border: 1px #00a170 solid;
         border-radius: 14px;
         color: white;
+        padding: 7px;
+        max-width: 200px;
+    }
+
+    .datos-aliado h3 {
+        font-size: 16px;
+        font-family: 'bebas neue';
+        text-align: center;
+        align-self: center;
+        background-color: #00a170;
+        border: 1px #00a170 solid;
+        border-radius: 14px;
+        color: white;
+        padding: 7px;
         max-width: 200px;
     }
 }
 
 @media (min-width: 1200px) {
     .datos {
+        align-self: center;
+    }
+
+    .datos-aliado {
         align-self: center;
     }
 
@@ -443,8 +520,24 @@ footer h2 {
         color: white;
 
     }
+    .datos-aliado h3 {
+        font-size: 16px;
+        font-family: 'bebas neue';
+        text-align: center;
+        background-color: #0084bd;
+        border: 1px #0084bd solid;
+        border-radius: 14px;
+        color: white;
+
+    }
 
     .datos p,
+    h4 {
+        font-size: 24px;
+        font-family: 'bebas neue';
+        text-align: center;
+    }
+    .datos-aliado p,
     h4 {
         font-size: 24px;
         font-family: 'bebas neue';
