@@ -14,14 +14,14 @@
             <div class="form-img">
                 <form action="/product/<%=producto.id%>/editProduct?_method=put" method="POST" enctype="multipart/form-data">
                     <div class="div-categorie">
-                        <select class="categoria" name="categoria">
-                            <option default class="select-categoria" name="categoria" value="<%= producto.category %>">
+                        <select class="categoria" name="category">
+                            <option default class="select-categoria" name="category" value="<%= producto.category %>">
                               -  <%= producto.category %> -
                             </option>
-                            <option name="categoria">Yoga</option>
-                            <option name="categoria">Fitness</option>
-                            <option name="categoria">Danzas</option>
-                            <option name="categoria">Deportes</option>
+                            <option name="category">Yoga</option>
+                            <option name="category">Fitness</option>
+                            <option name="category">Danzas</option>
+                            <option name="category">Deportes</option>
                         </select>
                         <span class="feedback"></span>
                     </div>
@@ -59,48 +59,48 @@
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Nombre del servicio</label>
-                        <input class="lsinput" type="text" name="nombreActividad" value="<%=producto.activity_name%>">
+                        <input class="lsinput" type="text" name="activity_name" value="<%=producto.activity_name%>">
                         <span class="feedback"></span>
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Nombre del Aliado</label>
-                        <input class="lsinput" type="text" name="nombreAliado" value="<%=producto.aliado_id%>">
+                        <input class="lsinput" type="text" name="aliado_name" value="<%=producto.aliado_name%>">
                         <span class="feedback"></span>
                     </div>
             
                     <div class="div-value-disc">
                         <div class="div-value">
                             <label for="value">Valor</label>
-                            <input class="sinput" type="number" name="valor" value="<%=producto.price%>">
+                            <input class="sinput" type="number" name="price" value="<%=producto.price%>">
                             <span class="feedback"></span>
                         </div>
                         <div class="div-disc">
                             <label for="apply-disc">Aplicar descuento</label>
-                            <input class="sinput" placeholder="(opcional)" type="number" name="descuento" value="<%=producto.discount%>">
+                            <input class="sinput" placeholder="(opcional)" type="number" name="discount" value="<%=producto.discount%>">
                             <p>%</p>
                             <span class="feedback"></span>
                         </div>
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Cupos</label>
-                        <input class="lsinput" type="text" name="cupos" value="<%=producto.spots%>">
+                        <input class="lsinput" type="text" name="spots" value="<%=producto.spots%>">
                         <span class="feedback"></span>
                     </div>
                 
                     <div class="div-description">
                         <label for="description">Descripción</label>
-                        <input class="lfinput" type="text" name="descripcion" value="<%=producto.product_description%>">
+                        <input class="lfinput" type="text" name="product_description" value="<%=producto.product_description%>">
                         <span class="feedback"></span>
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Horarios</label>
-                        <input class="lsinput" type="text" name="horarios" value="<%=producto.schedule%>">
+                        <input class="lsinput" type="text" name="schedule" value="<%=producto.schedule%>">
                         <span class="feedback"></span>
                     </div>
       
                     <div class="container-name-service">
                         <label for="name-service">Duración</label>
-                        <input class="lsinput" type="text" name="duracion" value="<%=producto.length%>">
+                        <input class="lsinput" type="text" name="length" value="<%=producto.length%>">
                         <span class="feedback"></span>
                     </div>
       
@@ -113,7 +113,7 @@
                     </div>
                     <div class="div-difficulty">
                         <label for="difficulty">Dificultad</label>
-                        <select name="dificultad" class="difficulty" value="dificultad">
+                        <select name="difficulty" class="difficulty" value="difficulty">
                             <option class="select-difficulty" default value="<%=producto.difficulty%>">-
                                 <%=producto.difficulty%> -</i></option>
                             <option value="<%=producto.difficulty%>">Principiante</i></option>
@@ -131,22 +131,22 @@
                     </div>
                     <div class="div-city">
                         <label for="city">Ciudad</label>
-                        <input class="lsinput" type="text" name="ciudad" value="<%=producto.city%>">
+                        <input class="lsinput" type="text" name="city" value="<%=producto.city%>">
                         <span class="feedback"></span>
                     </div>
                     <div class="div-ages">
-                        <label for="edadesAlumnos">Edades</label>
+                        <label for="age">Edades</label>
                         <div>
-                            <input type="checkbox" name="edadesAlumnos" value="Niños"> Niños
+                            <input type="checkbox" name="age" value="Niños"> Niños
                         </div>
                         <div>
-                            <input type="checkbox" name="edadesAlumnos" value="Adolescentes"> Adolescentes
+                            <input type="checkbox" name="age" value="Adolescentes"> Adolescentes
                         </div>
                         <div>
-                            <input type="checkbox" name="edadesAlumnos" value="Jovenes"> Jóvenes
+                            <input type="checkbox" name="age" value="Jovenes"> Jóvenes
                         </div>
                         <div>
-                            <input type="checkbox" name="edadesAlumnos" value="Adultos"> Adultos
+                            <input type="checkbox" name="age" value="Adultos"> Adultos
                         </div>
                         <span class="feedback"></span>
                     </div>
@@ -154,10 +154,10 @@
                     <div class="div-ages">
                         <label for="modalidad">Modalidad</label>
                         <div>
-                            <input type="checkbox" name="modalidad" value="<%=producto.mode%>"> Presencial
+                            <input type="checkbox" name="mode" value="<%=producto.mode%>"> Presencial
                         </div>
                         <div>
-                            <input type="checkbox" name="modalidad" value="<%=producto.mode%>"> Virtual
+                            <input type="checkbox" name="mode" value="<%=producto.mode%>"> Virtual
                         </div>
                         
                         <span class="feedback"></span>

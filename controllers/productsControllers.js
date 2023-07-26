@@ -44,7 +44,7 @@ const controller = {
 
   updateProduct: async (req, res) => {
     try{
-    await db.Producto.update({
+      await db.Producto.update( {
       activity_name: req.body.activity_name,
       category: req.body.category,
       subcategory: req.body.subcategory,
@@ -60,14 +60,16 @@ const controller = {
       city: req.body.city,
       image: req.file ? req.file.filename : "sin foto",
       age: req.body.age,
-      mode: req.body.mode
-    }, {
+      mode: req.body.mode,
+      aliado_name: req.body.aliado_name
+    },
+    {
       where: {
         id: req.params.id
       }
     })
 
-    res.redirect("/product/:id/productDetail");
+    res.redirect(`/product/${req.params.id}/productDetail`);
 
   }catch(error){
       res.json(error)

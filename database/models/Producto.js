@@ -11,6 +11,9 @@ module.exports = (sequelize, dataTypes) => {
         activity_name: {
             type: dataTypes.STRING  
         },
+        aliado_name: {
+            type: dataTypes.STRING  
+        },
         aliado_id: {
             type: dataTypes.INTEGER,   
         },

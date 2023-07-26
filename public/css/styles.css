@@ -175,6 +175,13 @@ header input:focus {
     font-weight: 550;
 }
 
+/* Perfil usuario/cliente */
+
+.plantilla {
+    border: 3px red solid;
+    border-radius: 100%;
+}
+
 /* Main */
 
 /* Slider */
