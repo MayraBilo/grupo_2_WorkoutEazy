@@ -8,4 +8,6 @@ router.get("/", mainController.getIndex);
 
 router.get("/blog", mainController.getBlog);
 
+router.get("/productSearch", mainController.getSearch)
+
 module.exports = router;

@@ -12,8 +12,12 @@
                 <option>Bahía Blanca</option>
                 <option>Santa Fe</option>
             </select>
-            <input type="text"></input>
-            <div class="lupita"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <form action="/productSearch" method="GET">
+            <div class="searchDiv">
+            <input type="text" name="search"></input>
+            <button type="submit" class="lupita"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            </form>
         </div>
 
         <%if (locals.isLogged) { %>

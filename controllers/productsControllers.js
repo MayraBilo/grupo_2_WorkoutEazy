@@ -29,20 +29,25 @@ const controller = {
 
 
   },
-  deleteProduct: (req, res) => {
-    db.Producto.destroy({
+  deleteProduct: async (req, res) => {
+    try{
+    await db.Producto.destroy({
       where: {
         id: req.params.id
       }
     })
     res.redirect("/product")
-
+  }catch(error){
+    res.json(error)
+  }
   },
 
-  updateProduct: (req, res) => {
-    db.Producto.update({
+  updateProduct: async (req, res) => {
+    try{
+    await db.Producto.update({
       activity_name: req.body.activity_name,
       category: req.body.category,
+      subcategory: req.body.subcategory,
       product_description: req.body.product_description,
       aliado: req.body.aliado_id,
       price: req.body.price,
@@ -61,6 +66,12 @@ const controller = {
         id: req.params.id
       }
     })
+
+    res.redirect("/product/:id/productDetail");
+
+  }catch(error){
+      res.json(error)
+    }
   },
 
   getCart: (req, res) => {

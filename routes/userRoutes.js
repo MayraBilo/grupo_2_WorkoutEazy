@@ -10,14 +10,13 @@ const userControllers = require("../controllers/userControllers");
 const aliadosControllers = require("../controllers/aliadosControllers");
 
 // Middlewares
-const uploadFile = require("../middlewares/multerMiddleware.js");
 const validations = require("../middlewares/validateRegisterMiddleware.js");
+const uploadFileCliente = require("../middlewares/multerMiddlewareCliente.js");
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
 
 // Middleware Aliados
 const uploadFileAliado = require("../middlewares/multerMiddlewareAliado.js");
-const uploadFileCliente = require("../middlewares/multerMiddlewareCliente.js");
 const validationsAliados = require("../middlewares/validateRegisterAliadosMiddleware.js");
 const authMiddlewareAliado = require("../middlewares/authMiddlewareAliado.js");
 const guestMiddlewareAliados = require("../middlewares/guestMiddlewareAliados.js");
@@ -59,7 +58,7 @@ router.post(
 // Edit Perfil de Aliado
 router.get(
   "/:id/editPerfilAliado",
-  guestMiddlewareAliados,
+  guestMiddleware,
   aliadosControllers.getUpdateAliado
 );
 router.put(

@@ -1,5 +1,5 @@
 function authMiddlewareAliado (req, res, next) {
-    if (!req.session.aliadoLogged){
+    if (!req.session.userLogged){
         return res.redirect('/loginAliado');
     }
     next();
