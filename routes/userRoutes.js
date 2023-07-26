@@ -9,17 +9,19 @@ const path = require("path");
 const userControllers = require("../controllers/userControllers");
 const aliadosControllers = require("../controllers/aliadosControllers");
 
-// Middlewares
+// Middlewares Cliente
 const validations = require("../middlewares/validateRegisterMiddleware.js");
 const uploadFileCliente = require("../middlewares/multerMiddlewareCliente.js");
 const guestMiddleware = require("../middlewares/guestMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
 
-// Middleware Aliados
+// Middlewares Aliados
 const uploadFileAliado = require("../middlewares/multerMiddlewareAliado.js");
 const validationsAliados = require("../middlewares/validateRegisterAliadosMiddleware.js");
 const authMiddlewareAliado = require("../middlewares/authMiddlewareAliado.js");
 const guestMiddlewareAliados = require("../middlewares/guestMiddlewareAliados.js");
+
+//USUARIOS login
 
 // Formulario de login
 router.get("/login", guestMiddleware, userControllers.getLogin);
@@ -29,10 +31,12 @@ router.get("/loginAliado", aliadosControllers.getLoginAliado);
 router.post("/login", userControllers.processLogin);
 router.post("/loginAliado", aliadosControllers.loginAliado);
 
-// Formulario de registro
+// USUARIOS registros
+
+// Formulario registroClientes
 router.get("/register", guestMiddleware, userControllers.getRegister);
 
-// Procesar el registro
+// Procesar registroClientes
 router.post(
   "/register",
   uploadFileCliente.single("avatar"),
@@ -40,14 +44,14 @@ router.post(
   userControllers.processRegister
 );
 
-// Formulario de registroAliado
+// Formulario registroAliado
 router.get(
   "/registerAliados",
   guestMiddlewareAliados,
   aliadosControllers.getRegisterAliados
 );
 
-// Procesar el registroAliados
+// Procesar registroAliados
 router.post(
   "/registerAliados",
   uploadFileAliado.single("avatar"),
@@ -55,23 +59,14 @@ router.post(
   aliadosControllers.registerAliados
 );
 
-// Edit Perfil de Aliado
-router.get(
-  "/:id/editPerfilAliado",
-  guestMiddleware,
-  aliadosControllers.getUpdateAliado
-);
-router.put(
-  "/:id/editPerfilAliado",
-  [guestMiddlewareAliados, uploadFileCliente.single("avatar")],
-  userControllers.updateProfile
-);
 
-// Perfil de usuario
+//CLIENTE
+
+// Perfil de cliente
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
 
-// Edit Perfil de usuario
+// Edit Perfil cliente
 router.get(
   "/:id/editPerfilCliente",
   authMiddleware,
@@ -83,13 +78,31 @@ router.put(
   userControllers.updateProfile
 );
 
-//Delete Perfil Usuario
+//Delete Perfil cliente
 router.delete("/:id/delete", userControllers.deleteProfile);
 
-// Perfil de usuarioAliado
+
+//ALIADO
+
+// Perfil Aliado
 router.get("/perfilAliado", aliadosControllers.getAliadoProfile);
 
-// Logout
+// Edit Perfil Aliado
+router.get(
+  "/:id/editPerfilAliado",
+  guestMiddleware,
+  aliadosControllers.getUpdateAliado
+);
+router.put(
+  "/:id/editPerfilAliado",
+  [guestMiddlewareAliados, uploadFileCliente.single("avatar")],
+  userControllers.updateProfile
+);
+
+
+//USUARIOS logout
+
+// Logout usuarios
 
 router.get("/logout", authMiddleware, userControllers.logout);
 router.get(

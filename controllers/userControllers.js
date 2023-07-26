@@ -115,7 +115,7 @@ const controller = {
 
   updateProfile: async (req, res) => {
     try{
-    await db.Cliente.update({
+    let cliente = {
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       birth_date: req.body.birth_date,
@@ -124,9 +124,11 @@ const controller = {
       contact_number: req.body.contact_number,
       email: req.body.email
 
-    }, { where: { id: req.params.id } });
+    }
+    
+    await db.Cliente.update( cliente, { where: { id: req.params.id } });
 
-      res.redirect('/perfilCliente');
+    return res.render("perfilCliente", { cliente: req.session.userLogged });
 
     } catch (error) {
       res.send("Hubo un error");
