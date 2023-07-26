@@ -106,34 +106,6 @@ const controller = {
       res.json(error);
     }
 
-    /*
-    try{
-
-    let userInDB = db.Cliente.findAll({
-      where: {
-        email: req.body.email
-      }});
-
-    if (userInDB) {
-      return res.render("register", {
-        errors: { email: { msg: "Este email ya está registrado" } },
-        oldData: req.body,
-      });
-    }
-
-    let userToCreate = await {
-      ...req.body,
-      password: bcrypt.hashSync(req.body.password, 10),
-      avatar: req.file.filename,
-    };
-
-    let userCreated = db.Cliente.create(userToCreate);
-
-    return res.redirect("/login");
-
-  } catch (error){
-    res.send('Hubo un error')
-  }*/
   },
   getUpdateCliente: (req, res) => {
     db.Cliente.findByPk(req.params.id).then(function (cliente) {
@@ -142,19 +114,20 @@ const controller = {
   },
 
   updateProfile: async (req, res) => {
-    const newData = {
+    try{
+    await db.Cliente.update({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       birth_date: req.body.birth_date,
       city: req.body.city,
       avatar: req.file ? req.file.filename : "sin foto",
       contact_number: req.body.contact_number,
-      email: req.body.email,
-    };
-    console.log(newData);
-    try {
-      await db.Cliente.update(newData, { where: { id: req.params.id } });
-      res.redirect("/perfilCliente");
+      email: req.body.email
+
+    }, { where: { id: req.params.id } });
+
+      res.redirect('/perfilCliente');
+
     } catch (error) {
       res.send("Hubo un error");
     }
@@ -183,60 +156,3 @@ const controller = {
 
 module.exports = controller;
 
-//Sequelize
-
-/*
-
-const { validationResult } = require("express-validator");
-const fs = require("fs");
-const Cliente = require("../database/models/Cliente");
-const bcrypt = require("bcryptjs");
-const uuid = require("uuid");
-
-const controller = {
-
-  getRegister: async (req, res) => {
-    res.render("register");
-  },
-
-  updateCliente: async (req, res) => {
-    try {
-      const clienteAEditar = await Cliente.findByPk(req.params.id)
-      res.render("/editPerfilCliente", {clienteAEditar})
-    } catch(error) {
-      res.send("hubo un error")
-    }
-  }, 
-  create: async (req, res) => {
-    const nuevoCliente = {
-      id: uuid.v4(),
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      genre: req.body.genre,
-      birth_date: req.body.birth_date,
-      city: req.body.city,
-      contact_number: req.body.contact_number,
-      email: req.body.email,
-      image: req.body.image,
-      password: req.body.password,
-    };
-    try {
-      const datos = await Cliente.create(nuevoCliente);
-    } catch (error) {
-      res.send("Ha habido un error");
-    }
-    res.redirect("/login");
-  },
-
-  update: async (req, res) => {
-    const newData = req.body
-    try {
-      await Cliente.update(newData, { where: { id: req.params.id } })
-      res.redirect("/perfilCliente")
-    } catch (error) {
-      res.send("Hubo un error")
-    }
-  },
-}
-
-*/
