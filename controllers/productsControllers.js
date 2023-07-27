@@ -129,6 +129,7 @@ const controller = {
       category: req.body.category,
       product_description: req.body.product_description,
       aliado: req.body.aliado_id,
+      aliado_name: req.body.aliado_name,
       price: req.body.price,
       discount: req.body.discount,
       spots: req.body.spots,
@@ -139,7 +140,8 @@ const controller = {
       image: req.file ? req.file.filename : "sin foto",
       city: req.body.city,
       age: req.body.age,
-      mode: req.body.mode}
+      mode: req.body.mode
+      }
       
 
     await db.Producto.create(newProduct)

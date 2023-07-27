@@ -81,15 +81,12 @@ Producto.associate = function(models) {
         foreignKey: "carrito_id",
         through: "carrito_producto"
     })
-    // Relación no funciona
-    // Trae una columna inexistente llamada 'AliadoId', puede ser porque todavía no haya aliados cargados.
-    /*
-    Producto.belongsTo(models.Aliado, {
+    
+    /*Producto.belongsTo(models.Aliado, {
         as: "aliado_producto",
         foreignKey: "aliado_id"
     })*/
 
-    // Relación Ok
     Producto.belongsToMany(models.Cliente, {
         as: "producto_cliente",
         foreignKey: "cliente_id",

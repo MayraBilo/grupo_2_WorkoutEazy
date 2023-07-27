@@ -56,13 +56,7 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING,
         },
-        product_id: {
-            type: dataTypes.INTEGER,
-            references: {
-                model: "product",
-                key: "id",
-            }
-        },
+
         password: {
             type: dataTypes.STRING,
             allowNull: false,
@@ -85,14 +79,11 @@ module.exports = (sequelize, dataTypes) => {
 
     const Aliado = sequelize.define(alias, cols, config);
 
-    // Relación no funciona
-    // Borrar columna product_id
-    /*
-    Aliado.associate = function(models) {
+    /*Aliado.associate = function(models) {
         Aliado.hasMany(models.Producto, {
             as: "aliado_productos",
         })
-     };
-    */
+     };*/
+    
     return Aliado;
 };
