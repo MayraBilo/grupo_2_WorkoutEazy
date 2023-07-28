@@ -70,6 +70,9 @@ module.exports = (sequelize, dataTypes) => {
         rol: {
             type: dataTypes.STRING,
         },
+        perfil_profesional: {
+            type: dataTypes.STRING,
+        },
     };
 
     const config = {

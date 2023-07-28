@@ -90,13 +90,13 @@ router.get("/perfilAliado", aliadosControllers.getAliadoProfile);
 // Edit Perfil Aliado
 router.get(
   "/:id/editPerfilAliado",
-  guestMiddleware,
+  authMiddlewareAliado,
   aliadosControllers.getUpdateAliado
 );
 router.put(
   "/:id/editPerfilAliado",
-  [guestMiddlewareAliados, uploadFileCliente.single("avatar")],
-  userControllers.updateProfile
+  [authMiddlewareAliado, uploadFileCliente.single("avatar")],
+  userControllers.updateAliado
 );
 
 

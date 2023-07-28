@@ -125,6 +125,7 @@ const controller = {
       email: req.body.email
 
     }
+  
     
     await db.Cliente.update( cliente, { where: { id: req.params.id } });
 
@@ -134,7 +135,28 @@ const controller = {
       res.send("Hubo un error");
     }
   },
+  updateAliado: async (req, res) => {
+    try{
+    let aliado = {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      perfil_profesional: req.body.perfil_profesional,
+      birth_date: req.body.birth_date,
+      services_city: req.body.city,
+      avatar: req.file ? req.file.filename : "sin foto",
+      contact_number: req.body.contact_number,
+      email: req.body.email
+    }
+  
+    
+    await db.Aliado.update( aliado, { where: { id: req.params.id } });
 
+    return res.render("perfilAliado", { aliado: req.session.userLogged });
+
+    } catch (error) {
+      res.send("Hubo un error");
+    }
+  },
   deleteProfile: (req, res) => {
     db.Cliente.destroy({
       where: {
