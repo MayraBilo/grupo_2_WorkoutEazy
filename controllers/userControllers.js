@@ -3,7 +3,6 @@ const fs = require("fs");
 const bcrypt = require("bcryptjs");
 
 const db = require("../database/models");
-const uuid = require("uuid");
 
 //uuid.v4()
 
@@ -91,12 +90,9 @@ const controller = {
 
       const hashedPassword = bcrypt.hashSync(userData.password, 10);
 
-      // const idUnico = uuid.v4()
-
       const userToCreate = {
         ...userData,
         password: hashedPassword,
-        //id: idUnico
       };
 
       await db.Cliente.create(userToCreate);
@@ -105,7 +101,6 @@ const controller = {
     } catch (error) {
       res.json(error);
     }
-
   },
   getUpdateCliente: (req, res) => {
     db.Cliente.findByPk(req.params.id).then(function (cliente) {
@@ -114,45 +109,40 @@ const controller = {
   },
 
   updateProfile: async (req, res) => {
-    try{
-    let cliente = {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      birth_date: req.body.birth_date,
-      city: req.body.city,
-      avatar: req.file ? req.file.filename : "sin foto",
-      contact_number: req.body.contact_number,
-      email: req.body.email
+    try {
+      let cliente = {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        birth_date: req.body.birth_date,
+        city: req.body.city,
+        avatar: req.file ? req.file.filename : "sin foto",
+        contact_number: req.body.contact_number,
+        email: req.body.email,
+      };
 
-    }
-  
-    
-    await db.Cliente.update( cliente, { where: { id: req.params.id } });
+      await db.Cliente.update(cliente, { where: { id: req.params.id } });
 
-    return res.render("perfilCliente", { cliente: req.session.userLogged });
-
+      return res.render("perfilCliente", { cliente: req.session.userLogged });
     } catch (error) {
       res.send("Hubo un error");
     }
   },
   updateAliado: async (req, res) => {
-    try{
-    let aliado = {
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      perfil_profesional: req.body.perfil_profesional,
-      birth_date: req.body.birth_date,
-      services_city: req.body.city,
-      avatar: req.file ? req.file.filename : "sin foto",
-      contact_number: req.body.contact_number,
-      email: req.body.email
-    }
-  
-    
-    await db.Aliado.update( aliado, { where: { id: req.params.id } });
+    try {
+      let aliado = {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        perfil_profesional: req.body.perfil_profesional,
+        birth_date: req.body.birth_date,
+        services_city: req.body.city,
+        avatar: req.file ? req.file.filename : "sin foto",
+        contact_number: req.body.contact_number,
+        email: req.body.email,
+      };
 
-    return res.render("perfilAliado", { aliado: req.session.userLogged });
+      await db.Aliado.update(aliado, { where: { id: req.params.id } });
 
+      return res.render("perfilAliado", { aliado: req.session.userLogged });
     } catch (error) {
       res.send("Hubo un error");
     }
@@ -179,4 +169,3 @@ const controller = {
 };
 
 module.exports = controller;
-

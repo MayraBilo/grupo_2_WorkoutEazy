@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
 
   const cols = {
     id: {
-      type: dataTypes.STRING,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -72,7 +72,9 @@ module.exports = (sequelize, dataTypes) => {
     Cliente.belongsToMany(models.Producto, {
       as: "producto_cliente",
       foreignKey: "product_id",
+      otherKey: "product_id",
       through: "cliente_producto",
+      timestamps: false,
     });
 
     // Relación OK

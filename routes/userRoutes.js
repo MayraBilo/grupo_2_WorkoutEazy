@@ -2,8 +2,6 @@ const express = require("express");
 
 const router = express.Router();
 
-const path = require("path");
-
 // Controller
 
 const userControllers = require("../controllers/userControllers");
@@ -59,7 +57,6 @@ router.post(
   aliadosControllers.registerAliados
 );
 
-
 //CLIENTE
 
 // Perfil de cliente
@@ -81,7 +78,6 @@ router.put(
 //Delete Perfil cliente
 router.delete("/:id/delete", userControllers.deleteProfile);
 
-
 //ALIADO
 
 // Perfil Aliado
@@ -98,7 +94,6 @@ router.put(
   [authMiddlewareAliado, uploadFileCliente.single("avatar")],
   userControllers.updateAliado
 );
-
 
 //USUARIOS logout
 

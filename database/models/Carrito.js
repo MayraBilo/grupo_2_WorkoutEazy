@@ -1,61 +1,61 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Carrito';
+  const alias = "Carrito";
 
-    const cols = {
-        id: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        quantity: {
-            type: dataTypes.INTEGER    
-        },
-        discount: {
-            type: dataTypes.INTEGER    
-        },
-        subtotal: {
-            type: dataTypes.INTEGER    
-        },
-        total: {
-            type: dataTypes.INTEGER    
-        },
-        cliente_id: {
-            type: dataTypes.INTEGER,
-            references: {
-                model: "cliente",
-                key: "id"
-            }
-        },
-        product_id: {
-            type: dataTypes.INTEGER,
-            references: {
-                model: "product",
-                key: "id"
-            }
-        }
-    }
+  const cols = {
+    id: {
+      type: dataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    quantity: {
+      type: dataTypes.INTEGER,
+    },
+    discount: {
+      type: dataTypes.INTEGER,
+    },
+    subtotal: {
+      type: dataTypes.INTEGER,
+    },
+    total: {
+      type: dataTypes.INTEGER,
+    },
+    cliente_id: {
+      type: dataTypes.INTEGER,
+      references: {
+        model: "cliente",
+        key: "id",
+      },
+    },
+    product_id: {
+      type: dataTypes.INTEGER,
+      references: {
+        model: "product",
+        key: "id",
+      },
+    },
+  };
 
- const config = {
-    tableName: 'shopping_cart',
-    timestamps: false
- }
-const Carrito = sequelize.define(alias, cols, config); 
+  const config = {
+    tableName: "shopping_cart",
+    timestamps: false,
+  };
+  const Carrito = sequelize.define(alias, cols, config);
 
-Carrito.associate = function(models) {
-
+  Carrito.associate = function (models) {
     // Relación Ok
     Carrito.belongsToMany(models.Producto, {
-        as: "carrito",
-        foreignKey: "product_id",
-        through: "carrito_producto"
-    })
+      as: "carrito",
+      foreignKey: "product_id",
+      otherKey: "cliente_id",
+      through: "carrito_producto",
+      timestamps: false,
+    });
     // Relación OK
     Carrito.belongsTo(models.Cliente, {
-        as: "cliente_carrito",
-        foreignKey: "cliente_id"
-    })
- };
+      as: "cliente_carrito",
+      foreignKey: "cliente_id",
+    });
+  };
 
-return Carrito;
-
-}
+  return Carrito;
+};
