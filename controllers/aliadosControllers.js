@@ -69,7 +69,7 @@ const controller = {
       });
 
       if (userToLogin) {
-        console.log("usuario encontrado");
+        console.log(userToLogin.rol);
         let isOkPass = bcrypt.compareSync(
           req.body.password,
           userToLogin.password

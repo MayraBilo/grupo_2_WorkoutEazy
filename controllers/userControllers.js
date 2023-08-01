@@ -24,6 +24,7 @@ const controller = {
       });
 
       if (userToLogin) {
+        console.log(userToLogin)
         let isOkPass = bcrypt.compareSync(
           req.body.password,
           userToLogin.password

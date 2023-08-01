@@ -24,6 +24,8 @@ app.set("views", [
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const userLoggedMiddlewareAliado = require("./middlewares/aliadoLoggedMiddleware");
 
+const userLoggedDatabase = require("./middlewares/userLoggedDatabase");
+
 app.use(
   session({
     secret: "Shhh",
@@ -40,6 +42,8 @@ app.use(methodOverride("_method"));
 
 app.use(userLoggedMiddleware);
 app.use(userLoggedMiddlewareAliado);
+
+/*app.use(userLoggedDatabase);*/
 
 //----routes----//
 app.use(mainRoutes);
