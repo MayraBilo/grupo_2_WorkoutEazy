@@ -34,7 +34,7 @@ const controller = {
           req.session.userLogged = userToLogin;
 
           if (req.body.rememberUser) {
-            res.cookie("userEmail", req.body.email, { maxAge: 1000 * 600 });
+            res.cookie("userEmail", req.session.userLogged.email, { maxAge: 1000 * 600 });
           }
 
           return res.redirect("/perfilCliente");

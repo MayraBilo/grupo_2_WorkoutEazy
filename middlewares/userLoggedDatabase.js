@@ -13,7 +13,7 @@ let userLoggedMiddleware = async (req, res ,next) => {
      console.log(emailInCookie);
      // undefined
 
-     let userFromCookie =  await db.Cliente.findOne ({where: {email: emailInCookie}}) 
+     let userFromCookie =  await db.Cliente.findOne({where: {email: emailInCookie}}) 
      
      if(userFromCookie) {
           req.session.userLogged = userFromCookie
