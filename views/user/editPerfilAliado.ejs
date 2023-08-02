@@ -39,8 +39,17 @@
                         <p><input type="text" name="birth_date" value="<%= locals.userLogged.birth_date%> "></p>
 
                         <h3>Ciudad</h3>
-                        <h4 class="ciudad"><input type="text" name="city"
-                                value="<%= locals.userLogged.services_city%> "></h4>
+
+                        <select class="ciudad" name="city">
+                            <option default class="ciudad" name="city" value="<%= locals.userLogged.services_city %>">
+                               - <%= locals.userLogged.services_city %> -
+                            </option>
+                            <option name="city">Buenos Aires</option>
+                            <option name="city">Caracas</option>
+                            <option name="city">Venado Tuerto</option>
+                            <option name="city">Bahía </option>
+                        </select>
+
                         <h3>Móvil</h3>
                         <h4><input type="text" name="contact_number" value="<%= locals.userLogged.contact_number%> ">
                         </h4>
