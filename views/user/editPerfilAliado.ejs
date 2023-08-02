@@ -14,7 +14,7 @@
             </div>
 
             <section class="profile">
-                <form action="/<%= locals.userLogged.id %>/editPerfilAliado?_method=put" method="post">
+                <form action="/<%= locals.userLogged.id %>/editPerfilAliado?_method=put" method="post" enctype="multipart/form-data">
                     <div class="avatar">
                         <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px" />
                         <div>

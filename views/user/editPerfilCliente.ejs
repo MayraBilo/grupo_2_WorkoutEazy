@@ -14,12 +14,12 @@
             </div>
 
             <section class="profile">
-                <form action="/<%= locals.userLogged.id %>/editPerfilCliente?_method=put" method="post">
+                <form action="/<%= locals.userLogged.id %>/editPerfilCliente?_method=put" method="post" enctype="multipart/form-data">
                     <div class="avatar">
                         <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px" />
                         <div>
                             <label id="avatar" for="avatar">Cambiar foto de perfil:</label>
-                            <input id="avatar" type="file" name="avatar">
+                            <input id="avatar" type="file" name="avatar" >
                         </div>
                     </div>
                     <div class="datos">
