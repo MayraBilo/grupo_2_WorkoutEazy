@@ -116,7 +116,7 @@ const controller = {
         last_name: req.body.last_name,
         birth_date: req.body.birth_date,
         city: req.body.city,
-        avatar: req.file ? req.file.filename : "sin foto",
+        avatar: req.file ? req.file.filename : req.body.file,
         contact_number: req.body.contact_number,
         email: req.body.email,
       };
@@ -136,7 +136,7 @@ const controller = {
         perfil_profesional: req.body.perfil_profesional,
         birth_date: req.body.birth_date,
         services_city: req.body.city,
-        avatar: req.file ? req.file.filename : "sin foto",
+        avatar: req.file ? req.file.filename : req.body.file,
         contact_number: req.body.contact_number,
         email: req.body.email,
       };

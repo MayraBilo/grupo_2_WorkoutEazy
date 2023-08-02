@@ -53,7 +53,7 @@ const controller = {
           difficulty: req.body.difficulty,
           adress: req.body.adress,
           city: req.body.city,
-          image: req.file ? req.file.filename : "sin foto",
+          image: req.file ? req.file.filename : req.body.file,
           age: req.body.age,
           mode: req.body.mode,
           aliado_name: req.body.aliado_name,
