@@ -43,7 +43,7 @@ app.use(methodOverride("_method"));
 app.use(userLoggedMiddleware);
 app.use(userLoggedMiddlewareAliado);
 
-/*app.use(userLoggedDatabase);*/
+app.use(userLoggedDatabase);
 
 //----routes----//
 app.use(mainRoutes);

@@ -116,7 +116,7 @@ const controller = {
         activity_name: req.body.activity_name,
         category: req.body.category,
         product_description: req.body.product_description,
-        //aliado_id: req.body.aliado_id, userLogged?
+        aliado_id: req.session.userLogged.id,
         price: req.body.price,
         discount: req.body.discount,
         spots: req.body.spots,

@@ -70,6 +70,13 @@ module.exports = (sequelize, dataTypes) => {
     rol: {
       type: dataTypes.STRING,
     },
+    product_id: {
+      type: dataTypes.INTEGER,
+      references: {
+        model: "product",
+        key: "id"
+      }
+    }
     /* perfil_profesional: {
       type: dataTypes.STRING,
     },*/

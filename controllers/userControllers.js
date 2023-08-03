@@ -122,6 +122,10 @@ const controller = {
       };
 
       await db.Cliente.update(cliente, { where: { id: req.params.id } });
+      
+      let clienteEditado = await db.Cliente.findOne({ where: { id: req.params.id } })
+
+      req.session.userLogged = clienteEditado
 
       return res.render("perfilCliente", { cliente: req.session.userLogged });
     } catch (error) {
