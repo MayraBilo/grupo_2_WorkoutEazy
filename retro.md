@@ -106,3 +106,34 @@ No comunicar dificultades en la participación del grupo.
 
 Dejar de hacer:
 Ausentarse sin avisar.
+
+Sprint 6
+
+- Reunión semanal martes 21:00 a 23:00.
+
+1. Comenzar a hacer:
+
+- Hacer las weekly. Resumir lo visto en la reunión.
+- Descansar.
+
+2. Más de:
+
+- Comunicación por whatsapp.
+- Mandar memes de programación.
+- Apoyarse más en el trello y la lista de tareas.
+- Concretar los objetivos.
+- Diferenciar lo que es extra de lo que es un requerimiento.
+
+3. Seguir haciendo:
+
+- Dividir las tareas equitativamente.
+- Seguir relejando con prueba y error. Con más tranquilidad al cometer errores y aprender.
+
+4. Menos de:
+
+- Pushear sin que todo esté funcionando.
+
+5. Dejar de hacer:
+
+- No tener presentes los requerimientos del sprint.
+- Entrar en crisis cuando algo no sale porque tarde o temprano se resuelve.
