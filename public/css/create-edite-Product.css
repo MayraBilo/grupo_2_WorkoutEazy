@@ -32,6 +32,11 @@ header {
     background-color: rgba(0, 161, 112, 30%);
 }
 
+header .buscador {
+    max-height: 42px;
+    max-width: 400px;
+}
+
 /* Main */
 
 input.lsinput.horasinput {

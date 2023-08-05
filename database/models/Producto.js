@@ -90,8 +90,8 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false,
     });
 
-    Producto.belongsTo(models.Aliado, {
-      as: "aliado_productos",
+Producto.belongsTo(models.Aliado, {
+      as: "aliado_producto",
       foreignKey: "aliado_id",
     });
 

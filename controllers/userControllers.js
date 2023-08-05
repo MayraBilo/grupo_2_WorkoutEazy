@@ -128,6 +128,7 @@ const controller = {
       req.session.userLogged = clienteEditado
 
       return res.render("perfilCliente", { cliente: req.session.userLogged });
+      
     } catch (error) {
       res.send("Hubo un error");
     }
