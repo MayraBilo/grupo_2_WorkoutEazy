@@ -518,8 +518,6 @@ button, input, optgroup, select, textarea {
     color: red;
 }
 
-
-
 /*------------------------------------------------------- Media Queries-----------------------------------------------------------*/
 @media (min-width: 669px) { 
 .registro {

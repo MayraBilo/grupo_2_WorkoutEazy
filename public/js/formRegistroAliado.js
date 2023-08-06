@@ -94,9 +94,7 @@ const validateEmailFormat = e => {
     const inpValueEmail = e.target.value;
     const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
-
     if (!regex.test(inpValueEmail)) {
-
         inp.classList.add("invalid");
         inp.nextElementSibling.classList.add("error");
         inp.nextElementSibling.innerText = "Ingresa email válido";
@@ -115,29 +113,31 @@ const validatePasswordFormat = e => {
     if (!regex.test(inpValuePassword)) {
         inp.classList.add("invalid");
         inp.nextElementSibling.classList.add("error");
-        inp.nextElementSibling.innerText = "Utiliza mímino 8 caracteres, como al menos una letra mayúscula, números y símbolos";
+        inp.nextElementSibling.innerText = "Utiliza mímino 8 caracteres, con al menos una letra mayúscula, números y símbolos";
     } else {
         inp.classList.remove("invalid");
         inp.nextElementSibling.classList.remove("error");
         inp.nextElementSibling.innerText = "";
-    }
+}
 }
 
-//Validaciones de espacio vacío
-document_numberInp.addEventListener('blur', (e) => validateEntiInp("Ingresa información requerida", e));
-contact_numberInp.addEventListener('blur', (e) => validateEntiInp("Ingresa número celular", e));
-birth_dateInp.addEventListener('blur', (e) => validateEntiInp("Ingresa fecha de nacimiento", e));
-services_cityInp.addEventListener('input', (e) => validateEntiInp("Ingresa ciudad de servicios", e));
-
 //Implementación de validaciones con Expresiones regulares
-emailInp.addEventListener('blur', validateEmailFormat);
-passwordInp.addEventListener('blur', validatePasswordFormat);
+emailInp.addEventListener('input', validateEmailFormat);
+passwordInp.addEventListener('input', validatePasswordFormat);
 entity_nameInp.addEventListener('blur', validateNombreInp);
 first_nameInp.addEventListener('blur', validateNombreInp);
 last_nameInp.addEventListener('blur', validateNombreInp);
 servicesInp.addEventListener('blur', validateServiceInp);
 document_numberInp.addEventListener('input', validateDocument_numberInp);
 contact_numberInp.addEventListener('input', validateContac_numberInp);
+
+//Validaciones de espacio vacío
+emailInp.addEventListener('blur', (e) => validateEntiInp("Ingresa información requerida", e));
+passwordInp.addEventListener('blur', (e) => validateEntiInp("Ingresa contraseña requerida", e));
+document_numberInp.addEventListener('blur', (e) => validateEntiInp("Ingresa información requerida", e));
+contact_numberInp.addEventListener('blur', (e) => validateEntiInp("Ingresa número celular", e));
+birth_dateInp.addEventListener('blur', (e) => validateEntiInp("Ingresa fecha de nacimiento", e));
+services_cityInp.addEventListener('blur', (e) => validateEntiInp("Ingresa ciudad de servicios", e));
 
 //Validación de archivo para foto perfil
 
@@ -157,3 +157,5 @@ avatarInp.addEventListener('blur', (e) => {
         inp.nextElementSibling.innerText = "";
     }
 });
+
+  
