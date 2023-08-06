@@ -470,8 +470,17 @@ align-items: center;
 }
 .grupo-de-registrosDocumentos input:focus {
     outline: none;
-    border: solid 2px #00a170;
+    border: solid 3px #006e52;
 }
+.grupo-de-registrosEntidad input:focus {
+    outline: none;
+    border: solid 3px #006e52;
+}
+.grupo-de-registrosA1 input:focus {
+    outline: none;
+    border: solid 3px #006e52;
+}
+
 
 .grupo-de-registrosUsuarios {
     margin-top: 15px;
@@ -496,10 +505,18 @@ button, input, optgroup, select, textarea {
   
  .grupo-de-registrosUsuarios input:focus {
     outline: none;
-    border: solid 2px #00a170;
+    border: solid 3px #00a170;
 }
 
+/* Validaciones */
+.invalid {
+    border: solid 1px red;
+    box-shadow: 0 0 10px red;
+}
 
+.error {
+    color: red;
+}
 
 
 

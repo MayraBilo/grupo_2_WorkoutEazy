@@ -61,7 +61,7 @@
 
           </div>
 
-          <div class="grupo-de-registrosEntidad">
+          <div class="grupo-de-registrosEntidad" id="entidadDeportiva">
 
             <label>Nombre de empresa o entidad deportiva:</label>
 
@@ -69,13 +69,13 @@
 
             <input type="text" name="entity_name" placeholder="Empresa"
               class="<%= locals.errors && errors.entity_name ? 'is-invalid' : null %>"
-              value="<%= locals.oldData ? oldData.entity_name : null %>">
+              value="<%= locals.oldData ? oldData.entity_name : null %>" id="entity_name">
             <% if (locals.errors && errors.entity_name) { %>
               <div class="text-danger">
                 <%= errors.entity_name.msg %>
               </div>
               <% } %>
-
+              <span></span>
           </div>
 
           <section class="grupo-de-registrosA1">
@@ -84,7 +84,7 @@
               <label>Nombre de profesional deportivo:</label>
               <br />
 
-              <input type="text" name="first_name"
+              <input type="text" name="first_name" id="first_name"
                 class="<%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
                 value="<%= locals.oldData ? oldData.first_name : null %>" placeholder="Ingresa tu Nombre">
 
@@ -94,7 +94,7 @@
                   <%= errors.first_name.msg %>
                 </div>
                 <% } %>
-
+                <span></span>
             </div>
 
             </div>
@@ -104,7 +104,7 @@
               </label>
 
               <br />
-              <input type="text" name="last_name"
+              <input type="text" name="last_name" id="last_name"
                 class="<%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
                 value="<%= locals.oldData ? oldData.last_name : null %>" placeholder="Ingresa tus Apellidos">
 
@@ -113,13 +113,13 @@
                   <%= errors.last_name.msg %>
                 </div>
                 <% } %>
-
+                <span></span>
             </div>
           </section>
 
           <div class="grupo-de-registrosUsuarios">
             <label>Profesión o Servicio:</label>
-            <input type="text" name="services" placeholder="profesión o servicio"
+            <input type="text" name="services" id="services" placeholder="profesión o servicio"
               value="<%= locals.oldData ? oldData.services : null %>">
 
             <% if (locals.errors && errors.services) { %>
@@ -127,7 +127,7 @@
                 <%= errors.services.msg %>
               </div>
               <% } %>
-
+              <span></span>
           </div>
 
           <div class="grupo-indicarSexo">
@@ -159,7 +159,7 @@
 
               <label>Número de Identificación:</label>
               <br />
-              <input type="text" name="document_number" placeholder="Ingresa tu Identificación"
+              <input name="document_number" id="document_number" placeholder="Ingresa tu Identificación"
                 value="<%= locals.oldData ? oldData.document_number : null %>">
 
               <% if (locals.errors && errors.document_number) { %>
@@ -167,7 +167,7 @@
                   <%= errors.document_number.msg %>
                 </div>
                 <% } %>
-
+                <span></span>
             </div>
 
           </section>
@@ -176,13 +176,14 @@
               <label>Fecha de Nacimiento:
               </label>
               <br />
-              <input type="date" name="birth_date">
+              <input type="date" name="birth_date" id="birth_date">
 
               <% if (locals.errors && errors.birth_date) { %>
                 <div class="text-danger">
                   <%= errors.birth_date.msg %>
                 </div>
                 <% } %>
+                <span></span>
             </div>
             <div>
               <label>Ciudad ubicación de servicios:
@@ -197,11 +198,11 @@
                 <% let ciudades=['Buenos Aires', 'Caracas' , 'Venado Tuerto' , 'Bahía Blanca' ]; %>
                   <% for (const oneCity of ciudades) { %>
                     <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.services_city) ? 'selected' : null %>
-                      >
+                      id="services_city">
                       <%= oneCity%>
                     </option>
                     <% }%>
-
+                    <span></span>
               </select>
             </div>
           </section>
@@ -209,7 +210,7 @@
           <section class="grupo-de-registrosA1">
             <div>
               <label>N° Celular: </label>
-              <input name="contact_number" placeholder="Ingresa tu # Celular" type="text"
+              <input name="contact_number" id="contact_number" placeholder="Ingresa tu # Celular 54 9-" type="text"
                 value="<%= locals.oldData ? oldData.contact_number : null %>">
 
               <% if (locals.errors && errors.contact_number) { %>
@@ -217,12 +218,12 @@
                   <%= errors.contact_number.msg %>
                 </div>
                 <% } %>
-
+                <span></span>
             </div>
             <div>
               <label>E-mail: </label>
               <input name="email" type="text" class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                type="email" value="<%= locals.oldData ? oldData.email : null %>"
+              type="email" value="<%= locals.oldData ? oldData.email : null %>" id="email"
                 placeholder="Ingresa tu correo electrónico">
 
               <% if (locals.errors && errors.email) { %>
@@ -230,27 +231,27 @@
                   <%= errors.email.msg %>
                 </div>
                 <% } %>
-
+                <span></span>
             </div>
           </section>
 
           <section class="grupo-de-registrosDocumentos">
             <label>Subir Foto Perfil:</label>
 
-            <input name="avatar" type="file" value="<%= locals.oldData ? oldData.avatar : null %>">
+            <input name="avatar" type="file" value="<%= locals.oldData ? oldData.avatar : null %>" id="avatar">
 
             <% if (locals.errors && errors.avatar) { %>
               <div class="text-danger">
                 <%= errors.avatar.msg %>
               </div>
               <% } %>
-
+              <span></span>
           </section>
 
           <div class="grupo-de-registrosUsuarios">
             <label>Contraseña:</label>
 
-            <input type="password" name="password" placeholder="Crear Contraseña"
+            <input type="password" name="password" id="password" placeholder="Crear Contraseña"
               value="<%= locals.oldData ? oldData.password : null %>">
 
             <% if (locals.errors && errors.password) { %>
@@ -258,7 +259,7 @@
                 <%= errors.password.msg %>
               </div>
               <% } %>
-
+              <span></span>
           </div>
 
           <!---<div class="grupo-de-registrosUsuarios">
@@ -303,7 +304,7 @@
           </div>
 
         </form>
-
+        <script src="/js/formRegistroAliado.js"></script>
       </section>
     </main>
     <%- include("../partials/footer") %>
