@@ -20,7 +20,7 @@ const validations = [
     body('product_description').notEmpty().withMessage('Escribir una decripción').isLength({ min: 20 }).withMessage('La descripción debe tener al menos 20 caracteres'),
     body('category').notEmpty().withMessage('Debe seleccionar una categoría'),
     body('subcategory').notEmpty().withMessage('Debe seleccionar una subcategoría'),
-    body('aliado_id').notEmpty().withMessage('Debe escribir un nombre de aliado'),
+    body('aliado_name').notEmpty().withMessage('Debe escribir un nombre de aliado'),
     body('price').notEmpty().withMessage('Debe escribir un precio de producto'),
     body('spots').notEmpty().withMessage('Debe escribir la cantidad de cupos disponibles'),
     body('schedule').notEmpty().withMessage('Debe seleccionar el horario de la clase'),
