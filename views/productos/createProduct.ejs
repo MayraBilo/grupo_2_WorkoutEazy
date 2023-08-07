@@ -81,11 +81,11 @@
 
           <div class="container-name-service">
             <label for="aliado_id">Nombre del Aliado</label>
-            <input class="lsinput <%= locals.errors && errors.aliado_id ? 'is-invalid' : null %>" type="text" name="aliado_id"
-            value="<%= locals.oldData ? oldData.aliado_id : null %>">
-            <% if (locals.errors && errors.aliado_id) { %>
+            <input class="lsinput <%= locals.errors && errors.aliado_name ? 'is-invalid' : null %>" type="text" name="aliado_name"
+            value="<%= locals.oldData ? oldData.aliado_name : null %>">
+            <% if (locals.errors && errors.aliado_name) { %>
               <div class="text-danger">
-                  <%= errors.aliado_id.msg %>
+                  <%= errors.aliado_name.msg %>
               </div>
               <% } %>
           </div>

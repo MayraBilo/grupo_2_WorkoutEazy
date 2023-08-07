@@ -64,7 +64,7 @@
                     </div>
                     <div class="container-name-service">
                         <label for="name-service">Nombre del Aliado</label>
-                        <input class="lsinput" type="text" name="aliado_first_name" value="<%=producto.aliado_first_name%>">
+                        <input class="lsinput" type="text" name="aliado_name" value="<%=producto.aliado_name%>">
                         <span class="feedback"></span>
                     </div>
             
@@ -106,10 +106,17 @@
       
                 
                     <div class="div-add-pictures">
-                        <label for="add-pictures">Agregar fotos</label>
-                        <input type="hidden" name="oldImage" value="<%= producto.image %>">
-                        <input class="add-pictures" type="file" name="image" accept="image/*" value="<%= producto.image %>">
-                        <span class="feedback"></span>
+                        <!--<input type="hidden" name="oldImage" value="<%= producto.image %>">
+                        <input class="add-pictures" type="file" name="image" value="<%= producto.image %>">-->
+
+                        <div class="div-add-pictures">
+                            <label for="add-pictures">Agregar fotos</label>
+                            <br>
+                            <input type="hidden" name="oldImage" value="<%= producto.image %>">
+                            <img src="/images/productos/<%= producto.image %>" alt="Imagen del producto" width="100px">
+                            <br>
+                            <input class="add-pictures" type="file" name="image" value="Imagen seleccionada">
+                        </div>
                     </div>
                     <div class="div-difficulty">
                         <label for="difficulty">Dificultad</label>
@@ -137,16 +144,16 @@
                     <div class="div-ages">
                         <label for="age">Edades</label>
                         <div>
-                            <input type="checkbox" name="age" value="Niños"> Niños
+                            <input type="checkbox" name="age" value="Ninos" <%= producto.age.includes('Ninos') ? 'checked' : '' %>> Niños
                         </div>
                         <div>
-                            <input type="checkbox" name="age" value="Adolescentes"> Adolescentes
+                            <input type="checkbox" name="age" value="Adolescentes" <%= producto.age.includes('Adolescentes') ? 'checked' : '' %>> Adolescentes
                         </div>
                         <div>
-                            <input type="checkbox" name="age" value="Jovenes"> Jóvenes
+                            <input type="checkbox" name="age" value="Jovenes" <%= producto.age.includes('Jovenes') ? 'checked' : '' %>> Jóvenes
                         </div>
                         <div>
-                            <input type="checkbox" name="age" value="Adultos"> Adultos
+                            <input type="checkbox" name="age" value="Adultos" <%= producto.age.includes('Adultos') ? 'checked' : '' %>> Adultos
                         </div>
                         <span class="feedback"></span>
                     </div>
@@ -154,10 +161,10 @@
                     <div class="div-ages">
                         <label for="modalidad">Modalidad</label>
                         <div>
-                            <input type="checkbox" name="mode" value="<%=producto.mode%>"> Presencial
+                            <input type="checkbox" name="mode" value="Presencial" <%= producto.mode.includes('Presencial') ? 'checked' : '' %>> Presencial
                         </div>
                         <div>
-                            <input type="checkbox" name="mode" value="<%=producto.mode%>"> Virtual
+                            <input type="checkbox" name="mode" value="Virtual" <%= producto.mode.includes('Virtual') ? 'checked' : '' %>> Virtual
                         </div>
                         
                         <span class="feedback"></span>
