@@ -202,6 +202,11 @@ form>div {
     display: none;
 }
 
+.text-danger {
+    color: rgb(184, 32, 32);
+    margin: 5px;
+}
+
 @media (min-width: 669px) {}
 
 @media (min-width: 1200px) {
@@ -239,3 +244,4 @@ form>div {
         background-color: #d10000;
     }
 }
+

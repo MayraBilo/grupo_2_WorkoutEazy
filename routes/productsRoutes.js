@@ -9,12 +9,13 @@ const router = express.Router();
 
 const uploadFile = require("../middlewares/multerMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
+const validations = require("../middlewares/validateCreateProduct")
 
 //@GET / product
 router.get("/", productController.getList);
 
 // @POST /product
-router.post("/", uploadFile.single("image"), productController.postProduct);
+router.post("/", uploadFile.single("image"), validations, productController.postProduct);
 
 // @GET /product/create
 router.get("/createProduct", productController.getCreate);

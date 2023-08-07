@@ -1,5 +1,6 @@
 const productModel = require("../models/product");
 const db = require("../database/models");
+const { validationResult } = require("express-validator");
 
 const controller = {
   // OK
@@ -112,6 +113,16 @@ const controller = {
 
   postProduct: async (req, res) => {
     try {
+
+      const resultValidation = validationResult(req);
+
+      if (resultValidation.errors.length > 0) {
+        return res.render("createProduct", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+        });
+      }
+
       const newProduct = {
         activity_name: req.body.activity_name,
         category: req.body.category,

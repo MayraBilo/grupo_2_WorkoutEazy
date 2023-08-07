@@ -14,75 +14,93 @@
           <div class="div-categoria">
             <select class="categoria" name="category">
               <option
-                default
                 class="select-categoria"
                 name="category"
-                value="category"
+                value=""
               >
                 - Selecciona una categoría -
               </option>
-              <option name="category" value="Yoga">Yoga</option>
-              <option name="category" value="Fitness">Fitness</option>
-              <option name="category" value="Danzas">Danzas</option>
-              <option name="category" value="Deportes">Deportes</option>
+
+            <% let categories=['Yoga', 'Fitness' , 'Danzas' , 'Deportes' ]; %>
+                                    <% for (const oneCategory of categories) { %>
+                                        <option value="<%= oneCategory%>" <%=locals.oldData && (oneCategory===oldData.category)
+                                            ? 'selected' : null %> >
+                                            <%= oneCategory%>
+                                        </option>
+                                        <% }%>
             </select>
-            <span class="feedback"></span>
+
           </div>
+
+          <% if (locals.errors && errors.category) { %>
+            <div class="text-danger">
+                <%= errors.category.msg %>
+            </div>
+            <% } %>
+
           <div class="div-subcategory">
             <select class="categoria" name="subcategory">
               <option
-                default
                 class="select-categoria"
                 name="subcategory"
-                value="subcategory"
+                value=""
               >
                 - Selecciona una subcategoría -
               </option>
-              <option name="subcategory" value="Yoga-Mysore">Yoga-Mysore</option>
-              <option name="subcategory">Yoga-Ashtanga</option>
-              <option name="subcategory">Yoga-Hatha</option>
-              <option name="subcategory">Yoga-Kundalini</option>
-              <option name="subcategory">Yoga-Flow</option>
-              <option name="subcategory">Yoga-Flex</option>
-              <option name="subcategory">Fitness-Funcional</option>
-              <option name="subcategory">Fitness-Pilates</option>
-              <option name="subcategory">Fitness-Musculación</option>
-              <option name="subcategory">Fitness-Crossfit</option>
-              <option name="subcategory">Fitness-Gimnasio</option>
-              <option name="subcategory">Fitness-De combate</option>
-              <option name="subcategory">Danzas-Clásico</option>
-              <option name="subcategory">Danzas-Urbano</option>
-              <option name="subcategory">Danzas-Salsa</option>
-              <option name="subcategory">Danzas-Tango</option>
-              <option name="subcategory">Danzas-Folklore</option>
-              <option name="subcategory">Danzas-Cuarteto</option>
-              <option name="subcategory">Danzas-Contemporáneo</option>
-              <option name="subcategory">Deportes-Acuáticos</option>
-              <option name="subcategory">Deportes-Gimnasia</option>
-              <option name="subcategory">Deportes-Extremos</option>
-              <option name="subcategory">Deportes-En conjunto</option>
-              <option name="subcategory">Deportes-Montaña</option>
+
+              <% let subcategories=['Yoga-Mysore', 'Yoga-Ashtanga' , 'Yoga-Hatha' , 'Yoga-Kundalini', 'Yoga-Flow', 'Yoga-Flex', 'Fitness-Functional', 'Fitness-Pilates', 'Fitness-Musculación', 'Fitness-Crossfit', 'Fitness-Gimnasio', 'Fitness-De combate', 'Danzas-Clásico', 'Danzas-Urbano', 'Danzas-Salsa', 'Danzas-Tango', 'Danzas-Folklore', 'Danzas-Cuarteto', 'Danzas-Contemporáneo', 'Deportes-Acuáticos', 'Deportes-Gimnasia', 'Deportes-Extremos', 'Deportes-En Conjunto', 'Deportes-Montaña']; %>
+                                    <% for (const oneSubcategory of subcategories) { %>
+                                        <option value="<%= oneSubcategory%>" <%=locals.oldData && (oneSubcategory===oldData.subcategory)
+                                            ? 'selected' : null %> >
+                                            <%= oneSubcategory%>
+                                        </option>
+                                        <% }%>
+
             </select>
-            <span class="feedback"></span>
+            
           </div>
+
+          <% if (locals.errors && errors.subcategory) { %>
+            <div class="text-danger">
+                <%= errors.subcategory.msg %>
+            </div>
+            <% } %>
 
           <div class="container-name-service">
             <label for="activity_name">Nombre del servicio</label>
-            <input class="lsinput" type="text" name="activity_name">
-            <span class="feedback"></span>
+            <input class="lsinput <%= locals.errors && errors.activity_name ? 'is-invalid' : null %>" type="text" name="activity_name"
+            value="<%= locals.oldData ? oldData.first_name : null %>"
+            >
+            <% if (locals.errors && errors.activity_name) { %>
+              <div class="text-danger">
+                  <%= errors.activity_name.msg %>
+              </div>
+              <% } %>
+
           </div>
 
           <div class="container-name-service">
             <label for="aliado_id">Nombre del Aliado</label>
-            <input class="lsinput" type="text" name="aliado_id">
-            <span class="feedback"></span>
+            <input class="lsinput <%= locals.errors && errors.aliado_id ? 'is-invalid' : null %>" type="text" name="aliado_id"
+            value="<%= locals.oldData ? oldData.aliado_id : null %>">
+            <% if (locals.errors && errors.aliado_id) { %>
+              <div class="text-danger">
+                  <%= errors.aliado_id.msg %>
+              </div>
+              <% } %>
           </div>
 
           <div class="div-value-disc">
             <div class="div-value">
               <label for="price">Valor</label>
-              <input class="sinput" type="text" name="price">
-              <span class="feedback"></span>
+              <input class="sinput <%= locals.errors && errors.price ? 'is-invalid' : null %>" type="text" name="price"
+              value="<%= locals.oldData ? oldData.price : null %>">
+              <% if (locals.errors && errors.price) { %>
+                <div class="text-danger">
+                    <%= errors.price.msg %>
+                </div>
+                <% } %>
+              
             </div>
 
             <div class="div-disc">
@@ -99,67 +117,109 @@
           </div>
           <div class="container-name-service">
             <label for="spots">Cupos</label>
-            <input class="lsinput" type="text" name="spots">
-            <span class="feedback"></span>
+            <input class="lsinput <%= locals.errors && errors.spots ? 'is-invalid' : null %>" type="text" name="spots"
+            value="<%= locals.oldData ? oldData.spots : null %>">
+            <% if (locals.errors && errors.spots) { %>
+              <div class="text-danger">
+                  <%= errors.spots.msg %>
+              </div>
+              <% } %>
           </div>
+
           <div class="div-description">
             <label for="product_description">Descripción</label>
-            <input class="lfinput" type="text" name="product_description">
-            <span class="feedback"></span>
+            <input class="lfinput <%= locals.errors && errors.product_description ? 'is-invalid' : null %>" type="text" name="product_description" value="<%= locals.oldData ? oldData.product_description : null %>">
+            <% if (locals.errors && errors.product_description) { %>
+              <div class="text-danger">
+                  <%= errors.product_description.msg %>
+              </div>
+              <% } %>
           </div>
 
           <div class="div-description">
             <label for="shedule">Horarios</label>
-            <input class="lfinput" type="date" name="schedule">
-            <span class="feedback"></span>
+            <input class="lfinput <%= locals.errors && errors.schedule ? 'is-invalid' : null %>" type="date" name="schedule"
+            value="<%= locals.oldData ? oldData.schedule : null %>">
+            <% if (locals.errors && errors.schedule) { %>
+              <div class="text-danger">
+                  <%= errors.schedule.msg %>
+              </div>
+              <% } %>
           </div>
 
           <div class="container-name-service containerhoras">
             <label for="length">Duración</label>
-            <input class="lsinput horasinput" type="time" name="length">
+            <input class="lsinput horasinput <%= locals.errors && errors.length ? 'is-invalid' : null %>" type="time" name="length"
+            value="<%= locals.oldData ? oldData.length : null %>">
             <p>hs</p>
-            <span class="feedback"></span>
+            <% if (locals.errors && errors.length) { %>
+              <div class="text-danger">
+                  <%= errors.length.msg %>
+              </div>
+              <% } %>
           </div>
 
           <div class="div-add-pictures">
             <label for="image">Agregar fotos</label>
-            <input
-              class="add-pictures"
-              type="file"
-              name="image"
-              accept="image/*"
-            />
-            <span class="feedback"></span>
+
+            <input class="add-pictures" type="file" name="image"
+                            value="<%= locals.oldData ? oldData.image : null %>">
+
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="text-danger">
+                                <%= errors.image.msg %>
+                            </div>
+                            <% } %>
           </div>
 
           <div class="div-difficulty">
             <label for="difficulty">difficulty</label>
             <select name="difficulty" class="difficulty">
               <option
-                default
                 class="select-difficulty"
                 name="difficulty"
-                value="difficulty"
+                value=""
               >
                 - Selecciona una dificultad -
               </option>
-              <option name="difficulty">Principiante</option>
-              <option name="difficulty">Facil</option>
-              <option name="difficulty">Intermedio</option>
-              <option name="difficulty">Dificil</option>
-              <option name="difficulty">Avanzado</option>
+
+              <% let difficulties=['Principiante', 'Fácil' , 'Intermedio' , 'Difícil', 'Avanzado' ]; %>
+                                    <% for (const oneDifficulty of difficulties) { %>
+                                        <option value="<%= oneDifficulty%>" <%=locals.oldData && (oneDifficulty===oldData.difficulty)
+                                            ? 'selected' : null %> >
+                                            <%= oneDifficulty%>
+                                        </option>
+                                        <% }%>
             </select>
-            <span class="feedback"></span>
+            
           </div>
+          <% if (locals.errors && errors.difficulty) { %>
+            <div class="text-danger">
+                <%= errors.difficulty.msg %>
+            </div>
+            <% } %>
+
           <div class="div-complete-direction">
             <label for="adress">Dirección Completa</label>
-            <input class="lsinput" type="text" name="adress">
-            <span class="feedback"></span>
+            <input class="lsinput <%= locals.errors && errors.adress ? 'is-invalid' : null %>" type="text" name="adress"
+            value="<%= locals.oldData ? oldData.adress: null %>">
+            <% if (locals.errors && errors.adress) { %>
+              <div class="text-danger">
+                  <%= errors.adress.msg %>
+              </div>
+              <% } %>
+            
           </div>
           <div class="div-city">
             <label for="city">Ciudad</label>
-            <input class="lsinput" type="text" name="city">
-            <span class="feedback"></span>
+            <input class="lsinput <%= locals.errors && errors.city ? 'is-invalid' : null %>" type="text" name="city"
+            value="<%= locals.oldData ? oldData.city: null %>">
+            <% if (locals.errors && errors.city) { %>
+              <div class="text-danger">
+                  <%= errors.city.msg %>
+              </div>
+              <% } %>
+            
           </div>
           <div class="div-ages">
             <label for="age">Edades</label>
@@ -180,6 +240,8 @@
                 value="Jóvenes"
               />Jóvenes
             </div>
+
+
             <div>
               <input
                 type="checkbox"
@@ -187,7 +249,11 @@
                 value="Adultos"
               />Adultos
             </div>
-            <span class="feedback"></span>
+            <% if (locals.errors && errors.age) { %>
+              <div class="text-danger">
+                  <%= errors.age.msg %>
+              </div>
+              <% } %>
           </div>
           <div class="div-ages">
             <label for="mode">Modalidad</label>
@@ -201,6 +267,11 @@
             <div>
               <input type="checkbox" name="mode" value="virtual" />Virtual
             </div>
+            <% if (locals.errors && errors.mode) { %>
+              <div class="text-danger">
+                  <%= errors.mode.msg %>
+              </div>
+              <% } %>
           </div>
           <div class="div-submit-button">
             <button class="submit-button" type="submit" value="submit">
