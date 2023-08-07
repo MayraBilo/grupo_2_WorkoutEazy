@@ -10,8 +10,30 @@ const emailInp = document.querySelector('#email');
 const passwordInp = document.querySelector('#password');
 const avatarInp = document.querySelector('#avatar');
 
+const setErrors = (message, inp, isError = true) => {
+    if (isError) {
+        inp.classList.add("invalid");
+        inp.nextElementSibling.classList.add("error");
+        inp.nextElementSibling.innerText = message;
+    } else {
+        inp.classList.remove("invalid");
+        inp.nextElementSibling.classList.remove("error");
+        inp.nextElementSibling.innerText = " ";
+    }
+  }
+
 //Validaciones con Expresiones regulares
-const validateEntiInp = (message, e) => {
+const validateEmptyInp = (message, e) => {
+    const inp = e.target;
+    const inpValue = e.target.value;
+
+    if (inpValue.trim().length === 0) {
+      setErrors(message, inp);
+    } else {
+      setErrors("", inp, false);
+    }
+  }
+/*const validateEntiInp = (message, e) => {
     const inp = e.target;
     const inpValue = e.target.value;
 
@@ -24,22 +46,19 @@ const validateEntiInp = (message, e) => {
         inp.nextElementSibling.classList.remove("error");
         inp.nextElementSibling.innerText = " ";
     }
-};
+};*/
 const validateNombreInp = e => {
     const inp = e.target;
     const inpValue = e.target.value;
     const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/); 
 
     if (inpValue.trim().length =! regex.test(e.target.value) ) {
-        inp.classList.add("invalid");
-        inp.nextElementSibling.classList.add("error");
-        inp.nextElementSibling.innerText = "Ingresa tus datos de 3 a 30 caracteres";
+        setErrors("Ingresa tus datos de 3 a 30 caracteres", inp);
     } else {
-        inp.classList.remove("invalid");
-        inp.nextElementSibling.classList.remove("error");
-        inp.nextElementSibling.innerText = "";
+        setErrors("", inp, false);
     }
 };
+
 const validateServiceInp = e => {
     const inp = e.target;
     const inpValue = e.target.value;
