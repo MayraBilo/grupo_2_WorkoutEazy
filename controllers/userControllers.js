@@ -34,7 +34,9 @@ const controller = {
           req.session.userLogged = userToLogin;
 
           if (req.body.rememberUser) {
-            res.cookie("userEmail", req.session.userLogged.email, { maxAge: 1000 * 600 });
+            res.cookie("userEmail", req.session.userLogged.email, {
+              maxAge: 1000 * 600,
+            });
           }
 
           return res.redirect("/perfilCliente");
@@ -122,13 +124,14 @@ const controller = {
       };
 
       await db.Cliente.update(cliente, { where: { id: req.params.id } });
-      
-      let clienteEditado = await db.Cliente.findOne({ where: { id: req.params.id } })
 
-      req.session.userLogged = clienteEditado
+      let clienteEditado = await db.Cliente.findOne({
+        where: { id: req.params.id },
+      });
+
+      req.session.userLogged = clienteEditado;
 
       return res.render("perfilCliente", { cliente: req.session.userLogged });
-      
     } catch (error) {
       res.send("Hubo un error");
     }
@@ -171,6 +174,20 @@ const controller = {
     res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
+  },
+
+  getCart: (req, res) => {
+    db.Carrito.findOne({
+      include: [{ association: "cliente_carrito" }],
+      where: {
+        cliente_id: req.params.id,
+      },
+    }).then(function (carrito) {
+      res.render("productCart", {
+        carrito: carrito,
+        userLogged: req.session.userLogged,
+      });
+    });
   },
 };
 

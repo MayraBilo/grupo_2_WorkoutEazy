@@ -1,132 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%- include("../partials/head") %>
-    <link rel="stylesheet" href="/css/productCart.css">
-</head>
+    <link rel="stylesheet" href="/css/productCart.css" />
+  </head>
 
-<body>
-    <%- include("../partials/header") %>
+  <body>
+    <%- include("../partials/header", {userLogged: locals.userLogged}) %>
     <main>
-        <section id="shopping-cart">
-            <div class="text-product">
-                <h3>Producto</h3>
-            </div>
-            <div class="div-prod-inf">
-                <div class="product-information-1">
-                    <h3>Precio unitario</h3>
-                </div>
-                <div class="product-information-2">
-                    <h3>Cantidad</h3>
-                </div>
-                <div class="product-information-3">
-                    <h3>Subtotal</h3>
-                </div>
-            </div>
-            <article class="product">
-                <div class="inf-product">
-                    <img class="img-product" src="/Images/inicio/JacintaYoga.JPG">
-                    <div class="name-product">
-                        <h4>Nombre del producto</h4>
-                    </div>
-                </div>
-                <div class="gen-inf-porduct">
-                    <div class="product-price">
-                        <h4>(Precio)</h4>
-                    </div>
-                    <div class="product-amount">
-                        <h4>(Cantidad)</h4>
-                    </div>
-                    <div class="product-subtotal">
-                        <h4>(Subtotal)</h4>
-                    </div>
-                </div>
-                <div class="trash-box">
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-            </article>
-            <article class="product">
-                <div class="inf-product">
-                    <img class="img-product" src="/Images/inicio/JacintaYoga.JPG">
-                    <div class="name-product">
-                        <h4>Nombre del producto</h4>
-                    </div>
-                </div>
-                <div class="gen-inf-porduct">
-                    <div class="product-price">
-                        <h4>(Precio)</h4>
-                    </div>
-                    <div class="product-amount">
-                        <h4>(Cantidad)</h4>
-                    </div>
-                    <div class="product-subtotal">
-                        <h4>(Subtotal)</h4>
-                    </div>
-                </div>
-                <div class="trash-box">
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-            </article>
-            <article class="product">
-                <div class="inf-product">
-                    <img class="img-product" src="/Images/inicio/JacintaYoga.JPG">
-                    <div class="name-product">
-                        <h4>Nombre del producto</h4>
-                    </div>
-                </div>
-                <div class="gen-inf-porduct">
-                    <div class="product-price">
-                        <h4>(Precio)</h4>
-                    </div>
-                    <div class="product-amount">
-                        <h4>(Cantidad)</h4>
-                    </div>
-                    <div class="product-subtotal">
-                        <h4>(Subtotal)</h4>
-                    </div>
-                </div>
-                <div class="trash-box">
-                    <i class="fa-solid fa-trash"></i>
-                </div>
-            </article>
-        </section>
-        <div id="purchase-summary">
-            <div id="text-purchase-summary">
-                <h3>Resumen de compra</h3>
-            </div>
-            <div id="discount-cup-text">
-                <h4>Cupon de descuento</h4>
-            </div>
-            <div id="input-discount-cup">
-                <input type="text" name="discount-cup"><button type="submit" name="discount-cup">Usar</button>
-            </div>
-            <div id="subtotal">
-                <h4>Subtotal</h4>
-                <h4>(Subtotal)</h4>
-            </div>
-            <div id="discount">
-                <h4>Descuentos</h4>
-                <h4>(Descuentos)</h4>
-            </div>
-            <div id="total">
-                <h4>Total</h4>
-                <h4>(Total)</h4>
-            </div>
-            <div id="botton-continue">
-                <button type="submit">Continuar</button>
-            </div>
-            <div id="continue-buying">
-                <a href="/">
-                    < seguir comprando</a>
-            </div>
+      <section id="shopping-cart">
+        <div class="text-product">
+          <h2><%= carrito.cliente_carrito.first_name %></h2>
+          <h3>Producto</h3>
         </div>
+        <div class="div-prod-inf">
+          <div class="product-information-1">
+            <h3>Precio unitario</h3>
+          </div>
+          <div class="product-information-2">
+            <h3>Cantidad</h3>
+          </div>
+          <div class="product-information-3">
+            <h3>Subtotal</h3>
+          </div>
+        </div>
+        <article class="product">
+          <div class="inf-product">
+            <img class="img-product" src="/Images/inicio/JacintaYoga.JPG" />
+            <div class="name-product">
+              <h4>Nombre del producto</h4>
+            </div>
+          </div>
+          <div class="gen-inf-porduct">
+            <div class="product-price">
+              <h4>(Precio)</h4>
+            </div>
+            <div class="product-amount">
+              <h4>(Cantidad)</h4>
+            </div>
+            <div class="product-subtotal">
+              <h4>(Subtotal)</h4>
+            </div>
+          </div>
+          <div class="trash-box">
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </article>
+        <article class="product">
+          <div class="inf-product">
+            <img class="img-product" src="/Images/inicio/JacintaYoga.JPG" />
+            <div class="name-product">
+              <h4>Nombre del producto</h4>
+            </div>
+          </div>
+          <div class="gen-inf-porduct">
+            <div class="product-price">
+              <h4>(Precio)</h4>
+            </div>
+            <div class="product-amount">
+              <h4>(Cantidad)</h4>
+            </div>
+            <div class="product-subtotal">
+              <h4>(Subtotal)</h4>
+            </div>
+          </div>
+          <div class="trash-box">
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </article>
+        <article class="product">
+          <div class="inf-product">
+            <img class="img-product" src="/Images/inicio/JacintaYoga.JPG" />
+            <div class="name-product">
+              <h4>Nombre del producto</h4>
+            </div>
+          </div>
+          <div class="gen-inf-porduct">
+            <div class="product-price">
+              <h4>(Precio)</h4>
+            </div>
+            <div class="product-amount">
+              <h4>(Cantidad)</h4>
+            </div>
+            <div class="product-subtotal">
+              <h4>(Subtotal)</h4>
+            </div>
+          </div>
+          <div class="trash-box">
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </article>
+      </section>
+      <div id="purchase-summary">
+        <div id="text-purchase-summary">
+          <h3>Resumen de compra</h3>
+        </div>
+        <div id="discount-cup-text">
+          <h4>Cupon de descuento</h4>
+        </div>
+        <div id="input-discount-cup">
+          <input type="text" name="discount-cup" /><button
+            type="submit"
+            name="discount-cup"
+          >
+            Usar
+          </button>
+        </div>
+        <div id="subtotal">
+          <h4>Subtotal</h4>
+          <h4>(Subtotal)</h4>
+        </div>
+        <div id="discount">
+          <h4>Descuentos</h4>
+          <h4>(Descuentos)</h4>
+        </div>
+        <div id="total">
+          <h4>Total</h4>
+          <h4>(Total)</h4>
+        </div>
+        <div id="botton-continue">
+          <button type="submit">Continuar</button>
+        </div>
+        <div id="continue-buying">
+          <a href="/"> < seguir comprando</a>
+        </div>
+      </div>
     </main>
     <%- include("../partials/footer") %>
     <button class="consultas">
-        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
-        Consultas</button>
-        
-</body>
-
+      <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
+      Consultas
+    </button>
+  </body>
 </html>
