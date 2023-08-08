@@ -1,5 +1,6 @@
 const path = require ('path');
 const {body} = require ('express-validator')
+const db = require("../database/models");  
 
 const validationsAliados = [
     body('entity_name').notEmpty().withMessage('Escribir un nombre').isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres'),
@@ -12,11 +13,17 @@ const validationsAliados = [
     body('contact_number').notEmpty().withMessage('Escribir número celular'),
     body('password').notEmpty().withMessage('Crear una contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres').matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/).withMessage('La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número'),
     body('email').notEmpty().withMessage('Escribir un email').bail()
-    .isEmail().withMessage('Debes escribir un mail válido'),
+    .isEmail().withMessage('Debes escribir un mail válido').custom(async (value) => {
+        const existingAliado = await db.Aliado.findOne({ where: { email: value } });
+        if (existingAliado) {
+          throw new Error('El correo electrónico ya está registrado');
+        }
+        return true;
+      }),
 
     body('avatar').custom((value, {req}) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+        let acceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg', '.gif'];
         
         if(!file) {
             throw new Error('Subir una imagen')

@@ -1,5 +1,6 @@
 const path = require ('path');
 const {body} = require ('express-validator')
+const db = require("../database/models");  
 
 const validations = [
     body('first_name').notEmpty().withMessage('Escribir un nombre').isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres'),
@@ -10,7 +11,13 @@ const validations = [
     body('genre').notEmpty().withMessage('Elegir un género'),
     body('birth_date').notEmpty().withMessage('Elegir una fecha de nacimiento'),
     body('email').notEmpty().withMessage('Escribir un email').bail()
-    .isEmail().withMessage('Debes escribir un mail válido'),
+    .isEmail().withMessage('Debes escribir un mail válido').custom(async (value) => {
+        const existingClient = await db.Cliente.findOne({ where: { email: value } });
+        if (existingClient) {
+          throw new Error('El correo electrónico ya está registrado');
+        }
+        return true;
+      }),
     body('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg', '.gif'];
