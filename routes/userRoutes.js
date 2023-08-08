@@ -22,8 +22,16 @@ const guestMiddlewareAliados = require("../middlewares/guestMiddlewareAliados.js
 //USUARIOS login
 
 // Formulario de login
-router.get("/login", [guestMiddleware, guestMiddlewareAliados], userControllers.getLogin);
-router.get("/loginAliado", guestMiddlewareAliados, aliadosControllers.getLoginAliado);
+router.get(
+  "/login",
+  [guestMiddleware, guestMiddlewareAliados],
+  userControllers.getLogin
+);
+router.get(
+  "/loginAliado",
+  guestMiddlewareAliados,
+  aliadosControllers.getLoginAliado
+);
 
 // Procesar el login
 router.post("/login", userControllers.processLogin);
@@ -32,7 +40,11 @@ router.post("/loginAliado", aliadosControllers.loginAliado);
 // USUARIOS registros
 
 // Formulario registroClientes
-router.get("/register", [guestMiddleware, guestMiddlewareAliados], userControllers.getRegister);
+router.get(
+  "/register",
+  [guestMiddleware, guestMiddlewareAliados],
+  userControllers.getRegister
+);
 
 // Procesar registroClientes
 router.post(
@@ -62,6 +74,7 @@ router.post(
 // Perfil de cliente
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
+router.get("/users/:id/productCart", authMiddleware, userControllers.getCart);
 
 // Edit Perfil cliente
 router.get(
@@ -81,7 +94,11 @@ router.delete("/:id/delete", userControllers.deleteProfile);
 //ALIADO
 
 // Perfil Aliado
-router.get("/perfilAliado", authMiddlewareAliado, aliadosControllers.getAliadoProfile);
+router.get(
+  "/perfilAliado",
+  authMiddlewareAliado,
+  aliadosControllers.getAliadoProfile
+);
 
 // Edit Perfil Aliado
 router.get(

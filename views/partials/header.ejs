@@ -68,7 +68,10 @@
             <li><a href="/product" id="productos">Productos</a></li>
             <li><a id="promociones">Promociones</a></li>
             <li><a href="/blog" id="blog">Blog</a></li>
-            <li><a href="/product/productCart" id="compras">Compras</a></li>
+            <%if (locals.isLogged) { %>
+             <li><a href="/users/<%=locals.userLogged.id%>/productCart" id="compras">Compras</a></li>
+
+                 <% }%>
         </ul>
     </nav>
 </header>

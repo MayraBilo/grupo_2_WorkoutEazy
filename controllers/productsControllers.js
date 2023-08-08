@@ -72,13 +72,6 @@ const controller = {
     }
   },
 
-  getCart: (req, res) => {
-    let products = productModel.findAll();
-    res.render("productCart", {
-      products: products,
-    });
-  },
-
   getCreate: (req, res) => {
     res.render("createProduct");
   },
@@ -113,7 +106,6 @@ const controller = {
 
   postProduct: async (req, res) => {
     try {
-
       const resultValidation = validationResult(req);
 
       if (resultValidation.errors.length > 0) {
@@ -147,6 +139,19 @@ const controller = {
     } catch (error) {
       res.json(error);
     }
+  },
+  addCart: (req, res) => {
+    db.Carrito.create({
+      id: req.query.id,
+      quantity: req.query.quantity,
+      discount: req.query.discount,
+      subtotal: req.query.subtotal,
+      total: req.query.total,
+      cliente_id: req.session.userLogged.id,
+      product_id: req.query.product_id,
+    });
+    console.log(req.query);
+    res.redirect("productCart");
   },
 };
 
