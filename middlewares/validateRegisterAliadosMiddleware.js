@@ -1,5 +1,5 @@
 const path = require ('path');
-const {body} = require ('express-validator')
+const {body} = require ('express-validator');
 
 const validationsAliados = [
     body('entity_name').notEmpty().withMessage('Escribir un nombre').isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres'),
