@@ -54,6 +54,7 @@ module.exports = (sequelize, dataTypes) => {
     Carrito.belongsTo(models.Cliente, {
       as: "cliente_carrito",
       foreignKey: "cliente_id",
+      through: "cliente_carrito",
     });
   };
 

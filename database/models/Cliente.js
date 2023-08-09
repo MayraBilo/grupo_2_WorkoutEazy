@@ -81,6 +81,7 @@ module.exports = (sequelize, dataTypes) => {
     Cliente.belongsTo(models.Carrito, {
       as: "cliente_carrito",
       foreignKey: "shopping_cart_id",
+      through: "cliente_carrito",
     });
   };
   return Cliente;

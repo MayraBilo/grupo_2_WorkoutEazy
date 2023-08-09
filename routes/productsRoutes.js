@@ -9,13 +9,18 @@ const router = express.Router();
 
 const uploadFile = require("../middlewares/multerMiddleware.js");
 const authMiddleware = require("../middlewares/authMiddleware.js");
-const validations = require("../middlewares/validateCreateProduct")
+const validations = require("../middlewares/validateCreateProduct");
 
 //@GET / product
 router.get("/", productController.getList);
 
 // @POST /product
-router.post("/", uploadFile.single("image"), validations, productController.postProduct);
+router.post(
+  "/",
+  uploadFile.single("image"),
+  validations,
+  productController.postProduct
+);
 
 // @GET /product/create
 router.get("/createProduct", productController.getCreate);
@@ -35,8 +40,8 @@ router.put(
   uploadFile.single("image"),
   productController.updateProduct
 );
-
-router.get("/productCart", authMiddleware, productController.getCart);
+// @GET /products/productCart
+router.get("/productCart/add", productController.addCart);
 
 router.get("/profileServices", productController.getService);
 

@@ -53,6 +53,7 @@ app.use(userRoutes);
 //--- ERROR 404 ---//
 
 app.use((req, res, next) => {
+  console.log(req.session.userLogged);
   res.status(404).render("404-error");
 });
 
