@@ -53,3 +53,24 @@ descriptionInput.oninput = (e) => {
     checkErrors()
 }
 
+const imageInput = document.querySelector('#imageInput');
+
+const isImageValid = () => {
+    const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+    const fileName = imageInput.value.toLowerCase();
+    const fileExtension = fileName.split('.').pop();
+
+    return allowedExtensions.includes(fileExtension);
+}
+
+imageInput.addEventListener('change', () => {
+    if (!isImageValid()) {
+        document.querySelector('#imageError').innerHTML = 'Formato de imagen inválido';
+    } else {
+        document.querySelector('#imageError').innerHTML = '';
+    }
+    checkErrors();
+});
+
+
+

@@ -168,13 +168,14 @@
             <label for="image">Agregar fotos</label>
 
             <input class="add-pictures" type="file" name="image"
-                            value="<%= locals.oldData ? oldData.image : null %>">
+                            value="<%= locals.oldData ? oldData.image : null %>" id="imageInput">
 
                         <% if (locals.errors && errors.image) { %>
                             <div class="text-danger">
                                 <%= errors.image.msg %>
                             </div>
                             <% } %>
+                            <p class="error text-danger" id="imageError"></p>
           </div>
 
           <div class="div-difficulty">
