@@ -18,13 +18,7 @@ const validations = [
         }
         return true;
       }),
-    .isEmail().withMessage('Debes escribir un mail válido').custom(async (value) => {
-        const existingClient = await db.Cliente.findOne({ where: { email: value } });
-        if (existingClient) {
-          throw new Error('El correo electrónico ya está registrado');
-        }
-        return true;
-      }),
+    
     body('avatar').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg', '.gif'];

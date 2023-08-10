@@ -70,12 +70,15 @@
             <label for="activity_name">Nombre del servicio</label>
             <input class="lsinput <%= locals.errors && errors.activity_name ? 'is-invalid' : null %>" type="text" name="activity_name"
             value="<%= locals.oldData ? oldData.first_name : null %>"
+            id="name"
             >
             <% if (locals.errors && errors.activity_name) { %>
               <div class="text-danger">
                   <%= errors.activity_name.msg %>
               </div>
               <% } %>
+          
+              <p class="error text-danger"></p>
 
           </div>
 
@@ -128,12 +131,14 @@
 
           <div class="div-description">
             <label for="product_description">Descripción</label>
-            <input class="lfinput <%= locals.errors && errors.product_description ? 'is-invalid' : null %>" type="text" name="product_description" value="<%= locals.oldData ? oldData.product_description : null %>">
+            <input class="lfinput <%= locals.errors && errors.product_description ? 'is-invalid' : null %>" type="text" name="product_description" value="<%= locals.oldData ? oldData.product_description : null %>" id="description">
             <% if (locals.errors && errors.product_description) { %>
               <div class="text-danger">
                   <%= errors.product_description.msg %>
               </div>
               <% } %>
+
+              <p class="error text-danger"></p>
           </div>
 
           <div class="div-description">
@@ -274,7 +279,7 @@
               <% } %>
           </div>
           <div class="div-submit-button">
-            <button class="submit-button" type="submit" value="submit">
+            <button class="submit-button" type="submit" value="submit" id="submit-btn">
               Publicar servicio
             </button>
           </div>
@@ -303,5 +308,6 @@
       <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
       Consultas
     </button>
+    <script src="/js/createProduct.js"></script>
   </body>
 </html>
