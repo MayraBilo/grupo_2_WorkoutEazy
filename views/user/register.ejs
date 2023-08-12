@@ -48,7 +48,7 @@
                         <div>
                             <label>Name:</label>
 
-                            <input type="text" name="first_name"
+                            <input type="text" name="first_name" id="first_name"
                                 class="input-selecto <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
                                 value="<%= locals.oldData ? oldData.first_name : null %>"
                                 placeholder="Ingresa tu nombre">
@@ -65,7 +65,7 @@
                             <label>Apellido: </label>
 
                             <input class="input-selecto <%= locals.errors && errors.last_name ? 'is-invalid' : null %>"
-                                type="text" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>"
+                                type="text" name="last_name" id="last_name" value="<%= locals.oldData ? oldData.last_name : null %>"
                                 placeholder="Ingresa tu apellido">
 
                             <% if (locals.errors && errors.last_name) { %>
@@ -97,7 +97,7 @@
                         <div>
                             <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de nacimiento: </label>
 
-                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="birth_date">
+                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="birth_date" id="birth_date">
 
                             <% if (locals.errors && errors.birth_date) { %>
                                 <div class="text-danger">
@@ -109,7 +109,7 @@
                         <div>
                             <label>Ciudad de Residencia: </label>
 
-                            <select class="option" name="city">
+                            <select class="option" name="city" id="city">
                                 <br>
                                 <option value="">Elegí una ciudad</option>
 
@@ -137,7 +137,7 @@
 
                         <div>
                             <label id="celular" for="celular">N° Celular: </label>
-                            <input class="input-selecto" id="e-mail" type="text" name="contact_number"
+                            <input class="input-selecto" id="e-mail" type="text" name="contact_number" id="contact_number"
                                 placeholder="Ingresa tu # Celular">
 
                             <% if (locals.errors && errors.contact_number) { %>
@@ -150,7 +150,7 @@
                         <div>
                             <label id="email" for="email">E-mail: </label>
                             <input class="input-selecto <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                                type="email" name="email" value="<%= locals.oldData ? oldData.email : null %>"
+                                type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>"
                                 placeholder="Ingresa tu correo electrónico">
 
                             <% if (locals.errors && errors.email) { %>
@@ -165,7 +165,7 @@
 
                     <section class="grupo-de-registrosUsuarios">
                         <label id="avatar" for="avatar">Subir foto de perfil:</label>
-                        <input id="avatar" type="file" name="avatar"
+                        <input id="avatar" type="file" name="avatar" id="avatar"
                             value="<%= locals.oldData ? oldData.avatar : null %>">
 
                         <% if (locals.errors && errors.avatar) { %>
@@ -179,7 +179,7 @@
 
                         <div>
                             <label id="contraseña" for="contraseña">Contraseña:</label>
-                            <input class="input-selecto" id="contraseña" type="password" name="password"
+                            <input class="input-selecto" id="contraseña" type="password" name="password" id="password"
                                 placeholder="Crear Contraseña">
 
                         </div>
@@ -202,7 +202,7 @@
                     <br>
 
                     <div class="condiciones">
-                        <input type="checkbox" name="condiciones" value="true">Acepto los
+                        <input type="checkbox" name="condiciones" id="condiciones" value="true">Acepto los
                         términos
                         y condiciones de uso del sitio web.
                         <% if (locals.errors && errors.condiciones) { %>
@@ -211,7 +211,7 @@
                             </div>
                             <% } %>
                                 <br>
-                                <input type="checkbox" name="privacidad" value="true">Acepto el
+                                <input type="checkbox" name="privacidad" id="privacidad" value="true">Acepto el
                                 tratamiento de datos personales según la política de privacidad con el fin de ser
                                 contactado por
                                 WorkoutEasy a través de los genres suministrados y/o recibir información relacionada con
