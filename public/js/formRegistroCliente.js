@@ -83,3 +83,20 @@ const validatePasswordFormat = e => {
         setErrors("", inp, false);
     }
 }
+
+//Implementación de validaciones con Expresiones regulares:
+
+emailInp.addEventListener('blur', validateEmailFormat);
+passwordInp.addEventListener('blur', validatePasswordFormat);
+first_nameInp.addEventListener('blur', validateNombreInp);
+last_nameInp.addEventListener('blur', validateNombreInp);
+contact_numberInp.addEventListener('blur', validateContac_numberInp);
+birth_dateInp.addEventListener('blur', validateBirthdayInp);
+
+//validación datos completados exitosamente
+emailInp.addEventListener('input', validateEmailFormat);
+passwordInp.addEventListener('input', validatePasswordFormat);
+first_nameInp.addEventListener('input', validateNombreInp);
+last_nameInp.addEventListener('input', validateNombreInp);
+contact_numberInp.addEventListener('input', validateContac_numberInp);
+birth_dateInp.addEventListener('input', validateBirthdayInp);
