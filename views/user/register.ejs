@@ -48,16 +48,16 @@
                         <div>
                             <label>Name:</label>
 
-                            <input type="text" name="first_name" id="first_name"
-                                class="input-selecto <%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
-                                value="<%= locals.oldData ? oldData.first_name : null %>"
-                                placeholder="Ingresa tu nombre">
-
+                        
+                                <input type="text" name="first_name" placeholder="Ingresa tu nombre"
+                                class="<%= locals.errors && errors.first_name ? 'is-invalid' : null %>"
+                                value="<%= locals.oldData ? oldData.first_name : null %>" id="first_name">
                             <% if (locals.errors && errors.first_name) { %>
                                 <div class="text-danger">
                                     <%= errors.first_name.msg %>
                                 </div>
                                 <% } %>
+                                <span></span>
 
                         </div>
 
@@ -73,7 +73,7 @@
                                     <%= errors.last_name.msg %>
                                 </div>
                                 <% } %>
-
+                                <span></span>
                         </div>
 
                     </section>
@@ -89,7 +89,7 @@
                                 <%= errors.genre.msg %>
                             </div>
                             <% } %>
-
+                            <span></span>
                     </div>
 
                     <section class="grupo-de-registrosA1">
@@ -102,6 +102,7 @@
                             <% if (locals.errors && errors.birth_date) { %>
                                 <div class="text-danger">
                                     <%= errors.birth_date.msg %>
+                                    <span></span>
                                 </div>
                                 <% } %>
                         </div>
@@ -122,6 +123,7 @@
                                         </option>
                                         <% }%>
                             </select>
+                            
                         </div>
 
                         <% if (locals.errors && errors.city) { %>
@@ -129,23 +131,24 @@
                                 <%= errors.city.msg %>
                             </div>
                             <% } %>
-
+                            <span></span>
 
                     </section>
 
                     <section class="grupo-de-registrosA1">
 
                         <div>
-                            <label id="celular" for="celular">N° Celular: </label>
-                            <input class="input-selecto" id="e-mail" type="text" name="contact_number" id="contact_number"
-                                placeholder="Ingresa tu # Celular">
-
+                            <label>N° Celular: </label>
+                            <input name="contact_number" id="contact_number" placeholder="Ingresa tu # Celular 54 9-" type="text"
+                              value="<%= locals.oldData ? oldData.contact_number : null %>">
+              
                             <% if (locals.errors && errors.contact_number) { %>
-                                <div class="text-danger">
-                                    <%= errors.contact_number.msg %>
-                                </div>
-                                <% } %>
-                        </div>
+                              <div class="text-danger">
+                                <%= errors.contact_number.msg %>
+                              </div>
+                              <% } %>
+                              <span></span>
+                          </div>
 
                         <div>
                             <label id="email" for="email">E-mail: </label>
@@ -158,6 +161,7 @@
                                     <%= errors.email.msg %>
                                 </div>
                                 <% } %>
+                                <span></span>
                         </div>
 
                     </section>
@@ -173,6 +177,7 @@
                                 <%= errors.avatar.msg %>
                             </div>
                             <% } %>
+                            <span></span>
                     </section>
 
                     <section class="grupo-de-registrosA1">
@@ -195,6 +200,7 @@
                                 <%= errors.password.msg %>
                             </div>
                             <% } %>
+                            <span></span>
 
                     </section>
 
@@ -210,6 +216,7 @@
                                 <%= errors.condiciones.msg %>
                             </div>
                             <% } %>
+                            <span></span>
                                 <br>
                                 <input type="checkbox" name="privacidad" id="privacidad" value="true">Acepto el
                                 tratamiento de datos personales según la política de privacidad con el fin de ser
@@ -221,6 +228,7 @@
                                         <%= errors.privacidad.msg %>
                                     </div>
                                     <% } %>
+                                    <span></span>
                     </div>
 
                     <div class="boton">
@@ -228,14 +236,14 @@
                     </div>
 
                 </form>
-
             </section>
         </main>
         <%- include("../partials/footer") %>
-            <button class="consultas">
-                <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
-                Consultas</button>
-
+        <button class="consultas">
+            <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
+            Consultas</button>
+            
+    <script src="/js/formRegistroCliente.js"></script>
 </body>
 
 </html>

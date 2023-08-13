@@ -74,7 +74,7 @@ h2 {
     flex-wrap: nowrap;
 }
 .redes-sociales button:hover {
-    transform: scale(1.2);
+    transform: scale(1.01);
 }
 #facebook{
     background-color: #1f8aff;
@@ -214,7 +214,7 @@ button.clicked {
 .boton input:hover {
     background-color: #0084bd;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.01);
 }
 
 h3 {
@@ -242,6 +242,7 @@ p {
 
 input .input-selecto .is-invalid {
     border: 3px rgb(184, 32, 32) solid;
+
 }
 
         /*--------------------------------------footer---------------------------------------------------------------------*/
@@ -394,7 +395,12 @@ align-items: center;
      align-items: center;
   }
   .grupo-de-registrosEntidad {
-    text-align: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    flex-wrap: nowrap;
+    
+
   }
 .grupo-de-registrosEntidad input {
     width: 60%;
@@ -402,6 +408,7 @@ align-items: center;
     border-radius: 10px;
     border: solid 1px #006e52;
     text-align: center;
+    align-self: center;
 }
 .grupo-de-registrosEntidad input:focus {
     outline: none;

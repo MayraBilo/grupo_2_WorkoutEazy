@@ -65,13 +65,13 @@
 
             <label>Nombre de empresa o entidad deportiva:</label>
 
-            <br />
-
             <input type="text" name="entity_name" placeholder="Empresa"
               class="<%= locals.errors && errors.entity_name ? 'is-invalid' : null %>"
               value="<%= locals.oldData ? oldData.entity_name : null %>" id="entity_name">
+            
             <% if (locals.errors && errors.entity_name) { %>
-              <div class="text-danger">
+             
+             <div class="text-danger">
                 <%= errors.entity_name.msg %>
               </div>
               <% } %>
