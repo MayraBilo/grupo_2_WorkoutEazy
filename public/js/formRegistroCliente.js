@@ -101,6 +101,6 @@ birth_date_Inp.addEventListener("blur", validateBirth_date_Inp);
 first_name_Inp.addEventListener("input", validateNameInp);
 last_name_Inp.addEventListener("input", validateNameInp);
 email_Inp.addEventListener("input", validateEmail_format);
-password_Inp.addEventListener("input", validatePassword_format);
+password_Inp.addEventListener("input", validate_password_inp);
 contact_number_Inp.addEventListener("input", validateContact_numberInp);
 birth_date_Inp.addEventListener("input", validateBirth_date_Inp);
