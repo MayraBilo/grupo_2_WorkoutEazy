@@ -6,10 +6,10 @@ const birth_date_Inp = document.querySelector("#birth_date");
 const city_Inp = document.querySelector("#city");
 const contact_number_Inp = document.querySelector("#contact_number");
 const email_Inp = document.querySelector("#email");
-const avatar_Inp = document.querySelector("#avatar");
 const password_Inp = document.querySelector("#password");
 const condiciones_Inp = document.querySelector("#condiciones");
 const privacidad_Inp = document.querySelector("#privacidad");
+const avatar_Inp = document.querySelector("#avatar");
 const enviar_Btn = document.getElementById("enviar");
 
 const setErrors = (message, inp, isError = true) => {
@@ -88,6 +88,18 @@ const validate_password_inp = (e) => {
   }
 };
 
+const validate_avatar_Inp = (e) => {
+  const inp = e.target;
+  const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
+  const allowedExt = ["jpg", "jpeg", "png", "gif"];
+  console.log(fileExt);
+  if (!allowedExt.includes(fileExt)) {
+    setErrors("Adjunta un archivo válido: .jpg, .jpeg, .png, .gif", inp, true);
+  } else {
+    setErrors("", inp, false);
+  }
+};
+
 //Implementación de validaciones con Expresiones regulares:
 
 first_name_Inp.addEventListener("blur", validateNameInp);
@@ -104,3 +116,5 @@ email_Inp.addEventListener("input", validateEmail_Format);
 password_Inp.addEventListener("input", validate_password_inp);
 contact_number_Inp.addEventListener("input", validateContact_numberInp);
 birth_date_Inp.addEventListener("input", validateBirth_date_Inp);
+
+avatar_Inp.addEventListener("change", validate_avatar_Inp);

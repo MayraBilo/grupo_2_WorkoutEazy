@@ -168,16 +168,15 @@
 
 
                     <section class="grupo-de-registrosUsuarios">
-                        <label id="avatar" for="avatar">Subir foto de perfil:</label>
-                        <input id="avatar" type="file" name="avatar" id="avatar"
-                            value="<%= locals.oldData ? oldData.avatar : null %>">
+                        <label  for="avatar">Subir foto de perfil:</label>
+                        <input name="avatar" type="file" value="<%= locals.oldData ? oldData.avatar : null %>" id="avatar">
 
                         <% if (locals.errors && errors.avatar) { %>
-                            <div class="text-danger">
-                                <%= errors.avatar.msg %>
-                            </div>
-                            <% } %>
-                            <span></span>
+                          <div class="text-danger">
+                            <%= errors.avatar.msg %>
+                          </div>
+                          <% } %>
+                          <span></span>
                     </section>
 
                     <section class="grupo-de-registrosA1">

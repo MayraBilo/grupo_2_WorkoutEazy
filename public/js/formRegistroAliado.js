@@ -120,6 +120,18 @@ const validatePasswordFormat = (e) => {
   }
 };
 
+const validateAvatarInp = (e) => {
+  const inp = e.target;
+  const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
+  const allowedExt = ["jpg", "jpeg", "png", "gif"];
+  console.log(fileExt);
+  if (!allowedExt.includes(fileExt)) {
+    setErrors("Adjunta un archivo válido: .jpg, .jpeg, .png, .gif", inp, true);
+  } else {
+    setErrors("", inp, false);
+  }
+};
+
 //Implementación de validaciones con Expresiones regulares:
 
 emailInp.addEventListener("blur", validateEmailFormat);
@@ -145,16 +157,7 @@ birth_dateInp.addEventListener("input", validateBirthdayInp);
 
 //Validación de archivo para foto perfil
 
-avatarInp.addEventListener("blur", (e) => {
-  const ind = e.target;
-  const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
-  const allowedExt = ["jpg", "jpeg", "png", "gif"];
-  if (!allowedExt.includes(fileExt)) {
-    setErrors("Adjunta un archivo válido: .jpg, .jpeg, .png, .gif", ind);
-  } else {
-    setErrors("", ind, false);
-  }
-});
+avatarInp.addEventListener("blur", validateAvatarInp);
 
 //Deshabilitar submit si no se llenan los datos
 

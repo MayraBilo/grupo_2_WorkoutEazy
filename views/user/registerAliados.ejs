@@ -236,16 +236,15 @@
           </section>
 
           <section class="grupo-de-registrosDocumentos">
-            <label>Subir Foto Perfil:</label>
+            <label  for="avatar">Subir foto de perfil:</label>
+                        <input name="avatar" type="file" value="<%= locals.oldData ? oldData.avatar : null %>" id="avatar">
 
-            <input name="avatar" type="file" value="<%= locals.oldData ? oldData.avatar : null %>" id="avatar">
-
-            <% if (locals.errors && errors.avatar) { %>
-              <div class="text-danger">
-                <%= errors.avatar.msg %>
-              </div>
-              <% } %>
-              <span></span>
+                        <% if (locals.errors && errors.avatar) { %>
+                          <div class="text-danger">
+                            <%= errors.avatar.msg %>
+                          </div>
+                          <% } %>
+                          <span></span>
           </section>
 
           <div class="grupo-de-registrosUsuarios">
