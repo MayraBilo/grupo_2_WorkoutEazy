@@ -46,7 +46,7 @@
                     <section class="grupo-de-registrosA1">
 
                         <div>
-                            <label>Name:</label>
+                            <label>Nombre:</label>
 
                         
                                 <input type="text" name="first_name" placeholder="Ingresa tu nombre"
@@ -97,14 +97,14 @@
                         <div>
                             <label id="fecha de nacimiento" for="fecha de nacimiento">Fecha de nacimiento: </label>
 
-                            <input class="input-selecto" id="label fecha de nacimiento" type="date" name="birth_date" id="birth_date">
+                            <input type="date" name="birth_date" id="birth_date">
 
-                            <% if (locals.errors && errors.birth_date) { %>
-                                <div class="text-danger">
+                                <% if (locals.errors && errors.birth_date) { %>
+                                    <div class="text-danger">
                                     <%= errors.birth_date.msg %>
+                                    </div>
+                                    <% } %>
                                     <span></span>
-                                </div>
-                                <% } %>
                         </div>
 
                         <div>
@@ -150,19 +150,19 @@
                               <span></span>
                           </div>
 
-                        <div>
-                            <label id="email" for="email">E-mail: </label>
-                            <input class="input-selecto <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                                type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>"
-                                placeholder="Ingresa tu correo electrónico">
-
+                          <div>
+                            <label>E-mail: </label>
+                            <input name="email" type="text" class="<%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                            type="email" value="<%= locals.oldData ? oldData.email : null %>" id="email"
+                              placeholder="Ingresa tu correo electrónico">
+              
                             <% if (locals.errors && errors.email) { %>
-                                <div class="text-danger">
-                                    <%= errors.email.msg %>
-                                </div>
-                                <% } %>
-                                <span></span>
-                        </div>
+                              <div class="text-danger">
+                                <%= errors.email.msg %>
+                              </div>
+                              <% } %>
+                              <span></span>
+                          </div>
 
                     </section>
 
@@ -184,8 +184,15 @@
 
                         <div>
                             <label id="contraseña" for="contraseña">Contraseña:</label>
-                            <input class="input-selecto" id="contraseña" type="password" name="password" id="password"
-                                placeholder="Crear Contraseña">
+                            <input type="password" name="password" id="password" placeholder="Crear Contraseña"
+                            value="<%= locals.oldData ? oldData.password : null %>">
+              
+                          <% if (locals.errors && errors.password) { %>
+                            <div class="text-danger">
+                              <%= errors.password.msg %>
+                            </div>
+                            <% } %>
+                            <span></span>
 
                         </div>
 

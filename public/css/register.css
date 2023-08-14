@@ -518,11 +518,16 @@ button, input, optgroup, select, textarea {
 /* Validaciones */
 .invalid {
     border: solid 1px red;
-    box-shadow: 0 0 10px red;
+    box-shadow: 0 0 5px red;
 }
 
 .error {
+    display: flex;
+    flex-wrap: nowrap;
     color: red;
+    font-size: 14px;
+    justify-content: center;
+    
 }
 
 /*------------------------------------------------------- Media Queries-----------------------------------------------------------*/

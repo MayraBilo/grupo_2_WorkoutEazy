@@ -53,7 +53,7 @@ const validateBirthdayInp = (e) => {
   //const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
 
   if (inpValue.trim().length === 0) {
-    setErrors("Ingresa tus fecha de Nacimiento", inp);
+    setErrors("Ingresa tu fecha de Nacimiento", inp);
   } else {
     setErrors("", inp, false);
   }

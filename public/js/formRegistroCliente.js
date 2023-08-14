@@ -30,9 +30,9 @@ const validateNameInp = (e) => {
   const inp = e.target;
   const inpValue = e.target.value;
   const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
-  console.log(inpValue);
+  regex.test(inpValue);
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Ingresa tus datos de 3 a 30 caracteres", inp);
+    setErrors("Ingresa tus datos de 3 a 30 caracteres", inp, true);
   } else {
     setErrors("", inp, false);
   }
@@ -40,10 +40,10 @@ const validateNameInp = (e) => {
 const validateBirth_date_Inp = (e) => {
   const inp = e.target;
   const inpValue = e.target.value;
-  const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
+  //const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
 
   if (inpValue.trim().length === 0) {
-    setErrors("Ingresa tus fecha de Nacimiento", inp);
+    setErrors("Ingresa una fecha de nacimiento válida", inp, true);
   } else {
     setErrors("", inp, false);
   }
@@ -61,13 +61,13 @@ const validateContact_numberInp = (e) => {
   }
 };
 
-const validateEmail_format = (e) => {
+const validateEmail_Format = (e) => {
   const inp = e.target;
   const inpValue = e.target.value;
   const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
-  if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Ingresa email válido", inp);
+  if (inpValue.trim().length > 4 && !regex.test(e.target.value)) {
+    setErrors("Ingresa un email válido", inp);
   } else {
     setErrors("", inp, false);
   }
@@ -80,7 +80,7 @@ const validate_password_inp = (e) => {
 
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
     setErrors(
-      "Utiliza mímino 8 caracteres, con al menos una letra mayúscula, números y símbolos",
+      "Utiliza mínimo 8 caracteres, con al menos una letra mayúscula, números y símbolos",
       inp
     );
   } else {
@@ -92,7 +92,7 @@ const validate_password_inp = (e) => {
 
 first_name_Inp.addEventListener("blur", validateNameInp);
 last_name_Inp.addEventListener("blur", validateNameInp);
-email_Inp.addEventListener("blur", validateEmail_format);
+email_Inp.addEventListener("blur", validateEmail_Format);
 password_Inp.addEventListener("blur", validate_password_inp);
 contact_number_Inp.addEventListener("blur", validateContact_numberInp);
 birth_date_Inp.addEventListener("blur", validateBirth_date_Inp);
@@ -100,7 +100,7 @@ birth_date_Inp.addEventListener("blur", validateBirth_date_Inp);
 //validación datos completados exitosamente
 first_name_Inp.addEventListener("input", validateNameInp);
 last_name_Inp.addEventListener("input", validateNameInp);
-email_Inp.addEventListener("input", validateEmail_format);
+email_Inp.addEventListener("input", validateEmail_Format);
 password_Inp.addEventListener("input", validate_password_inp);
 contact_number_Inp.addEventListener("input", validateContact_numberInp);
 birth_date_Inp.addEventListener("input", validateBirth_date_Inp);
