@@ -32,7 +32,7 @@ const validateNameInp = (e) => {
   const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
   regex.test(inpValue);
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Ingresa tus datos de 3 a 30 caracteres", inp, true);
+    setErrors("El nombre debe tener al menos 2 caracteres", inp, true);
   } else {
     setErrors("", inp, false);
   }
@@ -55,7 +55,7 @@ const validateContact_numberInp = (e) => {
   const regex = new RegExp(/^\d{10}$/);
 
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Número celular inválido", inp);
+    setErrors("El número de celular es celular inválido", inp);
   } else {
     setErrors("", inp, false);
   }

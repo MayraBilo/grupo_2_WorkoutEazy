@@ -42,7 +42,7 @@ const validateNombreInp = (e) => {
   const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
 
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Ingresa tus datos de 3 a 30 caracteres", inp);
+    setErrors("El nombre debe tener al menos 2 caracteres", inp);
   } else {
     setErrors("", inp, false);
   }
@@ -65,7 +65,7 @@ const validateServiceInp = (e) => {
   const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{6,40}$/);
 
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Ingresa tu servicio, de 6 a 30 caracteres", inp);
+    setErrors("Ingresa el nombre de tu servicio, de 6 a 30 caracteres", inp);
   } else {
     setErrors("", inp, false);
   }
@@ -73,10 +73,10 @@ const validateServiceInp = (e) => {
 const validateDocument_numberInp = (e) => {
   const inp = e.target;
   const inpValue = e.target.value;
-  const regex = new RegExp(/^\d{11,13}$/);
+  const regex = new RegExp(/^\d{8,13}$/);
 
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Número documento inválido", inp);
+    setErrors("El número de documento es inválido", inp);
   } else {
     setErrors("", inp, false);
   }
@@ -87,7 +87,7 @@ const validateContactnumberInp = (e) => {
   const regex = new RegExp(/^\d{10}$/);
 
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Número celular inválido", inp);
+    setErrors("El número de celular es inválido", inp);
   } else {
     setErrors("", inp, false);
   }
@@ -99,7 +99,7 @@ const validateEmailFormat = (e) => {
   const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
   if ((inpValue.trim().length = !regex.test(e.target.value))) {
-    setErrors("Ingresa email válido", inp);
+    setErrors("Ingresa un email válido", inp);
   } else {
     setErrors("", inp, false);
   }

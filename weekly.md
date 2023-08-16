@@ -26,3 +26,9 @@ Organizamos el trello asignando tareas.
 -Quedan pendientes un par de detalles para cuando apliquemos la base de datos. Por ejemplo, hashear el confirm-password y la edición de los perfiles de cliente y de aliado.
 
 -Queda pendiente replicar el trabajo de usuario-cliente en el usuario-aliado (el que brinda el servicio y carga los productos).
+
+15/8
+
+- Puesta a punto del sprint 7
+- La validación de email existente desde frontend no se puede hacer hasta no tener apis
+- El carrito de la aplicación todavía no funciona necesitamos aprender cómo hacerlo
