@@ -33,6 +33,7 @@
                     <img src="/images/productos/<%= producto.image %>" alt="imagenYoga" class="img-producto">
 
                     <form action="/product/productCart/add" method="get">
+                        
                         <input type="hidden" value="<%= producto.id %>" name="product_id">
                         
                         <div class="boton"><button class="reserva">Añadir al carrito</button></div>

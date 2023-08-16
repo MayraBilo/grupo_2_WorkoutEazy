@@ -19,7 +19,7 @@ const setErrors = (message, inp, isError = true) => {
     const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
     if (inpValue.trim().length =! regex.test(e.target.value) ) {
-        setErrors("Ingresa email válido", inp);
+        setErrors("Ingresa un email válido", inp);
     } else {
         setErrors("", inp, false);
     }

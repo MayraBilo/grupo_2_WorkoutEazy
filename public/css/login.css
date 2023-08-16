@@ -127,6 +127,9 @@ body {
     font-weight: 400;
 }
 
+.checkbox-recordar {
+    align-self: flex-start;
+}
 
 .button-access {
     width: 100vw;

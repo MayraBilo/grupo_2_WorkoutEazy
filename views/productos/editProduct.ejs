@@ -57,11 +57,23 @@
                         </select>
                         <span class="feedback"></span>
                     </div>
+
                     <div class="container-name-service">
-                        <label for="name-service">Nombre del servicio</label>
-                        <input class="lsinput" type="text" name="activity_name" value="<%=producto.activity_name%>">
-                        <span class="feedback"></span>
-                    </div>
+                        <label for="activity_name">Nombre del servicio</label>
+                        <input class="lsinput <%= locals.errors && errors.activity_name ? 'is-invalid' : null %>" type="text" name="activity_name"
+                        value="<%= locals.oldData ? oldData.first_name : null %>"
+                        id="name"
+                        >
+                        <% if (locals.errors && errors.activity_name) { %>
+                          <div class="text-danger">
+                              <%= errors.activity_name.msg %>
+                          </div>
+                          <% } %>
+                      
+                          <p class="error text-danger"></p>
+            
+                      </div>
+
                     <div class="container-name-service">
                         <label for="name-service">Nombre del Aliado</label>
                         <input class="lsinput" type="text" name="aliado_name" value="<%=producto.aliado_name%>">
@@ -88,10 +100,17 @@
                     </div>
                 
                     <div class="div-description">
-                        <label for="description">Descripción</label>
-                        <input class="lfinput" type="text" name="product_description" value="<%=producto.product_description%>">
-                        <span class="feedback"></span>
-                    </div>
+                        <label for="product_description">Descripción</label>
+                        <input class="lfinput <%= locals.errors && errors.product_description ? 'is-invalid' : null %>" type="text" name="product_description" value="<%= locals.oldData ? oldData.product_description : null %>" id="description">
+                        <% if (locals.errors && errors.product_description) { %>
+                          <div class="text-danger">
+                              <%= errors.product_description.msg %>
+                          </div>
+                          <% } %>
+            
+                          <p class="error text-danger"></p>
+                      </div>
+
                     <div class="container-name-service">
                         <label for="name-service">Horarios</label>
                         <input class="lsinput" type="text" name="schedule" value="<%=producto.schedule%>">
@@ -118,6 +137,8 @@
                             <input class="add-pictures" type="file" name="image" value="Imagen seleccionada">
                         </div>
                     </div>
+
+                    
                     <div class="div-difficulty">
                         <label for="difficulty">Dificultad</label>
                         <select name="difficulty" class="difficulty" value="difficulty">
@@ -171,7 +192,7 @@
                     </div>
                 
                     <div class="div-submit-button">
-                            <button class="submit-button" type="submit" value="submit">Guardar edicion</button>
+                            <button class="submit-button" type="submit" value="submit" id="submit-btn">Guardar edicion</button>
                     </div>
                     <div class="div-reset-button">
                         <button class="reset-button" type="reset" value="reset">Borrar campos</button>
