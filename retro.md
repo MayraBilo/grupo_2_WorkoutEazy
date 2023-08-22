@@ -137,3 +137,38 @@ Sprint 6
 
 - No tener presentes los requerimientos del sprint.
 - Entrar en crisis cuando algo no sale porque tarde o temprano se resuelve.
+
+
+Sprint 7
+
+- Reunión semanal martes 21:00 a 23:00.
+
+1. Comenzar a hacer:
+
+- Hacer las weekly. Resumir lo visto en la reunión.
+- Ir cerrando tareas pendientes del proyecto.
+
+2. Más de:
+
+- Comunicación sobre los avances.
+- Mandar memes de programación.
+
+3. Seguir haciendo:
+
+- Dividir las tareas equitativamente.
+- Seguir comunicando.
+- Apoyarnos en el trello.
+- Pushear con todo funcionando
+- Tener presentes los requerimientos del sprint.
+
+4. Menos de:
+
+- Pushear sin que todo esté funcionando.
+- Colgar en la etapa final.
+- Entrar en crisis cuando algo no sale porque tarde o temprano se resuelve.
+
+5. Dejar de hacer:
+
+- Dejar las cosas para último momento.
+- Olvidarnos de la weekly.
+
