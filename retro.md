@@ -172,3 +172,5 @@ Sprint 7
 - Dejar las cosas para último momento.
 - Olvidarnos de la weekly.
 
+Último Spint!
+
