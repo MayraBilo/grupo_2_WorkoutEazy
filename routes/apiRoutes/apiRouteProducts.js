@@ -6,6 +6,6 @@ const router = express.Router();
 
 //Endpoints
 
-router.get("/api/apiProducts", productController.getList)
+router.get("/apiProducts", productController.getList)
 
-router.get("/api/:id/apiProducts", productController.getDetail)
+router.get("/apiProducts/:id/detailApi", productController.getDetail)
