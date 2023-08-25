@@ -45,12 +45,13 @@ const controller = {
             const productId = req.params.id;
             const producto = await db.Producto.findByPk(productId)
             const relacion = await db.Producto.findByPk(productId, { include: [{ association: "aliado_producto" }] })
+            const urlProyecto = "http://localhost:3000/"
             
 
             return res.status(200).json({
                 data: producto,
                 aliado: [relacion.aliado_producto],
-                imageUrl: producto.image,
+                imageUrl: `${urlProyecto}/images/productos/${producto.image}`,
                 status: 200
             });
 
