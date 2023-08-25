@@ -50,7 +50,7 @@ app.use(userLoggedDatabase);
 app.use(mainRoutes);
 app.use("/product", productsRoutes);
 app.use(userRoutes);
-/*app.use(apiProduct);*/
+app.use(apiProduct);
 
 //--- ERROR 404 ---//
 

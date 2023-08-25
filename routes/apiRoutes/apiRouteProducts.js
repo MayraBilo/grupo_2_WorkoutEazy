@@ -9,3 +9,5 @@ const router = express.Router();
 router.get("/apiProducts", productController.getList)
 
 router.get("/apiProducts/:id/detailApi", productController.getDetail)
+
+module.exports = router
