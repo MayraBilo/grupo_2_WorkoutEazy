@@ -3,7 +3,7 @@ const db = require("../../database/models");
 
 const controller = {
 
-    getList: (req,res) => {
+    getApiList: (req,res) => {
         db.Producto.findAll({ include: [{ association: "aliado_producto" }] })
         .then(
             productos => {
@@ -22,7 +22,7 @@ const controller = {
             });
         });
     },
-    getDetail: (req,res) => {
+    getApiDetail: (req,res) => {
       const productId = req.params.id; 
         
         db.Producto.findByPk(productId, { include: [{ association: "aliado_producto" }] })

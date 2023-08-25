@@ -1,11 +1,11 @@
 const express = require("express");
 
-const productController = require ("../../controllers/apiControllers/apiControllerProducts")
+const productApiController = require ("../../controllers/apiControllers/apiControllerProducts")
 
 const router = express.Router();
 
 //Endpoints
 
-router.get("/apiProducts", productController.getList)
+router.get("/apiProducts", productApiController.getApiList)
 
-router.get("/apiProducts/:id/detailApi", productController.getDetail)
+router.get("/apiProducts/:id/detailApi", productApiController.getApiDetail)
