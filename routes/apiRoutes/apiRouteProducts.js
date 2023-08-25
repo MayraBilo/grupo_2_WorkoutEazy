@@ -8,4 +8,6 @@ const router = express.Router();
 
 router.get("/apiProducts", productApiController.getApiList)
 
-router.get("/apiProducts/:id/detailApi", productApiController.getApiDetail)
+router.get("/apiProducts/:id/detailApi", productController.getDetail)
+
+module.exports = router
