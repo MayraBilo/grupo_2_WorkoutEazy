@@ -4,17 +4,17 @@ const controller = {
 
         getApiList: async (req, res) => {
         try {
-            const allUsers = await db.User.findAll()
+            const allClientes = await db.Cliente.findAll()
 
             return res.status(200).json({
-                count: allUsers.length,
-                data: allUsers,
+                count: allClientes.length,
+                data: allClientes,
                 status: 200
             })
         }
         catch (error) {
             return res.status(500).json({
-                message: "Error fetching users",
+                message: "Error fetching clientes",
                 error: error.message,
                 status: 500
             });
@@ -22,19 +22,19 @@ const controller = {
     },
     getApiDetail: async (req, res) => {
         try {
-            const userId = req.params.id;
-            const user = await db.User.findByPk(userId)
+            const clienteId = req.params.id;
+            const cliente = await db.Cliente.findByPk(clienteId)
             const urlProyecto = "http://localhost:3000/"
             
             return res.status(200).json({
-                data: user,
-                imageUrl: `${urlProyecto}/images/avatars/${user.image}`,
+                data: cliente,
+                imageUrl: `${urlProyecto}/images/avatars/${cliente.image}`,
                 status: 200
             });
 
         } catch (error) {
             return res.status(500).json({
-                message: "Error fetching user details",
+                message: "Error fetching cliente details",
                 error: error.message,
                 status: 500
             });
