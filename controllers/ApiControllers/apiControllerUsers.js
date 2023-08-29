@@ -2,22 +2,21 @@ const db = require("../../database/models");
 
 const controller = {
 
-        getApiList: async (req, res) => {
+    getApiList: async (req, res) => {
         try {
+            const urlProyecto = "http://localhost:3000"
             const allClientes = await db.Cliente.findAll()
             const selectedClientes = allClientes.map(cliente => ({
                 id: cliente.id,
                 name: cliente.first_name,
                 last_name: cliente.last_name,
-                email: cliente.email
+                email: cliente.email,
+                detail: `${urlProyecto}/apiUser/${cliente.id}/detailApi`
             }))
-            const urlProyecto = "http://localhost:3000/"
-            
 
             return res.status(200).json({
                 count: allClientes.length,
                 data: selectedClientes,
-                detail: selectedClientes.id,
                 status: 200
             })
         }
@@ -32,9 +31,11 @@ const controller = {
     getApiDetail: async (req, res) => {
         try {
             const clienteId = req.params.id;
-            const cliente = await db.Cliente.findByPk(clienteId)
+            const cliente = await db.Cliente.findByPk(clienteId, {
+                attributes: { exclude: ['password', 'category'] }
+              })
             const urlProyecto = "http://localhost:3000/"
-            
+
             return res.status(200).json({
                 data: cliente,
                 imageUrl: `${urlProyecto}/images/avatars/${cliente.avatar}`,
@@ -50,6 +51,5 @@ const controller = {
         };
     }
 }
-
 
 module.exports = controller;
