@@ -5,10 +5,19 @@ const controller = {
         getApiList: async (req, res) => {
         try {
             const allClientes = await db.Cliente.findAll()
+            const selectedClientes = allClientes.map(cliente => ({
+                id: cliente.id,
+                name: cliente.first_name,
+                last_name: cliente.last_name,
+                email: cliente.email
+            }))
+            const urlProyecto = "http://localhost:3000/"
+            
 
             return res.status(200).json({
                 count: allClientes.length,
-                data: allClientes,
+                data: selectedClientes,
+                detail: selectedClientes.id,
                 status: 200
             })
         }
@@ -28,7 +37,7 @@ const controller = {
             
             return res.status(200).json({
                 data: cliente,
-                imageUrl: `${urlProyecto}/images/avatars/${cliente.image}`,
+                imageUrl: `${urlProyecto}/images/avatars/${cliente.avatar}`,
                 status: 200
             });
 
