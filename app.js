@@ -3,10 +3,9 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
+const cors = require("cors")
 
-const mainRoutes = require("./routes/mainRoutes");
-const productsRoutes = require("./routes/productsRoutes");
-const userRoutes = require("./routes/userRoutes");
+const { mainRoutes, productsRoutes, userRoutes } = require("./routes")
 const apiProduct = require("./routes/apiRoutes/apiRouteProducts");
 const apiUsers = require("./routes/apiRoutes/apiRouteUsers");
 
@@ -15,6 +14,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, "./public")));
 
 app.use(cookies());
+
+app.use(cors());
 
 app.set("view engine", "ejs");
 app.set("views", [
