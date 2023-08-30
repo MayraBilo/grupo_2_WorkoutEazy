@@ -8,6 +8,7 @@ const cors = require("cors")
 const { mainRoutes, productsRoutes, userRoutes } = require("./routes")
 const apiProduct = require("./routes/apiRoutes/apiRouteProducts");
 const apiUsers = require("./routes/apiRoutes/apiRouteUsers");
+const apiAliados = require("./routes/apiRoutes/apiRouteAliados");
 
 const app = express();
 
@@ -54,6 +55,7 @@ app.use("/product", productsRoutes);
 app.use(userRoutes);
 app.use(apiProduct);
 app.use(apiUsers);
+app.use(apiAliados);
 
 //--- ERROR 404 ---//
 
