@@ -180,9 +180,10 @@ const controller = {
     db.Carrito.findOne({
       include: [{ association: "cliente_carrito" }],
       where: {
-        cliente_id: req.params.id,
+        cliente_id: 16,
       },
     }).then(function (carrito) {
+      console.log('carrito-userController', carrito)
       res.render("productCart", {
         carrito: carrito,
         userLogged: req.session.userLogged,

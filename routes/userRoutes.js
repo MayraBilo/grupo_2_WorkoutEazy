@@ -74,7 +74,7 @@ router.post(
 // Perfil de cliente
 
 router.get("/perfilCliente", authMiddleware, userControllers.clientProfile);
-router.get("/users/:id/productCart", authMiddleware, userControllers.getCart);
+router.get("/productCart", authMiddleware, userControllers.getCart);
 
 // Edit Perfil cliente
 router.get(

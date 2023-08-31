@@ -10,4 +10,6 @@ router.get("/apiProducts", productApiController.getApiList)
 
 router.get("/apiProducts/:id/detailApi", productApiController.getApiDetail)
 
+router.get("/apiProducts/lastProduct", productApiController.getLastProduct)
+
 module.exports = router

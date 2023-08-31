@@ -61,6 +61,32 @@ const controller = {
                 status: 500
             });
         };
+    },
+
+    getLastProduct: async (req,res) => {
+        try {
+            const lastProduct = await db.Producto.findOne({
+                order: [['id', 'DESC']],
+            });
+    
+            if (!lastProduct) {
+                return res.status(404).json({
+                    message: "No products found",
+                    status: 404,
+                });
+            }
+    
+            return res.status(200).json({
+                data: lastProduct,
+                status: 200,
+        });
+        } catch (error) {
+            return res.status(500).json({
+                message: "Error fetching last product",
+                error: error.message,
+                status: 500,
+            });
+        }
     }
 }
 

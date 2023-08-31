@@ -141,6 +141,7 @@ const controller = {
     }
   },
   addCart: (req, res) => {
+    console.log('addCart 144', req.session.userLogged)
     db.Carrito.create({
       id: req.query.id,
       quantity: req.query.quantity,
@@ -150,8 +151,7 @@ const controller = {
       cliente_id: req.session.userLogged.id,
       product_id: req.query.product_id,
     });
-    console.log(req.query);
-    res.redirect("productCart");
+    res.redirect("/productCart");
   },
 };
 
