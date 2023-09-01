@@ -140,19 +140,56 @@ const controller = {
       res.json(error);
     }
   },
+  
   addCart: (req, res) => {
     console.log('addCart 144', req.session.userLogged)
     db.Carrito.create({
       id: req.query.id,
-      quantity: req.query.quantity,
-      discount: req.query.discount,
-      subtotal: req.query.subtotal,
-      total: req.query.total,
       cliente_id: req.session.userLogged.id,
-      product_id: req.query.product_id,
     });
     res.redirect("/productCart");
   },
+  /*
+  addCart: async (req, res) => {
+    try {
+    
+      const productoId = req.query.producto_id;
+      console.log('id producto', productoId)
+  
+      const clienteId = req.session.userLogged.id;
+      console.log('id cliente', clienteId)
+
+      const cliente = await db.Cliente.findByPk(clienteId);
+  
+      if (!cliente) {
+        return res.status(404).send("Cliente no encontrado");
+      }
+  
+      let carrito = await db.Carrito.findOrCreate({
+        where: { cliente_id: clienteId },
+      });
+  
+      carrito = carrito[0]; 
+  
+      const producto = await db.Producto.findByPk(productoId);
+  
+      if (!producto) {
+
+        return res.status(404).send("Producto no encontrado");
+      }
+  
+      await carrito.addProducto(producto);
+  
+      
+      res.redirect("/productCart");
+
+    } catch (error) {
+      
+      console.error("Error al agregar el producto al carrito:", error);
+  
+      res.status(500).send("Error interno del servidor");
+    }
+  },*/
 };
 
 module.exports = controller;
