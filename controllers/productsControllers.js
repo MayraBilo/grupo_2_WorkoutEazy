@@ -140,56 +140,36 @@ const controller = {
       res.json(error);
     }
   },
-  
-  addCart: (req, res) => {
-    console.log('addCart 144', req.session.userLogged)
-    db.Carrito.create({
-      id: req.query.id,
-      cliente_id: req.session.userLogged.id,
-    });
-    res.redirect("/productCart");
-  },
-  /*
+
   addCart: async (req, res) => {
+    console.log('id producto detail', req.query.producto_id)
     try {
-    
-      const productoId = req.query.producto_id;
-      console.log('id producto', productoId)
-  
+      const productoId = req.query.producto_id
       const clienteId = req.session.userLogged.id;
-      console.log('id cliente', clienteId)
 
-      const cliente = await db.Cliente.findByPk(clienteId);
-  
-      if (!cliente) {
-        return res.status(404).send("Cliente no encontrado");
+      let carrito = req.session.carrito;
+
+      if (!carrito) {
+        carrito = await db.Carrito.create({
+          cliente_id: clienteId,
+        });
+
+        req.session.carrito = carrito
       }
-  
-      let carrito = await db.Carrito.findOrCreate({
-        where: { cliente_id: clienteId },
+
+      const carritoId = req.session.carrito.id
+
+      await db.ProductsCart.create({
+        producto_id: productoId,
+        carrito_id: carritoId,
       });
-  
-      carrito = carrito[0]; 
-  
-      const producto = await db.Producto.findByPk(productoId);
-  
-      if (!producto) {
 
-        return res.status(404).send("Producto no encontrado");
-      }
-  
-      await carrito.addProducto(producto);
-  
-      
       res.redirect("/productCart");
 
     } catch (error) {
-      
-      console.error("Error al agregar el producto al carrito:", error);
-  
-      res.status(500).send("Error interno del servidor");
+      res.json(error);
     }
-  },*/
+  },
 };
 
 module.exports = controller;
