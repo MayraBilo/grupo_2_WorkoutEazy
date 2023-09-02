@@ -2,6 +2,12 @@ module.exports = (sequelize, dataTypes) => {
     const alias = "ProductsCart";
 
     const cols = {
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+          },
+          
         carrito_id: {
             type: dataTypes.INTEGER,
             references: {
