@@ -9,9 +9,11 @@
     <%- include("../partials/header", {userLogged: locals.userLogged}) %>
     <main>
       <section id="shopping-cart">
+      
         <div class="text-product">
   
           <h3>Producto</h3>
+
         </div>
         <div class="div-prod-inf">
           <div class="product-information-1">
@@ -24,16 +26,17 @@
             <h3>Subtotal</h3>
           </div>
         </div>
+      <% productosCarrito.forEach(producto => { %>
         <article class="product">
           <div class="inf-product">
-            <img class="img-product" src="/Images/inicio/JacintaYoga.JPG" />
+            <img class="img-product" src="/images/productos/<%= producto.image %>" alt="<%= producto.subcategory %>"/>
             <div class="name-product">
-              <h4>Nombre del producto</h4>
+              <h4><%= producto.activity_name %></h4>
             </div>
           </div>
           <div class="gen-inf-porduct">
             <div class="product-price">
-              <h4>(Precio)</h4>
+              <h4><%= producto.price %></h4>
             </div>
             <div class="product-amount">
               <h4>(Cantidad)</h4>
@@ -46,50 +49,9 @@
             <i class="fa-solid fa-trash"></i>
           </div>
         </article>
-        <article class="product">
-          <div class="inf-product">
-            <img class="img-product" src="/Images/inicio/JacintaYoga.JPG" />
-            <div class="name-product">
-              <h4>Nombre del producto</h4>
-            </div>
-          </div>
-          <div class="gen-inf-porduct">
-            <div class="product-price">
-              <h4>(Precio)</h4>
-            </div>
-            <div class="product-amount">
-              <h4>(Cantidad)</h4>
-            </div>
-            <div class="product-subtotal">
-              <h4>(Subtotal)</h4>
-            </div>
-          </div>
-          <div class="trash-box">
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </article>
-        <article class="product">
-          <div class="inf-product">
-            <img class="img-product" src="/Images/inicio/JacintaYoga.JPG" />
-            <div class="name-product">
-              <h4>Nombre del producto</h4>
-            </div>
-          </div>
-          <div class="gen-inf-porduct">
-            <div class="product-price">
-              <h4>(Precio)</h4>
-            </div>
-            <div class="product-amount">
-              <h4>(Cantidad)</h4>
-            </div>
-            <div class="product-subtotal">
-              <h4>(Subtotal)</h4>
-            </div>
-          </div>
-          <div class="trash-box">
-            <i class="fa-solid fa-trash"></i>
-          </div>
-        </article>
+        
+      <% }) %>
+
       </section>
       <div id="purchase-summary">
         <div id="text-purchase-summary">

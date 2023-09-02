@@ -189,9 +189,18 @@ const controller = {
   },
   */
 
+  /*
   getCart: (req, res) => {
     res.render("productCart")
-  }
+  } */
+
+  getCart: function (req, res) {
+    db.Producto.findAll({ include: [{ association: "carritos" }] }).then(
+      function (productosCarrito) {
+        res.render("productCart", { productosCarrito: productosCarrito });
+      }
+    );
+  },
 
 };
 

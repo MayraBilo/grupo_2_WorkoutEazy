@@ -1,89 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/head") %>
+
+<head>
+  <%- include("../partials/head") %>
     <link rel="stylesheet" href="/css/perfilCliente.css" />
-  </head>
-  <body>
-    <%- include("../partials/header") %>
+</head>
+
+<body>
+  <%- include("../partials/header") %>
     <main>
       <div class="soy-cliente">
         <h4>Soy cliente</h4>
       </div>
 
       <section class="profile">
-        <img
-          src="/images/avatars/<%= locals.userLogged.avatar %>"
-          class="logo-aliado1"
-          width="300px"
-        />
-        
+        <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="logo-aliado1" width="300px" />
+
         <div class="datos">
-            <h3>Nombre cliente </h3>
-                <h4 class="nombre-cliente">
-                    <%= locals.userLogged.first_name %> <%= locals.userLogged.last_name
-                    %>
-                </h4>
- 
-            <h3>Fecha de nacimiento </h3>
-                <p><%= locals.userLogged.birth_date %></p>
-     
-            <h3>Ciudad</h3>
-                <h4 class="ciudad"><%= locals.userLogged.city %></h4>
-            <h3>Móvil</h3>
-                <h4><%= locals.userLogged.contact_number %></h4>
-        
-            <h3>Email</h3>
-                <h4><%= locals.userLogged.email %></h4>
-         
+          <h3>Nombre cliente </h3>
+          <h4 class="nombre-cliente">
+            <%= locals.userLogged.first_name %>
+              <%= locals.userLogged.last_name %>
+          </h4>
+
+          <h3>Fecha de nacimiento </h3>
+          <p>
+            <%= locals.userLogged.birth_date %>
+          </p>
+
+          <h3>Ciudad</h3>
+          <h4 class="ciudad">
+            <%= locals.userLogged.city %>
+          </h4>
+          <h3>Móvil</h3>
+          <h4>
+            <%= locals.userLogged.contact_number %>
+          </h4>
+
+          <h3>Email</h3>
+          <h4>
+            <%= locals.userLogged.email %>
+          </h4>
+
         </div>
-    </section>
-    <section class="botones"> 
-        <button class="editar" >
-        <a href="/<%= locals.userLogged.id %>/editPerfilCliente/">
+      </section>
+
+      <section class="botones">
+
+        <button class="editar">
+          <a href="/<%= locals.userLogged.id %>/editPerfilCliente/">
             <h4>Editar</h4>
-        </a>
-          </button>
-  
-          <button class="editar">
-            <a href="/logout"><h4>Log out</h4></a>
-          </button>
-        </section>
+          </a>
+        </button>
 
-        
-        
-        <section class="calendario">
-            <div class="desplegable-calendar">
-              <h2>Calendario</h2>
-              <p>
-                Desplegar
-                <img src="/images/diseno/caret-down-solid.svg" width="15px" />
-              </p>
-            </div>
-    
-            <br />
-    
-          </section>
-        <br />
-        <div class="info-pago">
-          <h4>Información de pago</h4>
+        <button class="editar">
+          <a href="/logout">
+            <h4>Log out</h4>
+          </a>
+        </button>
 
-          <div class="desplegable">
-            <p>Domicilio de facturación</p>
-            <p>
-              Desplegar
-              <img src="/images/diseno/caret-down-solid.svg" width="15px" />
-            </p>
-          </div>
+      </section>
 
-          <div class="desplegable">
-            <p>Tarjetas cargadas</p>
-            <p>
-              Desplegar
-              <img src="/images/diseno/caret-down-solid.svg" width="15px" />
-            </p>
-          </div>
+
+
+      <section class="calendario">
+        <div class="desplegable-calendar">
+          <h2>Calendario</h2>
+          <p>
+            Desplegar
+            <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+          </p>
         </div>
+
+        <br />
+
+      </section>
+      <br />
+      <div class="info-pago">
+        <h4>Información de pago</h4>
+
+        <div class="desplegable">
+          <p>Domicilio de facturación</p>
+          <p class="desplegar">
+            Desplegar
+            <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+          </p>
+        </div>
+
+        <div class="desplegable">
+          <p>Tarjetas cargadas</p>
+          <p class="desplegar">
+            Desplegar
+            <img src="/images/diseno/caret-down-solid.svg" width="15px" />
+          </p>
+        </div>
+      </div>
 
       </section>
       <section class="aliados">
@@ -91,14 +102,10 @@
           <h4>Aliados</h4>
           <i class="fa-solid fa-caret-right fa-lg" style="color: #000000"></i>
         </div>
-        <img
-          src="/images/diseno/logoAlmaYoga.png"
-          class="logo-aliado1"
-          width="100px"
-        />
+        <img src="/images/diseno/logoAlmaYoga.png" class="logo-aliado1" width="100px" />
       </section>
-      
-      
+
+
 
       <section class="clases-sugeridas">
         <h2>Clases sugeridas</h2>
@@ -106,31 +113,19 @@
         <section class="busquedasRelacionadas">
           <div class="container-busquedas">
             <article class="clase-relacionada">
-              <img
-                src="/images/productos/functional.JPG"
-                alt="functional"
-                class="img-relacionada"
-              />
+              <img src="/images/productos/functional.JPG" alt="functional" class="img-relacionada" />
               <h5>Functional</h5>
               <p>Mantenete entrenado con nuestras clases</p>
             </article>
 
             <article class="clase-relacionada">
-              <img
-                src="/images/productos/yoga1.JPG"
-                alt="yoga1"
-                class="img-relacionada"
-              />
+              <img src="/images/productos/yoga1.JPG" alt="yoga1" class="img-relacionada" />
               <h5>Yoga al aire libre</h5>
               <p>Disfrutá de todos los beneficios del yoga.</p>
             </article>
 
             <article class="clase-relacionada">
-              <img
-                src="/images/productos/gimnasio.JPG"
-                alt="gimnasio"
-                class="img-relacionada"
-              />
+              <img src="/images/productos/gimnasio.JPG" alt="gimnasio" class="img-relacionada" />
               <h5>Gimnasio Indoor</h5>
               <p>Entrenamiento adaptado a todos los niveles.</p>
             </article>
@@ -139,9 +134,10 @@
       </section>
     </main>
     <%- include("../partials/footer") %>
-    <button class="consultas">
-      <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
-      Consultas
-    </button>
-  </body>
+      <button class="consultas">
+        <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff"></i>
+        Consultas
+      </button>
+</body>
+
 </html>
