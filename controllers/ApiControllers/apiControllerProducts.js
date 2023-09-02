@@ -111,6 +111,78 @@ const controller = {
                 status: 500,
             });
         }
+    },
+    getDeportesProducts: async (req, res) => {
+        try {
+            const deportesProducts = await db.Producto.findAll({ where: { category: 'Deportes' } });
+
+            if (!deportesProducts || deportesProducts.length === 0) {
+                return res.status(404).json({
+                    message: "No products found in the 'Deportes' category",
+                    status: 404,
+                });
+            }
+    
+            return res.status(200).json({
+                count: deportesProducts.length,
+                data: deportesProducts,
+                status: 200,
+            });
+        } catch (error) {
+            return res.status(500).json({
+                message: "Error fetching 'Deportes' products",
+                error: error.message,
+                status: 500,
+            });
+        }
+    },
+    getFitnessProducts: async (req, res) => {
+        try {
+            const fitnessProducts = await db.Producto.findAll({ where: { category: 'Fitness' } });
+
+            if (!fitnessProducts || fitnessProducts.length === 0) {
+                return res.status(404).json({
+                    message: "No products found in the 'Fitness' category",
+                    status: 404,
+                });
+            }
+    
+            return res.status(200).json({
+                count: fitnessProducts.length,
+                data: fitnessProducts,
+                status: 200,
+            });
+        } catch (error) {
+            return res.status(500).json({
+                message: "Error fetching 'Fitness' products",
+                error: error.message,
+                status: 500,
+            });
+        }
+    },
+    getYogaProducts: async (req, res) => {
+        try {
+            const yogaProducts = await db.Producto.findAll({ where: { category: 'Yoga' } });
+
+            if (!yogaProducts || yogaProducts.length === 0) {
+                return res.status(404).json({
+                    message: "No products found in the 'Yoga' category",
+                    status: 404,
+                });
+            }
+    
+            return res.status(200).json({
+                count: yogaProducts.length,
+                data: yogaProducts,
+                status: 200,
+            });
+        } catch (error) {
+            return res.status(500).json({
+                message: "Error fetching 'Yoga' products",
+                error: error.message,
+                status: 500,
+            });
+        }
     }
 }
 
