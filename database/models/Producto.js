@@ -78,7 +78,7 @@ module.exports = (sequelize, dataTypes) => {
     });
 
 Producto.belongsTo(models.Aliado, {
-      as: "aliado_producto",
+      as: "aliado",
       foreignKey: "aliado_id",
     });
   };
