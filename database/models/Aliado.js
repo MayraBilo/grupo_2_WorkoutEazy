@@ -77,6 +77,9 @@ module.exports = (sequelize, dataTypes) => {
         key: "id"
       }
     }
+    /* perfil_profesional: {
+      type: dataTypes.STRING,
+    },*/
   };
 
   const config = {
@@ -87,9 +90,12 @@ module.exports = (sequelize, dataTypes) => {
   const Aliado = sequelize.define(alias, cols, config);
 
   Aliado.associate = function (models) {
-    Aliado.hasMany(models.Producto, {
-      as: "productos",
-      foreignKey: "aliado_id"
+    Aliado.belongsToMany(models.Producto, {
+      as: "aliado_productos",
+      foreignKey: "product_id",
+      otherKey: "aliado_id",
+      through: "aliado_producto",
+      timestamps: false,
     });
   };
 
