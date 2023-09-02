@@ -87,6 +87,30 @@ const controller = {
                 status: 500,
             });
         }
+    },
+    getDanzasProducts: async (req, res) => {
+        try {
+            const danzasProducts = await db.Producto.findAll({ where: { category: 'Danzas' } });
+
+            if (!danzasProducts || danzasProducts.length === 0) {
+                return res.status(404).json({
+                    message: "No products found in the 'Danzas' category",
+                    status: 404,
+                });
+            }
+    
+            return res.status(200).json({
+                count: danzasProducts.length,
+                data: danzasProducts,
+                status: 200,
+            });
+        } catch (error) {
+            return res.status(500).json({
+                message: "Error fetching 'Danzas' products",
+                error: error.message,
+                status: 500,
+            });
+        }
     }
 }
 
