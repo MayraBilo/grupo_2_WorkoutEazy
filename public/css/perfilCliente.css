@@ -431,7 +431,7 @@ section.login {
 
 .clase-relacionada p {
     text-align: center;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .clase-relacionada:hover {
@@ -505,6 +505,11 @@ footer h2 {
         border-bottom: 5px #5c5d5b solid;
         border-right: 5px #5c5d5b solid;
         padding: 20px;
+    }
+
+    .clase-relacionada p {
+        text-align: center;
+        font-size: 18px;
     }
     
 }
