@@ -34,20 +34,6 @@ module.exports = (sequelize, dataTypes) => {
     avatar: {
       type: dataTypes.STRING,
     },
-    product_id: {
-      type: dataTypes.INTEGER,
-      references: {
-        model: "product",
-        key: "id",
-      },
-    },
-    shopping_cart_id: {
-      type: dataTypes.INTEGER,
-      references: {
-        model: "shopping_cart",
-        key: "id",
-      },
-    },
     password: {
       type: dataTypes.STRING,
       allowNull: false,
@@ -67,22 +53,13 @@ module.exports = (sequelize, dataTypes) => {
 
   const Cliente = sequelize.define(alias, cols, config);
 
-  Cliente.associate = function (models) {
-    // Relación OK
-    Cliente.belongsToMany(models.Producto, {
-      as: "producto_cliente",
-      foreignKey: "product_id",
-      otherKey: "product_id",
-      through: "cliente_producto",
-      timestamps: false,
-    });
+    Cliente.associate = function (models) {
+    
+         Cliente.hasMany(models.Carrito, {
+           as: "carritos",
+           foreignKey: "cliente_id", 
+         });
+      };
 
-    // Relación OK
-    Cliente.belongsTo(models.Carrito, {
-      as: "cliente_carrito",
-      foreignKey: "shopping_cart_id",
-      through: "cliente_carrito",
-    });
-  };
   return Cliente;
 };

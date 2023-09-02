@@ -140,18 +140,35 @@ const controller = {
       res.json(error);
     }
   },
-  addCart: (req, res) => {
-    console.log('addCart 144', req.session.userLogged)
-    db.Carrito.create({
-      id: req.query.id,
-      quantity: req.query.quantity,
-      discount: req.query.discount,
-      subtotal: req.query.subtotal,
-      total: req.query.total,
-      cliente_id: req.session.userLogged.id,
-      product_id: req.query.product_id,
-    });
-    res.redirect("/productCart");
+
+  addCart: async (req, res) => {
+    console.log('id producto detail', req.query.producto_id)
+    try {
+      const productoId = req.query.producto_id
+      const clienteId = req.session.userLogged.id;
+
+      let carrito = req.session.carrito;
+
+      if (!carrito) {
+        carrito = await db.Carrito.create({
+          cliente_id: clienteId,
+        });
+
+        req.session.carrito = carrito
+      }
+
+      const carritoId = req.session.carrito.id
+
+      await db.ProductsCart.create({
+        producto_id: productoId,
+        carrito_id: carritoId,
+      });
+
+      res.redirect("/productCart");
+
+    } catch (error) {
+      res.json(error);
+    }
   },
 };
 

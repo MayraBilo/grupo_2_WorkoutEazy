@@ -59,20 +59,7 @@ module.exports = (sequelize, dataTypes) => {
     mode: {
       type: dataTypes.STRING,
     },
-    cliente_id: {
-      type: dataTypes.INTEGER,
-      references: {
-        model: "cliente",
-        key: "id",
-      },
-    },
-    carrito_id: {
-      type: dataTypes.INTEGER,
-      references: {
-        model: "shopping_cart",
-        key: "id",
-      },
-    },
+
   };
 
   const config = {
@@ -82,25 +69,17 @@ module.exports = (sequelize, dataTypes) => {
   const Producto = sequelize.define(alias, cols, config);
 
   Producto.associate = function (models) {
-    // relación OK
+    
     Producto.belongsToMany(models.Carrito, {
-      as: "carrito",
-      foreignKey: "carrito_id",
-      through: "carrito_producto",
-      timestamps: false,
+      through: models.ProductsCart,
+      as: "carritos",
+      foreignKey: "producto_id",
+
     });
 
 Producto.belongsTo(models.Aliado, {
       as: "aliado_producto",
       foreignKey: "aliado_id",
-    });
-
-    Producto.belongsToMany(models.Cliente, {
-      as: "producto_cliente",
-      foreignKey: "cliente_id",
-      otherKey: "product_id",
-      through: "cliente_producto",
-      timestamps: false,
     });
   };
 

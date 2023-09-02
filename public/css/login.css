@@ -125,10 +125,20 @@ body {
 
 .checkbox-recordar label {
     font-weight: 400;
+    padding: 0;
 }
 
+.checkbox-recordar input {
+    width: 20px;
+}
+
+
 .checkbox-recordar {
-    align-self: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 130px;
 }
 
 .button-access {
@@ -333,5 +343,10 @@ footer h2 {
     #apple-logo:hover {
         width: 45px;
         height: 45px;
+    }
+
+    .checkbox-recordar {
+        align-self: flex-start;
+        margin-top: 30px;
     }
 }

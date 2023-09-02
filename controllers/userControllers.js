@@ -176,20 +176,33 @@ const controller = {
     return res.redirect("/");
   },
 
+  /*
   getCart: (req, res) => {
     db.Carrito.findOne({
-      include: [{ association: "cliente_carrito" }],
-      where: {
-        cliente_id: 16,
-      },
+      include: [{ association: "cliente" }]  
     }).then(function (carrito) {
-      console.log('carrito-userController', carrito)
       res.render("productCart", {
         carrito: carrito,
         userLogged: req.session.userLogged,
       });
     });
   },
+  */
+
+  /*
+  getCart: (req, res) => {
+    res.render("productCart")
+  } */
+
+  getCart: function (req, res) {
+    db.Producto.findAll({ include: [{ association: "carritos" }] }).then(
+      function (productosCarrito) {
+        res.render("productCart", { productosCarrito: productosCarrito });
+      }
+    );
+  },
+
 };
+
 
 module.exports = controller;
