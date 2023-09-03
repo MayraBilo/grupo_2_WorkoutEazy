@@ -5,6 +5,8 @@
     <%- include("../partials/head") %>
         <link rel="stylesheet" href="/css/create-edite-Product.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 </head>
 
 <body>
@@ -12,11 +14,12 @@
         <main>
             <h1>Editar servicio</h1>
             <div class="form-img">
-                <form action="/product/<%=producto.id%>/editProduct?_method=put" method="POST" enctype="multipart/form-data" id="myForm">
+                <form action="/product/<%=producto.id%>/editProduct?_method=put" method="POST"
+                    enctype="multipart/form-data" id="myForm">
                     <div class="div-categorie">
                         <select class="categoria" name="category">
                             <option default class="select-categoria" name="category" value="<%= producto.category %>">
-                              -  <%= producto.category %> -
+                                - <%= producto.category %> -
                             </option>
                             <option name="category">Yoga</option>
                             <option name="category">Fitness</option>
@@ -27,8 +30,9 @@
                     </div>
                     <div class="div-subcategorie">
                         <select class="categorie" name="subcategory">
-                            <option default class="select-categorie" name="subcategory" value="<%= producto.subcategory %>">
-                               - <%= producto.subcategory %> -
+                            <option default class="select-categorie" name="subcategory"
+                                value="<%= producto.subcategory %>">
+                                - <%= producto.subcategory %> -
                             </option>
                             <option name="subcategory">Yoga-Mysore</option>
                             <option name="subcategory">Yoga-Ashtanga</option>
@@ -60,26 +64,25 @@
 
                     <div class="container-name-service">
                         <label for="activity_name">Nombre del servicio</label>
-                        <input class="lsinput <%= locals.errors && errors.activity_name ? 'is-invalid' : null %>" type="text" name="activity_name"
-                        value="<%= locals.oldData ? oldData.first_name : null %>"
-                        id="name"
-                        >
+                        <input class="lsinput <%= locals.errors && errors.activity_name ? 'is-invalid' : null %>"
+                            type="text" name="activity_name" value="<%= locals.oldData ? oldData.first_name : null %>"
+                            id="name">
                         <% if (locals.errors && errors.activity_name) { %>
-                          <div class="text-danger">
-                              <%= errors.activity_name.msg %>
-                          </div>
-                          <% } %>
-                      
-                          <p class="error text-danger"></p>
-            
-                      </div>
+                            <div class="text-danger">
+                                <%= errors.activity_name.msg %>
+                            </div>
+                            <% } %>
+
+                                <p class="error text-danger"></p>
+
+                    </div>
 
                     <div class="container-name-service">
                         <label for="name-service">Nombre del Aliado</label>
                         <input class="lsinput" type="text" name="aliado_name" value="<%=producto.aliado_name%>">
                         <span class="feedback"></span>
                     </div>
-            
+
                     <div class="div-value-disc">
                         <div class="div-value">
                             <label for="value">Valor</label>
@@ -88,7 +91,8 @@
                         </div>
                         <div class="div-disc">
                             <label for="apply-disc">Aplicar descuento</label>
-                            <input class="sinput" placeholder="(opcional)" type="number" name="discount" value="<%=producto.discount%>">
+                            <input class="sinput" placeholder="(opcional)" type="number" name="discount"
+                                value="<%=producto.discount%>">
                             <p>%</p>
                             <span class="feedback"></span>
                         </div>
@@ -98,52 +102,57 @@
                         <input class="lsinput" type="text" name="spots" value="<%=producto.spots%>">
                         <span class="feedback"></span>
                     </div>
-                
+
                     <div class="div-description">
                         <label for="product_description">Descripción</label>
-                        <input class="lfinput <%= locals.errors && errors.product_description ? 'is-invalid' : null %>" type="text" name="product_description" value="<%= locals.oldData ? oldData.product_description : null %>" id="description">
+                        <input class="lfinput <%= locals.errors && errors.product_description ? 'is-invalid' : null %>"
+                            type="text" name="product_description"
+                            value="<%= locals.oldData ? oldData.product_description : null %>" id="description">
                         <% if (locals.errors && errors.product_description) { %>
-                          <div class="text-danger">
-                              <%= errors.product_description.msg %>
-                          </div>
-                          <% } %>
-            
-                          <p class="error text-danger"></p>
-                      </div>
+                            <div class="text-danger">
+                                <%= errors.product_description.msg %>
+                            </div>
+                            <% } %>
+
+                                <p class="error text-danger"></p>
+                    </div>
 
                     <div class="container-name-service">
                         <label for="name-service">Horarios</label>
                         <input class="lsinput" type="text" name="schedule" value="<%=producto.schedule%>">
                         <span class="feedback"></span>
                     </div>
-      
+
                     <div class="container-name-service">
                         <label for="name-service">Duración</label>
                         <input class="lsinput" type="text" name="length" value="<%=producto.length %>">
                         <span class="feedback"></span>
                     </div>
-      
-                
+
+
                     <div class="div-add-pictures">
                         <!--<input type="hidden" name="oldImage" value="<%= producto.image %>">
                         <input class="add-pictures" type="file" name="image" value="<%= producto.image %>">-->
 
                         <div class="div-add-pictures">
                             <label for="add-pictures">Agregar fotos</label>
-                            <br>
+                            <br/>
                             <input type="hidden" name="oldImage" value="<%= producto.image %>">
-                            <img src="/images/productos/<%= producto.image %>" alt="Imagen del producto" width="100px">
-                            <br>
-                            <input class="add-pictures" type="file" name="image" value="Imagen seleccionada">
+                            
+                            <img id="image" src="/images/productos/<%= producto.image %>" alt="Imagen para recortar" width="200px">
+                            <input class="add-pictures" type="file" name= "image" id="inputImage" name="image" value="Imagen seleccionada">
+                            <br/>
+                            <button class="submit-button" id="cropButton">Recortar</button>
                         </div>
                     </div>
 
-                    
+
                     <div class="div-difficulty">
                         <label for="difficulty">Dificultad</label>
                         <select name="difficulty" class="difficulty" value="difficulty">
                             <option class="select-difficulty" default value="<%=producto.difficulty%>">-
-                                <%=producto.difficulty%> -</i></option>
+                                <%=producto.difficulty%> -</i>
+                            </option>
                             <option value="<%=producto.difficulty%>">Principiante</i></option>
                             <option value="<%=producto.difficulty%>">Facil</i></option>
                             <option value="<%=producto.difficulty%>">Intermedio</i></option>
@@ -165,16 +174,20 @@
                     <div class="div-ages">
                         <label for="age">Edades</label>
                         <div>
-                            <input type="checkbox" name="age" value="Ninos" <%= producto.age.includes('Ninos') ? 'checked' : '' %>> Niños
+                            <input type="checkbox" name="age" value="Ninos" <%=producto.age.includes('Ninos')
+                                ? 'checked' : '' %>> Niños
                         </div>
                         <div>
-                            <input type="checkbox" name="age" value="Adolescentes" <%= producto.age.includes('Adolescentes') ? 'checked' : '' %>> Adolescentes
+                            <input type="checkbox" name="age" value="Adolescentes"
+                                <%=producto.age.includes('Adolescentes') ? 'checked' : '' %>> Adolescentes
                         </div>
                         <div>
-                            <input type="checkbox" name="age" value="Jovenes" <%= producto.age.includes('Jovenes') ? 'checked' : '' %>> Jóvenes
+                            <input type="checkbox" name="age" value="Jovenes" <%=producto.age.includes('Jovenes')
+                                ? 'checked' : '' %>> Jóvenes
                         </div>
                         <div>
-                            <input type="checkbox" name="age" value="Adultos" <%= producto.age.includes('Adultos') ? 'checked' : '' %>> Adultos
+                            <input type="checkbox" name="age" value="Adultos" <%=producto.age.includes('Adultos')
+                                ? 'checked' : '' %>> Adultos
                         </div>
                         <span class="feedback"></span>
                     </div>
@@ -182,17 +195,20 @@
                     <div class="div-ages">
                         <label for="modalidad">Modalidad</label>
                         <div>
-                            <input type="checkbox" name="mode" value="Presencial" <%= producto.mode.includes('Presencial') ? 'checked' : '' %> id="modes"> Presencial
+                            <input type="checkbox" name="mode" value="Presencial"
+                                <%=producto.mode.includes('Presencial') ? 'checked' : '' %> id="modes"> Presencial
                         </div>
                         <div>
-                            <input type="checkbox" name="mode" value="Virtual" <%= producto.mode.includes('Virtual') ? 'checked' : '' %> id="modes"> Virtual
+                            <input type="checkbox" name="mode" value="Virtual" <%=producto.mode.includes('Virtual')
+                                ? 'checked' : '' %> id="modes"> Virtual
                         </div>
-                        
+
                         <span class="feedback"></span>
                     </div>
-                
+
                     <div class="div-submit-button">
-                            <button class="submit-button" type="submit" value="submit" id="submit-btn">Guardar edicion</button>
+                        <button class="submit-button" type="submit" value="submit" id="submit-btn">Guardar
+                            edicion</button>
                     </div>
                     <div class="div-reset-button">
                         <button class="reset-button" type="reset" value="reset">Borrar campos</button>
@@ -205,31 +221,31 @@
             </div>
             <form action="/product/<%=producto.id%>/delete?_method=delete" method="POST" id="formDelete">
                 <div class="div-submit-button">
-                <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
+                    <button id="delProd" type="submit" class="action-button delete">Eliminar producto</button>
                 </div>
-                </form>
+            </form>
             <script>
                 const btnDel = document.getElementById('delProd');
                 const formDel = document.getElementById('formDelete');
 
-            btnDel.addEventListener('click', function(e){
+                btnDel.addEventListener('click', function (e) {
 
-            e.preventDefault();
+                    e.preventDefault();
 
-            Swal.fire({
-                title: 'Estás seguro?',
-                text: "El cambio no se puede revertir!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, lo quiero borrar!'
-              }).then((result) => {
-                if (result.isConfirmed) {
-                    formDel.submit();
-                }
-              })
-            })
+                    Swal.fire({
+                        title: 'Estás seguro?',
+                        text: "El cambio no se puede revertir!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sí, lo quiero borrar!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            formDel.submit();
+                        }
+                    })
+                })
             </script>
 
         </main>
@@ -238,7 +254,7 @@
                 <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
                 Consultas</button>
 
-                <script src="/js/editProduct.js"></script>
+            <script src="/js/editProduct.js"></script>
 </body>
 
 </html>

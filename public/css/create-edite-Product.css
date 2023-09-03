@@ -142,8 +142,14 @@ form>div {
     margin: 10px 0px;
 }
 
+#cropButton {
+    background-color: none;
+    border: none;
+}
+
 .div-submit-button button,
-.div-reset-button button {
+.div-reset-button button,
+#cropButton {
     width: 100%;
     padding: 10px;
     background-color: #00a170;

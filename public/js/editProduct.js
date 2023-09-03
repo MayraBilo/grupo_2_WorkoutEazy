@@ -88,3 +88,31 @@ descriptionEditInput.oninput = (e) => {
     checkErrors()
 }
 
+// Cropped
+
+const inputImage = document.getElementById('inputImage');
+const image = document.getElementById('image');
+const cropButton = document.getElementById('cropButton');
+
+const cropper = new Cropper(image, {
+  aspectRatio: 9 / 16, // Proporciones deseadas (ejemplo: 16:9)
+  viewMode: 2, // Permite que el usuario recorte toda la imagen
+});
+
+inputImage.addEventListener('change', (e) => {
+  const files = e.target.files;
+  if (files && files.length > 0) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      image.src = e.target.result;
+      cropper.replace(e.target.result);
+    };
+    reader.readAsDataURL(files[0]);
+  }
+});
+
+cropButton.addEventListener('click', () => {
+  const croppedImageData = cropper.getCroppedCanvas().toDataURL('image/jpeg'); // Obtén la imagen recortada
+  // Envía croppedImageData al servidor y guárdala
+});
+

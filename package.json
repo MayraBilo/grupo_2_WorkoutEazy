@@ -13,6 +13,7 @@
     "mysql2": "^3.5.0",
     "sequelize": "5.21",
     "sequelize-cli": "^6.6.1",
+    "sharp": "^0.32.5",
     "uuid": "^9.0.0"
   },
   "name": "grupo_2_workouteazy",

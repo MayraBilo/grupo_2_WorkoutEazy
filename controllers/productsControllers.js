@@ -2,6 +2,11 @@ const productModel = require("../models/product");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 
+
+const sharp = require('sharp');
+const fs = require('fs');
+
+
 const controller = {
   // OK
   getList: function (req, res) {
@@ -39,6 +44,32 @@ const controller = {
 
   updateProduct: async (req, res) => {
     try {
+
+      // Cropper y sharp para redimensionar la imagen
+
+      if (req.file) {
+        const desiredWidth = 533;
+        const desiredHeight = 800;
+  
+        const resizedImageBuffer = await sharp(req.file.buffer)
+          .resize(desiredWidth, desiredHeight)
+          .toBuffer();
+  
+        // Generar un nombre de archivo único para la imagen redimensionada
+        const uniqueFileName = Date.now() + '-' + req.file.originalname;
+  
+        // Guardar la imagen redimensionada en la ubicación deseada
+        const outputImagePath = path.join(__dirname, 'public/images/productos', uniqueFileName);
+        fs.writeFileSync(outputImagePath, resizedImageBuffer);
+  
+        // Utilizar el nombre de archivo único para la imagen en lugar del original
+        req.body.image = uniqueFileName;
+
+      } else {
+        // Si no se sube una nueva imagen, conserva la imagen actual en la base de datos
+        req.body.image = req.body.file;
+      }
+
       await db.Producto.update(
         {
           activity_name: req.body.activity_name,
@@ -55,6 +86,7 @@ const controller = {
           adress: req.body.adress,
           city: req.body.city,
           image: req.file ? req.file.filename : req.body.file,
+          /*image: req.body.image,*/
           age: req.body.age,
           mode: req.body.mode,
           aliado_name: req.body.aliado_name,
@@ -114,6 +146,29 @@ const controller = {
           oldData: req.body,
         });
       }
+
+      // Sharp para redimensionar imágenes
+      /*
+      const desiredWidth = 533;
+      const desiredHeight = 800;
+
+      let imageFileName = 'sin foto';
+
+      if (req.file) {
+        const resizedImageBuffer = await sharp (req.file.buffer)
+        .resize (desiredWidth, desiredHeight)
+        .toBuffer()
+      
+        // Generar un nombre de archivo único para la imagen redimensionada
+        const uniqueFileName = Date.now() + '-' + req.file.originalname;
+
+        // Guardar la imagen redimensionada en la ubicación deseada
+        const outputImagePath = path.join(__dirname, 'public/images/productos', uniqueFileName);
+        fs.writeFileSync(outputImagePath, resizedImageBuffer);
+
+        // Usar el nombre de archivo único para la imagen en lugar del original
+        imageFileName = uniqueFileName;
+      } */
 
       const newProduct = {
         activity_name: req.body.activity_name,
