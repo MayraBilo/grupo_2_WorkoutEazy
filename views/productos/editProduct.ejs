@@ -31,7 +31,7 @@
                     <div class="div-subcategorie">
                         <select class="categorie" name="subcategory">
                             <option default class="select-categorie" name="subcategory"
-                                value="<%= producto.subcategory %>">
+                                value="<%= producto.subcategory %>" >
                                 - <%= producto.subcategory %> -
                             </option>
                             <option name="subcategory">Yoga-Mysore</option>
@@ -66,7 +66,7 @@
                         <label for="activity_name">Nombre del servicio</label>
                         <input class="lsinput <%= locals.errors && errors.activity_name ? 'is-invalid' : null %>"
                             type="text" name="activity_name" value="<%= locals.oldData ? oldData.first_name : null %>"
-                            id="name">
+                            id="name" >
                         <% if (locals.errors && errors.activity_name) { %>
                             <div class="text-danger">
                                 <%= errors.activity_name.msg %>
@@ -79,7 +79,7 @@
 
                     <div class="container-name-service">
                         <label for="name-service">Nombre del Aliado</label>
-                        <input class="lsinput" type="text" name="aliado_name" value="<%=producto.aliado_name%>">
+                        <input class="lsinput" type="text" name="aliado_name" value="<%=producto.aliado_producto.first_name%> <%=producto.aliado_producto.last_name%>">
                         <span class="feedback"></span>
                     </div>
 
@@ -196,7 +196,7 @@
                         <label for="modalidad">Modalidad</label>
                         <div>
                             <input type="checkbox" name="mode" value="Presencial"
-                                <%=producto.mode.includes('Presencial') ? 'checked' : '' %> id="modes"> Presencial
+                                <%=producto.mode.includes('presencial') ? 'checked' : '' %> id="modes"> Presencial
                         </div>
                         <div>
                             <input type="checkbox" name="mode" value="Virtual" <%=producto.mode.includes('Virtual')
