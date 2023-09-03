@@ -185,6 +185,23 @@ select:focus {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);;
 }
 
+.button-filter {
+    border: #006e52 solid 1px;
+    border-radius: 5px;
+    z-index: 99;
+    color: white;
+    background-color: rgba(0, 161, 112);
+    font-size: 16px;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.button-filter:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);;
+}
+
 
 @media (min-width: 669px) {
 

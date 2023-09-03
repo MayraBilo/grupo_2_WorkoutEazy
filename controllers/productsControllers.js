@@ -50,18 +50,18 @@ const controller = {
       if (req.file) {
         const desiredWidth = 533;
         const desiredHeight = 800;
-  
+
         const resizedImageBuffer = await sharp(req.file.buffer)
           .resize(desiredWidth, desiredHeight)
           .toBuffer();
-  
+
         // Generar un nombre de archivo único para la imagen redimensionada
         const uniqueFileName = Date.now() + '-' + req.file.originalname;
-  
+
         // Guardar la imagen redimensionada en la ubicación deseada
         const outputImagePath = path.join(__dirname, 'public/images/productos', uniqueFileName);
         fs.writeFileSync(outputImagePath, resizedImageBuffer);
-  
+
         // Utilizar el nombre de archivo único para la imagen en lugar del original
         req.body.image = uniqueFileName;
 
@@ -225,6 +225,47 @@ const controller = {
       res.json(error);
     }
   },
+
+  filterProduct: async (req, res) => {
+    try {
+      /*
+      const filtrosDificultad = req.body.dificultadcheck || []; 
+      const filtrosEdad = req.body.edadcheck || []; 
+  
+      await db.Producto.filter(producto => {
+          return (filtrosDificultad.length === 0 || filtrosDificultad.includes(producto.difficulty)) &&
+                 (filtrosEdad.length === 0 || filtrosEdad.includes(producto.age));
+      }).then (
+      function (productosFiltrados) {
+      res.render("productList", { productos: productosFiltrados})
+      }
+      ) */
+
+      const filtrosDificultad = req.body.dificultadcheck || [];
+      const filtrosEdad = req.body.edadcheck || [];
+
+      const filtro = {
+        where: {}
+      };
+
+      if (filtrosDificultad.length > 0) {
+        filtro.where.difficulty = filtrosDificultad;
+      }
+
+      if (filtrosEdad.length > 0) {
+        filtro.where.age = filtrosEdad;
+      }
+
+      const productosFiltrados = await db.Producto.findAll(filtro);
+
+      res.render("productList", { productos: productosFiltrados });
+      
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor");
+    }
+
+  }
 };
 
 module.exports = controller;

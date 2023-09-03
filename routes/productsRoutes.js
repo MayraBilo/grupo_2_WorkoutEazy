@@ -50,4 +50,7 @@ router.get("/productListFitness", productController.getListFitness);
 router.get("/productListDeportes", productController.getListDeportes);
 router.get("/productListDanzas", productController.getListDanzas);
 
+// @POST filtrar por edad y dificultas
+router.post("/filtrarProductos", productController.filterProduct);
+
 module.exports = router;
