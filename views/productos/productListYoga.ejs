@@ -56,17 +56,11 @@
             </section>
 
             <section class="side-bar">
-                <button class="edad">
-                    <h4>Edad</h4>
+                <div class="dropdown">
+                <button class="edad" id="dropdownBtn">
+                    Edad
                 </button>
-                
-                <button class="dificultad">
-                    <h4>Dificultad</h4>
-                </button>
-            </section>
-
-            <section class="sidebar-desplegables">
-                <div class="check-edad">
+                <div id="dropdownContent" class="dropdown-content check-edad">
                     <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
                         <span class="checkmark"></span>
                     </div>
@@ -80,8 +74,13 @@
                         <span class="checkmark"></span>
                     </div>
                 </div>
+                </div>
 
-                <div class="check-dificultad">
+                <div class="dropdown">
+                <button class="dificultad" id="dropdownBtn2">
+                    Dificultad
+                </button>
+                <div id="dropdownContent2" class="dropdown-content check-dificultad">
                     <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
                         <i class="fa-solid fa-star"></i>
                         <span class="checkmark"></span>
@@ -106,6 +105,7 @@
                             class="fa-solid fa-star"></i>
                             <span class="checkmark"></span>
                     </div>
+                </div>
                 </div>
             </section>
 
@@ -306,6 +306,7 @@
                 <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
                 Consultas</button>
                 <script src="/js/productList.js"></script>
+                <script src="/js/listYoga.js"></script>
 </body>
 
 </html>

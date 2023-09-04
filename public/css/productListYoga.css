@@ -20,7 +20,7 @@ main {
     opacity: 50%;
     z-index: 7;
     position: relative;
-    height: 76px;
+    height: 150px;
 }
 
 .banner-yoga {
@@ -33,11 +33,13 @@ main {
     text-align: center;
     padding: 20px 5px;
     position: absolute;
-    left: 40%;
-    top: 0px;
     z-index: 10;
     margin: auto;
     font-family: "Bebas Neue";
+
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, 50%); 
 }
 
 /* Filtros */
@@ -87,49 +89,6 @@ select:focus {
     text-align: center;
 }
 
-/* Side-bar */
-
-.side-bar {
-    color: #5c5d5b;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 10px 15px;
-}
-
-.edad,
-.dificultad {
-    border: 2px #e8e8e8 solid;
-    width: 112px;
-    text-align: center;
-    padding: 5px;
-}
-
-.side-bar h4 {
-    margin: auto;
-}
-
-.dificultad:hover {
-    background-color: #0084bd;
-    color: white
-}
-
-.edad:hover {
-    background-color: #0084bd;
-    color: white;
-}
-
-.sidebar-desplegables {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.sidebar-desplegables {
-    display: none;
-}
 
 /* Actividades */
 
@@ -226,6 +185,66 @@ select:focus {
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
     transition: all 0.3s ease-in-out;
     box-sizing: border-box;
+}
+
+/* Side-bar */
+
+.side-bar {
+    color: #5c5d5b;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+
+/* menu drop down */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdownBtn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#dropdownBtn:hover {
+    background-color: white;
+    color: #3498db;
+    border: 1px #3498db solid;
+}
+
+#dropdownBtn2 {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#dropdownBtn2:hover {
+    background-color: white;
+    color: #3498db;
+    border: 1px #3498db solid;
+}
+
+.dropdown-content {
+    display: none;
+    /*position: absolute;*/
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    /*z-index: 1;*/
 }
 
 @media (min-width: 669px) {

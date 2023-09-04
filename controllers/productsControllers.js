@@ -228,18 +228,6 @@ const controller = {
 
   filterProduct: async (req, res) => {
     try {
-      /*
-      const filtrosDificultad = req.body.dificultadcheck || []; 
-      const filtrosEdad = req.body.edadcheck || []; 
-  
-      await db.Producto.filter(producto => {
-          return (filtrosDificultad.length === 0 || filtrosDificultad.includes(producto.difficulty)) &&
-                 (filtrosEdad.length === 0 || filtrosEdad.includes(producto.age));
-      }).then (
-      function (productosFiltrados) {
-      res.render("productList", { productos: productosFiltrados})
-      }
-      ) */
 
       const filtrosDificultad = req.body.dificultadcheck || [];
       const filtrosEdad = req.body.edadcheck || [];
@@ -259,7 +247,7 @@ const controller = {
       const productosFiltrados = await db.Producto.findAll(filtro);
 
       res.render("productList", { productos: productosFiltrados });
-      
+
     } catch (error) {
       console.error(error);
       res.status(500).send("Error interno del servidor");
