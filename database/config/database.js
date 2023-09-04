@@ -1,11 +1,11 @@
 module.exports = {
   development: {
     username: "root",
-    password: "root",
+    password: null,
     database: "workouteazy",
     host: "127.0.0.1",
     dialect: "mysql",
-    port: "8889",
+    port: "3306",
   },
   test: {
     username: "root",
@@ -15,10 +15,12 @@ module.exports = {
     dialect: "mysql",
   },
   production: {
-    username: "root",
-    password: null,
-    database: "database_production",
-    host: "127.0.0.1",
+    database: process.env.DB_NAME,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    // port: process.env.DB_PORT,
+    host: process.env.DB_HOST,
     dialect: "mysql",
+    operatorsAliases: 0,
   },
 };

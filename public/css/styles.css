@@ -537,10 +537,8 @@ footer h2 {
 /* NOT FOUND */
 .imagenNotFound img{
     width: 100%;
-    height: 100%;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    
 }
 
 
@@ -800,7 +798,6 @@ footer h2 {
     .texto-instructor h4 h3 {
         font-size: 18px;
     }
-
 
     /* Footer */
 

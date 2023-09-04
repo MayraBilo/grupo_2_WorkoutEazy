@@ -2,10 +2,8 @@ const productModel = require("../models/product");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 
-
-const sharp = require('sharp');
-const fs = require('fs');
-
+const sharp = require("sharp");
+const fs = require("fs");
 
 const controller = {
   // OK
@@ -18,7 +16,9 @@ const controller = {
   },
 
   getEdit: (req, res) => {
-    db.Producto.findByPk(req.params.id).then(function (producto) {
+    db.Producto.findByPk(req.params.id, {
+      include: [{ association: "aliado_producto" }],
+    }).then(function (producto) {
       res.render("editProduct", { producto: producto });
     });
   },
@@ -44,7 +44,6 @@ const controller = {
 
   updateProduct: async (req, res) => {
     try {
-
       // Cropper y sharp para redimensionar la imagen
 
       if (req.file) {
@@ -56,15 +55,18 @@ const controller = {
           .toBuffer();
 
         // Generar un nombre de archivo único para la imagen redimensionada
-        const uniqueFileName = Date.now() + '-' + req.file.originalname;
+        const uniqueFileName = Date.now() + "-" + req.file.originalname;
 
         // Guardar la imagen redimensionada en la ubicación deseada
-        const outputImagePath = path.join(__dirname, 'public/images/productos', uniqueFileName);
+        const outputImagePath = path.join(
+          __dirname,
+          "public/images/productos",
+          uniqueFileName
+        );
         fs.writeFileSync(outputImagePath, resizedImageBuffer);
 
         // Utilizar el nombre de archivo único para la imagen en lugar del original
         req.body.image = uniqueFileName;
-
       } else {
         // Si no se sube una nueva imagen, conserva la imagen actual en la base de datos
         req.body.image = req.body.file;
@@ -197,9 +199,9 @@ const controller = {
   },
 
   addCart: async (req, res) => {
-    console.log('id producto detail', req.query.producto_id)
+    console.log("id producto detail", req.query.producto_id);
     try {
-      const productoId = req.query.producto_id
+      const productoId = req.query.producto_id;
       const clienteId = req.session.userLogged.id;
 
       let carrito = req.session.carrito;
@@ -209,10 +211,10 @@ const controller = {
           cliente_id: clienteId,
         });
 
-        req.session.carrito = carrito
+        req.session.carrito = carrito;
       }
 
-      const carritoId = req.session.carrito.id
+      const carritoId = req.session.carrito.id;
 
       await db.ProductsCart.create({
         producto_id: productoId,
@@ -220,7 +222,6 @@ const controller = {
       });
 
       res.redirect("/productCart");
-
     } catch (error) {
       res.json(error);
     }
@@ -233,7 +234,7 @@ const controller = {
       const filtrosEdad = req.body.edadcheck || [];
 
       const filtro = {
-        where: {}
+        where: {},
       };
 
       if (filtrosDificultad.length > 0) {
@@ -252,8 +253,7 @@ const controller = {
       console.error(error);
       res.status(500).send("Error interno del servidor");
     }
-
-  }
+  },
 };
 
 module.exports = controller;
