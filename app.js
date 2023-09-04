@@ -3,14 +3,18 @@ const path = require("path");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
-const cors = require("cors")
+const cors = require("cors");
 
-const { mainRoutes, productsRoutes, userRoutes } = require("./routes")
+const { mainRoutes, productsRoutes, userRoutes } = require("./routes");
 const apiProduct = require("./routes/apiRoutes/apiRouteProducts");
 const apiUsers = require("./routes/apiRoutes/apiRouteUsers");
 const apiAliados = require("./routes/apiRoutes/apiRouteAliados");
 
 const app = express();
+
+// .env
+
+require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "./public")));
 
