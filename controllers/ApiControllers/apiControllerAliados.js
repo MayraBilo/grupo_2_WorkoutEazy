@@ -50,7 +50,32 @@ const controller = {
                 status: 500
             });
         };
-    }
+    },
+    getLastAliado: async (req,res) => {
+        try {
+            const lastAliado = await db.Aliado.findOne({
+                order: [['id', 'DESC']],
+            });
+    
+            if (!lastAliado) {
+                return res.status(404).json({
+                    message: "No Aliado found",
+                    status: 404,
+                });
+            }
+    
+            return res.status(200).json({
+                data: lastAliado,
+                status: 200,
+        });
+        } catch (error) {
+            return res.status(500).json({
+                message: "Error fetching last Aliado",
+                error: error.message,
+                status: 500,
+            });
+        }
+    },
 }
 
 module.exports = controller;
