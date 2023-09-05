@@ -95,42 +95,57 @@ select:focus {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-    margin: 10px 15px;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 10px;
 }
 
-.edad,
-.dificultad {
-    border: 2px #e8e8e8 solid;
-    width: 112px;
-    text-align: center;
-    padding: 5px;
+
+/* menu drop down */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.side-bar h4 {
-    margin: auto;
-}
-
-.dificultad:hover {
-    background-color: #0084bd;
-    color: white
-}
-
-.edad:hover {
-    background-color: #0084bd;
+#dropdownBtn {
+    background-color: #3498db;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-.sidebar-desplegables {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+#dropdownBtn:hover {
+    background-color: white;
+    color: #3498db;
+    border: 1px #3498db solid;
 }
 
-.sidebar-desplegables {
+#dropdownBtn2 {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#dropdownBtn2:hover {
+    background-color: white;
+    color: #3498db;
+    border: 1px #3498db solid;
+}
+
+.dropdown-content {
     display: none;
+    /*position: absolute;*/
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    /*z-index: 1;*/
 }
-
 /* Actividades */
 
 /* Actividades cargadas */

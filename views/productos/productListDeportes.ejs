@@ -53,59 +53,7 @@
                 </div>
             </section>
 
-            <section class="side-bar">
-                <button class="edad">
-                    <h4>Edad</h4>
-                </button>
-                
-                <button class="dificultad">
-                    <h4>Dificultad</h4>
-                </button>
-            </section>
-
-            <section class="sidebar-desplegables">
-                <div class="check-edad">
-                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
-                        <span class="checkmark"></span>
-                    </div>
-                </div>
-
-                <div class="check-dificultad">
-                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
-                        <i class="fa-solid fa-star"></i>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
-                            <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
-                            <span class="checkmark"></span>
-                    </div>
-                </div>
-            </section>
+            <%- include("../partials/sideBar") %>
 
             <section class="productos-display">
 
@@ -474,6 +422,7 @@
                 <i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i>
                 Consultas</button>
                 <script src="/js/productList.js"></script>
+                <script src="/js/menuFiltros.js"></script>
 </body>
 
 </html>
