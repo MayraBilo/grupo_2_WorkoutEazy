@@ -4,7 +4,7 @@ const selectElement = document.getElementById('miSelect');
 
 // Define un objeto que mapea las opciones a las rutas correspondientes
 const optionRoutes = {
-    "Todos": "",                  // Ruta para "Todos"
+    "Todos": "/product",                  // Ruta para "Todos"
     "Yoga": "/product/productListYoga",   // Ruta para "Yoga"
     "Fitness": "/product/productListFitness", // Ruta para "Fitness"
     "Danzas": "/product/productListDanzas",   // Ruta para "Danzas"
