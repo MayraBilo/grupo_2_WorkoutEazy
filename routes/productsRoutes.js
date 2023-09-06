@@ -52,5 +52,12 @@ router.get("/productListDanzas", productController.getListDanzas);
 
 // @POST filtrar por edad y dificultas
 router.post("/filtrarProductos", productController.filterProduct);
+router.post("/filtrarProductosYoga", productController.filterProductYoga);
+router.post("/filtrarProductosFitness", productController.filterProductFitness);
+router.post(
+  "/filtrarProductosDeportes",
+  productController.filterProductDeportes
+);
+router.post("/filtrarProductosDanzas", productController.filterProductDanzas);
 
 module.exports = router;

@@ -9,6 +9,14 @@ body {
 main {
     margin-bottom: 40px;
 }
+.cuerpo{
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+.fa-solid, .fa-star{
+    display: none
+}
 
 .titulo-general {
     text-align: center;
@@ -87,6 +95,30 @@ select:focus {
     margin: 5px;
     width: 150px;
     text-align: center;
+}
+
+/* Side-bar */
+.side-bar form {
+    width: 20vw;
+    font-family: 'bebas neue';
+    color: #5c5d5b;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    
+}
+.button-filter {
+    border: #006e52 solid 1px;
+    border-radius: 5px;
+    z-index: 99;
+    color: white;
+    background-color: rgba(0, 161, 112);
+    font-size: 16px;
+    font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 
