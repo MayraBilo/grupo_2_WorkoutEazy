@@ -43,3 +43,8 @@ Presentación
 6) May: detail del producto.
 7) May: profile service.
 8) Franco: Carrito.
+9) React:
+- home: franco
+- listados: jaci
+- detalles: may
+- categorias: eli
