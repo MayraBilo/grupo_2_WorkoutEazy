@@ -32,3 +32,14 @@ Organizamos el trello asignando tareas.
 - Puesta a punto del sprint 7
 - La validación de email existente desde frontend no se puede hacer hasta no tener apis
 - El carrito de la aplicación todavía no funciona necesitamos aprender cómo hacerlo
+
+Presentación
+1) Eli: presentación de proyecto y concepto.
+2) Jaci: mostrar el home.
+2) May: productos y product list, filtros.
+3) Eli: perfiles y registro.
+4) Franco: crear, editar y borrar.
+5) Jaci: inicio de sesión y cookies.
+6) May: detail del producto.
+7) May: profile service.
+8) Franco: Carrito.

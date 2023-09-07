@@ -209,6 +209,7 @@ const controller = {
       if (!carrito) {
         carrito = await db.Carrito.create({
           cliente_id: clienteId,
+          /*producto_id: productoId,*/
         });
 
         req.session.carrito = carrito;

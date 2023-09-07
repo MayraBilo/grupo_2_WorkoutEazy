@@ -195,7 +195,7 @@ const controller = {
   } */
 
   getCart: function (req, res) {
-    db.Producto.findAll({ include: [{ association: "carritos" }] }).then(
+    db.Carrito.findAll({ include: [{ association: "carrito" }] }).then(
       function (productosCarrito) {
         res.render("productCart", { productosCarrito: productosCarrito });
       }
