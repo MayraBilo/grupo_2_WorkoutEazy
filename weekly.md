@@ -44,7 +44,7 @@ Presentación
 7) May: profile service.
 8) Franco: Carrito.
 9) React:
-- home: franco
-- listados: jaci
-- detalles: may
-- categorias: eli
+- home: Franco
+- listados: Jaci
+- detalles: May
+- categorias: Eli

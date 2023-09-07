@@ -298,6 +298,14 @@ footer h2 {
     margin: 20px 0;
 }
 
+.trash {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (min-width: 1200px) {
     main {
         display: flex;
