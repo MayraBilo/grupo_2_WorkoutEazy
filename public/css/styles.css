@@ -99,9 +99,7 @@ form {
 .searchDiv {
     display: flex;
     align-items: center; 
-    
 }
-
 
 
 header input:focus {
@@ -124,7 +122,12 @@ header input:focus {
     margin: 0;
 }
 
-
+.buscador select {
+    border: 1px solid #e8e8e8;
+    background-color: white;
+    border-radius: 14px;
+    padding: 1%;
+}
 
 .persona {
     display: inline-block;
@@ -917,9 +920,4 @@ footer h2 {
     .carousel-item.active {
         margin-right: -57%;
     }
-    .searchDiv input{
-        width: 240px;
-    }
-    
-    
 }
