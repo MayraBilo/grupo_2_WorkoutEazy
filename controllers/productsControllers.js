@@ -229,7 +229,6 @@ const controller = {
 
   filterProduct: async (req, res) => {
     try {
-
       const filtrosDificultad = req.body.dificultadcheck || [];
       const filtrosEdad = req.body.edadcheck || [];
 
@@ -248,7 +247,106 @@ const controller = {
       const productosFiltrados = await db.Producto.findAll(filtro);
 
       res.render("productList", { productos: productosFiltrados });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor");
+    }
+  },
+  filterProductYoga: async (req, res) => {
+    try {
+      const filtrosDificultad = req.body.dificultadcheck || [];
+      const filtrosEdad = req.body.edadcheck || [];
 
+      const filtro = {
+        where: { category: "yoga" },
+      };
+
+      if (filtrosDificultad.length > 0) {
+        filtro.where.difficulty = filtrosDificultad;
+      }
+
+      if (filtrosEdad.length > 0) {
+        filtro.where.age = filtrosEdad;
+      }
+
+      const productosFiltrados = await db.Producto.findAll(filtro);
+
+      res.render("productList", { productos: productosFiltrados });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor");
+    }
+  },
+  filterProductFitness: async (req, res) => {
+    try {
+      const filtrosDificultad = req.body.dificultadcheck || [];
+      const filtrosEdad = req.body.edadcheck || [];
+
+      const filtro = {
+        where: { category: "Fitness" },
+      };
+
+      if (filtrosDificultad.length > 0) {
+        filtro.where.difficulty = filtrosDificultad;
+      }
+
+      if (filtrosEdad.length > 0) {
+        filtro.where.age = filtrosEdad;
+      }
+
+      const productosFiltrados = await db.Producto.findAll(filtro);
+
+      res.render("productList", { productos: productosFiltrados });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor");
+    }
+  },
+  filterProductDeportes: async (req, res) => {
+    try {
+      const filtrosDificultad = req.body.dificultadcheck || [];
+      const filtrosEdad = req.body.edadcheck || [];
+
+      const filtro = {
+        where: { category: "Deportes" },
+      };
+
+      if (filtrosDificultad.length > 0) {
+        filtro.where.difficulty = filtrosDificultad;
+      }
+
+      if (filtrosEdad.length > 0) {
+        filtro.where.age = filtrosEdad;
+      }
+
+      const productosFiltrados = await db.Producto.findAll(filtro);
+
+      res.render("productList", { productos: productosFiltrados });
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error interno del servidor");
+    }
+  },
+  filterProductDanzas: async (req, res) => {
+    try {
+      const filtrosDificultad = req.body.dificultadcheck || [];
+      const filtrosEdad = req.body.edadcheck || [];
+
+      const filtro = {
+        where: { category: "Danzas" },
+      };
+
+      if (filtrosDificultad.length > 0) {
+        filtro.where.difficulty = filtrosDificultad;
+      }
+
+      if (filtrosEdad.length > 0) {
+        filtro.where.age = filtrosEdad;
+      }
+
+      const productosFiltrados = await db.Producto.findAll(filtro);
+
+      res.render("productList", { productos: productosFiltrados });
     } catch (error) {
       console.error(error);
       res.status(500).send("Error interno del servidor");

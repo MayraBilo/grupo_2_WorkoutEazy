@@ -6,6 +6,7 @@
     <head>
         <%- include("../partials/head") %>
         <link rel="stylesheet" href="/css/productListDeportes.css">
+        <link rel="stylesheet" href="/css/productList.css">
     </head>
 </head>
 
@@ -28,7 +29,7 @@
                     <option>Yoga</option>
                     <option>Fitness</option>
                     <option>Danzas</option>
-                    <option>Deportes</option>
+                    <option selected>Deportes</option>
                 </select>
             </section>
 
@@ -53,7 +54,60 @@
                 </div>
             </section>
 
-            <%- include("../partials/sideBar") %>
+           <!-- <%- include("../partials/sideBar") %> -->
+           <div class="cuerpo">
+           <section class="side-bar">
+
+            <form action="/product/filtrarProductosDeportes" method="POST">
+                <div class="check-dificultad">
+                    <h3>Dificultad</h3>
+                    <div><input type="checkbox" name="dificultadcheck" value="principiante"> Principiante</input>
+                        <i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="fácil"> Fácil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="intermedio"> Intermedio</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="difícil"> Difícil</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="dificultadcheck" value="avanzado"> Avanzado</input>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+            
+                <br>
+                <div class="check-edad">
+                    <h3>Edad</h3>
+                    <div><input type="checkbox" name="edadcheck" value="niños"> Niños</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adolescentes"> Adolescentes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="jóvenes"> Jovenes</input>
+                        <span class="checkmark"></span>
+                    </div>
+                    <div><input type="checkbox" name="edadcheck" value="adultos"> Adultos</input>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <button class="button-filter" type="submit">Aplicar filtros</button>
+            </form>
+
+            </section>
 
             <section class="productos-display">
 
@@ -414,7 +468,7 @@
                 </div>
 
             </section>
-
+        </div>
         </main>
         
         <%- include("../partials/footer") %>

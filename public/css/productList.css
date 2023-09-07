@@ -43,7 +43,17 @@ select:focus {
 }
 
 /* Side-bar */
-
+.side-bar form {
+    width: 20vw;
+    font-family: 'bebas neue';
+    color: #5c5d5b;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    
+}
 .check-dificultad div {
     padding-bottom: 10px;
 }
@@ -253,6 +263,7 @@ select:focus {
     .nav-filtros select {
         width: 15%;
         font-size: 24px;
+        font-family: 'bebas neue';
     }
 
     /* Actividades */

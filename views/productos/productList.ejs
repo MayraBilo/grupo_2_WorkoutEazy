@@ -17,7 +17,7 @@
 
             <section class="nav-filtros">
                 <select id="miSelect">
-                    <option>Todos</option>
+                    <option selected>Todos</option>
                     <option>Yoga</option>
                     <option>Fitness</option>
                     <option>Danzas</option>
@@ -32,7 +32,6 @@
                 <section class="side-bar">
 
                 <form action="/product/filtrarProductos" method="POST">
-
                     <div class="check-dificultad">
                         <h3>Dificultad</h3>
                         <div><input type="checkbox" name="dificultadcheck" value="principiante"> Principiante</input>
@@ -59,7 +58,9 @@
                                 class="fa-solid fa-star"></i>
                             <span class="checkmark"></span>
                         </div>
+                   
                     </div>
+                
                     <br>
                     <div class="check-edad">
                         <h3>Edad</h3>
@@ -167,6 +168,7 @@
                 Consultas</button>
 
                 <script src="/js/productList.js"></script>
+            
 </body>
 
 </html>

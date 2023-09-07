@@ -6,6 +6,7 @@
     <head>
         <%- include("../partials/head") %>
         <link rel="stylesheet" href="/css/productListYoga.css">
+        <link rel="stylesheet" href="/css/productList.css">
     </head>
 </head>
 
@@ -24,7 +25,8 @@
 
             <section class="nav-filtros">
                 <select id="miSelect">
-                    <option>Yoga</option>
+                    <option>Todos</option>
+                    <option selected>Yoga</option>
                     <option>Fitness</option>
                     <option>Danzas</option>
                     <option>Deportes</option>
@@ -55,59 +57,59 @@
                 </div>
             </section>
 
+            <div class="cuerpo">
             <section class="side-bar">
-                <div class="dropdown">
-                <button class="edad" id="dropdownBtn">
-                    Edad
-                </button>
-                <div id="dropdownContent" class="dropdown-content check-edad">
-                    <div><input type="checkbox" name="edadcheck" value="niños">Niños</input>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="edadcheck" value="adolescentes">Adolescentes</input>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="edadcheck" value="jóvenes">Jovenes</input>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="edadcheck" value="adultos">Adultos</input>
-                        <span class="checkmark"></span>
-                    </div>
-                </div>
-                </div>
 
-                <div class="dropdown">
-                <button class="dificultad" id="dropdownBtn2">
-                    Dificultad
-                </button>
-                <div id="dropdownContent2" class="dropdown-content check-dificultad">
-                    <div><input type="checkbox" name="dificultadcheck" value="principiante">Principiante</input>
-                        <i class="fa-solid fa-star"></i>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="fácil">Fácil</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="intermedio">Intermedio</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
+                <form action="/product/filtrarProductosYoga" method="POST">
+                    <div class="check-dificultad">
+                        <h3>Dificultad</h3>
+                        <div><input type="checkbox" name="dificultadcheck" value="principiante"> Principiante</input>
+                            <i class="fa-solid fa-star"></i>
                             <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="difícil">Difícil</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <div><input type="checkbox" name="dificultadcheck" value="fácil"> Fácil</input>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             <span class="checkmark"></span>
-                    </div>
-                    <div><input type="checkbox" name="dificultadcheck" value="avanzado">Avanzado</input>
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                            class="fa-solid fa-star"></i>
+                        </div>
+                        <div><input type="checkbox" name="dificultadcheck" value="intermedio"> Intermedio</input>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
                             <span class="checkmark"></span>
+                        </div>
+                        <div><input type="checkbox" name="dificultadcheck" value="difícil"> Difícil</input>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                        </div>
+                        <div><input type="checkbox" name="dificultadcheck" value="avanzado"> Avanzado</input>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                            <span class="checkmark"></span>
+                        </div>
                     </div>
-                </div>
-                </div>
-            </section>
+                
+                    <br>
+                    <div class="check-edad">
+                        <h3>Edad</h3>
+                        <div><input type="checkbox" name="edadcheck" value="niños"> Niños</input>
+                            <span class="checkmark"></span>
+                        </div>
+                        <div><input type="checkbox" name="edadcheck" value="adolescentes"> Adolescentes</input>
+                            <span class="checkmark"></span>
+                        </div>
+                        <div><input type="checkbox" name="edadcheck" value="jóvenes"> Jovenes</input>
+                            <span class="checkmark"></span>
+                        </div>
+                        <div><input type="checkbox" name="edadcheck" value="adultos"> Adultos</input>
+                            <span class="checkmark"></span>
+                        </div>
+                    </div>
+
+                    <button class="button-filter" type="submit">Aplicar filtros</button>
+                </form>
+
+                </section>
 
             <section class="productos-display">
 
@@ -298,7 +300,7 @@
                 </div>
 
             </section>
-
+        </div>
         </main>
         
         <%- include("../partials/footer") %>
