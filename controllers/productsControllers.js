@@ -49,9 +49,14 @@ const controller = {
       if (req.file) {
         const desiredWidth = 533;
         const desiredHeight = 800;
+        const left = 0; // Coordenada X del punto de inicio del recorte
+        const top = 0; // Coordenada Y del punto de inicio del recorte
+        const width = 300; // Ancho del área a recortar
+        const height = 300; // Alto del área a recortar
 
         const resizedImageBuffer = await sharp(req.file.buffer)
           .resize(desiredWidth, desiredHeight)
+          .extract({ left, top, width, height })
           .toBuffer();
 
         // Generar un nombre de archivo único para la imagen redimensionada
