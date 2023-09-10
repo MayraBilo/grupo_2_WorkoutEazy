@@ -189,7 +189,7 @@
               <label>Ciudad ubicación de servicios:
               </label>
               <br />
-              <select name="services_city">
+              <select class="option" name="services_city" id="services_city">
 
                 <br />
                 <option value="">Elegí una ciudad</option>
@@ -198,13 +198,18 @@
                 <% let ciudades=['Buenos Aires', 'Caracas' , 'Venado Tuerto' , 'Bahía Blanca' ]; %>
                   <% for (const oneCity of ciudades) { %>
                     <option value="<%= oneCity%>" <%=locals.oldData && (oneCity===oldData.services_city) ? 'selected' : null %>
-                      id="services_city">
+                      >
                       <%= oneCity%>
                     </option>
                     <% }%>
-                    <span></span>
               </select>
             </div>
+            <% if (locals.errors && errors.services_city) { %>
+              <div class="text-danger">
+                  <%= errors.services_city.msg %>
+              </div>
+              <% } %>
+              <span></span>
           </section>
 
           <section class="grupo-de-registrosA1">
