@@ -9,7 +9,7 @@ const contact_numberInp = document.querySelector("#contact_number");
 const emailInp = document.querySelector("#email");
 const passwordInp = document.querySelector("#password");
 const avatarInp = document.querySelector("#avatar");
-const enviarBtn = document.getElementById("enviar");
+
 
 const setErrors = (message, inp, isError = true) => {
   if (isError) {
@@ -50,10 +50,20 @@ const validateNombreInp = (e) => {
 const validateBirthdayInp = (e) => {
   const inp = e.target;
   const inpValue = e.target.value;
-  //const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
+
 
   if (inpValue.trim().length === 0) {
     setErrors("Ingresa tu fecha de Nacimiento", inp);
+  } else {
+    setErrors("", inp, false);
+  }
+};
+const validateServices_cityInp = (e) => {
+  const inp = e.target;
+  const inpValue = e.target.value;
+  
+  if (inpValue.trim().length === 0 || inpValue == "Elegí una ciudad"){
+    setErrors("Ingresa un ciudad", inp, true);
   } else {
     setErrors("", inp, false);
   }
@@ -119,7 +129,17 @@ const validatePasswordFormat = (e) => {
     setErrors("", inp, false);
   }
 };
+const validate_AvatarInp = (e) => {
+  const inp = e.target;
+  const inpValue = e.target.value;
+ 
 
+  if (inpValue.trim().length === 0 ) {
+    setErrors("Ingresa un archivo de imágen", inp, true);
+  } else {
+    setErrors("", inp, false);
+  }
+};
 const validateAvatarInp = (e) => {
   const inp = e.target;
   const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
@@ -143,6 +163,7 @@ servicesInp.addEventListener("blur", validateServiceInp);
 document_numberInp.addEventListener("blur", validateDocument_numberInp);
 contact_numberInp.addEventListener("blur", validateContactnumberInp);
 birth_dateInp.addEventListener("blur", validateBirthdayInp);
+services_cityInp.addEventListener("blur", validateServices_cityInp);
 
 //validación datos completados exitosamente
 emailInp.addEventListener("input", validateEmailFormat);
@@ -155,19 +176,9 @@ document_numberInp.addEventListener("input", validateDocument_numberInp);
 contact_numberInp.addEventListener("input", validateContactnumberInp);
 birth_dateInp.addEventListener("input", validateBirthdayInp);
 
+
 //Validación de archivo para foto perfil
 
 avatarInp.addEventListener("blur", validateAvatarInp);
+avatarInp.addEventListener("blur", validate_AvatarInp);
 
-//Deshabilitar submit si no se llenan los datos
-
-/*function validarCampos() {
-    if (entity_nameInp.value.trim() !== "" && first_nameInp.value.trim() !== "" && last_nameInp.value.trim() !== "" && servicesvalue.trim() !== "" && servicesInp.value.trim() !== "" 
-    && document_numberInp.value.trim() !== "" && birth_dateInp.trim() !== "" && services_cityInp.value.trim() !== "" && contact_numberInp.value.trim() !== "" && emailInp.value.trim() !== "" 
-    && passwordInp.value.trim() !== "" && avatarInp.value.trim() !== "") {
-        enviarBtn.removeAttribute("disabled");
-    } else {
-        enviarBtn.setAttribute("disabled", "true");
-    }
-}
-*/

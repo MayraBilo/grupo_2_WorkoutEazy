@@ -8,7 +8,8 @@ const password_Inp = document.querySelector("#password");
 const condiciones_Inp = document.querySelector("#condiciones");
 const privacidad_Inp = document.querySelector("#privacidad");
 const avatar_Inp = document.querySelector("#avatar");
-const enviar_Btn = document.getElementById("enviar");
+
+
 
 const setErrors = (message, inp, isError = true) => {
   if (isError) {
@@ -38,10 +39,21 @@ const validateNameInp = (e) => {
 const validateBirth_date_Inp = (e) => {
   const inp = e.target;
   const inpValue = e.target.value;
-  //const regex = new RegExp(/^[a-zA-ZÀ-ÿ\s]{3,40}$/);
+ 
 
   if (inpValue.trim().length === 0) {
     setErrors("Ingresa una fecha de nacimiento válida", inp, true);
+  } else {
+    setErrors("", inp, false);
+  }
+};
+const validateCity_Inp = (e) => {
+  const inp = e.target;
+  const inpValue = e.target.value;
+ 
+
+  if (inpValue.trim().length === 0 && "Elegí una ciudad") {
+    setErrors("Ingresa un ciudad", inp, true);
   } else {
     setErrors("", inp, false);
   }
@@ -64,7 +76,7 @@ const validateEmail_Format = (e) => {
   const inpValue = e.target.value;
   const regex = new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
-  if (inpValue.trim().length > 4 && !regex.test(e.target.value)) {
+  if (inpValue.trim().length = !regex.test(e.target.value)) {
     setErrors("Ingresa un email válido", inp);
   } else {
     setErrors("", inp, false);
@@ -81,6 +93,17 @@ const validate_password_inp = (e) => {
       "Utiliza mínimo 8 caracteres, con al menos una letra mayúscula, números y símbolos",
       inp
     );
+  } else {
+    setErrors("", inp, false);
+  }
+};
+const validateAvatar_Inp = (e) => {
+  const inp = e.target;
+  const inpValue = e.target.value;
+ 
+
+  if (inpValue.trim().length === 0 ) {
+    setErrors("Ingresa un archivo de imágen", inp, true);
   } else {
     setErrors("", inp, false);
   }
@@ -106,6 +129,8 @@ email_Inp.addEventListener("blur", validateEmail_Format);
 password_Inp.addEventListener("blur", validate_password_inp);
 contact_number_Inp.addEventListener("blur", validateContact_numberInp);
 birth_date_Inp.addEventListener("blur", validateBirth_date_Inp);
+city_Inp.addEventListener("blur", validateCity_Inp);
+avatar_Inp.addEventListener("blur", validateAvatar_Inp);
 
 //validación datos completados exitosamente
 first_name_Inp.addEventListener("input", validateNameInp);
@@ -114,5 +139,6 @@ email_Inp.addEventListener("input", validateEmail_Format);
 password_Inp.addEventListener("input", validate_password_inp);
 contact_number_Inp.addEventListener("input", validateContact_numberInp);
 birth_date_Inp.addEventListener("input", validateBirth_date_Inp);
+city_Inp.addEventListener("input", validateCity_Inp);
 
 avatar_Inp.addEventListener("change", validate_avatar_Inp);

@@ -10,6 +10,7 @@ const validationsAliados = [
     body('genre').notEmpty().withMessage('Elegir un género'),
     body('document_number').notEmpty().withMessage('Escribir identificación'),
     body('birth_date').notEmpty().withMessage('Elegir una fecha de nacimiento'),
+    body('services_city').notEmpty().withMessage('Elegir una ciudad'),
     body('contact_number').notEmpty().withMessage('Escribir número celular'),
     body('password').notEmpty().withMessage('Crear una contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres').matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/).withMessage('La contraseña debe contener al menos una letra mayúscula, una letra minúscula y un número'),
     body('email').notEmpty().withMessage('Escribir un email').bail()
