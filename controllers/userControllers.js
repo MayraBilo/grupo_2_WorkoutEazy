@@ -194,13 +194,45 @@ const controller = {
     res.render("productCart")
   } */
 
-  getCart: function (req, res) {
-    db.Carrito.findAll({ include: [{ association: "carrito" }] }).then(
+  /*getCart: function (req, res) {
+    db.Carrito.findAll({ include: [{ association: "products" }] }).then(
       function (productosCarrito) {
         res.render("productCart", { productosCarrito: productosCarrito });
       }
     );
+  },*/
+
+  getCart: function (req, res) {
+    const carritoId = req.session.carrito.id;
+
+    db.Carrito.findByPk(carritoId, {
+      include: [{ model: db.Producto, as: "products" }],
+    })
+      .then(function (carrito) {
+        res.render("productCart", { carrito: carrito });
+      })
+      .catch(function (error) {
+        res.json(error);
+      });
   },
+
+  deleteCart: (req, res) => {
+    const productoId = req.params.productoId; 
+    const carritoId = req.session.carrito.id; 
+
+    db.ProductsCart.destroy({
+      where: {
+        producto_id: productoId,
+        carrito_id: carritoId,
+      },
+    })
+      .then(function () {
+        res.redirect("/productCart");
+      })
+      .catch(function (error) {
+        res.json(error);
+      });
+  }
 
 };
 

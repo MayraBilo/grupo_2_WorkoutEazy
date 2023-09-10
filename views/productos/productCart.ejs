@@ -26,7 +26,7 @@
             <h3>Subtotal</h3>
           </div>
         </div>
-      <% productosCarrito.forEach(producto => { %>
+      <% carrito.products.forEach(producto => { %>
         <article class="product">
           <div class="inf-product">
             <img class="img-product" src="/images/productos/<%= producto.image %>" alt="<%= producto.subcategory %>"/>
@@ -45,9 +45,9 @@
               <h4>(Subtotal)</h4>
             </div>
           </div>
-          <div class="trash-box">
+          <a class= "trash" href="/removeFromCart/<%= producto.id %>">
             <i class="fa-solid fa-trash"></i>
-          </div>
+          </a>
         </article>
         
       <% }) %>
