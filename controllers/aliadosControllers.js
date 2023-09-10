@@ -4,7 +4,7 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
 const db = require("../database/models");
-const uuid = require("uuid");
+//const uuid = require("uuid");
 
 const controller = {
   getRegisterAliados: (req, res) => {
@@ -69,13 +69,13 @@ const controller = {
       });
 
       if (userToLogin) {
-        console.log(userToLogin.rol);
+        //console.log(userToLogin.rol);
         let isOkPass = bcrypt.compareSync(
           req.body.password,
           userToLogin.password
         );
         if (isOkPass) {
-          console.log("password coincide");
+          //console.log("password coincide");
           delete userToLogin.password;
           req.session.userLogged = userToLogin;
 
@@ -116,7 +116,7 @@ const controller = {
   },
 
   logoutAliado: (req, res) => {
-    console.log("logoutaliado");
+    // console.log("logoutaliado");
     res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/loginAliado");
@@ -124,4 +124,3 @@ const controller = {
 };
 
 module.exports = controller;
-

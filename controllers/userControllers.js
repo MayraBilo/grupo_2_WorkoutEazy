@@ -24,7 +24,7 @@ const controller = {
       });
 
       if (userToLogin) {
-        console.log(userToLogin);
+        //console.log(userToLogin);
         let isOkPass = bcrypt.compareSync(
           req.body.password,
           userToLogin.password
@@ -217,8 +217,8 @@ const controller = {
   },
 
   deleteCart: (req, res) => {
-    const productoId = req.params.productoId; 
-    const carritoId = req.session.carrito.id; 
+    const productoId = req.params.productoId;
+    const carritoId = req.session.carrito.id;
 
     db.ProductsCart.destroy({
       where: {
@@ -232,9 +232,7 @@ const controller = {
       .catch(function (error) {
         res.json(error);
       });
-  }
-
+  },
 };
-
 
 module.exports = controller;

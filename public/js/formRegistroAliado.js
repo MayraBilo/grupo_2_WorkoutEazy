@@ -124,7 +124,7 @@ const validateAvatarInp = (e) => {
   const inp = e.target;
   const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
   const allowedExt = ["jpg", "jpeg", "png", "gif"];
-  console.log(fileExt);
+  // console.log(fileExt);
   if (!allowedExt.includes(fileExt)) {
     setErrors("Adjunta un archivo válido: .jpg, .jpeg, .png, .gif", inp, true);
   } else {

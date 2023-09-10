@@ -199,7 +199,7 @@ const controller = {
   },
 
   addCart: async (req, res) => {
-    console.log("id producto detail", req.query.producto_id);
+    // console.log("id producto detail", req.query.producto_id);
     try {
       const productoId = req.query.producto_id;
       const clienteId = req.session.userLogged.id;

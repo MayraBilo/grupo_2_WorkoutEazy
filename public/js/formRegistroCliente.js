@@ -1,5 +1,3 @@
-console.log("archivo vinculado");
-
 const first_name_Inp = document.querySelector("#first_name");
 const last_name_Inp = document.querySelector("#last_name");
 const birth_date_Inp = document.querySelector("#birth_date");
@@ -92,7 +90,7 @@ const validate_avatar_Inp = (e) => {
   const inp = e.target;
   const fileExt = e.target.files[0].name.split(".").pop().toLowerCase();
   const allowedExt = ["jpg", "jpeg", "png", "gif"];
-  console.log(fileExt);
+  //console.log(fileExt);
   if (!allowedExt.includes(fileExt)) {
     setErrors("Adjunta un archivo válido: .jpg, .jpeg, .png, .gif", inp, true);
   } else {
