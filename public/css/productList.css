@@ -92,10 +92,20 @@ select:focus {
 
 .actividades-container {
     display: grid;
-    grid-template-rows: 100%;
     grid-template-columns: 1fr 1fr;
     margin: 0 20px;
     gap: 30px;
+}
+.actividades-container h3 {
+    font-size: 20px;
+}
+.productos-display {
+    grid-area: productos;
+}
+.container-grid {
+    display: grid;
+    grid-template-areas: "side productos";
+    grid-template-columns: 1fr 1fr;
 }
 
 .actividad-ejemplo {
@@ -184,7 +194,7 @@ select:focus {
     z-index: 99;
     color: white;
     background-color: rgba(0, 161, 112);
-    font-size: 16px;
+    font-size: 12px;
     font-family: 'Bebas Neue', 'cursive', 'Roboto', 'sans-serif';
     transition: all 0.3s ease-in-out;
     box-sizing: border-box;
@@ -275,7 +285,7 @@ select:focus {
     }
 
     .productos-display {
-        grid: productos;
+        grid-area: productos;
     }
 
     .container-grid {

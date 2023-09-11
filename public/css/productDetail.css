@@ -433,9 +433,7 @@ button:hover {
         max-width: 100%;
     }
 
-    .container-img-producto {
-        margin-left: 30%;
-    }
+   
 
     /* Relacionadas */
 
@@ -584,8 +582,8 @@ button:hover {
         margin-top: 0px;
     }
 
-    .img-producto {
-        justify-content: flex-start;
+    .container-img-producto {
+        margin-left: 30%;
     }
 
     /* Banner promocional */
