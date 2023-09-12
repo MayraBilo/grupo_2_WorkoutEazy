@@ -65,7 +65,7 @@
                     <div class="container-name-service">
                         <label for="activity_name">Nombre del servicio</label>
                         <input class="lsinput <%= locals.errors && errors.activity_name ? 'is-invalid' : null %>"
-                            type="text" name="activity_name" value="<%= locals.oldData ? oldData.first_name : null %>"
+                            type="text" name="activity_name" value="<%=producto.activity_name%>"
                             id="name" >
                         <% if (locals.errors && errors.activity_name) { %>
                             <div class="text-danger">
