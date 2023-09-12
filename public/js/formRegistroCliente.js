@@ -52,7 +52,7 @@ const validateCity_Inp = (e) => {
   const inpValue = e.target.value;
  
 
-  if (inpValue.trim().length === 0 && "Elegí una ciudad") {
+  if (inpValue.trim() === "Elegí una ciudad") {
     setErrors("Ingresa un ciudad", inp, true);
   } else {
     setErrors("", inp, false);
